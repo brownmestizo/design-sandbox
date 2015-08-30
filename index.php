@@ -33,7 +33,6 @@
 
 <?php include_once('components/modal-login.php') ?>
 <?php include_once('components/modal-signup.php') ?>
-
 <?php include_once('components/navbar.php') ?>
 
 <?php //include_once('components/banner.php') ?>

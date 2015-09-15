@@ -8,22 +8,21 @@
                 <!-- product Image -->
 
                 <div class="main-image  col-lg-12 no-padding style3">
-                    <a class="product-largeimg-link" href="product-details-style4.html"><img src="images/zoom/zoom1.jpg"
-                                                                                      class="img-responsive product-largeimg"
-                                                                                      alt="img">
+                    <a class="product-largeimg-link" href="product-details-style4.html">
+                        <img src="images/zoom/zoom1.jpg" class="img-responsive product-largeimg prod-solo-1" alt="img">
                     </a>
                 </div>
                 <!--/.main-image-->
 
                 <div class="modal-product-thumb">
-                    <a class="thumbLink selected"><img data-large="images/zoom/zoom1.jpg" alt="img"
-                                                       class="img-responsive" src="images/zoom/zoom1.jpg">
+                    <a class="thumbLink selected">
+                        <img data-large="images/zoom/zoom1.jpg" alt="img" class="img-responsive prod-solo-2" src="images/zoom/zoom1.jpg">
                     </a>
-                    <a class="thumbLink"><img data-large="images/zoom/zoom2.jpg" alt="img" class="img-responsive"
-                                              src="images/zoom/zoom2.jpg">
+                    <a class="thumbLink">
+                        <img data-large="images/zoom/zoom2.jpg" alt="img" class="img-responsive prod-solo-3" src="images/zoom/zoom2.jpg">
                     </a>
-                    <a class="thumbLink"><img data-large="images/zoom/zoom3.jpg" alt="img" class="img-responsive"
-                                              src="images/zoom/zoom3.jpg">
+                    <a class="thumbLink">
+                        <img data-large="images/zoom/zoom3.jpg" alt="img" class="img-responsive prod-solo-4" src="images/zoom/zoom3.jpg">
                     </a>
                 </div>
                 <!--/.modal-product-thumb-->
@@ -33,13 +32,13 @@
 
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 modal-details no-padding">
                 <div class="modal-details-inner">
-                    <h1 class="product-title">NORTH AMERICAN MUSTANG P51-NERVOUS ENERGY V</h1>
+                    <h1 class="product-title">[Product Name]</h1>
 
-                    <h3 class="product-code">Product Code : NAMMUSTANG</h3>
+                    <h3>Product Code : <span class="product-code">[Code]</span></h3>
 
-                    <div class="product-price"><span class="price-sales">Starting at $70</span> </div>
-                    <div class="details-description">
-                        <p>The Bell 206 Jet Ranger is popular with corporations and police forces. Military variants range from the five seat trainer and passenger models of the H-57 Sea Ranger, to the H-58 Kiowa, armed with missiles.</p>
+                    <div class="product-price"><span class="price-sales">Starting at $<span class="product-starting-price"></span> </span> </div>
+                    <div class="details-description product-description ellipsis" style="max-height: 60px; overflow:hidden; word-wrap: break-word;">
+                        [Product Description]
                     </div>
                     <!--/.color-details-->
 

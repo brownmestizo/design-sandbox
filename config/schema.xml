@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="mpm" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="tbl_era" idMethod="native" phpName="TblEra">
+    <column name="era_id" phpName="EraId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="era_description" phpName="EraDescription" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_general" idMethod="native" phpName="TblGeneral">
+    <column name="prod_general" phpName="ProdGeneral" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_name" phpName="ProdName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_description" phpName="ProdDescription" type="LONGVARCHAR" required="true"/>
+    <column name="prod_description_pa" phpName="ProdDescriptionPa" type="LONGVARCHAR" required="true"/>
+    <column name="prod_description_m3" phpName="ProdDescriptionM3" type="LONGVARCHAR" required="true"/>
+    <column name="prod_keywords" phpName="ProdKeywords" type="LONGVARCHAR"/>
+    <column name="prod_keywords_pa" phpName="ProdKeywordsPa" type="LONGVARCHAR"/>
+    <column name="prod_keywords_m3" phpName="ProdKeywordsM3" type="LONGVARCHAR"/>
+    <column name="prod_writeupkeywords" phpName="ProdWriteupkeywords" type="LONGVARCHAR"/>
+    <column name="prod_writeupkeywords_pa" phpName="ProdWriteupkeywordsPa" type="LONGVARCHAR"/>
+    <column name="prod_writeupkeywords_m3" phpName="ProdWriteupkeywordsM3" type="LONGVARCHAR"/>    
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_madetoorder" idMethod="native" phpName="TblMadetoorder">
+    <column name="mad_id" phpName="MadId" type="INTEGER" primaryKey="true" required="true" defaultValue="0"/>
+    <column name="mad_name" phpName="MadName" type="LONGVARCHAR" required="true"/>
+    <column name="mad_email" phpName="MadEmail" type="LONGVARCHAR" required="true"/>
+    <column name="mad_color" phpName="MadColor" type="LONGVARCHAR" required="true"/>
+    <column name="mad_length" phpName="MadLength" type="LONGVARCHAR" required="true"/>
+    <column name="mad_mark" phpName="MadMark" type="LONGVARCHAR" required="true"/>
+    <column name="mad_rem" phpName="MadRem" type="LONGVARCHAR" required="true"/>
+    <column name="mad_url" phpName="MadUrl" type="LONGVARCHAR" required="true"/>
+    <column name="mad_photo" phpName="MadPhoto" type="LONGVARCHAR" required="true"/>
+    <column name="mad_photo2" phpName="MadPhoto2" type="LONGVARCHAR" required="true"/>
+    <column name="mad_photo3" phpName="MadPhoto3" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_menus" idMethod="native" phpName="TblMenus">
+    <column name="menu_id" phpName="MenuId" type="SMALLINT" size="9" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="menu_alias" phpName="MenuAlias" type="LONGVARCHAR" required="true"/>
+    <column name="menu_name" phpName="MenuName" type="LONGVARCHAR" required="true"/>
+    <column name="menu_status" phpName="MenuStatus" type="LONGVARCHAR" required="true"/>
+    <column name="menu_title" phpName="MenuTitle" type="LONGVARCHAR" required="true"/>
+    <column name="menu_description" phpName="MenuDescription" type="LONGVARCHAR" required="true"/>
+    <column name="menu_writeup" phpName="MenuWriteup" type="LONGVARCHAR"/>
+    <column name="menu_status_pa" phpName="MenuStatusPa" type="LONGVARCHAR" required="true"/>
+    <column name="menu_description_pa" phpName="MenuDescriptionPa" type="LONGVARCHAR" required="true"/>
+    <column name="menu_writeup_pa" phpName="MenuWriteupPa" type="LONGVARCHAR"/>
+    <column name="menu_status_m3" phpName="MenuStatusM3" type="LONGVARCHAR" required="true"/>
+    <column name="menu_description_m3" phpName="MenuDescriptionM3" type="LONGVARCHAR" required="true"/>
+    <column name="menu_writeup_m3" phpName="MenuWriteupM3" type="LONGVARCHAR"/>
+    <column name="menu_writeupkeywords" phpName="MenuWriteupkeywords" type="LONGVARCHAR" required="true"/>
+    <column name="menu_writeupkeywords_pa" phpName="MenuWriteupkeywordsPa" type="LONGVARCHAR" required="true"/>
+    <column name="menu_writeupkeywords_m3" phpName="MenuWriteupkeywordsM3" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_photos" idMethod="native" phpName="TblPhotos">
+    <column name="photo_id" phpName="PhotoId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="photo_name" phpName="PhotoName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_id" phpName="ProdId" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_photos_blank" idMethod="native" phpName="TblPhotosBlank">
+    <column name="photo_id" phpName="PhotoId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="photo_name" phpName="PhotoName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_id" phpName="ProdId" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_photos_m3" idMethod="native" phpName="TblPhotosM3">
+    <column name="photo_id" phpName="PhotoId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="photo_name" phpName="PhotoName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_id" phpName="ProdId" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_photos_pa" idMethod="native" phpName="TblPhotosPa">
+    <column name="photo_id" phpName="PhotoId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="photo_name" phpName="PhotoName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_id" phpName="ProdId" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_info" idMethod="native" phpName="TblProdInfo">
+    <column name="prod_id" phpName="ProdId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_price_id" phpName="ProdPriceId" type="INTEGER" required="true"/>
+    <column name="prod_name" phpName="ProdName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_alt1" phpName="ProdAlt1" type="LONGVARCHAR" required="true"/>
+    <column name="prod_alt2" phpName="ProdAlt2" type="LONGVARCHAR" required="true"/>
+    <column name="prod_alt3" phpName="ProdAlt3" type="LONGVARCHAR" required="true"/>
+    <column name="prod_alt4" phpName="ProdAlt4" type="LONGVARCHAR" required="true"/>
+    <column name="prod_code" phpName="ProdCode" type="LONGVARCHAR" required="true"/>
+    <column name="prod_category" phpName="ProdCategory" type="LONGVARCHAR" required="true"/>
+    <column name="prod_category_shipping" phpName="ProdCategoryShipping" type="INTEGER"/>
+    <column name="prod_writeup" phpName="ProdWriteup" type="CLOB" required="true"/>
+    <column name="prod_length" phpName="ProdLength" type="LONGVARCHAR" required="true"/>
+    <column name="prod_wingspan" phpName="ProdWingspan" type="LONGVARCHAR" required="true"/>
+    <column name="prod_height" phpName="ProdHeight" type="LONGVARCHAR" required="true"/>
+    <column name="prod_scale" phpName="ProdScale" type="LONGVARCHAR" required="true"/>
+    <column name="prod_links" phpName="ProdLinks" type="LONGVARCHAR" required="true"/>
+    <column name="prod_linkdescription" phpName="ProdLinkdescription" type="LONGVARCHAR" required="true"/>
+    <column name="prod_front" phpName="ProdFront" type="LONGVARCHAR"/>
+    <column name="prod_keywords" phpName="ProdKeywords" type="LONGVARCHAR" required="true"/>
+    <column name="prod_keywords_writeup" phpName="ProdKeywordsWriteup" type="LONGVARCHAR" required="true"/>
+    <column name="prod_title" phpName="ProdTitle" type="LONGVARCHAR" required="true"/>
+    <column name="prod_description" phpName="ProdDescription" type="LONGVARCHAR" required="true"/>
+    <column name="prod_general" phpName="ProdGeneral" type="INTEGER" required="true"/>
+    <column name="prod_era" phpName="ProdEra" type="INTEGER" required="true"/>
+    <column name="prod_company" phpName="ProdCompany" type="LONGVARCHAR" required="true"/>
+    <column name="prod_related" phpName="ProdRelated" type="LONGVARCHAR" required="true"/>
+    <column name="prod_related_pa" phpName="ProdRelatedPa" type="LONGVARCHAR"/>
+    <column name="prod_related_m3" phpName="ProdRelatedM3" type="LONGVARCHAR"/>
+    <column name="prod_related2" phpName="ProdRelated2" type="LONGVARCHAR" required="true"/>
+    <column name="prod_saveas" phpName="ProdSaveas" type="INTEGER" required="true"/>
+    <column name="prod_aircraftreg" phpName="ProdAircraftreg" type="LONGVARCHAR" required="true"/>
+    <column name="mb" phpName="Mb" type="INTEGER"/>
+    <column name="pa" phpName="Pa" type="INTEGER"/>
+    <column name="m3" phpName="M3" type="INTEGER"/>
+    <index name="prod_name">
+      <index-column name="prod_name" size="50"/>
+    </index>
+    <index name="prod_id">
+      <index-column name="prod_id"/>
+    </index>
+    <foreign-key foreignTable="tbl_era">
+      <reference local="prod_id" foreign="era_id"/>
+    </foreign-key>    
+    <foreign-key foreignTable="tbl_general">
+      <reference local="prod_id" foreign="prod_general"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_menus">
+      <reference local="prod_category" foreign="menu_alias"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_prod_photos">
+      <reference local="prod_id" foreign="prod_id"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_prod_prices">
+      <reference local="prod_id" foreign="prod_id"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_prod_pricing">
+      <reference local="prod_price_id" foreign="prod_price_id"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_prod_smaller">
+      <reference local="prod_id" foreign="prod_id"/>
+    </foreign-key>        
+    <foreign-key foreignTable="tbl_shipping_categories">
+      <reference local="prod_category_shipping" foreign="prod_shipping_price_id"/>
+    </foreign-key>        
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_photos" idMethod="native" phpName="TblProdPhotos">
+    <column name="prod_id" phpName="ProdId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_solo_1" phpName="ProdSolo1" type="LONGVARCHAR" required="true"/>
+    <column name="prod_solo_2" phpName="ProdSolo2" type="LONGVARCHAR" required="true"/>
+    <column name="prod_solo_3" phpName="ProdSolo3" type="LONGVARCHAR" required="true"/>
+    <column name="prod_solo_4" phpName="ProdSolo4" type="LONGVARCHAR" required="true"/>
+    <column name="prod_solo_1_pa" phpName="ProdSolo1Pa" type="LONGVARCHAR"/>
+    <column name="prod_solo_2_pa" phpName="ProdSolo2Pa" type="LONGVARCHAR"/>
+    <column name="prod_solo_3_pa" phpName="ProdSolo3Pa" type="LONGVARCHAR"/>
+    <column name="prod_solo_4_pa" phpName="ProdSolo4Pa" type="LONGVARCHAR"/>
+    <column name="prod_solo_1_m3" phpName="ProdSolo1M3" type="LONGVARCHAR"/>
+    <column name="prod_solo_2_m3" phpName="ProdSolo2M3" type="LONGVARCHAR"/>
+    <column name="prod_solo_3_m3" phpName="ProdSolo3M3" type="LONGVARCHAR"/>
+    <column name="prod_solo_4_m3" phpName="ProdSolo4M3" type="LONGVARCHAR"/>
+    <column name="prod_solo_1_blank" phpName="ProdSolo1Blank" type="LONGVARCHAR"/>
+    <column name="prod_solo_2_blank" phpName="ProdSolo2Blank" type="LONGVARCHAR"/>
+    <column name="prod_solo_3_blank" phpName="ProdSolo3Blank" type="LONGVARCHAR"/>
+    <column name="prod_solo_4_blank" phpName="ProdSolo4Blank" type="LONGVARCHAR"/>
+    <index name="prod_id">
+      <index-column name="prod_id"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_prices" idMethod="native" phpName="TblProdPrices">
+    <column name="prod_id" phpName="ProdId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_normalprice" phpName="ProdNormalprice" type="LONGVARCHAR" required="true"/>
+    <column name="prod_salesprice" phpName="ProdSalesprice" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_asia" phpName="ProdShippingAsia" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_europe" phpName="ProdShippingEurope" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_usa" phpName="ProdShippingUsa" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_canada" phpName="ProdShippingCanada" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_au" phpName="ProdShippingAu" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_asia_parcel" phpName="ProdShippingAsiaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_europe_parcel" phpName="ProdShippingEuropeParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_usa_parcel" phpName="ProdShippingUsaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_canada_parcel" phpName="ProdShippingCanadaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_au_parcel" phpName="ProdShippingAuParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_customprice" phpName="ProdCustomprice" type="LONGVARCHAR" required="true"/>
+    <index name="prod_id">
+      <index-column name="prod_id"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_pricing" idMethod="native" phpName="TblProdPricing">
+    <column name="prod_price_id" phpName="ProdPriceId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_price_name" phpName="ProdPriceName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_price_description" phpName="ProdPriceDescription" type="LONGVARCHAR" required="true"/>
+    <column name="prod_price_price" phpName="ProdPricePrice" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_shipping" idMethod="native" phpName="TblProdShipping">
+    <column name="prod_shipping_price_id" phpName="ProdShippingPriceId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_shipping_name" phpName="ProdShippingName" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_description" phpName="ProdShippingDescription" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_asia" phpName="ProdShippingAsia" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_europe" phpName="ProdShippingEurope" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_usa" phpName="ProdShippingUsa" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_canada" phpName="ProdShippingCanada" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_au" phpName="ProdShippingAu" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_asia_parcel" phpName="ProdShippingAsiaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_europe_parcel" phpName="ProdShippingEuropeParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_usa_parcel" phpName="ProdShippingUsaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_canada_parcel" phpName="ProdShippingCanadaParcel" type="LONGVARCHAR" required="true"/>
+    <column name="prod_shipping_au_parcel" phpName="ProdShippingAuParcel" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_prod_smaller" idMethod="native" phpName="TblProdSmaller">
+    <column name="prod_id" phpName="ProdId" type="INTEGER" primaryKey="true" required="true"/>
+    <column name="sm_enable_id" phpName="SmEnableId" type="INTEGER" required="true"/>
+    <column name="sm_prod_length" phpName="SmProdLength" type="LONGVARCHAR" required="true"/>
+    <column name="sm_prod_wingspan" phpName="SmProdWingspan" type="LONGVARCHAR" required="true"/>
+    <column name="sm_prod_height" phpName="SmProdHeight" type="LONGVARCHAR" required="true"/>
+    <column name="sm_prod_scale" phpName="SmProdScale" type="LONGVARCHAR" required="true"/>
+    <column name="sm_prod_price_id" phpName="SmProdPriceId" type="INTEGER" required="true"/>
+    <column name="sm_prod_normalprice" phpName="SmProdNormalprice" type="FLOAT" required="true"/>
+    <column name="sm_prod_shipping_price_id" phpName="SmProdShippingPriceId" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_settings" idMethod="native" phpName="TblSettings">
+    <column name="settings_id" phpName="SettingsId" type="INTEGER" required="true"/>
+    <column name="settings_name" phpName="SettingsName" type="LONGVARCHAR" required="true"/>
+    <column name="settings_value" phpName="SettingsValue" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_shipping_categories" idMethod="native" phpName="TblShippingCategories">
+    <column name="prod_shipping_price_id" phpName="ProdShippingPriceId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="prod_shipping_name" phpName="ProdShippingName" type="LONGVARCHAR" required="true"/>
+    <column name="weight_ide" phpName="WeightIde" type="INTEGER" required="true"/>
+    <column name="weight_idp" phpName="WeightIdp" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_shipping_countries" idMethod="native" phpName="TblShippingCountries">
+    <column name="cty_id" phpName="CtyId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="cty_name" phpName="CtyName" type="LONGVARCHAR"/>
+    <column name="cty_priority" phpName="CtyPriority" type="LONGVARCHAR"/>
+    <column name="cty_economy" phpName="CtyEconomy" type="LONGVARCHAR"/>
+    <column name="zone_id" phpName="ZoneId" type="INTEGER"/>
+    <column name="airparcel_firstkg" phpName="AirparcelFirstkg" type="LONGVARCHAR"/>
+    <column name="airparcel_secondkg" phpName="AirparcelSecondkg" type="LONGVARCHAR"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_shipping_economy" idMethod="native" phpName="TblShippingEconomy">
+    <column name="weight_ide" phpName="WeightIde" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="weight_name" phpName="WeightName" type="LONGVARCHAR" required="true"/>
+    <column name="A" phpName="A" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="B" phpName="B" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="C" phpName="C" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="D" phpName="D" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="E" phpName="E" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="F" phpName="F" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="G" phpName="G" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="H" phpName="H" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="K" phpName="K" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="N" phpName="N" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="O" phpName="O" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="P" phpName="P" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Q" phpName="Q" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="R" phpName="R" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="T" phpName="T" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="U" phpName="U" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="V" phpName="V" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="W" phpName="W" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="X" phpName="X" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Y" phpName="Y" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Z" phpName="Z" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="AA" phpName="Aa" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="AB" phpName="Ab" type="DECIMAL" size="10" scale="2" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_shipping_priority" idMethod="native" phpName="TblShippingPriority">
+    <column name="weight_idp" phpName="WeightIdp" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="weight_name" phpName="WeightName" type="LONGVARCHAR" required="true"/>
+    <column name="A" phpName="A" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="B" phpName="B" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="C" phpName="C" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="D" phpName="D" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="E" phpName="E" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="F" phpName="F" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="G" phpName="G" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="H" phpName="H" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="K" phpName="K" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="N" phpName="N" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="O" phpName="O" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="P" phpName="P" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Q" phpName="Q" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="R" phpName="R" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="T" phpName="T" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="U" phpName="U" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="V" phpName="V" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="W" phpName="W" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="X" phpName="X" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Y" phpName="Y" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="Z" phpName="Z" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="AA" phpName="Aa" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="AB" phpName="Ab" type="DECIMAL" size="10" scale="2" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_shipping_zones" idMethod="native" phpName="TblShippingZones">
+    <column name="zone_id" phpName="ZoneId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="zone_name" phpName="ZoneName" type="LONGVARCHAR" required="true"/>
+    <column name="zone_desc" phpName="ZoneDesc" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tbl_stands" idMethod="native" phpName="TblStands">
+    <column name="stand_id" phpName="StandId" type="INTEGER" primaryKey="true" required="true" defaultValue="0"/>
+    <column name="stand_name" phpName="StandName" type="CLOB" required="true"/>
+    <column name="stand_price" phpName="StandPrice" type="INTEGER" required="true" defaultValue="0"/>
+    <column name="mb" phpName="Mb" type="INTEGER"/>
+    <column name="pa" phpName="Pa" type="INTEGER"/>
+    <column name="m3" phpName="M3" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tbl_users" idMethod="native" phpName="TblUsers">
+    <column name="user_id" phpName="UserId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="user_username" phpName="UserUsername" type="LONGVARCHAR" required="true"/>
+    <column name="user_password" phpName="UserPassword" type="LONGVARCHAR" required="true"/>
+    <column name="user_lastlogin" phpName="UserLastlogin" type="LONGVARCHAR" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+</database>

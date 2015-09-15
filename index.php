@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once 'lib/init.php'; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -65,9 +66,9 @@
 ================================================== -->
 
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 <!-- include jqueryCycle plugin -->
 <script src="assets/js/jquery.cycle2.min.js"></script>
 
@@ -81,7 +82,6 @@
 <script type="text/javascript" src="assets/js/helper-plugins/jquery.mousewheel.min.js"></script>
 
 <!-- include mCustomScrollbar plugin //Custom Scrollbar  -->
-
 <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.js"></script>
 
 <!-- include checkRadio plugin //Custom check & Radio  -->
@@ -101,10 +101,11 @@
 
 <!-- include custom script for only homepage  -->
 <script src="assets/js/home.js"></script>
+
 <!-- include custom script for site  -->
 <script src="assets/js/script.js"></script>
-<script>
+<script src="assets/js/custom.js"></script>
 
-</script>
+
 </body>
 </html>

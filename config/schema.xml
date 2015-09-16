@@ -137,7 +137,7 @@
       <reference local="prod_id" foreign="era_id"/>
     </foreign-key>    
     <foreign-key foreignTable="tbl_general">
-      <reference local="prod_id" foreign="prod_general"/>
+      <reference local="prod_general" foreign="prod_general"/>
     </foreign-key>        
     <foreign-key foreignTable="tbl_menus">
       <reference local="prod_category" foreign="menu_alias"/>

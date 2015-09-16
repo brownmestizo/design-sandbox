@@ -939,10 +939,6 @@ abstract class TblProdInfo implements ActiveRecordInterface
             $this->aTblEra = null;
         }
 
-        if ($this->aTblGeneral !== null && $this->aTblGeneral->getProdGeneral() !== $v) {
-            $this->aTblGeneral = null;
-        }
-
         if ($this->aTblProdPhotos !== null && $this->aTblProdPhotos->getProdId() !== $v) {
             $this->aTblProdPhotos = null;
         }
@@ -1407,6 +1403,10 @@ abstract class TblProdInfo implements ActiveRecordInterface
             $this->modifiedColumns[TblProdInfoTableMap::COL_PROD_GENERAL] = true;
         }
 
+        if ($this->aTblGeneral !== null && $this->aTblGeneral->getProdGeneral() !== $v) {
+            $this->aTblGeneral = null;
+        }
+
         return $this;
     } // setProdGeneral()
 
@@ -1800,9 +1800,6 @@ abstract class TblProdInfo implements ActiveRecordInterface
         if ($this->aTblEra !== null && $this->prod_id !== $this->aTblEra->getEraId()) {
             $this->aTblEra = null;
         }
-        if ($this->aTblGeneral !== null && $this->prod_id !== $this->aTblGeneral->getProdGeneral()) {
-            $this->aTblGeneral = null;
-        }
         if ($this->aTblProdPhotos !== null && $this->prod_id !== $this->aTblProdPhotos->getProdId()) {
             $this->aTblProdPhotos = null;
         }
@@ -1820,6 +1817,9 @@ abstract class TblProdInfo implements ActiveRecordInterface
         }
         if ($this->aTblShippingCategories !== null && $this->prod_category_shipping !== $this->aTblShippingCategories->getProdShippingPriceId()) {
             $this->aTblShippingCategories = null;
+        }
+        if ($this->aTblGeneral !== null && $this->prod_general !== $this->aTblGeneral->getProdGeneral()) {
+            $this->aTblGeneral = null;
         }
     } // ensureConsistency
 
@@ -3074,18 +3074,11 @@ abstract class TblProdInfo implements ActiveRecordInterface
     {
         $validPk = null !== $this->getProdId();
 
-        $validPrimaryKeyFKs = 5;
+        $validPrimaryKeyFKs = 4;
         $primaryKeyFKs = [];
 
         //relation tbl_prod_info_fk_731947 to table tbl_era
         if ($this->aTblEra && $hash = spl_object_hash($this->aTblEra)) {
-            $primaryKeyFKs[] = $hash;
-        } else {
-            $validPrimaryKeyFKs = false;
-        }
-
-        //relation tbl_prod_info_fk_fc87d4 to table tbl_general
-        if ($this->aTblGeneral && $hash = spl_object_hash($this->aTblGeneral)) {
             $primaryKeyFKs[] = $hash;
         } else {
             $validPrimaryKeyFKs = false;
@@ -3279,16 +3272,17 @@ abstract class TblProdInfo implements ActiveRecordInterface
     public function setTblGeneral(ChildTblGeneral $v = null)
     {
         if ($v === null) {
-            $this->setProdId(NULL);
+            $this->setProdGeneral(NULL);
         } else {
-            $this->setProdId($v->getProdGeneral());
+            $this->setProdGeneral($v->getProdGeneral());
         }
 
         $this->aTblGeneral = $v;
 
-        // Add binding for other direction of this 1:1 relationship.
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the ChildTblGeneral object, it will not be re-added.
         if ($v !== null) {
-            $v->setTblProdInfo($this);
+            $v->addTblProdInfo($this);
         }
 
 
@@ -3305,10 +3299,15 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function getTblGeneral(ConnectionInterface $con = null)
     {
-        if ($this->aTblGeneral === null && ($this->prod_id !== null)) {
-            $this->aTblGeneral = ChildTblGeneralQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->aTblGeneral->setTblProdInfo($this);
+        if ($this->aTblGeneral === null && ($this->prod_general !== null)) {
+            $this->aTblGeneral = ChildTblGeneralQuery::create()->findPk($this->prod_general, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aTblGeneral->addTblProdInfos($this);
+             */
         }
 
         return $this->aTblGeneral;

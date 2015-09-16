@@ -32,35 +32,35 @@
 
 <body>
 
-<?php include_once('components/modal-login.php') ?>
-<?php include_once('components/modal-signup.php') ?>
-<?php include_once('components/navbar.php') ?>
+<?php include_once('templates/partials/modal-login.php') ?>
+<?php include_once('templates/partials/modal-signup.php') ?>
+<?php include_once('templates/partials/navbar.php') ?>
 
-<?php //include_once('components/banner.php') ?>
+<?php //include_once('templates/partials/banner.php') ?>
 
 <div class="container main-container">
 
-    <?php include_once('components/featured-products.php') ?>
+    <?php include_once('templates/partials/featured-products.php') ?>
 
 </div>
 <!-- /main container -->
 
-<?php include_once('components/banner-medium.php') ?>
+<?php include_once('templates/partials/banner-medium.php') ?>
 
 <div class="container main-container">
 
-    <?php include_once('components/featured-products-grid.php') ?>
-    <?php include_once('components/featured-collections.php') ?>
-    <?php include_once('components/featured-vendors.php') ?>
+    <?php include_once('templates/partials/featured-products-grid.php') ?>
+    <?php include_once('templates/partials/featured-collections.php') ?>
+    <?php include_once('templates/partials/featured-vendors.php') ?>
 
 </div>
 <!--main-container-->
 
 
-<?php include_once('components/parallax.php') ?>
+<?php include_once('templates/partials/parallax.php') ?>
 
-<?php include_once('components/products-modal.php') ?>
-<?php include_once('components/footer.php') ?>
+<?php include_once('templates/partials/products-modal.php') ?>
+<?php include_once('templates/partials/footer.php') ?>
 
 <!-- Le javascript
 ================================================== -->

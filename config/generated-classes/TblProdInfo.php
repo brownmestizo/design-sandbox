@@ -16,7 +16,9 @@ class TblProdInfo extends BaseTblProdInfo
 {
     public function getProdWriteup()
     {    	
-        return preg_replace('/(<[^>]+) style=".*?"/i', '$1', html_entity_decode($this->prod_writeup));
+    	$output = html_entity_decode($this->prod_writeup);
+    	$output = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $output);
+    	return $output;
     }
 
 }

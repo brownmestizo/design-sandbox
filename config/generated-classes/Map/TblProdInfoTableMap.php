@@ -292,7 +292,6 @@ class TblProdInfoTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_era', 'era_id', true, null, null);
-        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_general', 'prod_general', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_photos', 'prod_id', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_prices', 'prod_id', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_smaller', 'prod_id', true, null, null);
@@ -317,7 +316,7 @@ class TblProdInfoTableMap extends TableMap
         $this->addColumn('prod_keywords_writeup', 'ProdKeywordsWriteup', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_title', 'ProdTitle', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_description', 'ProdDescription', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_general', 'ProdGeneral', 'INTEGER', true, null, null);
+        $this->addForeignKey('prod_general', 'ProdGeneral', 'INTEGER', 'tbl_general', 'prod_general', true, null, null);
         $this->addColumn('prod_era', 'ProdEra', 'INTEGER', true, null, null);
         $this->addColumn('prod_company', 'ProdCompany', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_related', 'ProdRelated', 'LONGVARCHAR', true, null, null);
@@ -346,7 +345,7 @@ class TblProdInfoTableMap extends TableMap
         $this->addRelation('TblGeneral', '\\TblGeneral', RelationMap::MANY_TO_ONE, array (
   0 =>
   array (
-    0 => ':prod_id',
+    0 => ':prod_general',
     1 => ':prod_general',
   ),
 ), null, null, null, false);

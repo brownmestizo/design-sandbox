@@ -194,13 +194,13 @@ class TblGeneralTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('TblProdInfo', '\\TblProdInfo', RelationMap::ONE_TO_ONE, array (
+        $this->addRelation('TblProdInfo', '\\TblProdInfo', RelationMap::ONE_TO_MANY, array (
   0 =>
   array (
-    0 => ':prod_id',
+    0 => ':prod_general',
     1 => ':prod_general',
   ),
-), null, null, null, false);
+), null, null, 'TblProdInfos', false);
     } // buildRelations()
 
     /**

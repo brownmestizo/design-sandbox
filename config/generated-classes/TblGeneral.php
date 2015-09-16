@@ -15,4 +15,21 @@ use Base\TblGeneral as BaseTblGeneral;
 class TblGeneral extends BaseTblGeneral
 {
 
+	public function getProdDescription($alternateNames = null) {
+		
+		$var = $this->prod_description;
+
+		$output = mb_convert_encoding($var, "utf-8", "HTML-ENTITIES");	
+		$output = preg_replace('/<p[^>]*>[\s|&nbsp;]*<\/p>/', "", $output);
+		$output = preg_replace('/<br[^>]*>/', "", $output);
+
+		$output = preg_replace('/\+\./', "", $output);
+		$output = preg_replace('/\+/', "", $output);
+
+		$models = array("[model]", "[model1]", "[model2]", "[model3]", "[model4]");
+		$output = str_replace($models, $alternateNames, $output);
+
+		return $output;
+
+	}
 }

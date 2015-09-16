@@ -2,6 +2,7 @@
 
 namespace Base;
 
+use \TblGeneral as ChildTblGeneral;
 use \TblGeneralQuery as ChildTblGeneralQuery;
 use \TblProdInfo as ChildTblProdInfo;
 use \TblProdInfoQuery as ChildTblProdInfoQuery;
@@ -13,6 +14,7 @@ use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
 use Propel\Runtime\ActiveRecord\ActiveRecordInterface;
 use Propel\Runtime\Collection\Collection;
+use Propel\Runtime\Collection\ObjectCollection;
 use Propel\Runtime\Connection\ConnectionInterface;
 use Propel\Runtime\Exception\BadMethodCallException;
 use Propel\Runtime\Exception\LogicException;
@@ -139,9 +141,10 @@ abstract class TblGeneral implements ActiveRecordInterface
     protected $prod_writeupkeywords_m3;
 
     /**
-     * @var        ChildTblProdInfo one-to-one related ChildTblProdInfo object
+     * @var        ObjectCollection|ChildTblProdInfo[] Collection to store aggregation of ChildTblProdInfo objects.
      */
-    protected $singleTblProdInfo;
+    protected $collTblProdInfos;
+    protected $collTblProdInfosPartial;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -150,6 +153,12 @@ abstract class TblGeneral implements ActiveRecordInterface
      * @var boolean
      */
     protected $alreadyInSave = false;
+
+    /**
+     * An array of objects scheduled for deletion.
+     * @var ObjectCollection|ChildTblProdInfo[]
+     */
+    protected $tblProdInfosScheduledForDeletion = null;
 
     /**
      * Initializes internal state of Base\TblGeneral object.
@@ -835,7 +844,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
         if ($deep) {  // also de-associate any related objects?
 
-            $this->singleTblProdInfo = null;
+            $this->collTblProdInfos = null;
 
         } // if (deep)
     }
@@ -947,9 +956,20 @@ abstract class TblGeneral implements ActiveRecordInterface
                 $this->resetModified();
             }
 
-            if ($this->singleTblProdInfo !== null) {
-                if (!$this->singleTblProdInfo->isDeleted() && ($this->singleTblProdInfo->isNew() || $this->singleTblProdInfo->isModified())) {
-                    $affectedRows += $this->singleTblProdInfo->save($con);
+            if ($this->tblProdInfosScheduledForDeletion !== null) {
+                if (!$this->tblProdInfosScheduledForDeletion->isEmpty()) {
+                    \TblProdInfoQuery::create()
+                        ->filterByPrimaryKeys($this->tblProdInfosScheduledForDeletion->getPrimaryKeys(false))
+                        ->delete($con);
+                    $this->tblProdInfosScheduledForDeletion = null;
+                }
+            }
+
+            if ($this->collTblProdInfos !== null) {
+                foreach ($this->collTblProdInfos as $referrerFK) {
+                    if (!$referrerFK->isDeleted() && ($referrerFK->isNew() || $referrerFK->isModified())) {
+                        $affectedRows += $referrerFK->save($con);
+                    }
                 }
             }
 
@@ -1199,20 +1219,20 @@ abstract class TblGeneral implements ActiveRecordInterface
         }
         
         if ($includeForeignObjects) {
-            if (null !== $this->singleTblProdInfo) {
+            if (null !== $this->collTblProdInfos) {
                 
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
-                        $key = 'tblProdInfo';
+                        $key = 'tblProdInfos';
                         break;
                     case TableMap::TYPE_FIELDNAME:
-                        $key = 'tbl_prod_info';
+                        $key = 'tbl_prod_infos';
                         break;
                     default:
-                        $key = 'TblProdInfo';
+                        $key = 'TblProdInfos';
                 }
         
-                $result[$key] = $this->singleTblProdInfo->toArray($keyType, $includeLazyLoadColumns, $alreadyDumpedObjects, true);
+                $result[$key] = $this->collTblProdInfos->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
 
@@ -1516,9 +1536,10 @@ abstract class TblGeneral implements ActiveRecordInterface
             // the getter/setter methods for fkey referrer objects.
             $copyObj->setNew(false);
 
-            $relObj = $this->getTblProdInfo();
-            if ($relObj) {
-                $copyObj->setTblProdInfo($relObj->copy($deepCopy));
+            foreach ($this->getTblProdInfos() as $relObj) {
+                if ($relObj !== $this) {  // ensure that we don't try to copy a reference to ourselves
+                    $copyObj->addTblProdInfo($relObj->copy($deepCopy));
+                }
             }
 
         } // if ($deepCopy)
@@ -1562,42 +1583,402 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function initRelation($relationName)
     {
+        if ('TblProdInfo' == $relationName) {
+            return $this->initTblProdInfos();
+        }
     }
 
     /**
-     * Gets a single ChildTblProdInfo object, which is related to this object by a one-to-one relationship.
+     * Clears out the collTblProdInfos collection
      *
-     * @param  ConnectionInterface $con optional connection object
-     * @return ChildTblProdInfo
+     * This does not modify the database; however, it will remove any associated objects, causing
+     * them to be refetched by subsequent calls to accessor method.
+     *
+     * @return void
+     * @see        addTblProdInfos()
+     */
+    public function clearTblProdInfos()
+    {
+        $this->collTblProdInfos = null; // important to set this to NULL since that means it is uninitialized
+    }
+
+    /**
+     * Reset is the collTblProdInfos collection loaded partially.
+     */
+    public function resetPartialTblProdInfos($v = true)
+    {
+        $this->collTblProdInfosPartial = $v;
+    }
+
+    /**
+     * Initializes the collTblProdInfos collection.
+     *
+     * By default this just sets the collTblProdInfos collection to an empty array (like clearcollTblProdInfos());
+     * however, you may wish to override this method in your stub class to provide setting appropriate
+     * to your application -- for example, setting the initial array to the values stored in database.
+     *
+     * @param      boolean $overrideExisting If set to true, the method call initializes
+     *                                        the collection even if it is not empty
+     *
+     * @return void
+     */
+    public function initTblProdInfos($overrideExisting = true)
+    {
+        if (null !== $this->collTblProdInfos && !$overrideExisting) {
+            return;
+        }
+        $this->collTblProdInfos = new ObjectCollection();
+        $this->collTblProdInfos->setModel('\TblProdInfo');
+    }
+
+    /**
+     * Gets an array of ChildTblProdInfo objects which contain a foreign key that references this object.
+     *
+     * If the $criteria is not null, it is used to always fetch the results from the database.
+     * Otherwise the results are fetched from the database the first time, then cached.
+     * Next time the same method is called without $criteria, the cached collection is returned.
+     * If this ChildTblGeneral is new, it will return
+     * an empty collection or the current collection; the criteria is ignored on a new object.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
      * @throws PropelException
      */
-    public function getTblProdInfo(ConnectionInterface $con = null)
+    public function getTblProdInfos(Criteria $criteria = null, ConnectionInterface $con = null)
     {
+        $partial = $this->collTblProdInfosPartial && !$this->isNew();
+        if (null === $this->collTblProdInfos || null !== $criteria  || $partial) {
+            if ($this->isNew() && null === $this->collTblProdInfos) {
+                // return empty collection
+                $this->initTblProdInfos();
+            } else {
+                $collTblProdInfos = ChildTblProdInfoQuery::create(null, $criteria)
+                    ->filterByTblGeneral($this)
+                    ->find($con);
 
-        if ($this->singleTblProdInfo === null && !$this->isNew()) {
-            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->getPrimaryKey(), $con);
+                if (null !== $criteria) {
+                    if (false !== $this->collTblProdInfosPartial && count($collTblProdInfos)) {
+                        $this->initTblProdInfos(false);
+
+                        foreach ($collTblProdInfos as $obj) {
+                            if (false == $this->collTblProdInfos->contains($obj)) {
+                                $this->collTblProdInfos->append($obj);
+                            }
+                        }
+
+                        $this->collTblProdInfosPartial = true;
+                    }
+
+                    return $collTblProdInfos;
+                }
+
+                if ($partial && $this->collTblProdInfos) {
+                    foreach ($this->collTblProdInfos as $obj) {
+                        if ($obj->isNew()) {
+                            $collTblProdInfos[] = $obj;
+                        }
+                    }
+                }
+
+                $this->collTblProdInfos = $collTblProdInfos;
+                $this->collTblProdInfosPartial = false;
+            }
         }
 
-        return $this->singleTblProdInfo;
+        return $this->collTblProdInfos;
     }
 
     /**
-     * Sets a single ChildTblProdInfo object as related to this object by a one-to-one relationship.
+     * Sets a collection of ChildTblProdInfo objects related by a one-to-many relationship
+     * to the current object.
+     * It will also schedule objects for deletion based on a diff between old objects (aka persisted)
+     * and new objects from the given Propel collection.
      *
-     * @param  ChildTblProdInfo $v ChildTblProdInfo
-     * @return $this|\TblGeneral The current object (for fluent API support)
+     * @param      Collection $tblProdInfos A Propel collection.
+     * @param      ConnectionInterface $con Optional connection object
+     * @return $this|ChildTblGeneral The current object (for fluent API support)
+     */
+    public function setTblProdInfos(Collection $tblProdInfos, ConnectionInterface $con = null)
+    {
+        /** @var ChildTblProdInfo[] $tblProdInfosToDelete */
+        $tblProdInfosToDelete = $this->getTblProdInfos(new Criteria(), $con)->diff($tblProdInfos);
+
+        
+        $this->tblProdInfosScheduledForDeletion = $tblProdInfosToDelete;
+
+        foreach ($tblProdInfosToDelete as $tblProdInfoRemoved) {
+            $tblProdInfoRemoved->setTblGeneral(null);
+        }
+
+        $this->collTblProdInfos = null;
+        foreach ($tblProdInfos as $tblProdInfo) {
+            $this->addTblProdInfo($tblProdInfo);
+        }
+
+        $this->collTblProdInfos = $tblProdInfos;
+        $this->collTblProdInfosPartial = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of related TblProdInfo objects.
+     *
+     * @param      Criteria $criteria
+     * @param      boolean $distinct
+     * @param      ConnectionInterface $con
+     * @return int             Count of related TblProdInfo objects.
      * @throws PropelException
      */
-    public function setTblProdInfo(ChildTblProdInfo $v = null)
+    public function countTblProdInfos(Criteria $criteria = null, $distinct = false, ConnectionInterface $con = null)
     {
-        $this->singleTblProdInfo = $v;
+        $partial = $this->collTblProdInfosPartial && !$this->isNew();
+        if (null === $this->collTblProdInfos || null !== $criteria || $partial) {
+            if ($this->isNew() && null === $this->collTblProdInfos) {
+                return 0;
+            }
 
-        // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
-        if ($v !== null && $v->getTblGeneral(null, false) === null) {
-            $v->setTblGeneral($this);
+            if ($partial && !$criteria) {
+                return count($this->getTblProdInfos());
+            }
+
+            $query = ChildTblProdInfoQuery::create(null, $criteria);
+            if ($distinct) {
+                $query->distinct();
+            }
+
+            return $query
+                ->filterByTblGeneral($this)
+                ->count($con);
+        }
+
+        return count($this->collTblProdInfos);
+    }
+
+    /**
+     * Method called to associate a ChildTblProdInfo object to this object
+     * through the ChildTblProdInfo foreign key attribute.
+     *
+     * @param  ChildTblProdInfo $l ChildTblProdInfo
+     * @return $this|\TblGeneral The current object (for fluent API support)
+     */
+    public function addTblProdInfo(ChildTblProdInfo $l)
+    {
+        if ($this->collTblProdInfos === null) {
+            $this->initTblProdInfos();
+            $this->collTblProdInfosPartial = true;
+        }
+
+        if (!$this->collTblProdInfos->contains($l)) {
+            $this->doAddTblProdInfo($l);
         }
 
         return $this;
+    }
+
+    /**
+     * @param ChildTblProdInfo $tblProdInfo The ChildTblProdInfo object to add.
+     */
+    protected function doAddTblProdInfo(ChildTblProdInfo $tblProdInfo)
+    {
+        $this->collTblProdInfos[]= $tblProdInfo;
+        $tblProdInfo->setTblGeneral($this);
+    }
+
+    /**
+     * @param  ChildTblProdInfo $tblProdInfo The ChildTblProdInfo object to remove.
+     * @return $this|ChildTblGeneral The current object (for fluent API support)
+     */
+    public function removeTblProdInfo(ChildTblProdInfo $tblProdInfo)
+    {
+        if ($this->getTblProdInfos()->contains($tblProdInfo)) {
+            $pos = $this->collTblProdInfos->search($tblProdInfo);
+            $this->collTblProdInfos->remove($pos);
+            if (null === $this->tblProdInfosScheduledForDeletion) {
+                $this->tblProdInfosScheduledForDeletion = clone $this->collTblProdInfos;
+                $this->tblProdInfosScheduledForDeletion->clear();
+            }
+            $this->tblProdInfosScheduledForDeletion[]= clone $tblProdInfo;
+            $tblProdInfo->setTblGeneral(null);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblEra(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblEra', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblMenus(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblMenus', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblProdPhotos(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblProdPhotos', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblProdPrices(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblProdPrices', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblProdPricing(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblProdPricing', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblProdSmaller(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblProdSmaller', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
+    }
+
+
+    /**
+     * If this collection has already been initialized with
+     * an identical criteria, it returns the collection.
+     * Otherwise if this TblGeneral is new, it will return
+     * an empty collection; or if this TblGeneral has previously
+     * been saved, it will retrieve related TblProdInfos from storage.
+     *
+     * This method is protected by default in order to keep the public
+     * api reasonable.  You can provide public methods for those you
+     * actually need in TblGeneral.
+     *
+     * @param      Criteria $criteria optional Criteria object to narrow the query
+     * @param      ConnectionInterface $con optional connection object
+     * @param      string $joinBehavior optional join type to use (defaults to Criteria::LEFT_JOIN)
+     * @return ObjectCollection|ChildTblProdInfo[] List of ChildTblProdInfo objects
+     */
+    public function getTblProdInfosJoinTblShippingCategories(Criteria $criteria = null, ConnectionInterface $con = null, $joinBehavior = Criteria::LEFT_JOIN)
+    {
+        $query = ChildTblProdInfoQuery::create(null, $criteria);
+        $query->joinWith('TblShippingCategories', $joinBehavior);
+
+        return $this->getTblProdInfos($query, $con);
     }
 
     /**
@@ -1636,12 +2017,14 @@ abstract class TblGeneral implements ActiveRecordInterface
     public function clearAllReferences($deep = false)
     {
         if ($deep) {
-            if ($this->singleTblProdInfo) {
-                $this->singleTblProdInfo->clearAllReferences($deep);
+            if ($this->collTblProdInfos) {
+                foreach ($this->collTblProdInfos as $o) {
+                    $o->clearAllReferences($deep);
+                }
             }
         } // if ($deep)
 
-        $this->singleTblProdInfo = null;
+        $this->collTblProdInfos = null;
     }
 
     /**

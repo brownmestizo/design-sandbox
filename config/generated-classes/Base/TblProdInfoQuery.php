@@ -485,8 +485,6 @@ abstract class TblProdInfoQuery extends ModelCriteria
      *
      * @see       filterByTblEra()
      *
-     * @see       filterByTblGeneral()
-     *
      * @see       filterByTblProdPhotos()
      *
      * @see       filterByTblProdPrices()
@@ -1171,6 +1169,8 @@ abstract class TblProdInfoQuery extends ModelCriteria
      * $query->filterByProdGeneral(array('min' => 12)); // WHERE prod_general > 12
      * </code>
      *
+     * @see       filterByTblGeneral()
+     *
      * @param     mixed $prodGeneral The value to use as filter.
      *              Use scalar values for equality.
      *              Use array values for in_array() equivalent.
@@ -1672,14 +1672,14 @@ abstract class TblProdInfoQuery extends ModelCriteria
     {
         if ($tblGeneral instanceof \TblGeneral) {
             return $this
-                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ID, $tblGeneral->getProdGeneral(), $comparison);
+                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_GENERAL, $tblGeneral->getProdGeneral(), $comparison);
         } elseif ($tblGeneral instanceof ObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ID, $tblGeneral->toKeyValue('PrimaryKey', 'ProdGeneral'), $comparison);
+                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_GENERAL, $tblGeneral->toKeyValue('PrimaryKey', 'ProdGeneral'), $comparison);
         } else {
             throw new PropelException('filterByTblGeneral() only accepts arguments of type \TblGeneral or Collection');
         }

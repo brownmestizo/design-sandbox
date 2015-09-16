@@ -631,7 +631,7 @@ abstract class TblGeneralQuery extends ModelCriteria
     {
         if ($tblProdInfo instanceof \TblProdInfo) {
             return $this
-                ->addUsingAlias(TblGeneralTableMap::COL_PROD_GENERAL, $tblProdInfo->getProdId(), $comparison);
+                ->addUsingAlias(TblGeneralTableMap::COL_PROD_GENERAL, $tblProdInfo->getProdGeneral(), $comparison);
         } elseif ($tblProdInfo instanceof ObjectCollection) {
             return $this
                 ->useTblProdInfoQuery()

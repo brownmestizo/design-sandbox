@@ -19,7 +19,7 @@
                             <div class="quickview">
                                 <a title="Quick View" class="btn btn-xs btn-quickview" data-target="#product-details-modal" data-toggle="modal" id="<?= $newProduct->getProdId() ?>"> Quick View </a>
                             </div>
-                            <a href="product-details-style4.html">                                                                  
+                            <a href="product.php?id=<?= $newProduct->getProdId() ?>">                                                                  
                                 <img src="http://modelbuffs.com/mpm/uploads/<?= $newProduct->getTblProdPhotos()->getProdSolo1() ?>" alt="img" class="img-responsive">
                             </a>
                             
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="description">
-                            <h4><a href="product-details-style4.html"><?= $newProduct->getProdName() ?></a></h4>
+                            <h4><a href="product.php?id=<?= $newProduct->getProdId() ?>"><?= $newProduct->getProdName() ?></a></h4>
                             
                             <?php 
                                 if ($newProduct->getProdSaveAs== 1) 

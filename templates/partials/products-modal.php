@@ -74,7 +74,8 @@
                             <button onclick="productAddToCartForm.submit(this);" class="button btn-cart cart first"
                                     title="Add to Cart" type="button">Add to Cart
                             </button>
-                            <a class="link-wishlist wishlist">Add to Wishlist</a></div>
+                            <!-- <a class="link-wishlist wishlist">Add to Wishlist</a> -->
+                        </div>
                     </div>
                     <!--/.cart-actions-->
 

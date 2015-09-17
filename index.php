@@ -1,111 +1,12 @@
-<?php require_once 'lib/init.php'; ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+require_once 'lib/init.php';
+
+$loader = new Twig_Loader_Filesystem('templates/');
+$twig = new Twig_Environment($loader);
 
 
-    <title>Modelbuffs Version 4</title>
-    <!-- Bootstrap core CSS -->
-    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+$newProducts = TblProdInfoQuery::create()->orderByProdId('desc')->forThisWebsiteOnly()->limit(4)->find();
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
+echo $twig->render('template.html', array('newProducts' => $newProducts));
 
-    <!-- Just for debugging purposes. -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- include pace script for automatic web page progress bar  -->
-
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-    <script src="assets/js/pace.min.js"></script>
-</head>
-
-<body>
-
-<?php include_once('templates/partials/modal-login.php') ?>
-<?php include_once('templates/partials/modal-signup.php') ?>
-<?php include_once('templates/partials/navbar.php') ?>
-
-<?php //include_once('templates/partials/banner.php') ?>
-
-<div class="container main-container">
-
-    <?php include_once('templates/partials/featured-products.php') ?>
-
-</div>
-<!-- /main container -->
-
-<?php include_once('templates/partials/banner-medium.php') ?>
-
-<div class="container main-container">
-
-    <?php include_once('templates/partials/featured-products-grid.php') ?>
-    <?php include_once('templates/partials/featured-collections.php') ?>
-    <?php include_once('templates/partials/featured-vendors.php') ?>
-
-</div>
-<!--main-container-->
-
-
-<?php include_once('templates/partials/parallax.php') ?>
-
-<?php include_once('templates/partials/products-modal.php') ?>
-<?php include_once('templates/partials/footer.php') ?>
-
-<!-- Le javascript
-================================================== -->
-
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- include jqueryCycle plugin -->
-<script src="assets/js/jquery.cycle2.min.js"></script>
-
-<!-- include easing plugin -->
-<script src="assets/js/jquery.easing.1.3.js"></script>
-
-<!-- include  parallax plugin -->
-<script type="text/javascript" src="assets/js/jquery.parallax-1.1.js"></script>
-
-<!-- optionally include helper plugins -->
-<script type="text/javascript" src="assets/js/helper-plugins/jquery.mousewheel.min.js"></script>
-
-<!-- include mCustomScrollbar plugin //Custom Scrollbar  -->
-<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.js"></script>
-
-<!-- include checkRadio plugin //Custom check & Radio  -->
-<script type="text/javascript" src="assets/js/ion-checkRadio/ion.checkRadio.min.js"></script>
-
-<!-- include grid.js // for equal Div height  -->
-<script src="assets/js/grids.js"></script>
-
-<!-- include carousel slider plugin  -->
-<script src="assets/js/owl.carousel.min.js"></script>
-
-<!-- jQuery minimalect // custom select   -->
-<script src="assets/js/jquery.minimalect.min.js"></script>
-
-<!-- include touchspin.js // touch friendly input spinner component   -->
-<script src="assets/js/bootstrap.touchspin.js"></script>
-
-<!-- include custom script for only homepage  -->
-<script src="assets/js/home.js"></script>
-
-<!-- include custom script for site  -->
-<script src="assets/js/script.js"></script>
-<script src="assets/js/custom.js"></script>
-
-
-</body>
-</html>
+?>

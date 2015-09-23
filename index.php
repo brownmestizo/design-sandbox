@@ -1,7 +1,7 @@
 <?php
 require_once 'lib/init.php';
 
-$loader = new Twig_Loader_Filesystem('templates/');
+$loader = new Twig_Loader_Filesystem('views/');
 $twig = new Twig_Environment($loader);
 
 

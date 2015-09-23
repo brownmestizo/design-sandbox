@@ -1,0 +1,59 @@
+/* Theme */
+
+// Variables, Mixins
+@import "inspinia/variables";
+
+// ***** Theme Elements
+@import "base/owl.carousel.css";
+@import "base/owl.theme.css";
+@import "base/font-awesome.css";
+@import "base/animate.min.css";
+@import "base/jquery.mCustomScrollbar.css";
+@import "base/alpha.css";
+@import "base/jquery.minimalect.min.css";
+@import "base/smoothproducts.css";
+@import "base/ion.checkRadio.css";
+@import "base/ion.checkRadio.cloudy.css";
+
+
+
+// Landing page
+
+
+// RTL Support
+
+
+// For demo only - config box style
+
+
+// Skins
+
+
+// Media query style
+
+
+
+/*
+ *
+ *   Custom work
+ *   Version 1 - 2015
+ *
+*/
+
+// Variables, Mixins
+@import "variables";
+@import "mixins";
+
+// Elements
+@import "typography";
+@import "navigation";
+@import "top_navigation";
+@import "buttons";
+@import "badgets_labels";
+@import "elements";
+@import "sidebar";
+@import "base";
+@import "pages";
+
+// Media query style
+@import "media";

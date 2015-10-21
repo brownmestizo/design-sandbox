@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+
+{% block title %}Modelbuffs Version 4{% endblock %}
+
+{% block content %}
+
+        {% include 'partials/banner.php' %}    
+
+        <div class="container main-container">
+            {% include 'partials/featured-products.php' %}    
+        </div>
+        <!-- /main container -->
+
+        {% include 'partials/banner-medium.php' %}
+
+        <div class="container main-container">
+            {# include 'partials/featured-products-grid.php' #}
+            {% include 'partials/featured-collections.php' %}
+            {% include 'partials/featured-vendors.php' %}   
+        </div>
+        <!--main-container-->
+
+        {% include 'partials/parallax.php' %}
+        {% include 'partials/products-modal.php' %}
+
+{% endblock %}

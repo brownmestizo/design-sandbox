@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <title>Modelbuffs Version 4</title>
+    <title>{% block title%} {% endblock %}</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -35,28 +35,11 @@
 {% include 'partials/modal-signup.php' %}
 {% include 'partials/navbar.php' %}
 
-{% include 'partials/banner.php' %}
 
-<div class="container main-container">
+    {% block content %}
 
-    {% include 'partials/featured-products.php' %}
-    
-</div>
-<!-- /main container -->
+    {% endblock %}
 
-{% include 'partials/banner-medium.php' %}
-
-<div class="container main-container">
-
-    {# include 'partials/featured-products-grid.php' #}
-    {% include 'partials/featured-collections.php' %}
-    {% include 'partials/featured-vendors.php' %}
-
-</div>
-<!--main-container-->
-
-{% include 'partials/parallax.php' %}
-{% include 'partials/products-modal.php' %}
 {% include 'partials/footer.php' %}
 
 <!-- Le javascript

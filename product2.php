@@ -7,6 +7,6 @@ $twig = new Twig_Environment($loader);
 
 $newProducts = TblProdInfoQuery::create()->orderByProdId('desc')->forThisWebsiteOnly()->limit(4)->find();
 
-echo $twig->render('pages_index.html', array('newProducts' => $newProducts));
+echo $twig->render('pages_product.html', array('newProducts' => $newProducts));
 
 ?>

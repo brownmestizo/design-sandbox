@@ -15,8 +15,10 @@ use Base\TblGeneral as BaseTblGeneral;
 class TblGeneral extends BaseTblGeneral
 {
 
-	public function getProdDescription($alternateNames = null) {
-		
+	public function getProdDescription() {
+
+		$alternateNames = array($this->prod_name, $this->prod_alt1, $this->prod_alt2, $this->prod_alt3, $this->prod_alt4);
+
 		$var = $this->prod_description;
 
 		$output = mb_convert_encoding($var, "utf-8", "HTML-ENTITIES");	

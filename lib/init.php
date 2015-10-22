@@ -5,9 +5,13 @@
 	    if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) )
 	        return true;
 	}
+
+	$generated_image_url = 'http://www.modelbuffs.com/mpm/uploads/';
 	
 	require_once 'vendor/autoload.php';
 	
 	if(is_localhost()) require_once 'config/config_local.php';
-	else require_once 'config/config_online.php';
+	else require_once 'config/config_online.php';		
 ?>
+
+

@@ -5,14 +5,14 @@ $loader = new Twig_Loader_Filesystem('views/');
 $twig = new Twig_Environment($loader);
 
 $categoryCurrent = TblMenusQuery::create()
-	->filterByMenuAlias($_GET['category'])
-	->findOne();
+	->findPK($_GET['category']);	
 
 $categories = TblMenusQuery::create()
 	->find();	
 
 $products = TblProdInfoQuery::create()
-	->filterByProdCategory($_GET['category'])
+	->filterByProdCategory($categoryCurrent->getMenuAlias())
+	->limit(20)
 	->find();
 
 echo $twig->render(
@@ -21,7 +21,8 @@ echo $twig->render(
         	'image_url' => $generated_image_url,
             'products' => $products,
             'categoryCurrent' => $categoryCurrent,
-            'categories' => $categories
+            'categories' => $categories,
+            'image_url' => $generated_image_url
             ));
 
 ?>

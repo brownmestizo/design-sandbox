@@ -37,7 +37,7 @@
                             <ul class="nav nav-pills nav-stacked tree">
                                 {% for category in categories %}
                                     <li>
-                                        <a href="#">
+                                        <a href="category.php?category={{ category.getMenuId() }}">
                                             <span class="badge pull-right">42</span> 
                                             {{ category.getMenuName() }}
                                         </a>
@@ -87,42 +87,50 @@
 
             <div class="row categoryProduct xsResponse clearfix">
 
-                <div class="item col-sm-4 col-lg-4 col-md-4 col-xs-6">
-                    <div class="product">
-                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
-                           data-placement="left">
-                            <i class="glyphicon glyphicon-heart"></i>
-                        </a>
-
-                        <div class="image">
-                            <div class="quickview">
-                                <a title="Quick View" class="btn btn-xs  btn-quickview" data-target="#product-details-modal" data-toggle="modal"> Quick View </a>
-                            </div>
-                            <a href="product-details-style4.html">
-                                <img src="images/product/30.jpg" alt="img" class="img-responsive">
+                {% for product in products %}
+                    <div class="item col-sm-4 col-lg-4 col-md-4 col-xs-6">
+                        <div class="product">
+                            <!--
+                            <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist" data-placement="left">
+                                <i class="glyphicon glyphicon-heart"></i>
                             </a>
-                            <div class="promotion"><span class="new-product"> NEW</span> <span class="discount">15% OFF</span></div>
-                        </div>
-                        <div class="description">
-                            <h4><a href="product-details-style4.html">Sukhoi T-50 Russian Air Force</a></h4>
+                            -->
 
-                            <div class="grid-description">
-                                <p>This product has a smaller version.</p>
+                            <div class="image">
+                                <div class="quickview">
+                                    <a title="Quick View" class="btn btn-xs  btn-quickview" data-target="#product-details-modal" data-toggle="modal"> Quick View </a>
+                                </div>
+                                <a href="product.html">                                    
+                                    <img src="{{ image_url }}{{ product.getTblProdPhotos().getProdSolo1() }}" alt="img" class="img-responsive">
+                                </a>
+                                
+                                <!--
+                                    <div class="promotion">
+                                        <span class="new-product">NEW</span>
+                                        <span class="discount">15% OFF</span>
+                                    </div>
+                                -->
                             </div>
-                            <div class="list-description">
-                                <p> Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
-                                    fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
-                                    odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
-                                    vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
-                                    sit amet placerat elit. </p>
-                            </div>
-                            </div>
-                        <div class="price"><span>$25</span></div>
-                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
-                    </div>
-                </div>
-                <!--/.item-->                
+                            <div class="description">
+                                <h4><a href="product.html">{{ product.getProdName() }}</a></h4>
+
+                                <div class="grid-description">
+                                    <p>This product has a smaller version.</p>
+                                </div>
+                                <div class="list-description">
+                                    <p> Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel
+                                        fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin
+                                        odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit
+                                        vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent
+                                        sit amet placerat elit. </p>
+                                </div>
+                                </div>
+                            <div class="price"><span>$25</span></div>
+                            <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                        </div>
+                    </div>                
+                {% endfor %}
 
             </div>
             <!--/.categoryProduct || product content end-->

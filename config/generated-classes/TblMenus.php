@@ -14,5 +14,32 @@ use Base\TblMenus as BaseTblMenus;
  */
 class TblMenus extends BaseTblMenus
 {
+	public function getProductCount ($website) {
 
+		switch($website) {
+			case 'mb':
+				$productCount = TblProdInfoQuery::create()
+					->filterByMb(true)
+					->filterByProdCategory($this->menu_alias)
+					->count();
+			break;
+
+			case 'm3':
+				$productCount = TblProdInfoQuery::create()
+					->filterByM3(true)
+					->filterByProdCategory($this->menu_alias)
+					->count();			
+			break;
+
+			case 'pa':
+				$productCount = TblProdInfoQuery::create()
+					->filterByPa(true)
+					->filterByProdCategory($this->menu_alias)
+					->count();			
+			break;
+		}
+
+		return $productCount;
+
+	}
 }

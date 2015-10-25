@@ -7,6 +7,8 @@
 	}
 
 	$generated_image_url = 'http://www.modelbuffs.com/mpm/uploads/';
+	$website = 'mb';
+	$maxResultsPerPage = 20;
 	
 	require_once 'vendor/autoload.php';
 	

@@ -66,10 +66,9 @@
         <!-- this part is duplicate from cartMenu  keep it for mobile -->
         <div class="navbar-cart  collapse">
             <div class="cartMenu static-search-box  col-lg-4 col-xs-12 col-md-4 ">
-                <div class="w100 miniCartTable scroll-pane">
+                <div class="w100 miniCartTable scroll-pane">                    
                     <table>
-                        <tbody>
-                        <?php for($i=1; $i<=5; $i++) { ?>
+                        <tbody>                        
                             <tr class="miniCartProduct">
                                 <td style="20%" class="miniCartProductThumb">
                                     <div><a href="product-details-style4.html"> <img src="images/product/3.jpg" alt="img"> </a>
@@ -87,7 +86,6 @@
                                 <td style="15%" class="miniCartSubtotal"><span> $8.80 </span></td>
                                 <td style="5%" class="delete"><a> x </a></td>
                             </tr>
-                        <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -162,7 +160,7 @@
 
                             <!-- megamenu-content -->
 
-                            <ul class="col-lg-6  col-sm-2 col-md-2  unstyled noMarginLeft">
+                            <ul class="col-lg-6  col-sm-2 col-md-2 unstyled noMarginLeft">
                                 <li><a href="#"> Airships and Blimps </a></li>
                                 <li><a href="#"> Aviation Nose Art Panels </a></li>
                                 <li><a href="#"> Aviation Oil Paintings </a></li>
@@ -171,7 +169,7 @@
                                 <li><a href="#"> Helicopters </a></li>
                                 <li><a href="#"> Made to Order Models </a></li>
                             </ul>
-                            <ul class="col-lg-6  col-sm-2 col-md-2  unstyled">
+                            <ul class="col-lg-6  col-sm-2 col-md-2 unstyled">
                                 <li><a href="#"> Military Airplanes - Jet </a></li>
                                 <li><a href="#"> Military Airplanes - Propeller</a></li>
                                 <li><a href="#"> Private & Civilian </a></li>

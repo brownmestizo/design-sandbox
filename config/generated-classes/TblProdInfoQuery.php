@@ -15,10 +15,20 @@ use Base\TblProdInfoQuery as BaseTblProdInfoQuery;
 class TblProdInfoQuery extends BaseTblProdInfoQuery
 {
 	
-	public function forThisWebsiteOnly () {
-		return $this->filterByMb(1);
+	public function forThisWebsiteOnly ($website) {
+		switch($website) {
+			case 'mb':
+				return $this->filterByMb(1);
+			break;
+
+			case 'm3':
+				return $this->filterByM3(1);
+			break;
+
+			case 'pa':
+				return $this->filterByPa(1);
+			break;
+		}		
 	}
-
-
 	
 }

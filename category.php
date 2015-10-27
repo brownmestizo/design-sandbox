@@ -14,8 +14,7 @@ $categories = TblMenusQuery::create()
 	->find();	
 
 $productsPager = TblProdInfoQuery::create()
-	->filterByProdCategory($categoryCurrent->getMenuAlias())
-	->forThisWebsiteOnly($website)
+	->filterByProdCategory($categoryCurrent->getMenuAlias())	
 	->paginate($page = $pageNumber, $maxPerPage = $maxResultsPerPage);
 
 echo $twig->render(

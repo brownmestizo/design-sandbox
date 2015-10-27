@@ -14,7 +14,7 @@ use Base\TblProdInfoQuery as BaseTblProdInfoQuery;
  */
 class TblProdInfoQuery extends BaseTblProdInfoQuery
 {
-	
+	/*
 	public function forThisWebsiteOnly ($website) {
 		switch($website) {
 			case 'mb':
@@ -30,5 +30,6 @@ class TblProdInfoQuery extends BaseTblProdInfoQuery
 			break;
 		}		
 	}
+	*/
 	
 }

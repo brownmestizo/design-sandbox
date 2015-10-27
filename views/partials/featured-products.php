@@ -17,6 +17,7 @@
                                 <a title="Quick View" class="btn btn-xs btn-quickview" data-target="#product-details-modal" data-toggle="modal" id="{{ newProduct.getProdId() }}"> Quick View </a>
                             </div>
                             <a href="product.php?id={{ newProduct.getProdId() }}">      
+                                {{ newProduct.getTblProdPhotos().getProdSolo1() }}
                                 <img src="{{ image_url }}{{ newProduct.getTblProdPhotos().getProdSolo1() }}" alt="img" class="img-responsive">
                             </a>
                         </div>

@@ -12,7 +12,7 @@
                             <i class="glyphicon glyphicon-heart"></i>
                         </a>
                         -->
-                        {{ newProduct }}
+                        {{ newProduct.getTblProdPhotos() }}
                         <div class="image">
                             <div class="quickview">
                                 <a title="Quick View" class="btn btn-xs btn-quickview" data-target="#product-details-modal" data-toggle="modal" id="{{ newProduct.getProdId() }}"> Quick View </a>

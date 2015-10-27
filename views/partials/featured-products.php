@@ -3,7 +3,7 @@
         <h3 class="section-title style2 text-center"><span>NEW ARRIVALS</span></h3>
 
         <div id="productslider" class="owl-carousel owl-theme">
-
+                
                 {% for newProduct in newProducts %}
                 <div class="item">
                     <div class="product">
@@ -17,7 +17,7 @@
                                 <a title="Quick View" class="btn btn-xs btn-quickview" data-target="#product-details-modal" data-toggle="modal" id="{{ newProduct.getProdId() }}"> Quick View </a>
                             </div>                            
                             <a href="product.php?id={{ newProduct.getProdId() }}">      
-                                <img src="{{ image_url }}{{ newProduct.getTblProdPhotos.getProdSolo1 }}" alt="img" class="img-responsive">
+                                <img src="{{ image_url }}{{ newProduct.getTblProdPhotos().getProdSolo1() }}" alt="img" class="img-responsive">
                             </a>
                         </div>
 

@@ -12,8 +12,12 @@
 	
 	require_once 'vendor/autoload.php';
 	
+	/*
 	if(is_localhost()) require_once 'config/config_local.php';
-	else require_once 'config/config_online.php';		
+	else require_once 'config/config_online.php';			
+	*/
+
+	require_once 'config/config_online.php'	
 ?>
 
 

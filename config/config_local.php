@@ -7,7 +7,7 @@ $manager->setConfiguration(array (
   'classname' => 'Propel\\Runtime\\Connection\\ConnectionWrapper',
   'dsn' => 'mysql:host=localhost;dbname=rathmell_mpm',
   'user' => 'root',
-  'password' => 'pjTDJyLtga',
+  'password' => '',
   'attributes' =>
   array (
     'ATTR_EMULATE_PREPARES' => false,

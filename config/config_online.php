@@ -5,7 +5,7 @@ $serviceContainer->setAdapterClass('mpm', 'mysql');
 $manager = new \Propel\Runtime\Connection\ConnectionManagerSingle();
 $manager->setConfiguration(array (
   'classname' => 'Propel\\Runtime\\Connection\\ConnectionWrapper',
-  'dsn' => 'mysql:host=128.199.154.181:3306;dbname=rathmell_mpm',
+  'dsn' => 'mysql:host=128.199.154.181;dbname=rathmell_mpm',
   'user' => 'root',
   'password' => 'pjTDJyLtga',
   'attributes' =>

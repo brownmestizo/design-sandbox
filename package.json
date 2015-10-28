@@ -1,0 +1,36 @@
+{
+  "name": "design-sandbox",
+  "description": "Design Sandbox for Modelbuffs, Planears, M3",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rathmell/design-sandbox.git"
+  },
+  "author": "Raden Sucalit",
+  "license": "ISC",
+  "homepage": "https://github.com/rathmell/design-sandbox",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-file-append": "0.0.6",
+    "grunt-html-convert": "0.0.2",
+    "grunt-string-replace": "^1.0.0",
+    "load-grunt-tasks": "~0.2.0",
+    "sass": "^0.5.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "grunt-html2js": "^0.3.0"
+  }
+}

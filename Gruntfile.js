@@ -14,11 +14,6 @@ module.exports = function (grunt) {
                 }
             },
 
-            /*js: {
-                files: ['theme/js/*.js'],
-                tasks: ['uglify']
-            }*/
-
         },
 
         sass: {

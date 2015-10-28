@@ -161,22 +161,23 @@
                             <!-- megamenu-content -->
 
                             <ul class="col-lg-6  col-sm-2 col-md-2 unstyled noMarginLeft">
-                                <li><a href="#"> Airships and Blimps </a></li>
-                                <li><a href="#"> Aviation Nose Art Panels </a></li>
-                                <li><a href="#"> Aviation Oil Paintings </a></li>
-                                <li><a href="#"> Boats, Ships & Submarines</a></li>
-                                <li><a href="#"> Early Aviation - Pre-1950 </a></li>
-                                <li><a href="#"> Helicopters </a></li>
-                                <li><a href="#"> Made to Order Models </a></li>
+                                <li><a href="category.php?category=13"> Airships and Blimps </a></li>
+                                <li><a href="category.php?category=7"> Nose Art Panels </a></li>
+                                <li><a href="category.php?category=14"> Aviation Oil Paintings </a></li>
+                                <li><a href="category.php?category=15"> Boats, Ships & Submarines</a></li>
+                                <li><a href="category.php?category=5"> Early Aviation - Pre-1950 </a></li>
+                                <li><a href="category.php?category=4"> Helicopters </a></li>
+                                <li><a href="category.php?category=9"> Made to Order Models </a></li>
+                                <li><a href="category.php?category=16"> Tanks & Armored Vehicles </a></li>
                             </ul>
                             <ul class="col-lg-6  col-sm-2 col-md-2 unstyled">
-                                <li><a href="#"> Military Airplanes - Jet </a></li>
-                                <li><a href="#"> Military Airplanes - Propeller</a></li>
-                                <li><a href="#"> Private & Civilian </a></li>
-                                <li><a href="#"> Sale Clearance Items </a></li>
-                                <li><a href="#"> Space, NASA & Experimental</a></li>
-                                <li><a href="#"> Specials </a></li>
-                                <li><a href="#"> Stands & Wall Mounts</a></li>
+                                <li><a href="category.php?category=2"> Military Airplanes - Jet </a></li>
+                                <li><a href="category.php?category=1"> Military Airplanes - Propeller</a></li>
+                                <li><a href="category.php?category=3"> Private & Civilian </a></li>
+                                <li><a href="category.php?category=10"> Sale Clearance Items </a></li>
+                                <li><a href="category.php?category=6"> Space, NASA & Experimental</a></li>
+                                <li><a href="category.php?category=12"> Specials </a></li>
+                                <li><a href="category.php?category=8"> Tail Shields & Flashes, Plaques & Seals</a></li>
                             </ul>
                         </li>
                     </ul>

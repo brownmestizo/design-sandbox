@@ -1,59 +1,33 @@
 /* Theme */
 
-// Variables, Mixins
-@import "inspinia/variables";
 
-// ***** Theme Elements
-@import "base/owl.carousel.css";
-@import "base/owl.theme.css";
-@import "base/font-awesome.css";
-@import "base/animate.min.css";
-@import "base/jquery.mCustomScrollbar.css";
-@import "base/alpha.css";
-@import "base/jquery.minimalect.min.css";
-@import "base/smoothproducts.css";
-@import "base/ion.checkRadio.css";
-@import "base/ion.checkRadio.cloudy.css";
+@import
 
+"base/owl.carousel",
+"base/owl.theme",
+"base/font-awesome",
+"base/animate.min",
+"base/jquery.mCustomScrollbar",
+"base/alpha",
+"base/jquery.minimalect.min",
+"base/smoothproducts",
+"base/ion.checkRadio",
+"base/ion.checkRadio.cloudy",
 
+"base/blog",
+"base/category-2",
+"base/footable-0.1",
+"base/footable.paginate",
+"base/footable.sortable-0.1",
+"base/gray-look",
+"base/idangerous.swiper",
+"base/idangerous.swiper.scrollbar",
+"base/ion.checkRadio.dark",
+"base/ion.checkRadio.green",
+"base/selectric",
+"base/story",
 
-// Landing page
+"skins/skin-3",
 
-
-// RTL Support
-
-
-// For demo only - config box style
-
-
-// Skins
-
-
-// Media query style
-
-
-
-/*
- *
- *   Custom work
- *   Version 1 - 2015
- *
-*/
-
-// Variables, Mixins
-@import "variables";
-@import "mixins";
-
-// Elements
-@import "typography";
-@import "navigation";
-@import "top_navigation";
-@import "buttons";
-@import "badgets_labels";
-@import "elements";
-@import "sidebar";
-@import "base";
-@import "pages";
-
-// Media query style
-@import "media";
+// Main page
+"pages/custom"

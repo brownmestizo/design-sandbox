@@ -1,3 +1,4 @@
 # Ignore Mac system files.
 ._*
 vendor/
+node_modules/

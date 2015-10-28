@@ -1,0 +1,39 @@
+/* =============================================================== */
+/* FOUNDATION
+/* =============================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+
+a {
+    color: #34495E;
+    text-decoration: none;
+    outline: none !important;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #34495E;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    position: relative;
+    background: #fff;
+}

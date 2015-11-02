@@ -9,10 +9,16 @@ $newProducts = TblProdInfoQuery::create()
 	->limit(4)
 	->find();
 
+$featuredProducts = TblProdInfoQuery::create()
+	->orderByProdId('asc')
+	->filterByProdFront('yes')
+	->find();	
+
 echo $twig->render(
 	'pages_index.html', 
 		array(
 			'newProducts' => $newProducts, 
+			'featuredProducts' => $featuredProducts, 
 			'image_url' => $generated_image_url
 		));
 

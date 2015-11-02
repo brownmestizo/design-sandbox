@@ -21,4 +21,5 @@ class TblProdInfo extends BaseTblProdInfo
     	return $output;
     }
 
+
 }

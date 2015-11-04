@@ -15,15 +15,9 @@ use Base\TblProdInfo as BaseTblProdInfo;
 class TblProdInfo extends BaseTblProdInfo
 {
     public function getProdWriteup()
-    {    	
-    	
-    	/*
-    	$output = html_entity_decode($this->prod_writeup);
-    	$output = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $output);
-    	*/
-
-    	//return html_entity_decode($this->prod_writeup, ENT_QUOTES, 'UTF-8');
-    	return $this->prod_writeup;
+    {    	    	    	    	
+    	$output = preg_replace('/\+/', "", preg_replace('/\+\./', "", $this->prod_writeup));
+    	return $output;
     }
 
 

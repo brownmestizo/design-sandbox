@@ -127,12 +127,15 @@ h3 code {
     position: relative;
 }
 
-.no-margin {
-    margin: 0 !important;
-}
-
 .no-padding {
     padding: 0 !important;
+}
+
+
+/* Margins */
+
+.no-margin {
+    margin: 0 !important;
 }
 
 .no-margin-right {
@@ -150,6 +153,24 @@ h3 code {
 .no-margin-bottom {
     margin-bottom: 0;
 }
+
+
+.m-t-xs {
+    margin-top: 5px;
+}
+
+.m-b-xs {
+    margin-bottom: 5px;
+}
+
+.m-r-xs {
+    margin-right: 5px;
+}
+
+.m-l-xs {
+    margin-left: 5px;
+}
+
 
 .no-border {
     border: 0;

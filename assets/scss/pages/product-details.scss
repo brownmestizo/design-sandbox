@@ -154,6 +154,13 @@
     text-transform: uppercase;
 }
 
+.product-stats {
+    span {
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+}
+
 .rating span {
     display: inline-block;
 }
@@ -165,7 +172,7 @@
 /*------- product-details style 4 ------- */
 
 .zoomThumb {
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
 }
 
@@ -248,7 +255,6 @@
 /***  ------- filterBox ------- ***/
 
 .filterBox {
-    display: inline-block;
     margin-right: 20px;
 }
 

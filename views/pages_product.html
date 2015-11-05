@@ -74,10 +74,10 @@
 
                 <div class="product-stats m-b-xs">
                     <h3 class="product-code">Product statistics</h3>
-                    <span><strong>Length</strong> 14.90 in (37.85 cm)</span>
-                    <span><strong>Wing span</strong> 17.10 in (43.43 cm)</span>
-                    <span><strong>Height</strong> 6.30 in (16.00 cm)</span>
-                    <span><strong>Scale</strong> 1:26 </span>
+                    <span><strong>Length</strong> {{ product.displayStat(product.prodLength) }}</span>
+                    <span><strong>Wing span</strong> {{ product.displayStat(product.prodWingspan) }}</span>
+                    <span><strong>Height</strong> {{ product.displayStat(product.prodHeight) }}</span>
+                    <span><strong>Scale</strong> {{ product.prodScale }} </span>
                 </div>
 
                 <hr />

@@ -14,11 +14,24 @@ use Base\TblProdInfo as BaseTblProdInfo;
  */
 class TblProdInfo extends BaseTblProdInfo
 {
-    public function getProdWriteup()
-    {    	    	    	    	
+    public function getProdWriteup() {    	    	    	    	
     	$output = preg_replace('/\+/', "", preg_replace('/\+\./', "", $this->prod_writeup));
     	return $output;
     }
 
+    public function numberFormat ($x) {
+    	return number_format($x, 2);
+    }
+
+    public function numberConvertToMetric ($x) {
+    	return ($x * 2.54);
+    }
+
+    public function displayStat ($x) {
+    	$formatted = number_format($x, 2);
+    	$metric = number_format(($x * 2.54), 2);
+
+    	return $formatted." in (".$metric." cm)";
+    }
 
 }

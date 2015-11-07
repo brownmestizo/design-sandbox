@@ -88,9 +88,9 @@
 
                 <div class="productFilter">
                     <div class="row">
-                        <div class="col-xs-3">
+                        <div class="col-xs-2">
                             <select>
-                                <option value="" selected>Quantity</option>
+                                <option value="" selected>Qty</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -102,14 +102,11 @@
                             </select>
                         </div>
 
-                        <div class="col-xs-9">
+                        <div class="col-xs-10">
                             <select>
-                                <option value="" selected>Stands</option>
-                                <option value="1">Solid Mahogany with Stainless Steel Arm</option>
-                                <option value="2">Solid Mahogany</option>
-                                <option value="3">Solid Mahogany Oblong with Stainless Steel Arm</option>
-                                <option value="4">Solid Mahogany Matte Black</option>
-                                <option value="5">Solid Mahogany Black with Customized Logo</option>
+                                {% for stand in stands %}
+                                    <option value="{{ stand.standId }}">{{ stand.standName }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>

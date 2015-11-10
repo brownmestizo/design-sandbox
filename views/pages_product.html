@@ -113,7 +113,7 @@
                         <div class="col-xs-10">
                             <select>
                                 {% for stand in stands %}
-                                    <option value="{{ stand.standId }}">{{ stand.standName }}</option>
+                                    <option value="{{ stand.standId }}">{{ stand.standName }} (+ ${{ stand.standPrice }})</option>
                                 {% endfor %}
                             </select>
                         </div>

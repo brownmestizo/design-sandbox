@@ -1,0 +1,29 @@
+{
+  "name": "mpm",
+  "description": "Design Sandbox for Modelbuffs, Planears, M3",
+  "main": "bower",
+  "authors": [
+    "Raden Sucalit"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "modelbuffs",
+    "planearts",
+    "mymahogany"
+  ],
+  "homepage": "https://github.com/rathmell/design-sandbox",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.3.0"
+  }
+}

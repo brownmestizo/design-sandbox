@@ -26,6 +26,27 @@
 	    echo $product->toJSON();
 	});
 
+	$app->get('/stands/all', function () {
+	    $standQuery = new TblStandsQuery();
+	    $stands = $standQuery->find();	    
+	    echo $stands->toJSON();
+	});	
+
+	$app->get('/price/:product', function ($product) {
+		$product = TblProdInfoQuery::create()
+		->select(array('prod_price_id'))
+		->filterByProdId($product)
+		->findOne();
+
+		$pricingQuery = new TblProdPricingQuery();
+
+		$price = $pricingQuery		
+		->filterByProdPriceId($product)		
+		->findOne();
+
+	    echo $price->toJSON();
+	});	
+
 	$app->run();
 ?>
 

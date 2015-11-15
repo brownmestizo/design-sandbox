@@ -96,25 +96,20 @@
 
                 <div class="productFilter">
                     <div class="row">
-                        <div class="col-xs-2">
-                            <select>
-                                <option value="" selected>Qty</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
+                        <div class="col-xs-3">
+                            <select class="form-control" data-bind="
+                                value: selectedQty,
+                                options: qty, 
+                                optionsCaption: 'Qty', 
+                                optionsText: 'optionText',
+                                optionsValue: 'optionValue'
+                                ">
                             </select>
                         </div>
 
-                        <div class="col-xs-10">
-                            <select>
-                                {% for stand in stands %}
-                                    <option value="{{ stand.standId }}">{{ stand.standName }} (+ ${{ stand.standPrice }})</option>
-                                {% endfor %}
+                        <div class="col-xs-9">                            
+                            <select class="form-control" data-bind="foreach: stands, value:selectedStand">
+                                <option data-bind="value:optionValue, text:optionText, attr: {'data-price':optionDataPrice}"></option>
                             </select>
                         </div>
                     </div>
@@ -136,7 +131,9 @@
                         </div>                    
                         <div class="col-xs-4">
                             <div class="pull-right product-price">
-                                <span class="price-sales">${{ product.getTblProdPricing().getProdPricePrice() }}</span>
+                                <span class="price-sales">
+                                    $<span data-bind="text: totalPrice "></span>
+                                </span>
                             </div>
                         </div>     
                     </div>
@@ -255,7 +252,7 @@
 
 
 <div class="gap"></div>
-
-
-
 {% endblock %}
+
+
+{% block customjs %}<script type="text/javascript" src="assets/js/scripts/product.js"></script>{% endblock %}

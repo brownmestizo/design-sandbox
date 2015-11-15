@@ -411,7 +411,7 @@ $(document).ready(function () {
 
 
     // customs select by minimalect
-    $("select").minimalect();
+    //$("select").minimalect();
 
     // cart quantity changer sniper
     $("input[name='quanitySniper']").TouchSpin({

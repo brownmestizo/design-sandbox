@@ -107,10 +107,32 @@
                             </select>
                         </div>
 
-                        <div class="col-xs-9">                            
-                            <select class="form-control" data-bind="foreach: stands, value:selectedStand">
-                                <option data-bind="value:optionValue, text:optionText, attr: {'data-price':optionDataPrice}"></option>
+                        <div class="col-xs-9">                 
+                            <select class="form-control" data-bind="
+                                value: selectedStand, 
+                                options: stands, 
+                                optionsText: function(item) {
+                                    return item.optionText
+                                },
+                                optionsValue: function(item) {
+                                    return item.optionDataPrice     
+                                }"
+                            ></select>
+
+                            <!--
+                            <select class="form-control" data-bind="value: selectedStand">
+                            -->
+                                <!-- ko foreach: stands -->
+                                <!--
+                                <option data-bind="value:optionDataPrice, text:optionText, attr: {'data-price':optionDataPrice}">
+                                </option>
+                                -->
+
+                                <!-- /ko -->
+                            <!--
                             </select>
+                            -->
+
                         </div>
                     </div>
                 </div>

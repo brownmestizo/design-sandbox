@@ -25,5 +25,8 @@
   ],
   "dependencies": {
     "knockout": "~3.3.0"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.4"
   }
 }

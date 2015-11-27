@@ -18,11 +18,11 @@ function CartModel () {
 	self.stands = ko.observableArray([]);
 	self.selectedStand = ko.observable();
 	
-	$.getJSON("api/index.php/price/18", function (data) {		
+	$.getJSON("../api/index.php/price/18", function (data) {		
 		self.unitPrice(data.ProdPricePrice);
 	});			
 
-	$.getJSON("api/index.php/stands/all", function (data) {		
+	$.getJSON("../api/index.php/stands/all", function (data) {		
 		$.each(data.TblStandss, function(key, val) {
 			self.stands.push(new Stands(data.TblStandss[key]));				
 		});

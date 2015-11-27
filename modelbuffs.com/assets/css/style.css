@@ -1,0 +1,210 @@
+/* Theme */
+/* line 2, ../../../assets/scss/skins/skin-3.scss */
+a:hover,
+a:focus, a.link {
+  color: #3498db; }
+
+/* line 7, ../../../assets/scss/skins/skin-3.scss */
+.search-full, .search-input {
+  background: #2980b9; }
+
+/* line 11, ../../../assets/scss/skins/skin-3.scss */
+.search-close {
+  color: #2980b9; }
+
+/* line 15, ../../../assets/scss/skins/skin-3.scss */
+.btn-primary, .btn-primary, .product:hover .add-fav:hover, .product:hover .add-fav.active {
+  background-color: #3498db;
+  color: #FFFFFF; }
+
+/* line 20, ../../../assets/scss/skins/skin-3.scss */
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #39a7f1;
+  border-color: #39a7f1;
+  color: #FFFFFF; }
+
+/* line 26, ../../../assets/scss/skins/skin-3.scss */
+.btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  background: #2c88c5; }
+
+/* line 30, ../../../assets/scss/skins/skin-3.scss */
+.navbar-tshop {
+  background: #3498db; }
+
+/* line 34, ../../../assets/scss/skins/skin-3.scss */
+.navbar-top {
+  background: #2c88c5; }
+
+/* line 38, ../../../assets/scss/skins/skin-3.scss */
+.site-color {
+  color: #3498db !important; }
+
+/* line 42, ../../../assets/scss/skins/skin-3.scss */
+.navbar-nav > li > a {
+  color: #fff; }
+
+/* line 46, ../../../assets/scss/skins/skin-3.scss */
+.nav > li.active, .nav > li > a:hover, .nav > li > a:focus, .nav > li:hover > a {
+  background: #2980b9; }
+
+/* line 50, ../../../assets/scss/skins/skin-3.scss */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .cartMenu:hover > a.dropdown-toggle {
+  background: #2980b9; }
+
+/* line 54, ../../../assets/scss/skins/skin-3.scss */
+.dropdown-menu {
+  border-top: solid #2980b9; }
+
+/* line 58, ../../../assets/scss/skins/skin-3.scss */
+.search-box:hover .form-control {
+  background: #3498db; }
+
+/* line 62, ../../../assets/scss/skins/skin-3.scss */
+.search-box:hover .btn-nobg {
+  color: #3498db; }
+
+/* line 66, ../../../assets/scss/skins/skin-3.scss */
+.searchInputBox .search-btn {
+  color: #fff; }
+
+/* line 70, ../../../assets/scss/skins/skin-3.scss */
+.mCS-dark-2 > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: rgba(52, 152, 219, 0.7) !important; }
+
+/* line 74, ../../../assets/scss/skins/skin-3.scss */
+.action-control a:hover, .action-control a.active {
+  color: #fff;
+  background: #2980b9; }
+
+/* line 79, ../../../assets/scss/skins/skin-3.scss */
+.product:hover, .featuredImgLook2 .inner:hover {
+  border: 1px solid #3498db; }
+
+/* line 83, ../../../assets/scss/skins/skin-3.scss */
+.subCategoryList .thumbnail:hover {
+  border: 1px solid #3498db; }
+
+/* line 87, ../../../assets/scss/skins/skin-3.scss */
+.pager2 a {
+  border: 1px solid #3498db; }
+
+/* line 91, ../../../assets/scss/skins/skin-3.scss */
+.pager2 a.selected {
+  background: #3498db; }
+
+/* line 95, ../../../assets/scss/skins/skin-3.scss */
+.btn-discover, .btn-site, .newsLatterBox .btn {
+  background: #3498db; }
+
+/* line 99, ../../../assets/scss/skins/skin-3.scss */
+.btn-discover:hover, .btn-site:hover, .newsLatterBox .btn:hover {
+  background: #2980b9; }
+
+/* line 103, ../../../assets/scss/skins/skin-3.scss */
+.full {
+  width: 100%; }
+
+/* line 107, ../../../assets/scss/skins/skin-3.scss */
+.footer a:hover {
+  color: #3498db; }
+
+/* line 111, ../../../assets/scss/skins/skin-3.scss */
+.footer {
+  /*border-top: solid 3px #3498db;*/ }
+
+/* line 115, ../../../assets/scss/skins/skin-3.scss */
+.modal-header {
+  background: #3498db; }
+
+/* line 119, ../../../assets/scss/skins/skin-3.scss */
+.form-control:focus {
+  border-color: #3498db; }
+
+/* line 123, ../../../assets/scss/skins/skin-3.scss */
+.new-product {
+  background: rgba(52, 152, 219, 0.95) !important; }
+
+/* line 127, ../../../assets/scss/skins/skin-3.scss */
+#pager a.cycle-pager-active {
+  background: rgba(52, 152, 219, 0.5); }
+
+/* tree menu */
+/* line 133, ../../../assets/scss/skins/skin-3.scss */
+.nav.tree > li.active, .nav.tree > li > a:hover, .nav.tree > li > a:focus, .nav.tree > li:hover > a {
+  background: none;
+  color: #2c3e50; }
+
+/* line 138, ../../../assets/scss/skins/skin-3.scss */
+.nav.tree .open-tree > a, .nav.tree .open-tree > a:hover, .nav.tree .open-tree > a:focus {
+  background: none;
+  font-weight: bold;
+  color: #2c3e50; }
+
+/* line 144, ../../../assets/scss/skins/skin-3.scss */
+.panel-default > .panel-heading {
+  border-top: 4px solid #3498db; }
+
+/* line 148, ../../../assets/scss/skins/skin-3.scss */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li:hover > a {
+  background: #BFC9CA; }
+
+/* line 152, ../../../assets/scss/skins/skin-3.scss */
+.nav-tabs {
+  border-bottom: 3px solid #BFC9CA; }
+
+/* line 156, ../../../assets/scss/skins/skin-3.scss */
+.socialIcon a:hover {
+  background: #3498db; }
+
+/* line 160, ../../../assets/scss/skins/skin-3.scss */
+.cart-actions button, .cart-actions .wishlist {
+  background: none repeat scroll 0 0 #3498db;
+  border: 2px solid #2980b9; }
+
+/* line 165, ../../../assets/scss/skins/skin-3.scss */
+.cart-actions button:hover {
+  background: #fff;
+  color: #2c3e50;
+  border: solid 2px #3498db; }
+
+/* line 171, ../../../assets/scss/skins/skin-3.scss */
+.sp-thumbs a:hover, .sp-thumbs a:active, .sp-current, sp-current:visited {
+  border: 2px solid #3498db !important; }
+
+/* line 175, ../../../assets/scss/skins/skin-3.scss */
+.promo-1 {
+  background: none repeat scroll 0 0 #2980b9; }
+
+@media (max-width: 767px) {
+  /* line 180, ../../../assets/scss/skins/skin-3.scss */
+  .miniCartFooter {
+    background: #2980b9 !important; } }
+/* line 188, ../../../assets/scss/skins/skin-3.scss */
+#pager2 span.cycle-pager-active {
+  background: #2980b9 !important; }
+
+/* line 192, ../../../assets/scss/skins/skin-3.scss */
+#pager2 span {
+  border: 2px solid #2980b9; }
+
+/* line 196, ../../../assets/scss/skins/skin-3.scss */
+.orderStep li.active a {
+  background: #3498db; }
+
+/* line 200, ../../../assets/scss/skins/skin-3.scss */
+.orderStep li.active a:after {
+  border-top-color: #3498db !important; }
+
+/* line 204, ../../../assets/scss/skins/skin-3.scss */
+.orderStep li a {
+  background: #2c88c5; }
+
+/* line 208, ../../../assets/scss/skins/skin-3.scss */
+darkcoilor {
+  background: #2c88c5; }
+
+/* line 212, ../../../assets/scss/skins/skin-3.scss */
+citecolor {
+  color: #3498db !important; }
+
+/*# sourceMappingURL=style.css.map */

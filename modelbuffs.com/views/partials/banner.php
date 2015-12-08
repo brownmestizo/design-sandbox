@@ -12,7 +12,7 @@
             <div class="slider slider-v1" data-cycle-swipe=true data-cycle-prev=".prevControl" data-cycle-next=".nextControl" data-cycle-loader="wait">
 
                 <div class="slider-item slider-item-img1">
-                    <img src="images/slider/slider0.jpg" class="img-responsive parallaximg sliderImg" alt="img">
+                    <img src="../images/slider/slider0.jpg" class="img-responsive parallaximg sliderImg" alt="img">
                 </div>
 
 
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="images/slider/slider1.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
+                    <img src="../images/slider/slider1.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
                 <!--/.slider-item-->
 
                 <div class="slider-item slider-item-img2 ">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="images/slider/slider3.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
+                    <img src="../images/slider/slider3.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
                 <!--/.slider-item-->
 
                 <div class="slider-item slider-item-img3 ">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="images/slider/slider4.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
+                    <img src="../images/slider/slider4.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
                 <!--/.slider-item-->
 
                 <div class="slider-item slider-item-img3">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <img src="images/slider/6.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
+                    <img src="../images/slider/6.jpg" class="img-responsive parallaximg sliderImg" alt="img"></div>
             </div>
             <!--/.slider slider-v1-->
         </div>

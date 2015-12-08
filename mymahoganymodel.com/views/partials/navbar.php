@@ -71,7 +71,7 @@
                         <tbody>                        
                             <tr class="miniCartProduct">
                                 <td style="20%" class="miniCartProductThumb">
-                                    <div><a href="product-details-style4.html"> <img src="images/product/3.jpg" alt="img"> </a>
+                                    <div><a href="product-details-style4.html"> <img src="../images/product/3.jpg" alt="img"> </a>
                                     </div>
                                 </td>
                                 <td style="40%">
@@ -127,7 +127,7 @@
                             <ul class="col-lg-3  col-sm-3 col-md-3  col-xs-4">
                                 <li>
                                     <a class="newProductMenuBlock" href="product-details-style4.html">
-                                        <img class="img-responsive" src="images/site/promo1.jpg" alt="product">
+                                        <img class="img-responsive" src="../images/site/promo1.jpg" alt="product">
                                         <span class="ProductMenuCaption"> <i class="fa fa-caret-right"> </i> Aviation Oil Paintings </span>
                                     </a>
                                 </li>
@@ -135,7 +135,7 @@
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-4">
                                 <li>
                                     <a class="newProductMenuBlock" href="product-details-style4.html">
-                                        <img class="img-responsive" src="images/site/promo2.jpg" alt="product">
+                                        <img class="img-responsive" src="../images/site/promo2.jpg" alt="product">
                                         <span class="ProductMenuCaption"><i class="fa fa-caret-right"> </i> Helicopters</span>
                                     </a>
                                 </li>
@@ -143,7 +143,7 @@
                             <ul class="col-lg-3  col-sm-3 col-md-3 col-xs-4">
                                 <li>
                                     <a class="newProductMenuBlock" href="product-details-style4.html">
-                                        <img class="img-responsive" src="images/site/promo3.jpg" alt="product">
+                                        <img class="img-responsive" src="../images/site/promo3.jpg" alt="product">
                                         <span class="ProductMenuCaption"> <i class="fa fa-caret-right"> </i> Specials </span>
                                     </a>
                                 </li>
@@ -223,7 +223,7 @@
                                 <?php for ($i=1; $i<=6; $i++) { ?>
                                     <tr class="miniCartProduct">
                                         <td style="width:20%" class="miniCartProductThumb">
-                                            <div><a href="product-details-style4.html"> <img src="images/product/3.jpg" alt="img">
+                                            <div><a href="product-details-style4.html"> <img src="../images/product/3.jpg" alt="img">
                                             </a></div>
                                         </td>
                                         <td style="width:40%">

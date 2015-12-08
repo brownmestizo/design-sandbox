@@ -9,20 +9,20 @@
 
                 <div class="main-image  col-lg-12 no-padding style3">
                     <a class="product-largeimg-link" href="product-details-style4.html">
-                        <img src="images/zoom/zoom1.jpg" class="img-responsive product-largeimg prod-solo-1" alt="img">
+                        <img src="../images/zoom/zoom1.jpg" class="img-responsive product-largeimg prod-solo-1" alt="img">
                     </a>
                 </div>
                 <!--/.main-image-->
 
                 <div class="modal-product-thumb">
                     <a class="thumbLink selected">
-                        <img data-large="images/zoom/zoom1.jpg" alt="img" class="img-responsive prod-solo-2" src="images/zoom/zoom1.jpg">
+                        <img data-large="../images/zoom/zoom1.jpg" alt="img" class="img-responsive prod-solo-2" src="../images/zoom/zoom1.jpg">
                     </a>
                     <a class="thumbLink">
-                        <img data-large="images/zoom/zoom2.jpg" alt="img" class="img-responsive prod-solo-3" src="images/zoom/zoom2.jpg">
+                        <img data-large="../images/zoom/zoom2.jpg" alt="img" class="img-responsive prod-solo-3" src="../images/zoom/zoom2.jpg">
                     </a>
                     <a class="thumbLink">
-                        <img data-large="images/zoom/zoom3.jpg" alt="img" class="img-responsive prod-solo-4" src="images/zoom/zoom3.jpg">
+                        <img data-large="../images/zoom/zoom3.jpg" alt="img" class="img-responsive prod-solo-4" src="../images/zoom/zoom3.jpg">
                     </a>
                 </div>
                 <!--/.modal-product-thumb-->

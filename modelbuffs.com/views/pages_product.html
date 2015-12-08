@@ -2,6 +2,10 @@
 
 {% block title %}Modelbuffs - Product Page{% endblock %}
 
+{% block customheader%} 
+    <link id="snipcart-theme" type="text/css" href="https://cdn.snipcart.com/themes/base/snipcart.min.css" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 
 
@@ -77,6 +81,7 @@
                 <h1 class="product-title">{{ product.getProdName() }}</h1>
 
                 <h3 class="product-code">Product Code : {{ product.getProdCode() }}</h3>
+                <input type="hidden" id="productID" value="{{ product.getProdId() }}" />
 
                 <hr />
 
@@ -94,6 +99,7 @@
                     <p>Shipping and choice of stand may increase the price of this model.</p>
                 </div>
 
+                <!--
                 <div class="productFilter">
                     <div class="row">
                         <div class="col-xs-3">
@@ -118,30 +124,17 @@
                                     return item.optionDataPrice     
                                 }"
                             ></select>
-
-                            <!--
-                            <select class="form-control" data-bind="value: selectedStand">
-                            -->
-                                <!-- ko foreach: stands -->
-                                <!--
-                                <option data-bind="value:optionDataPrice, text:optionText, attr: {'data-price':optionDataPrice}">
-                                </option>
-                                -->
-
-                                <!-- /ko -->
-                            <!--
-                            </select>
-                            -->
-
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- productFilter -->
 
                 <div class="cart-actions">
                     
                     <div class="row">
                         <div class="col-xs-8 addto">                    
+                            <!--
                             <button 
                                 onclick="productAddToCartForm.submit(this);" 
                                 class="button btn-block btn-cart cart first"
@@ -149,14 +142,36 @@
                                 type="button">
                                 Add to Cart
                             </button>
+                            -->
+                            <button 
+                                class="snipcart-add-item button btn-block btn-cart first"
+                                data-item-id="{{ product.getProdId() }}"
+                                data-item-name="{{ product.getProdName() }}"
+                                data-item-price="{{ product.getTblProdPricing().getProdPricePrice() }}"
+                                data-item-custom1-name="stands"
+                                data-item-custom1-options="
+                                    {% for stand in stands %}  
+                                        {{ stand.getStandName() }}[+{{ stand.getStandPrice() }}]|
+                                    {% endfor %}                                
+                                "
+                                data-item-url="http://myapp.com/products/bacon">
+                                    Add to cart
+                            </button>                            
                             <!-- <a class="link-wishlist wishlist">Add to Wishlist</a> -->
                         </div>                    
                         <div class="col-xs-4">
+                            <!--
                             <div class="pull-right product-price">
                                 <span class="price-sales">
                                     $<span data-bind="text: totalPrice "></span>
                                 </span>
                             </div>
+                            -->
+                            <div class="pull-right product-price">
+                                <span class="price-sales">
+                                    ${{ product.getTblProdPricing().getProdPricePrice() }}
+                                </span>
+                            </div>                            
                         </div>     
                     </div>
 
@@ -277,4 +292,7 @@
 {% endblock %}
 
 
-{% block customjs %}<script type="text/javascript" src="../assets/js/scripts/product.js"></script>{% endblock %}
+{% block customjs %}
+<script type="text/javascript" src="../assets/js/scripts/product.js"></script>
+<script type="text/javascript" id="snipcart" src="https://cdn.snipcart.com/scripts/snipcart.js" data-api-key="MjI2Y2ZjYjctNzJiOS00MTdiLWI1MWEtOGYwMjU2N2JhNzI3"></script>
+{% endblock %}

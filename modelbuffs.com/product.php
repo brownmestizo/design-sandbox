@@ -13,7 +13,9 @@ $productQuery = new TblProdInfoQuery();
 $product = $productQuery->findPK($_GET['id']);
 
 $relatedProducts = TblProdInfoQuery::create()->findPKs(explode(" ", $product->getProdRelated())); 
-$stands = TblStandsQuery::create()->find();
+
+$standsQuery = new TblStandsQuery();
+$stands = TblStandsQuery::create()->orderByStandId()->find();
 
 echo $twig->render(
     'pages_product.html',

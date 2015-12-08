@@ -13367,4 +13367,8 @@ div.quickview {
 .rating-here .fa, .rating .fa {
   color: #E7711B; }
 
+/* line 1, ../scss/pages/custom.scss */
+.snipcart-overwrite #snipcart-footer {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */

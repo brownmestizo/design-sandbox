@@ -28,7 +28,7 @@
 
 	$app->get('/stands/all', function () {
 	    $standQuery = new TblStandsQuery();
-	    $stands = $standQuery->find();	    
+	    $stands = $standQuery->orderByStandId()->find();	    
 	    echo $stands->toJSON();
 	});	
 

@@ -1,0 +1,83 @@
+// Font
+$font-stack: "Roboto", "Segoe UI", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+
+// Shadows
+$shadow-one-opacity: 0.14 !default;
+$shadow-two-opacity: 0.10 !default;
+$shadow-three-opacity: 0.10 !default;
+
+// Central palette
+$darker-navyblue: #131419;
+$dark-navyblue: #1E2028;
+$navyblue: #292C36;
+$light-navyblue: #565c71;
+
+$accent-color: #5E6C8C; // App-wide accent colour - e.g. links, primary buttons etc
+$light-accent-color: #E5E7EF;
+$dark-accent-color: #47506F;
+
+// Basic Colors
+$navy: #1ab394;           // Primary color
+$dark-gray: #c2c2c2;      // Default color
+$blue: #1c84c6;           // Success color
+$yellow: #f8ac59;         // Warrning color
+$red: #ed5565;            // Danger color
+$orange: #FF5E0C;         // Orange color
+
+// Original CSDS Central colours
+$teal: #39B4BF;
+$green: #2A7A44;
+$deep-blue: #355595;
+$pink: #D65C92;
+$purple: #946fb0;
+$mustard: #CE932C;
+$brown: #7A6754;
+
+// Basic Colours
+$navy: #536296;                 // Primary colour
+$blue: #1c84c6;                 // Success colour
+$info: #288CBD;                 // Info colour
+$yellow: #f8ac59;               // Warning colour
+$red: #a94442;                  // Danger colour
+
+// CSDS Colours
+$csds-orange: #c9602a;
+$csds-dark-grey: #3c3c3c;
+
+// Greys
+$lightest-grey: #ECECEC;
+$lighter-grey: #D8D8D8;
+$light-grey: #bebebe;
+$grey: #676a6c;
+
+/* $input-border-color: #E0E0E0; */
+$border-grey: #e7eaec;
+$darker-border-grey:#DDDDDD;
+$hover-grey: #f5f5f5;
+
+$text-color: $grey;             // Body text
+$dark-gray: $csds-dark-grey;    // Default colour
+$gray: #EFEFEF;                 // Background wrapper colour
+$light-gray: $text-color;       // Default label, badget
+
+// IBOX colours ( default panel colours)
+$border-color: $border-grey;         // IBox border
+$ibox-title-bg: white;          // IBox Background header
+$ibox-content-bg: white;        // IBox Background content
+
+//Navigation
+$nav-bg: $darker-navyblue;
+$nav-text-color: #9d9d9d;
+
+// Spiner color and margin
+$spin-color: $navy;
+$spin-margin: 0 auto;
+
+//Sidebar width
+$sidebar-width: 220px;
+
+// Boxed layout width
+$boxed-width: 1200px;
+
+//Border radius for buttons
+$btn-border-radius: 3px;

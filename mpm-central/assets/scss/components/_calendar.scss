@@ -1,0 +1,87 @@
+.fc table td {
+    background-color: #FFF;
+}
+
+.fc-event,
+.fc-agenda .fc-event-time,
+.fc-event a {
+  padding: 4px 6px;
+  background-color: transparent;
+  border: none !important;
+  margin-bottom: 5px;
+  color: $grey;
+}
+
+.fc-button {
+	text-transform: capitalize;    
+}
+
+.fc-toolbar {
+    margin-bottom: 0;
+
+    h2 {
+        margin-top: 4px;
+    }
+}
+
+.fc-state-active {
+	background-color: $navy;
+	border-color: $navy;
+}
+
+.fc-event {
+    padding: 6px;
+}
+
+.fc-event.alert-orange:hover {
+	color: darken($orange, 21%);
+}
+
+.fc-event.alert-pink:hover {
+	color: darken($pink, 21%);
+}
+
+.fc-event.alert-info:hover {
+	color: darken($info, 21%);
+}
+
+.fc-event.alert-red:hover {
+	color: darken($red, 21%);
+}
+
+.fc-event.alert-grey:hover {
+	color: darken($grey, 21%);
+}
+
+.fc-event.alert-grey {
+	opacity: 0.5;
+
+    .label {
+        opacity: 0.4;
+    }
+}
+
+.fc-past {
+	background-color: $lightest-grey;
+	opacity: 0.4;
+}
+
+.fc-unthemed .fc-today {
+	background: lighten($grey, 50%);
+	font-weight: bold;
+}
+
+.fc-row .fc-content-skeleton td, 
+.fc-row .fc-helper-skeleton td {
+	background: none !important;
+}
+
+.external-event {
+	cursor: auto;
+}
+
+.fc-toolbar {
+	.fc-left, .fc-right {
+		margin-bottom: 10px;
+	}
+}

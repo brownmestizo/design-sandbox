@@ -1,0 +1,297 @@
+{% extends "template.html" %}
+
+{% block title %}MPM Central{% endblock %}
+
+{% block customheader%}
+<!-- Chartist style -->
+<link href="assets/css/plugins/chartist/chartist.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="row wrapper white-bg page-heading animated fadeInDown">
+
+    <div class="col-md-12">
+        <h2 class="m-b-none"><a href="../index.html">Dashboard</a></h2>
+    </div>
+    
+    <div class="col-md-4">
+
+        <div class="widget style2 navy-bg text-center m-b-none">
+            <h1>3521</h1>
+            <h3>Products</h3>                                 
+            <a class="btn btn-primary btn-block m-t-sm" href="equip/search.php">Search Modelbuffs</a>
+        </div>                            
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="widget style2 navy-bg text-center m-b-none">
+            <h1>454</h1>
+            <h3>Products</h3>                                 
+            <a class="btn btn-primary btn-block m-t-sm" href="equip/profile-crud-blank.php">Search Planearts</a>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="widget style2 navy-bg text-center m-b-none">
+            <h1>454</h1>
+            <h3>Products</h3>                                 
+            <a class="btn btn-primary btn-block m-t-sm" href="equip/profile-crud-blank.php">Search M3</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    
+    <div class="row">
+
+        <div class="col-lg-9">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h2 class="weight-normal m-b-none">Products sold</h2>                        
+                </div>
+                <div class="ibox-title-alt clear">
+                    <div class="row">                                   
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-block" href="requests/wizard.php">Add a product</a>
+                        </div>
+                         <div class="col-sm-4">
+                            <a class="btn btn-primary btn-block" href="requests/list_requests.php">View all products</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-block" href="workorders/list_workorders.php">View orders</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <h3>Purchased products over the last 6 months</h3>
+                    <div class="m-b-m">
+                        <canvas id="coffee"></canvas>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h3 class="text-orange">Modelbuffs</h3>
+                            <ul class="list-group clear-list m-t">
+                                <li class="list-group-item fist-item">
+                                    <span class="pull-right">
+                                       <span class="label label-orange">5</span>
+                                    </span>
+                                    This month
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        <span class="label label-orange">105</span>
+                                    </span>
+                                    This year
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3 class="text-pink">Planearts</h3>
+                            <ul class="list-group clear-list m-t">
+                                <li class="list-group-item fist-item">
+                                    <span class="pull-right">
+                                       <span class="label label-pink">5</span>
+                                    </span>
+                                    This month
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        <span class="label label-pink">105</span>
+                                    </span>
+                                    This year
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <h3 class="text-info">M3</h3>
+                            <ul class="list-group clear-list m-t">
+                                <li class="list-group-item fist-item">
+                                    <span class="pull-right">
+                                       <span class="label label-info">5</span>
+                                    </span>
+                                    This month
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="pull-right">
+                                        <span class="label label-info">105</span>
+                                    </span>
+                                    This year
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- END col -->
+
+         <div class="col-lg-3">
+            <div class="row">
+                <div class="col-sm-6 col-lg-12">                                                     
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="requests/list_requests.php">5</a></h1>
+                        <a href="requests/list_requests.php"><h3 class="text-yellow">Product categories</h3></a>
+                    </div>
+                </div>
+
+                 <div class="col-sm-6 col-lg-12">                                                                          
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="requests/list_requests.php">3</a></h1>
+                        <a href="requests/list_requests.php"><h3 class="text-green">Pricing categories</h3></a>
+                    </div>                    
+                </div>
+
+                <div class="col-sm-6 col-lg-12">
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="workorders/list_workorders.php">21</a></h1>
+                        <a href="workorders/list_workorders.php"><h3 class="text-yellow">Model eras</h3></a>
+                    </div>
+                </div>                        
+
+                <div class="col-sm-6 col-lg-12">
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="workorders/list_workorders.php">21</a></h1>
+                        <a href="workorders/list_workorders.php"><h3 class="text-orange">Smaller models</h3></a>
+                    </div>
+                </div>                        
+
+                <div class="col-sm-6 col-lg-12">
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="workorders/list_workorders.php">10</a></h1>
+                        <a href="workorders/list_workorders.php"><h3 class="text-red">Stands</h3></a>
+                    </div>
+                </div>                                                                                                                    
+            </div>                            
+
+        </div> <!-- END col -->
+
+    </div><!-- END row -->
+</div> <!-- END content wrapper -->
+
+{% endblock %}
+
+{% block customjs %}
+    <!-- ChartJS-->
+    <script src="assets/js/plugins/chartJs/Chart.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var d1 = [];
+            var d2 = [];
+            var d3 = [];        
+
+            var lineData = {
+                labels: ["July", "August", "September", "October", "November", "December"],
+                datasets: [
+                    {
+                        label: "Modelbuffs",
+                        fillColor: "rgba(255,94,12,0.5)",
+                        strokeColor: "rgba(255,94,12,1)",
+                        pointColor: "rgba(255,94,12,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(255,94,12,1)",
+                        data: [29, 9, 35, 28, 20, 25]
+                    },                
+                    {
+                        label: "Planearts",
+                        fillColor: "rgba(40,140,189,0.5)",
+                        strokeColor: "rgba(40,140,189,0.7)",
+                        pointColor: "rgba(40,140,189,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(40,140,189,1)",
+                        data: [18, 19, 30, 12, 30, 21]
+                    },
+                    {
+                        label: "M3",
+                        fillColor: "rgba(214,92,146,0.5)",
+                        strokeColor: "rgba(214,92,146,0.7)",
+                        pointColor: "rgba(214,92,146,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(214,92,146,1)",
+                        data: [10, 2, 5, 16, 18, 21]
+                    }
+                ]
+            };
+
+            var lineOptions = {
+                scaleShowGridLines: true,
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleGridLineWidth: 1,
+                bezierCurve: true,
+                bezierCurveTension: 0.4,
+                pointDot: true,
+                pointDotRadius: 4,
+                pointDotStrokeWidth: 1,
+                pointHitDetectionRadius: 20,
+                datasetStroke: true,
+                datasetStrokeWidth: 2,
+                datasetFill: true,
+                responsive: true,
+                maintainAspectRatio: false,
+                multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+            };
+
+
+            var ctx = document.getElementById("coffee").getContext("2d");
+            var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+
+
+            var d1a = [];
+            var d2a = [];
+            var d3a = [];        
+
+            var lineData1 = {
+                labels: ["July", "August", "September", "October", "November", "December"],
+                pointLabelFontSize : 14,
+                datasets: [
+                    {
+                        label: "Usage",
+                        fillColor: "rgba(255,255,255,0)",
+                        strokeColor: "rgba(94,108,140,1)",
+                        pointColor: "rgba(94,108,140,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(94,108,140,1)",
+                        data: [55, 49, 40, 51, 36, 25]
+                    }
+                ]
+            };
+
+            var lineOptions1 = {
+                scaleShowGridLines: true,
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleGridLineWidth: 1,
+                bezierCurve: true,
+                bezierCurveTension: 0.4,
+                pointDot: true,
+                pointDotRadius: 4,
+                pointDotStrokeWidth: 1,
+                pointHitDetectionRadius: 20,
+                datasetStroke: true,
+                datasetStrokeWidth: 2,
+                datasetFill: true,
+                responsive: true,
+                maintainAspectRatio: false,
+                multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+            };
+
+
+            var ctx1 = document.getElementById("tea").getContext("2d");
+            var myNewChart = new Chart(ctx1).Line(lineData1, lineOptions1);
+
+
+        });
+    </script>
+{% endblock %}

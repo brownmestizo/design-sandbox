@@ -1,0 +1,29 @@
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+
+    /* border: none; */
+
+  }
+
+
+.no-bg {
+
+    ul.nav-tabs li a {
+        background: none !important;
+        border-right: none;
+        color: $light-grey;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }    
+
+  ul.nav-tabs li.active a {    
+    border-bottom: 2px solid $accent-color;
+    color: $accent-color;
+  }
+
+  .social-footer {
+    background-color: #f5f5f5;
+  }
+}

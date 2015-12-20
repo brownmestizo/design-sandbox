@@ -12,6 +12,7 @@ module.exports = function (grunt) {
                     'modelbuffs.com/assets/scss/**/*.scss',
                     'planearts.com/assets/scss/**/*.scss',
                     'mymahoganymodel.com/assets/scss/**/*.scss',
+                    'mpm-central/assets/scss/**/*.scss',                     
                 ],
                 tasks: ['sass'],
                 options: {
@@ -34,6 +35,7 @@ module.exports = function (grunt) {
                     'modelbuffs.com/assets/css/style.css': 'modelbuffs.com/assets/scss/style.scss',
                     'planearts.com/assets/css/style.css': 'planearts.com/assets/scss/style.scss',
                     'mymahoganymodel.com/assets/css/style.css': 'mymahoganymodel.com/assets/scss/style.scss',
+                    'mpm-central/assets/css/style.css': 'mpm-central/assets/scss/style.scss',
                 },            
                 options: {
                         //debugInfo: true,

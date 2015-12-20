@@ -1,0 +1,160 @@
+/* WIDGETS */
+
+.widget {
+    margin-bottom: 20px;
+
+    &.style1 {
+        h1 {
+            font-weight: 700;
+            font-size: 30px;
+            margin:0;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        h3 {
+            opacity: 0.6;
+        }
+        p {
+            line-height: 14px;
+            margin: 5px 0 0 0;
+        }
+    }
+
+    &.style2 {
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+            margin:0;
+            margin-top: 5px;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        h3 {
+            opacity: 0.6;
+            margin-top: 0;
+        }
+        p {
+            line-height: 14px;
+            margin: 5px 0 0 0;
+        }
+    }
+
+    &.style3 {
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+            margin:0;
+            margin-top: 5px;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        h3 {
+            margin-top: 0;
+        }
+        p {
+            line-height: 14px;
+            margin: 5px 0 0 0;
+        }
+    }
+
+    &.style4 {
+
+        padding: 12px 14px;
+
+        label {
+            padding: 3px 5px; 
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+
+    &.mini-widget {
+        margin: 0px;
+        padding: 5px 10px;        
+        width: auto !important;
+        display: inline-block;
+        min-width: 100%;
+        width: 100% !important;
+        border-radius: 3px;
+
+        i.fa {
+            padding-top: 3px;
+        }
+
+        &.mini-widget--open {
+            min-width: 70px !important;
+            width: 100%;
+            text-align: left;   
+            padding: 0;         
+        }
+    }
+
+
+
+}
+
+.widget-head-color-box {
+    padding: 20px;
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+.widget-text-box {
+    hr {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+.widget-text-box {
+    padding: 30px 30px 25px 30px;
+}
+
+
+.widget-head-color-box {
+    .text-muted,
+    .text-muted small {
+        color: lighten($accent-color, 16%);
+    }
+}
+
+.widget-simshop {
+    margin-top: 10px;
+    border-radius: 5px;
+    -webkit-font-smoothing: antialiased;
+
+    p {
+        line-height: 1.2;
+        max-width: 300px;
+        margin: 0 auto 10px auto;
+    }
+
+    h1 {
+        font-weight: normal;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    .front-img {
+        background: url(../img/simshop-head2.png);
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        min-height: 117px;
+        background-size: contain;
+    }
+
+}

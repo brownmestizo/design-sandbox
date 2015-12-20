@@ -1,0 +1,53 @@
+/* Toastr custom style */
+
+#toast-container.toast-top-center > div {
+    width: 500px;
+}
+
+#toast-container > .toast-warning:before {
+  content: none;
+}
+
+#toast-container > div {
+    border-radius: 0;
+    padding: 11px 20px 14px 20px;
+    opacity: 1;
+}
+
+.toast-info {
+  background-color: $accent-color;
+}
+
+.toast-warning { 
+    color: $mustard !important;
+    background-color: lighten($mustard, 45%);
+    border-color: $mustard !important;
+    background-image: none;
+
+    .toast-close-button {
+        color: $mustard;  
+    }
+
+    a {
+        color: $mustard;  
+        font-weight: 700;
+        border-bottom: 1px solid lighten($mustard, 30%);
+    }
+
+    a:hover {
+        color: $mustard;
+        border-bottom: 1px solid $mustard;
+    }
+
+    .toast-progress {
+        background-color: $mustard;
+        opacity: 1;
+    }
+}
+
+.toast-close-button {
+    position: relative;
+    text-shadow: none;
+    opacity: 1;
+
+}

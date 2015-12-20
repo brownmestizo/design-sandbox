@@ -1,0 +1,379 @@
+/* FORMS */
+
+textarea {
+    resize: none;
+}
+
+.form-group {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.input-group-btn:first-child>.btn {
+    margin-right: -2px;
+}
+
+/* Form control */
+
+.form-control {
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    border-color: $lighter-grey;
+    color: $text-color;
+    height: auto;
+
+    &:focus {
+        border-color: $accent-color;
+        box-shadow: inset 0 -1px 0 $accent-color; 
+    }
+
+}
+
+.form-control.error {
+    border-width: 0 0 1px 0;
+    border-color: $red;
+    border-style: solid;
+    box-shadow: inset 0 -1px 0 $red; 
+
+    &:focus {
+        border-color: $accent-color;
+        box-shadow: inset 0 -1px 0 $accent-color; 
+    }
+}
+
+.form-control[disabled], 
+.form-control[readonly], 
+fieldset[disabled] .form-control {
+  background: inherit;
+  border-style: dotted;
+  opacity: 0.7;
+}
+
+h2 input.form-control {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+
+select.form-control {
+    cursor: pointer;
+}
+
+.form-control:focus, .single-line:focus {
+    border-color: $accent-color !important;
+    outline: none;
+}
+
+.has-success .form-control {
+    border-color: $accent-color;
+}
+
+.has-warning .form-control {
+    border-color: $yellow;
+}
+
+.has-error .form-control {
+    border-color: $red;
+}
+
+.has-success .control-label {
+    color: $accent-color;
+}
+
+.has-warning .control-label {
+    color: $yellow;
+}
+
+.has-error .control-label {
+    color: $red;
+}
+
+.form-control-inline {
+    padding: 0px !important;
+    border: none !important;
+
+    &:focus {
+        border-color: none;
+        box-shadow: none;
+    }   
+}
+
+
+/* Input addon */
+
+.input-group-addon {
+    background-color: white;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    line-height: 1;
+    text-align: center;
+
+    &.btn-right {
+        padding: 0 0 0 12px;
+    }
+
+    &.left { 
+        padding: 6px 12px 6px 0;
+    }
+
+    &.right {
+        padding: 6px 0 6px 12px;    
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+
+/* ON/OFF Switch label */
+
+.onoffswitch-label {
+  border: 2px solid $accent-color;
+}
+
+.onoffswitch-inner:before {
+  background-color: $accent-color;
+}
+
+.onoffswitch-switch {
+  border: 2px solid $accent-color;
+}
+
+
+/* Labels */
+
+.label {
+    font-weight:700;
+    font-family: $font-stack;
+    font-size: 12px;
+
+    h3 {
+        margin: 0;
+        font-weight: 700;
+    }
+    
+}
+
+.inline-label {
+    float: left;
+    clear: left;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.label-group {
+    line-height: 25px;
+}
+
+label .small {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.fw-label {
+    display: inline-block;
+    padding: 1em .6em;
+    width: 100%;
+}
+
+
+/* icheck Checkboxes */
+
+.i-checks,
+.i-checks2 {
+    label {
+        font-weight: normal;
+        margin-bottom: 0 !important;
+        cursor: pointer;
+    }
+
+    &:last-child label {
+        margin-bottom: 0;
+    }
+
+    span {
+        padding-left: 5px;
+        padding-top: 2px
+    }
+}
+
+.i-checks2 {
+    label {
+        font-weight: normal;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;        
+    }
+    .icheckbox_square-steelblue {
+        margin-right: 5px;
+    }
+}
+
+.checkbox-container {
+    background: white;
+    padding: 5px 8px 5px 5px;
+    font-size: 14px;
+    color: lighten($grey, 20%);
+    cursor: pointer;
+
+    .icheckbox_square-red {
+       margin-right: 5px;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    &:hover {
+        color: $red;
+    }
+}
+
+/* Form group */
+
+.form-group {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.input-inline { //input-group
+    position: relative;
+    display: table;
+    border-collapse: separate;
+
+    .input-inline-text { //input-group-btn
+        position: relative;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        width: 1%;
+
+        span {
+            position: relative;
+
+            &.right {
+                padding-left: 10px;
+            }
+
+            &.left {
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .form-control {
+        display: table-cell;
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+}
+
+.search-clear {
+    text-decoration: none;
+    position: absolute;
+    color: $accent-color;
+    z-index: 2;
+}
+
+.input-group .search-clear,
+.page-search .search-clear {
+    top: 5px;
+    right: 0;
+}
+
+input {
+    .clear-option {
+        padding-right: 30px;
+    }  
+}
+
+
+/* Select2 */
+
+.select2-container .select2-selection--single {
+    height: 34px !important;
+
+    .select2-selection__rendered {
+        padding-top: 2px;
+        padding-left: 4px;
+    }
+}
+
+
+.select2-container--default .select2-selection--single {
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid #CCC !important;
+}
+
+
+.select2-container:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: none !important;
+    border-bottom: 1px solid #CCC !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+    background: none;
+
+    &:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+/* In page search */
+
+.page-search {
+    background-color: darken($gray, 4%);
+    display: table;
+    padding: 5px 10px;
+    border-radius: 2px;
+
+    .input-group-addon {
+        background-color: darken($gray, 4%);        
+    }
+
+    input,
+    input:focus,
+    input:active,
+    input:hover { 
+        border: 0;
+        box-shadow: none;
+    }
+}

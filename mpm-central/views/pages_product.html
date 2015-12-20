@@ -1,0 +1,243 @@
+{% extends "template.html" %}
+
+{% block title %}MPM Central{% endblock %}
+{% block customheader%}
+<link href="assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="row wrapper white-bg page-heading">
+    <div class="col-lg-8 col-md-6 col-xs-6">
+        <h2><a href="../index.html">Products</a></h2>
+        <ol class="breadcrumb">           
+            <li class="active">
+                Products search
+            </li>
+        </ol>
+    </div><!-- END col -->
+
+    <div class="col-lg-4 col-md-6 col-xs-6">
+        <span class="pull-right m-t-lg">
+            <a class="btn btn-primary" href="event.php">Add new product</a>
+        </span>
+    </div>
+</div><!-- END row -->
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12 list-filters">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    {% for category in categories %}                
+                        <li class="i-checks"><a><label> <input type="checkbox" value=""> {{ category.getMenuName() }} </label></a></li>                    
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Status (3) <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="i-checks"><a><label> <input type="checkbox" value=""> Active</label></a></li>
+                    <li class="i-checks"><a><label> <input type="checkbox" value=""> Inactive </label></a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#locationmodal"><i class="fa fa-map-marker"></i> Location</button>-->
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#locationmodal"><i class="fa fa-map-marker"></i> Redcliffe </button>                             
+            </div>
+
+            <div class="btn-group">
+                <a>Clear all filters</a>
+            </div>
+
+            <div class="modal fade" id="locationmodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <a data-dismiss="modal">
+                                <i class="fa fa-times"></i>
+                            </a>
+
+                            <h3>Location</h3>
+
+                            <div class="pull-right">                                            
+                                <a data-dismiss="modal">Done</a>
+                            </div>                                    
+                            
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group form-group">
+                                <span class="input-group-addon left"><i class="fa fa-map-marker"></i></span>
+                                <input type="text" class="form-control clear-option" placeholder="Search for location">
+                                <a href="#" class="search-clear"> <i class="fa fa-times"></i></a>
+                            </div>
+                            
+
+                            <table class="table list-table">
+                                <tbody>
+                                <tr>
+                                    <td width="20px">
+                                        <i class="fa fa-map-marker text-navy"></i>
+                                    </td>
+                                    <td>
+                                        <a>Redcliffe</a> <span class="text-muted"><em>Suburb</em></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-building text-navy"></i>
+                                    </td>
+                                    <td>
+                                        <a>Redcliffe Skills Centre</a> <span class="text-muted"><em>Pocket Centre</em></span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-map-marker text-navy"></i>
+                                    </td>
+                                    <td>
+                                        <a>Redhill</a> <span class="text-muted"><em>Suburb</em></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-map-marker text-navy"></i>
+                                    </td>
+                                    <td>
+                                        <a>Redbank Plains</a> <span class="text-muted"><em>Suburb</em></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-map-marker text-navy"></i>
+                                    </td>
+                                    <td>
+                                        <a>Redland Bay</a> <span class="text-muted"><em>Suburb</em></span>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div><!--/.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+                                
+        </div><!-- END col  -->               
+    </div><!-- END row -->
+
+    <div class="row">
+        <div class="col-md-12 list-options"> 
+
+            <div class="btn-group-count"><h3><strong>1-30</strong> of <strong>453</strong> products</h3></div>  
+
+            <div class="pull-right">                              
+                <h3>3345 results</h3>                     
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a><i></i> Spreadsheet <span class="text-muted">(xls)</span></a></li>
+                    </ul>
+                </div>
+            </div>                                                                        
+
+        </div><!-- END col -->
+    </div> <!-- END row -->
+
+    <div class="list-container">
+        
+        <div class="listing">
+            <div class="list-results">
+
+                <!-- List item -->
+                <div class="list-item">
+                    <div class="list-row">
+                        <div class="list-key">
+                            <a href=""><i class="fa fa-plus"></i></a>
+                        </div>
+                        <div class="list-summary">
+                            <img alt="image" height="22" src="../img/equip/airsim-baby.jpg"/>                                    
+                            Airsim Baby 
+                        </div>
+                    </div>
+                   <div class="list-row-end">
+                        <span>
+                            <a>Part Task Trainer</a> 
+                            <i class="fa fa-angle-right"></i>
+                            <a>Paediatric</a>
+                        </span>
+                        <span>Qty <strong>2</strong></span>
+                        <span class="preview"><i class="fa fa-angle-double-right"></i></span>                             
+                    </div>
+                </div>
+                <!-- END List item -->
+                
+                <!-- List item -->
+                <div class="list-item selected">
+                    <div class="list-row">
+                        <div class="list-key">
+                            <a href=""><i class="fa fa-plus"></i></a>
+                        </div>
+                        <div class="list-summary">
+                            <img alt="image" height="22" height="22" src="../img/equip/airway-management-trainer.jpg"/>
+                            Airway Management Trainer
+                        </div>
+                    </div>
+                   <div class="list-row-end">
+                        <span>
+                            <a>Medical Device</a> 
+                            <i class="fa fa-angle-right"></i> 
+                            <a>Clinical</a>
+                        </span>
+                        <span>Qty <strong>21</strong></span>
+                        <span class="preview current"><i class="fa fa-angle-double-right"></i></span>
+                    </div>
+                </div>
+                <!-- END List item -->
+                
+
+
+
+
+            </div>
+
+            <div class="list-options">
+                <div class="btn-group m-r-sm">
+                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+                    <button class="btn btn-white">1</button>
+                    <button class="btn btn-white  active">2</button>
+                    <button class="btn btn-white">3</button>
+                    <button class="btn btn-white">4</button>
+                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
+                </div>
+            
+                <div class="pull-right m-t-xxs"><h3>3345 results</h3></div>
+            </div>
+           
+
+        </div> <!-- END listing -->
+
+
+    </div><!-- END list container -->
+</div><!-- END wrapper-content -->
+
+{% endblock %}
+
+{% block customjs %}
+<!-- iCheck -->
+<script src="assets/js/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-steelblue',
+            radioClass: 'iradio_square-steelblue',
+        });
+    });
+</script>
+
+{% endblock %}

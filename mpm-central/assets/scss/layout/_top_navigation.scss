@@ -1,0 +1,24 @@
+.navbar .dropdown-menu {
+
+    .indicator {
+        border-color: transparent;
+        border-bottom-color: #FFF;
+        border-style: dashed dashed solid;
+        border-width: 0 8.5px 8.5px;
+        /* display: none; */
+        position: absolute;
+        left: 116px;
+        top: -7px;
+        z-index: 1;
+        height: 0;
+        width: 0;
+    }
+}
+
+.navbar .dropdown-alerts {
+    margin-top: 17px;
+
+    .indicator {
+        left: 212px;
+    }
+}

@@ -1,0 +1,152 @@
+/* TABLES */
+
+.table {
+    margin-bottom: 0; 
+
+    th:first-child,
+    td:first-child {
+        padding-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+        padding-right: 0;
+    }
+
+}
+
+table {
+
+    &.list-table,
+    &.table-vam /* vertical align middle */ {
+
+        td {
+            border: none !important;
+            padding-right: 0 !important;
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
+
+            &:first-child {
+                padding-left: 0;
+                padding-right: 0;
+                width: 15px;
+                display: table-cell;
+                vertical-align: top; 
+
+                i {
+                    color: $accent-color;
+                }
+
+                span.text-warning i {
+                    color: $mustard;
+                }
+
+                span.text-danger i {
+                    color: $red;
+                }
+
+                span.text-grey i {
+                    color: $grey;
+                }
+            }
+        }
+
+    }
+
+    &.table-vam /* vertical align middle */ {
+
+        td,
+        td:first-child {
+            vertical-align: middle;
+        }
+    }
+
+    &.history {
+        tbody tr:first-child > td {
+            border-top: 0;
+        }
+    }
+}
+
+.table-list {
+    list-style: none;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+
+    div {
+        display: inline-block;
+    }
+
+    div.pull-right {
+        padding-left: 5px;
+    }
+    
+    li {
+        border-color: $darker-border-grey;
+        border-bottom: 1px solid $darker-border-grey;
+        display: block;
+        padding: 10px 0;
+        margin-left: 15px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+}
+
+/* Table without padding */
+
+.table-wop {
+    border: none;
+    padding: 0;
+    background: #E0E8F5;
+
+    table {
+        /* Generalities */
+        tr { border-bottom: none;  }
+        th, td { padding: 10px; }
+
+        /* Background color for rows */
+        tbody > tr { background: #FFF;  }
+
+
+        /* Borders for rows */
+        tbody > tr { border-bottom: 1px solid #f3f6fb; border-left: 1px solid white; }
+        tbody > tr.hover { background: #fafafa; border-left: 1px solid #4e5c8c; }
+
+        /* Subtotals */
+        tbody > tr.subtotals {
+            background: #f3f6fb;
+            border-left-color: #f3f6fb;
+            border-bottom: none;
+            td { line-height: 1.7em; font-weight: bold; }
+        }
+
+
+        /* Columns */
+
+        /* Adjusting the padding for the first and last column gutters */
+        th:nth-child(1), td:nth-child(1) { padding-left: 20px; }
+        th:nth-last-child(1), td:nth-last-child(1) { padding-right: 20px; }
+
+        //Item List
+        th:nth-child(1),td:nth-child(1) { width: 45%; }
+
+        //Quantity
+        th:nth-child(2),td:nth-child(2) { width: 14%; text-align: center; }
+            td:nth-child(2) { text-align: center; }
+
+        //Cost
+        th:nth-child(3),td:nth-child(3) { width: 18%; }
+
+        //Total
+        th:nth-child(4),td:nth-child(4) { width: 18%; text-align: right; }
+            td:nth-child(4) {
+                text-align: right;
+                input { width: 50%; float: right; }
+             }
+
+        //Action
+        th:nth-child(5) { width: 5%; }
+
+    }
+}

@@ -1,0 +1,46 @@
+/* Progress Bars */
+.progress {
+    background-color: #E2E2E2;
+}
+
+.progress-bar,
+.progress-bar-success,
+.progress-bar-green {
+    background-color: $green;
+}
+
+.progress-bar-yellow,
+.progress-bar-mustard {
+    background-color:$mustard;
+}
+
+.progress-bar-red,
+.progress-bar-danger {
+    background-color: $red;
+}
+
+.progress-bar-purple {
+    background-color: $purple;
+}
+
+.progress-bar-pink {
+    background-color: $pink;
+}
+
+.progress-bar-info {
+    background-color: $info;
+}
+
+.progress-bar-grey {
+    background-color: $light-grey;
+}
+
+.alert-success .progress,
+.alert-green .progress {
+    background-color: #B8E0C5;
+    margin: 10px 0 0 0;
+}
+
+.alert-grey .progress .progress-bar {
+	background-color: $grey;
+}

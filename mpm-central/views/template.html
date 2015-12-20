@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title%} {% endblock %}</title>
+    {% block customheader%} {% endblock %}
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,500,500italic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="request">
+
+    <div id="wrapper">
+
+        {% include 'partials/partial_sidebar.php' %}
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            {% include 'partials/partial_navtop.php' %}        
+            
+            {% block content %}
+            {% endblock %}            
+        </div> <!-- END page wrapper -->
+
+    </div> <!-- END wrapper -->
+
+    <!-- Mainly scripts -->
+    <script src="assets/js/jquery-2.1.1.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="assets/js/inspinia.js"></script>
+    <script src="assets/js/plugins/pace/pace.min.js"></script>
+
+    {% block customjs%} {% endblock %}
+</body>
+</html>

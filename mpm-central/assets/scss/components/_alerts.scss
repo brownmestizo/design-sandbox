@@ -1,0 +1,151 @@
+.alert-warning,
+.alert-yellow {
+    color: $mustard;
+    border-color: lighten($mustard, 31%);
+    background-color: lighten($mustard, 45%);
+
+    a {
+        border-bottom: 1px solid lighten($mustard, 31%);
+        color: $mustard;
+
+        &:hover {
+            border-bottom: 1px solid $mustard;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.alert-green, 
+.alert-success {
+    background-color: lighten($green, 57%);
+    color: $green;
+    border: 1px solid #8DC3A7;
+
+    a {
+        border-bottom: 1px solid #8DC3A7;
+        color: $green;
+
+        &:hover {
+            border-bottom: 1px solid $green;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.alert-danger,
+.alert-red {
+    color: $red;
+    border-color: lighten($red, 31%);
+    background-color: lighten($red, 45%); 
+}
+
+.alert-grey {
+	color: $grey;
+	border-color: lighten($grey, 31%);
+	background-color: lighten($grey, 45%);
+
+    a {
+        border-bottom: 1px solid lighten($grey, 31%);
+        color: $grey;
+
+        &:hover {
+            border-bottom: 1px solid $grey;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.alert-pink {
+    color: $pink;
+    border-color: $pink;
+    background-color: lighten($pink, 35%);
+    border: 1px solid;    
+
+    a {
+        border-bottom: 1px solid lighten($pink, 31%);
+        color: $pink;
+
+        &:hover {
+            border-bottom: 1px solid $pink;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.alert-info {
+    color: $info;
+    border-color: $info;
+    background-color: lighten($info, 47%);
+    border: 1px solid;
+    
+    a {
+        border-bottom: 1px solid lighten($info, 31%);
+        color: $info;
+
+        &:hover {
+            border-bottom: 1px solid $info;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
+.alert-orange {
+    color: $orange;
+    border-color: $orange;
+    border: 1px solid;
+
+    background-color: lighten($orange, 40%);
+
+    a {
+        border-bottom: 1px solid lighten($orange, 31%);
+        color: $orange;
+
+        &:hover {
+            color: $orange !important;
+            border-bottom: 1px solid $orange;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}

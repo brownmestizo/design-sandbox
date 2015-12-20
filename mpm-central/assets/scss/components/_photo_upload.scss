@@ -1,0 +1,39 @@
+/* PHOTO UPLOAD */
+
+.photo-container {
+    position: relative;
+    display: inline-block; /* added */
+    overflow: hidden; /* added */
+    width: 100%;
+
+    &:hover div {
+        opacity: 1; /* added */
+        top: 0; /* added */
+        z-index: 500;
+    
+        i {
+            top: 45%;
+            position: absolute;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+    }
+
+    div {
+        role: button;
+        display: block;
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        color: inherit;        
+    }
+}

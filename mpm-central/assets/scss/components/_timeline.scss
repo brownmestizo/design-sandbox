@@ -1,0 +1,84 @@
+/* TIMELINES */
+
+div.history {
+
+    .row {
+        border-bottom: 1px solid $border-grey;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .col-xs-3 {
+        padding-right: 0px;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        width: 60px;
+        text-align: center;
+        border-top: 1px solid #e7eaec;
+        border-bottom: 1px solid #e7eaec;
+        border-left: 1px solid #e7eaec;
+        background: #f8f8f8;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .timeline-item {
+        .date {
+            padding-top: 40px;
+            padding-right: 8px;
+        }
+
+        .content {
+            min-height: 75px;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Small Vertical Timeline */
+
+.vertical-container--small {
+    &:before {
+        left: 14px;
+        width: 3px;
+    }
+
+    margin: 10px 0;
+}
+
+.vertical-timeline-block--small {
+    
+    margin: 0;
+
+    .vertical-timeline-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+
+        i {
+            margin-top: -7px;
+            margin-left: -11px;
+        }
+    }
+
+    .vertical-timeline-content {
+        background: #FFF !important;
+        margin-left: 40px;
+        p { font-size: 14px; line-height: 30px; margin: 0.7em 0; }
+    }
+}

@@ -1,0 +1,184 @@
+label {
+    margin-bottom: 0;
+}
+
+.label {
+    font-family: inherit;
+    background-color: $grey;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    
+    &.outline {
+        background-color: lighten($grey, 45%);
+        color: $grey;
+        border: 1px solid $grey;
+    }
+
+    &.block {
+        display: block;
+        padding: 10px;
+        font-weight: 500;
+    }
+}
+
+.sidebar-collapse .label {
+    padding: 6px 8px;
+}
+
+.label-mustard, .badge-mustard,
+.label-yellow, .badge-yellow {
+    border: 1px solid $mustard;
+    background-color: $mustard;
+    color: white;
+
+    &.outline {
+        background-color: lighten($mustard, 45%);
+        color: $mustard;       
+        border: 1px solid $mustard; 
+    }
+}
+
+.label-teal, .badge-teal {
+    border: 1px solid $teal;
+    background-color: $teal;
+    color: white;
+
+    &.outline {
+        background-color: lighten($teal, 45%);
+        color: $teal;       
+        border: 1px solid $teal; 
+    }
+}
+
+.label-green, .badge-green
+.label-success, .badge-success {
+    border: 1px solid $green;
+    background-color: $green;
+    color: white;
+
+    &.outline {
+        background-color: lighten($green, 57%);
+        color: $green;       
+        border: 1px solid $green; 
+    }
+}
+
+.label-purple, .badge-purple {
+    border: 1px solid $purple;
+    background-color: $purple;
+    color: white;
+
+    &.outline {
+        background-color: lighten($purple, 36%);
+        color: $purple;       
+        border: 1px solid $purple; 
+    }
+}
+
+.label-deep-blue, .badge-deep-blue {
+    border: 1px solid $deep-blue;
+    background-color: $deep-blue;
+    color: white;
+
+    &.outline {
+        background-color: lighten($deep-blue, 45%);
+        color: $deep-blue;       
+        border: 1px solid $deep-blue; 
+    }
+}
+
+.label-light-grey, .badge-light-grey {
+    background-color: $lighter-grey;
+    color: $text-color;
+}
+
+.label-brown, .badge-brown {
+    border: 1px solid $brown;
+    background-color: $brown;
+    color: white;
+
+    &.outline {
+        background-color: lighten($brown, 45%);
+        color: $brown;       
+        border: 1px solid $brown; 
+    }
+}
+
+.label-pink, .badge-pink {
+    border: 1px solid $pink;
+    background-color: $pink;
+    color: white;
+
+    &.outline {
+        background-color: lighten($pink, 35%);
+        color: $pink;       
+        border: 1px solid $pink; 
+    }
+}
+
+.label-primary, .badge-primary {
+  border: 1px solid $accent-color;
+  background-color: $accent-color;
+
+  &.outline {
+        background-color: lighten($accent-color, 45%);
+        color: $accent-color;     
+        border: 1px solid $accent-color;   
+    }
+  }
+
+.label-danger, .badge-danger,
+.label-red, .badge-red {
+    border: 1px solid $red;
+    background-color: $red;
+    color: white;
+
+    &.outline {
+        background-color: lighten($red, 45%);
+        color: $red;       
+        border: 1px solid $red; 
+    }
+  }
+
+.label-info, .badge-info {
+  border: 1px solid $info;
+  background-color: $info;
+    &.outline {
+        background-color: lighten($info, 47%);
+        color: $info;     
+        border: 1px solid $info;   
+    }
+}
+
+.label-orange, .badge-orange {
+    border: 1px solid $orange;
+    background-color: $orange;
+    color: white;
+
+    &.outline {
+        background-color: lighten($orange, 36%);
+        color: $orange;       
+        border: 1px solid $orange; 
+    }
+}
+
+.label-light-grey {
+    border: 1px solid $light-grey;
+    background-color: $light-grey;
+}
+
+.badge {
+    text-align: center;
+    font-family: inherit;
+    &.lg {
+        font-weight: 700;
+        font-size: 18px;
+        color: $accent-color;
+        background-color: white;
+        min-width: 24px;
+        border-radius: 12px;
+        margin-top: -4px;
+        margin-right: 5px;
+    }
+}

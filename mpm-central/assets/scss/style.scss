@@ -1,0 +1,71 @@
+/* MPM Central
+================================================== */
+
+@import
+
+/* INSPINIA Responsive Admin Theme - Version 2.2 ================ */
+
+// Variables, Mixins
+"inspinia/variables",
+
+// Elements
+"inspinia/typography",
+"inspinia/navigation",
+"inspinia/top_navigation",
+"inspinia/buttons",
+"inspinia/badgets_labels",
+"inspinia/elements",
+"inspinia/sidebar",
+"inspinia/base",
+"inspinia/pages",
+"inspinia/chat",
+"inspinia/metismenu",
+"inspinia/spinners",
+"inspinia/landing",
+"inspinia/rtl",
+"inspinia/theme-config",
+"inspinia/skins",
+"inspinia/media",
+
+/* CSDS Theme ================ */
+// Custom styles to override theme styles
+
+// Utilities
+"utilities/variables",
+"utilities/mixins",
+
+// Base
+"base/base",
+"base/typography",
+
+// Components
+"components/badges_labels",
+"components/buttons",
+"components/navigation",
+"components/comments",
+"components/ibox",
+"components/lists",
+"components/modals",
+"components/navigation",
+"components/photo_upload",
+"components/progress_bars",
+"components/tables",
+"components/timeline",
+"components/widgets",
+"components/calendar",
+"components/alerts",
+
+// Plugins
+"plugins/toastr",
+"plugins/skspinner",
+"plugins/chartist",
+
+// Layout
+"layout/top_navigation",
+"layout/sidebar",
+"layout/forms",
+"layout/content",
+"layout/media", //media queries
+
+// Pages
+"pages/pages"

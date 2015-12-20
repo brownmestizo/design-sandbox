@@ -1,0 +1,74 @@
+/* MODALS */
+
+.modal-header {
+    background: $accent-color;
+    color: white;
+    border: 0;
+    padding: 15px;
+
+    a {
+        color: white;
+    }
+
+    a i {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    h2 { 
+        margin-top: 45px; 
+        color: white;          
+            a {                
+                color: white;
+            }
+            a.text-muted,
+            span.text-muted {                
+                color: lighten($accent-color, 16%);
+            }
+    }
+
+    h3 { 
+        font-size: 18px;
+        display: inline;
+        color: white !important;
+        margin-left: 5px;
+    }
+
+    .dropdown-menu a {
+        color: $grey;
+
+         &:hover {
+            background-color: $lightest-grey;
+        }
+    }
+
+}
+
+.modal-body {
+    padding-bottom: 20px;
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group:last-child {
+        margin-bottom: 5px;
+    }
+}
+
+.modal-footer {
+    padding: 10px 15px;
+    background-color: $hover-grey;
+}
+
+/* .text-right {
+    .btn {
+        margin-top: 4px;
+    }
+} */
+
+.choices_other--text {
+    margin-left: 30px;    
+    margin-top: -25px;
+    margin-bottom: 20px;
+}

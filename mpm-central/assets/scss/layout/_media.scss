@@ -1,0 +1,373 @@
+/* MEDIA QUERIES */
+
+@media (max-width: 1400px) {      
+    .no-ibox-bg .ibox-content.scroll-list {
+        height: 260px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .add-m-sm {
+        margin-bottom: 10px;
+    }
+
+    .photo-container:hover div i {
+        top: 40%;
+    }
+
+    .list-item-request {
+
+        .list-row-requests-status {
+            width: 29%;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .list-row-requests-status--payment {        
+            text-align: right;
+        }        
+
+        .list-row-requests-progress {
+            width: 58%;
+            margin-top: 10px;
+        }                
+        
+    } 
+
+    .list-row-requests-status {
+        text-align: left;
+    }        
+
+    .list-item-workorder {
+
+        .list-item-workorder--status,
+        .list-item-workorder--type {
+            width: 30%;
+        }
+
+        .list-item-workorder--assignee {
+            width: 40%;
+            text-align: right;
+        }
+
+        .list-item-workorder--equipment,
+        .list-item-workorder--createdDate {
+            width: 100%;
+        }
+
+        .list-item-workorder--equipment {
+            margin: 10px 0;
+        }
+
+        .list-item-workorder--createdDate {
+            text-align: left;
+            span, small { display: inline; clear: none; }
+        }
+
+    }       
+}
+
+@media (max-width: 999px) {
+    /* .listing  {
+        display: block;
+        width: 100%;
+    } */
+
+    .modal-dialog {
+        margin: -1px auto;
+    }
+
+    .list-item-workorder {
+
+        .list-item-workorder--status { width: 40%; }
+        .list-item-workorder--type { width: 30%; }                
+
+        .list-item-workorder--equipment {
+            margin-top: 10px !important;
+        }
+
+        .list-item-workorder--assignee {
+            text-align: right;
+            width: 30%;
+        }
+
+        .list-item-workorder--createdDate {
+            text-align: left;
+            margin-top: 10px; 
+
+            span, small {
+                display: inline;
+                clear: none;
+            }
+        }
+    }        
+}
+
+@media (max-width: 992px) {
+    .list-item-request {
+
+        .list-summary { margin-bottom: 5px; }
+
+        .list-row-requests-status {
+            width: 50%;
+            margin-top: 5px;
+        }
+
+        .list-row-requests-submitted {
+            text-align: left;
+            margin-top: 5px; 
+        }
+
+        .list-row-requests-status--payment {        
+            text-align: right;                   
+        }      
+
+        .list-row-requests-progress {
+            width: 100%; 
+            margin-top: 5px;          
+
+            .list-row-requests-progress--header {            
+                display: block; 
+                float: none;
+                clear: both;
+                font-weight: bold;            
+                margin: 10px 0;
+            }        
+        }
+
+    }    
+
+    #coffee {
+        height: 300px !important;
+    }
+
+}
+
+
+@media (max-width: 840px) {
+    .centered-content {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .navbar-search {
+        clear:both;
+    }    
+
+    .navbar-right .dropdown-menu {
+        margin-top: -48px;
+    }    
+}
+
+@media (max-width: 768px) {
+    .ibox-tools {
+        float: right;
+        display: inline-block;
+    }
+
+    .btn-block {
+        margin-top: 5px;
+        margin-bottom: 5px;        
+    }
+
+}
+
+@media (max-width: 600px) {
+    .list-row {
+        margin: 10px 10px 5px 10px;
+    }
+
+    .list-row-end {
+        position: relative;
+        padding: 0 10px 8px 10px;
+        width: 100%;
+
+        span {
+            margin: 0 10px 0 0;
+        }
+
+        span.preview {
+            float: right;
+        }
+    }
+
+    .list-item {
+        white-space: normal;
+    }
+
+    .list-item-request {
+        .list-row-end {
+            margin-top: 10px;
+            em { display: inline; }
+        }        
+    }
+}
+
+@media (max-width: 550px) {
+    #toast-container.toast-top-center > div {
+        width: 100%;
+    }
+
+    .page-heading {
+        div {
+           span.btn-group.pull-right {
+             float: left !important; margin-top: 15px;
+           } 
+        }
+    }
+
+    .list-options {
+        .pull-right { 
+            width: 100%;
+        }
+    }  
+
+    .list-item-workorder {
+
+        .list-item-workorder--status {
+            width: 60%;
+        }
+        
+        .list-item-workorder--type {
+            width: 40%;
+            .mini-widget--open {
+                text-align: right;
+            }
+        }
+
+        .list-item-workorder--assignee {
+            width: 100%;
+            clear: both;
+            text-align: left;
+            margin-top: 10px;
+
+            span, small {
+                display: inline;
+                clear: none;
+            }
+        }
+
+        .list-item-workorder--createdDate {
+            text-align: left;
+            margin-top: 10px; 
+
+            span, small {
+                display: inline;
+                clear: none;
+            }
+        }
+    }      
+
+}
+
+@media (max-width: 460px) {
+    .navbar-form-custom .form-group {
+        padding: 0 15px 10px 15px;
+    }
+
+
+    .navbar-search {
+        margin-top: 60px;
+
+        label, .search-clear {
+            top: 6px;
+        }    
+    }
+
+    .minimalize-styl-2 {
+        margin-bottom: 15px;
+    }
+
+    .fc-toolbar {
+        .fc-right .fc-button-group {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .table-list {
+        div.pull-right {
+            float:none !important;
+            display:block;
+            padding-left: 5px;
+        }
+        li {
+            padding: 5px 0;
+        }
+    }
+    
+    .modal-dialog {
+        margin: -1px auto;
+    }
+
+    .list-item-workorder {
+
+        .list-item-workorder--status,
+        .list-item-workorder--type {
+            width: 100% !important;
+        }
+
+        .list-item-workorder--type {
+            margin-top: 10px;
+            .mini-widget--open {
+                text-align: left;
+            }            
+        }
+
+        .list-item-workorder--assignee {
+            margin-top: 0;
+        }
+
+        .list-item-workorder--equipment {
+            .pull-right {
+                display: block;
+                clear: both !important;
+                float: left !important;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            span:nth-child(2) {
+                display: block;
+                clear: both;
+            }
+        }   
+
+    }        
+}
+
+@media (max-width: 350px) {
+
+    .profile-name {
+        display: none;
+    }
+
+    .nav.navbar-top-links li.dropdown {
+		display: inline-block;
+    }
+
+    .nav.navbar-top-links span.current_pocket {
+        display: inline-block;
+        margin-top: 23px;
+    }
+
+    .show-mobile {
+        display: inline;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .modal .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 330px) {
+    .nav.navbar-top-links span.current_pocket {
+        display: none;
+    }
+}

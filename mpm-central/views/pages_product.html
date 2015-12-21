@@ -55,10 +55,10 @@
     <div class="row">
         <div class="col-md-12 list-options"> 
 
-            <div class="btn-group-count"><h3><strong>1-30</strong> of <strong>453</strong> products</h3></div>  
+            <div class="btn-group-count"><h3><strong>1-{{remainingProducts}}</strong> of <strong>{{ count }}</strong> products</h3></div>  
 
             <div class="pull-right">                              
-                <h3>3345 results</h3>                     
+                <h3>{{ count }} results</h3>                     
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -79,7 +79,10 @@
                     <div class="list-item">
                         <div class="list-row">
                             <div class="list-key">
-                                <a href=""><i class="fa fa-circle"></i></a>
+                                
+                                <span class="text-orange {% if product.Mb != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
+                                <span class="text-purple {% if product.Pa != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
+                                <span class="text-info {% if product.M3 != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
                             </div>
                             <div class="list-summary">                                    
                                 {{ product.getProdName() }}
@@ -89,9 +92,11 @@
                             <span>
                                 {{ product.getTblMenus().getMenuName() }}
                                 <i class="fa fa-angle-right"></i>
+                                <em>
                                 {{ product.getTblEra().getEraDescription() }}
+                                </em>
                             </span>
-                            <span>${{ product.getTblProdPricing().getProdPricePrice() }}</span>
+                            <span><i class="fa fa-dollar"></i> {{ product.getTblProdPricing().getProdPricePrice() }}</span>
                             <span class="preview"><i class="fa fa-angle-double-right"></i></span>                             
                         </div>
                     </div>              
@@ -103,7 +108,7 @@
                 <div class="btn-group m-r-sm">
                     <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
                     <button class="btn btn-white">1</button>
-                    <button class="btn btn-white  active">2</button>
+                    <button class="btn btn-white active">2</button>
                     <button class="btn btn-white">3</button>
                     <button class="btn btn-white">4</button>
                     <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>

@@ -15,12 +15,16 @@ $productsPager = TblProdInfoQuery::create()
 	->orderByProdId('DESC')	
 	->paginate($page = $pageNumber, $maxPerPage = $maxResultsPerPage);
 
+$count = TblProdInfoQuery::create()->count();
+
+
 echo $twig->render(
 	'pages_product.html', 
 		array(
 			'categories' => $categories,
             'productsPager' => $productsPager,			
 			'pageNumber' => $pageNumber,
+			'count' => $count,			
+			'remainingProducts' =>$maxPerPage,
 		));
-
 ?>

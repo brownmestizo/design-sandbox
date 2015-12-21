@@ -123,7 +123,7 @@ abstract class TblEraQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblEraTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblEraTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -167,7 +167,7 @@ abstract class TblEraQuery extends ModelCriteria
             /** @var ChildTblEra $obj */
             $obj = new ChildTblEra();
             $obj->hydrate($row);
-            TblEraTableMap::addInstanceToPool($obj, (string) $key);
+            TblEraTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 
@@ -325,7 +325,7 @@ abstract class TblEraQuery extends ModelCriteria
     {
         if ($tblProdInfo instanceof \TblProdInfo) {
             return $this
-                ->addUsingAlias(TblEraTableMap::COL_ERA_ID, $tblProdInfo->getProdId(), $comparison);
+                ->addUsingAlias(TblEraTableMap::COL_ERA_ID, $tblProdInfo->getProdEra(), $comparison);
         } elseif ($tblProdInfo instanceof ObjectCollection) {
             return $this
                 ->useTblProdInfoQuery()

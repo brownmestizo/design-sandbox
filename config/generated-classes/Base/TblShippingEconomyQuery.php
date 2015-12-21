@@ -225,7 +225,7 @@ abstract class TblShippingEconomyQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblShippingEconomyTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblShippingEconomyTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -269,7 +269,7 @@ abstract class TblShippingEconomyQuery extends ModelCriteria
             /** @var ChildTblShippingEconomy $obj */
             $obj = new ChildTblShippingEconomy();
             $obj->hydrate($row);
-            TblShippingEconomyTableMap::addInstanceToPool($obj, (string) $key);
+            TblShippingEconomyTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

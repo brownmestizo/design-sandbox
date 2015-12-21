@@ -115,7 +115,7 @@ abstract class TblShippingZonesQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblShippingZonesTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblShippingZonesTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -159,7 +159,7 @@ abstract class TblShippingZonesQuery extends ModelCriteria
             /** @var ChildTblShippingZones $obj */
             $obj = new ChildTblShippingZones();
             $obj->hydrate($row);
-            TblShippingZonesTableMap::addInstanceToPool($obj, (string) $key);
+            TblShippingZonesTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

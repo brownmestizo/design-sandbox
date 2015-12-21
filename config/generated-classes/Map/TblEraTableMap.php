@@ -140,13 +140,13 @@ class TblEraTableMap extends TableMap
      */
     public function buildRelations()
     {
-        $this->addRelation('TblProdInfo', '\\TblProdInfo', RelationMap::ONE_TO_ONE, array (
+        $this->addRelation('TblProdInfo', '\\TblProdInfo', RelationMap::ONE_TO_MANY, array (
   0 =>
   array (
-    0 => ':prod_id',
+    0 => ':prod_era',
     1 => ':era_id',
   ),
-), null, null, null, false);
+), null, null, 'TblProdInfos', false);
     } // buildRelations()
 
     /**
@@ -169,7 +169,7 @@ class TblEraTableMap extends TableMap
             return null;
         }
 
-        return (string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)];
+        return null === $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)] || is_scalar($row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)]) || is_callable([$row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)], '__toString']) ? (string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)] : $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('EraId', TableMap::TYPE_PHPNAME, $indexType)];
     }
 
     /**

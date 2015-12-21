@@ -134,7 +134,7 @@
       <index-column name="prod_id"/>
     </index>
     <foreign-key foreignTable="tbl_era">
-      <reference local="era_id" foreign="era_id"/>
+      <reference local="prod_era" foreign="era_id"/>
     </foreign-key>    
     <foreign-key foreignTable="tbl_general">
       <reference local="prod_general" foreign="prod_general"/>

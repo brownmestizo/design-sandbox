@@ -353,7 +353,7 @@ abstract class TblProdInfoQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdInfoTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblProdInfoTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -397,7 +397,7 @@ abstract class TblProdInfoQuery extends ModelCriteria
             /** @var ChildTblProdInfo $obj */
             $obj = new ChildTblProdInfo();
             $obj->hydrate($row);
-            TblProdInfoTableMap::addInstanceToPool($obj, (string) $key);
+            TblProdInfoTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 
@@ -482,8 +482,6 @@ abstract class TblProdInfoQuery extends ModelCriteria
      * $query->filterByProdId(array(12, 34)); // WHERE prod_id IN (12, 34)
      * $query->filterByProdId(array('min' => 12)); // WHERE prod_id > 12
      * </code>
-     *
-     * @see       filterByTblEra()
      *
      * @see       filterByTblProdPhotos()
      *
@@ -1212,6 +1210,8 @@ abstract class TblProdInfoQuery extends ModelCriteria
      * $query->filterByProdEra(array('min' => 12)); // WHERE prod_era > 12
      * </code>
      *
+     * @see       filterByTblEra()
+     *
      * @param     mixed $prodEra The value to use as filter.
      *              Use scalar values for equality.
      *              Use array values for in_array() equivalent.
@@ -1595,14 +1595,14 @@ abstract class TblProdInfoQuery extends ModelCriteria
     {
         if ($tblEra instanceof \TblEra) {
             return $this
-                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ID, $tblEra->getEraId(), $comparison);
+                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ERA, $tblEra->getEraId(), $comparison);
         } elseif ($tblEra instanceof ObjectCollection) {
             if (null === $comparison) {
                 $comparison = Criteria::IN;
             }
 
             return $this
-                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ID, $tblEra->toKeyValue('PrimaryKey', 'EraId'), $comparison);
+                ->addUsingAlias(TblProdInfoTableMap::COL_PROD_ERA, $tblEra->toKeyValue('PrimaryKey', 'EraId'), $comparison);
         } else {
             throw new PropelException('filterByTblEra() only accepts arguments of type \TblEra or Collection');
         }

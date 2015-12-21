@@ -158,7 +158,7 @@ abstract class TblProdSmallerQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdSmallerTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblProdSmallerTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -202,7 +202,7 @@ abstract class TblProdSmallerQuery extends ModelCriteria
             /** @var ChildTblProdSmaller $obj */
             $obj = new ChildTblProdSmaller();
             $obj->hydrate($row);
-            TblProdSmallerTableMap::addInstanceToPool($obj, (string) $key);
+            TblProdSmallerTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

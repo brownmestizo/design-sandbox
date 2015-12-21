@@ -291,7 +291,6 @@ class TblProdInfoTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_era', 'era_id', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_photos', 'prod_id', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_prices', 'prod_id', true, null, null);
         $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_smaller', 'prod_id', true, null, null);
@@ -317,7 +316,7 @@ class TblProdInfoTableMap extends TableMap
         $this->addColumn('prod_title', 'ProdTitle', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_description', 'ProdDescription', 'LONGVARCHAR', true, null, null);
         $this->addForeignKey('prod_general', 'ProdGeneral', 'INTEGER', 'tbl_general', 'prod_general', true, null, null);
-        $this->addColumn('prod_era', 'ProdEra', 'INTEGER', true, null, null);
+        $this->addForeignKey('prod_era', 'ProdEra', 'INTEGER', 'tbl_era', 'era_id', true, null, null);
         $this->addColumn('prod_company', 'ProdCompany', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_related', 'ProdRelated', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_related_pa', 'ProdRelatedPa', 'LONGVARCHAR', false, null, null);
@@ -338,7 +337,7 @@ class TblProdInfoTableMap extends TableMap
         $this->addRelation('TblEra', '\\TblEra', RelationMap::MANY_TO_ONE, array (
   0 =>
   array (
-    0 => ':prod_id',
+    0 => ':prod_era',
     1 => ':era_id',
   ),
 ), null, null, null, false);
@@ -413,7 +412,7 @@ class TblProdInfoTableMap extends TableMap
             return null;
         }
 
-        return (string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)];
+        return null === $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)] || is_scalar($row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)]) || is_callable([$row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)], '__toString']) ? (string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)] : $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)];
     }
 
     /**

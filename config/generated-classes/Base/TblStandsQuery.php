@@ -130,7 +130,7 @@ abstract class TblStandsQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblStandsTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblStandsTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -174,7 +174,7 @@ abstract class TblStandsQuery extends ModelCriteria
             /** @var ChildTblStands $obj */
             $obj = new ChildTblStands();
             $obj->hydrate($row);
-            TblStandsTableMap::addInstanceToPool($obj, (string) $key);
+            TblStandsTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

@@ -339,7 +339,15 @@ abstract class TblStands implements ActiveRecordInterface
     {
         $this->clearAllReferences();
 
-        return array_keys(get_object_vars($this));
+        $cls = new \ReflectionClass($this);
+        $propertyNames = [];
+        $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
+        
+        foreach($serializableProperties as $property) {
+            $propertyNames[] = $property->getName();
+        }
+        
+        return $propertyNames;
     }
 
     /**

@@ -133,7 +133,7 @@ abstract class TblProdPricingQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdPricingTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblProdPricingTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -177,7 +177,7 @@ abstract class TblProdPricingQuery extends ModelCriteria
             /** @var ChildTblProdPricing $obj */
             $obj = new ChildTblProdPricing();
             $obj->hydrate($row);
-            TblProdPricingTableMap::addInstanceToPool($obj, (string) $key);
+            TblProdPricingTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

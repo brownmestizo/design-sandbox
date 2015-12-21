@@ -193,7 +193,7 @@ abstract class TblMenusQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblMenusTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblMenusTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -237,7 +237,7 @@ abstract class TblMenusQuery extends ModelCriteria
             /** @var ChildTblMenus $obj */
             $obj = new ChildTblMenus();
             $obj->hydrate($row);
-            TblMenusTableMap::addInstanceToPool($obj, (string) $key);
+            TblMenusTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

@@ -198,7 +198,7 @@ abstract class TblProdPhotosQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdPhotosTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblProdPhotosTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -242,7 +242,7 @@ abstract class TblProdPhotosQuery extends ModelCriteria
             /** @var ChildTblProdPhotos $obj */
             $obj = new ChildTblProdPhotos();
             $obj->hydrate($row);
-            TblProdPhotosTableMap::addInstanceToPool($obj, (string) $key);
+            TblProdPhotosTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

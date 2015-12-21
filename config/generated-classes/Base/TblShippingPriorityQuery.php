@@ -225,7 +225,7 @@ abstract class TblShippingPriorityQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblShippingPriorityTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblShippingPriorityTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -269,7 +269,7 @@ abstract class TblShippingPriorityQuery extends ModelCriteria
             /** @var ChildTblShippingPriority $obj */
             $obj = new ChildTblShippingPriority();
             $obj->hydrate($row);
-            TblShippingPriorityTableMap::addInstanceToPool($obj, (string) $key);
+            TblShippingPriorityTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

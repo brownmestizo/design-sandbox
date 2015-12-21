@@ -115,7 +115,7 @@ abstract class TblPhotosBlankQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblPhotosBlankTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblPhotosBlankTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -159,7 +159,7 @@ abstract class TblPhotosBlankQuery extends ModelCriteria
             /** @var ChildTblPhotosBlank $obj */
             $obj = new ChildTblPhotosBlank();
             $obj->hydrate($row);
-            TblPhotosBlankTableMap::addInstanceToPool($obj, (string) $key);
+            TblPhotosBlankTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

@@ -120,7 +120,7 @@ abstract class TblUsersQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblUsersTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+        if ((null !== ($obj = TblUsersTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
             // the object is already in the instance pool
             return $obj;
         }
@@ -164,7 +164,7 @@ abstract class TblUsersQuery extends ModelCriteria
             /** @var ChildTblUsers $obj */
             $obj = new ChildTblUsers();
             $obj->hydrate($row);
-            TblUsersTableMap::addInstanceToPool($obj, (string) $key);
+            TblUsersTableMap::addInstanceToPool($obj, null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key);
         }
         $stmt->closeCursor();
 

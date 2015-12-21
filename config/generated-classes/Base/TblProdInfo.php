@@ -575,7 +575,15 @@ abstract class TblProdInfo implements ActiveRecordInterface
     {
         $this->clearAllReferences();
 
-        return array_keys(get_object_vars($this));
+        $cls = new \ReflectionClass($this);
+        $propertyNames = [];
+        $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
+        
+        foreach($serializableProperties as $property) {
+            $propertyNames[] = $property->getName();
+        }
+        
+        return $propertyNames;
     }
 
     /**
@@ -933,10 +941,6 @@ abstract class TblProdInfo implements ActiveRecordInterface
         if ($this->prod_id !== $v) {
             $this->prod_id = $v;
             $this->modifiedColumns[TblProdInfoTableMap::COL_PROD_ID] = true;
-        }
-
-        if ($this->aTblEra !== null && $this->aTblEra->getEraId() !== $v) {
-            $this->aTblEra = null;
         }
 
         if ($this->aTblProdPhotos !== null && $this->aTblProdPhotos->getProdId() !== $v) {
@@ -1427,6 +1431,10 @@ abstract class TblProdInfo implements ActiveRecordInterface
             $this->modifiedColumns[TblProdInfoTableMap::COL_PROD_ERA] = true;
         }
 
+        if ($this->aTblEra !== null && $this->aTblEra->getEraId() !== $v) {
+            $this->aTblEra = null;
+        }
+
         return $this;
     } // setProdEra()
 
@@ -1797,9 +1805,6 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function ensureConsistency()
     {
-        if ($this->aTblEra !== null && $this->prod_id !== $this->aTblEra->getEraId()) {
-            $this->aTblEra = null;
-        }
         if ($this->aTblProdPhotos !== null && $this->prod_id !== $this->aTblProdPhotos->getProdId()) {
             $this->aTblProdPhotos = null;
         }
@@ -1820,6 +1825,9 @@ abstract class TblProdInfo implements ActiveRecordInterface
         }
         if ($this->aTblGeneral !== null && $this->prod_general !== $this->aTblGeneral->getProdGeneral()) {
             $this->aTblGeneral = null;
+        }
+        if ($this->aTblEra !== null && $this->prod_era !== $this->aTblEra->getEraId()) {
+            $this->aTblEra = null;
         }
     } // ensureConsistency
 
@@ -3074,15 +3082,8 @@ abstract class TblProdInfo implements ActiveRecordInterface
     {
         $validPk = null !== $this->getProdId();
 
-        $validPrimaryKeyFKs = 4;
+        $validPrimaryKeyFKs = 3;
         $primaryKeyFKs = [];
-
-        //relation tbl_prod_info_fk_731947 to table tbl_era
-        if ($this->aTblEra && $hash = spl_object_hash($this->aTblEra)) {
-            $primaryKeyFKs[] = $hash;
-        } else {
-            $validPrimaryKeyFKs = false;
-        }
 
         //relation tbl_prod_info_fk_c95266 to table tbl_prod_photos
         if ($this->aTblProdPhotos && $hash = spl_object_hash($this->aTblProdPhotos)) {
@@ -3227,16 +3228,17 @@ abstract class TblProdInfo implements ActiveRecordInterface
     public function setTblEra(ChildTblEra $v = null)
     {
         if ($v === null) {
-            $this->setProdId(NULL);
+            $this->setProdEra(NULL);
         } else {
-            $this->setProdId($v->getEraId());
+            $this->setProdEra($v->getEraId());
         }
 
         $this->aTblEra = $v;
 
-        // Add binding for other direction of this 1:1 relationship.
+        // Add binding for other direction of this n:n relationship.
+        // If this object has already been added to the ChildTblEra object, it will not be re-added.
         if ($v !== null) {
-            $v->setTblProdInfo($this);
+            $v->addTblProdInfo($this);
         }
 
 
@@ -3253,10 +3255,15 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function getTblEra(ConnectionInterface $con = null)
     {
-        if ($this->aTblEra === null && ($this->prod_id !== null)) {
-            $this->aTblEra = ChildTblEraQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->aTblEra->setTblProdInfo($this);
+        if ($this->aTblEra === null && ($this->prod_era !== null)) {
+            $this->aTblEra = ChildTblEraQuery::create()->findPk($this->prod_era, $con);
+            /* The following can be used additionally to
+                guarantee the related object contains a reference
+                to this object.  This level of coupling may, however, be
+                undesirable since it could result in an only partially populated collection
+                in the referenced object.
+                $this->aTblEra->addTblProdInfos($this);
+             */
         }
 
         return $this->aTblEra;

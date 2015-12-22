@@ -6,17 +6,17 @@
                 </div>
                 <div class="logo-element">MPM</div>
             </li>
-            <li class="active">
+            <li {% if page == 'dashboard' %} class="active" {% endif %}>
                 <a href="index.php">
                     <i class="fa fa-th"></i> <span class="nav-label">Dashboard</span>
                 </a>
             </li>
-            <li>
+            <li {% if page == 'products' %} class="active" {% endif %}>
                 <a href="products.php">
                     <i class="fa fa-cube"></i> <span class="nav-label">Products</span>
                 </a>
             </li>                    
-            <li>
+            <li {% if page == 'categories' %} class="active" {% endif %}>
                 <a href="categories.php">
                     <i class="fa fa-list-alt"></i> <span class="nav-label">Categories</span>
                 </a>

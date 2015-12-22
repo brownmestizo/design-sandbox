@@ -1,10 +1,9 @@
 {% extends "template.html" %}
 {% set page = 'products' %}
 
-{% block title %}MPM Central{% endblock %}
+{% block title %}MPM Central - {{ entityName|capitalize }}{% endblock %}
 
 {% block customheader%}
-<link href="assets/css/plugins/iCheck/custom.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -12,17 +11,17 @@
 <div class="row wrapper white-bg page-heading">
     
     <div class="col-lg-8 col-md-6 col-xs-6">
-        <h2><a href="../index.html">Products</a></h2>
+        <h2><a href="../index.html">Categories</a></h2>
         <ol class="breadcrumb">           
             <li class="active">
-                Products search
+                {{ entityName | capitalize }}
             </li>
         </ol>
     </div><!-- END col -->
 
     <div class="col-lg-4 col-md-6 col-xs-6">
         <span class="pull-right m-t-lg">
-            <a class="btn btn-primary" href="event.php">Add new product</a>
+            <a class="btn btn-primary" href="event.php">Add new {{ entityName }}</a>
         </span>
     </div>
 </div><!-- END row -->
@@ -30,15 +29,6 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-12 list-filters">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    {% for category in categories %}                
-                        <li class="i-checks"><a><label> <input type="checkbox" value=""> {{ category.getMenuName() }} </label></a></li>                    
-                    {% endfor %}
-                </ul>
-            </div>
-
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Status (3) <span class="caret"></span></button>
                 <ul class="dropdown-menu">
@@ -51,14 +41,13 @@
                 <a>Clear all filters</a>
             </div>
 
-
         </div><!-- END col  -->               
     </div><!-- END row -->
 
     <div class="row">
         <div class="col-md-12 list-options"> 
 
-            <div class="btn-group-count"><h3><strong>1-{{remainingProducts}}</strong> of <strong>{{ count }}</strong> products</h3></div>  
+            <div class="btn-group-count"><h3><strong>1-{{remainingProducts}}</strong> of <strong>{{ count }}</strong> {{entityName}}</h3></div>  
 
             <div class="pull-right">                              
                 <h3>{{ count }} results</h3>                     
@@ -78,28 +67,31 @@
         <div class="listing">
             <div class="list-results">
 
-                {% for product in productsPager %}
+                {% for key,value in entities %}
                     <div class="list-item">
                         <div class="list-row">
-                            <div class="list-key">
-                                
-                                <span class="text-orange {% if product.Mb != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
-                                <span class="text-purple {% if product.Pa != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
-                                <span class="text-info {% if product.M3 != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
+                            <div class="list-summary col-xs-3">
+                                {{ value['description'] }}
                             </div>
-                            <div class="list-summary">                                    
-                                {{ product.getProdName() }}
-                            </div>
-                        </div>
-                       <div class="list-row-end">
-                            <span>
-                                {{ product.getTblMenus().getMenuName() }}
-                                <i class="fa fa-angle-right"></i>
-                                <em>
-                                {{ product.getTblEra().getEraDescription() }}
-                                </em>
+
+                            <span class="col-xs-3">
+                                <span class="text-orange"><i class="fa fa-circle"></i></span>
+                                <em>{{ value['countMB'] }}</em>
                             </span>
-                            <span><i class="fa fa-dollar"></i> {{ product.getTblProdPricing().getProdPricePrice() }}</span>
+                            
+                            <span class="col-xs-3">
+                                <span class="text-purple"><i class="fa fa-circle"></i></span>
+                                <em>{{ value['countPA'] }}</em>
+                            </span>
+                            
+                            <span class="col-xs-3">
+                                <span class="text-info"><i class="fa fa-circle"></i></span>
+                                <em>{{ value['countM3'] }}</em>
+                            </span>                            
+                        </div>    
+
+                       <div class="list-row-end">
+                            <em>{{ value['count'] }}</em>
                             <span class="preview"><i class="fa fa-angle-double-right"></i></span>                             
                         </div>
                     </div>              
@@ -117,7 +109,7 @@
                     <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
                 </div>
             
-                <div class="pull-right m-t-xxs"><h3>3345 results</h3></div>
+                <div class="pull-right m-t-xxs"><h3>{{ count }} results</h3></div>
             </div>
            
 
@@ -130,15 +122,4 @@
 {% endblock %}
 
 {% block customjs %}
-<!-- iCheck -->
-<script src="assets/js/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-steelblue',
-            radioClass: 'iradio_square-steelblue',
-        });
-    });
-</script>
-
 {% endblock %}

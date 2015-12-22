@@ -1,4 +1,5 @@
 {% extends "template.html" %}
+{% set page = 'categories' %}
 
 {% block title %}MPM Central{% endblock %}
 
@@ -23,9 +24,9 @@
     <div class="col-md-4">
 
         <div class="widget style2 navy-bg text-center m-b-none">
-            <h1>15</h1>
-            <h3>Pricing categories</h3>
-            <a class="btn btn-primary btn-block m-t-xs" href="#">Add pricing category</a>                                             
+            <h1>{{ erasRC + 5 }}</h1>
+            <h3>Airplane model eras</h3>
+            <a class="btn btn-primary btn-block m-t-xs" href="#">Add era</a>
         </div>
 
     </div>
@@ -33,9 +34,9 @@
     <div class="col-md-4">
 
         <div class="widget style2 navy-bg text-center m-b-none">
-            <h1>12</h1>
-            <h3>Airplane model eras</h3>
-            <a class="btn btn-primary btn-block m-t-xs" href="#">Add era</a>
+            <h1>{{ pricingCategoriesRC + 5 }}</h1>
+            <h3>Pricing categories</h3>
+            <a class="btn btn-primary btn-block m-t-xs" href="#">Add pricing category</a>            
         </div>        
 
     </div>    
@@ -43,7 +44,7 @@
     <div class="col-md-4">
 
         <div class="widget style2 navy-bg text-center m-b-none">
-            <h1>10</h1>
+            <h1>{{ shippingCategoriesRC + 5 }}</h1>
             <h3>Shipping categories</h3>
             <a class="btn btn-primary btn-block m-t-xs" href="#">Add shipping category</a>                                             
         </div>
@@ -60,10 +61,9 @@
             <div class="ibox">
                 <div class="ibox-content">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <h3 class="text-orange">Eras</h3>
-
-                            <ul class="list-group clear-list m-t">
+                        <div class="col-sm-12 col-md-4">
+                            <h3 class="text-orange m-t-m">Airplane model eras</h3>
+                            <ul class="list-group clear-list m-t m-b-none">
                                 {% for key,value in eras %}                
                                     <li class="list-group-item">
                                         <span class="pull-right">
@@ -75,11 +75,21 @@
                                     </li>
                                 {% endfor %}
                             </ul>
+                            {% if erasRC > 0 %}
+                                <p class="text-center m-b-sm m-t-sm">
+                                    <small><strong>and {{ erasRC }} more items</strong></small>
+                                </p>
+                            {% else %}
+                                <p class="text-center m-b-sm m-t-sm">
+                                    <small><strong>End of list</strong></small>
+                                </p>
+                            {% endif %}
+                            <a class="btn btn-primary btn-block m-t-xs m-b-lg" href="category_eras.php">View all airplane model eras</a>                            
 
                         </div>
-                        <div class="col-sm-4">
-                            <h3 class="text-pink">Pricing categories</h3>
-                            <ul class="list-group clear-list m-t">
+                        <div class="col-sm-12 col-md-4">
+                            <h3 class="text-pink m-t-m">Pricing categories</h3>
+                            <ul class="list-group clear-list m-t m-b-none">
                                 {% for key,value in pricingCategories %}                
                                     <li class="list-group-item">
                                         <span class="pull-right">
@@ -91,10 +101,16 @@
                                     </li>
                                 {% endfor %}
                             </ul>
+                            <p class="text-center m-b-sm m-t-sm">
+                                <small><strong>and {{ pricingCategoriesRC }} more items</strong></small>
+                            </p>                                                    
+                            <a class="btn btn-primary btn-block m-t-xs m-b-lg" href="#">View all pricing categories</a>                            
+
                         </div>
-                        <div class="col-sm-4">
-                            <h3 class="text-info">Shipping categories</h3>
-                            <ul class="list-group clear-list m-t">
+
+                        <div class="col-sm-12 col-md-4">
+                            <h3 class="text-info m-t-m">Shipping categories</h3>
+                            <ul class="list-group clear-list m-t m-b-none">
                                 {% for key,value in shippingCategories %}                
                                     <li class="list-group-item">
                                         <span class="pull-right">
@@ -106,6 +122,11 @@
                                     </li>
                                 {% endfor %}                            
                             </ul>
+                            <p class="text-center m-b-sm m-t-sm">
+                                <small><strong>and {{ shippingCategoriesRC }} more items</strong></small>
+                            </p>
+                            <a class="btn btn-primary btn-block m-t-xs m-b-lg" href="#">View all shipping categories</a>                                                        
+
                         </div>
                     </div>
                 </div>

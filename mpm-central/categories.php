@@ -5,20 +5,13 @@ $loader = new Twig_Loader_Filesystem('views/');
 $twig = new Twig_Environment($loader);
 
 
-$eras = TblEraQuery::create()
-	->orderByEraId('ASC')
-	->limit(5)
-	->find();
+$eras = TblEraQuery::create()->orderByEraId('ASC')->limit(5)->find();
+$pricingCategories = TblProdPricingQuery::create()->orderByProdPriceId('ASC')->limit(5)->find();
+$shippingCategories = TblProdShippingQuery::create()->orderByProdShippingName('ASC')->limit(5)->find();	
 
-$pricingCategories = TblProdPricingQuery::create()
-	->orderByProdPriceId('ASC')
-	->limit(5)
-	->find();
-
-$shippingCategories = TblProdShippingQuery::create()
-	->orderByProdShippingName('ASC')
-	->limit(5)
-	->find();	
+$erasRC = TblEraQuery::create()->count();
+$pricingCategoriesRC = TblProdPricingQuery::create()->count();
+$shippingCategoriesRC = TblProdShippingQuery::create()->count();	
 
 $erasListing = [];
 $pricingCategoriesListing = [];
@@ -63,5 +56,8 @@ echo $twig->render(
 			'eras' => $erasListing,
 			'pricingCategories' => $pricingCategoriesListing,
 			'shippingCategories' => $shippingCategoriesListing,
+			'erasRC' => ($erasRC-5),
+			'pricingCategoriesRC' => ($pricingCategoriesRC-5),
+			'shippingCategoriesRC' => ($shippingCategoriesRC-5),
 		));
 ?>

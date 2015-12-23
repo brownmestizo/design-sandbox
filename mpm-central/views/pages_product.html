@@ -40,7 +40,7 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Status (3) <span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Status <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="i-checks"><a><label> <input type="checkbox" value=""> Active</label></a></li>
                     <li class="i-checks"><a><label> <input type="checkbox" value=""> Inactive </label></a></li>
@@ -71,7 +71,7 @@
             </div>                                                                        
 
         </div><!-- END col -->
-    </div> <!-- END row -->
+    </div> <!-- END row --> 
 
     <div class="list-container">
         
@@ -93,14 +93,14 @@
                         </div>
                        <div class="list-row-end">
                             <span>
-                                {{ product.getTblMenus().getMenuName() }}
+                                <strong>{{ product.getTblMenus().getMenuName() }}</strong>
                                 <i class="fa fa-angle-right"></i>
                                 <em>
                                 {{ product.getTblEra().getEraDescription() }}
                                 </em>
                             </span>
                             <span><i class="fa fa-dollar"></i> {{ product.getTblProdPricing().getProdPricePrice() }}</span>
-                            <span class="preview"><i class="fa fa-angle-double-right"></i></span>                             
+                            <span class="text-danger"><i class="fa fa-remove"></i></span>                                                                                                                  
                         </div>
                     </div>              
                 {% endfor %}
@@ -117,7 +117,7 @@
                     <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
                 </div>
             
-                <div class="pull-right m-t-xxs"><h3>3345 results</h3></div>
+                <div class="pull-right m-t-xxs"><h3>{{count}} results</h3></div>
             </div>
            
 

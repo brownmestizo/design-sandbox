@@ -51,7 +51,8 @@ echo $twig->render(
 	'pages_category.html', 
 		array(
 			'entities' => $entitiesListing,
-			'entityName' => 'pricing categories',
+			'entityName' => 'pricing category',
+			'entityPlural' => 'pricing categories',
 			'count' => $count,
 		));
 ?>

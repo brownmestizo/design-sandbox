@@ -44,7 +44,8 @@ echo $twig->render(
 	'pages_category.html', 
 		array(
 			'entities' => $erasListing,
-			'entityName' => 'airplane model eras',
+			'entityName' => 'airplane model era',
+			'entityPlural' => 'airplane model eras',
 			'count' => $count,
 		));
 ?>

@@ -11,7 +11,7 @@ $erasListing = [];
 
 foreach ($eras as $era) {	
 
-	$count = TblProdInfoQuery::create()
+	$countTotal = TblProdInfoQuery::create()
 	->filterByProdEra($era->getEraId())	
 	->count();	
 
@@ -33,7 +33,7 @@ foreach ($eras as $era) {
 	$erasListing[] = [
 		"description" => $era->getEraDescription(),
 		"id" => $era->getEraId(),
-		"count" => $count,
+		"count" => $countTotal,
 		"countMB" => $countMB,
 		"countPA" => $countPA,
 		"countM3" => $countM3,

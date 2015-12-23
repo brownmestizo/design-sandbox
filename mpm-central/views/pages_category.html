@@ -78,7 +78,7 @@
 
                     <div class="clear">
                         <div class="text-right m-t-md">
-                            <button class="btn btn-grey" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-white" data-dismiss="modal">Cancel</button>
                             <button class="btn btn-primary">Save {{entityName}}</button>
                         </div>
                     </div>                    
@@ -119,8 +119,10 @@
                             </div>
 
                             <div class="col-xs-2 text-right">                            
-                                <em class="m-r-lg">Total {{ value['count'] }}</em>
-                                <span class="text-danger"><i class="fa fa-remove"></i></span>                                                         
+                                <em class="m-r-lg">Total {{ value['count'] }}</em>                                       
+                                <a data-toggle="modal" data-target="#deletemodal">
+                                    <span class="text-danger"><i class="fa fa-remove"></i></span>
+                                </a>                                
                             </div>
                         </div>    
                     </div>              
@@ -128,6 +130,26 @@
 
             </div>
 
+            <div class="modal fade" id="deletemodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a data-dismiss="modal" class="pull-right">
+                                <i class="fa fa-times"></i>
+                            </a>
+
+                            <h3>Delete {{entityName}}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>Delete <strong>[name of category]</strong>? Any products associated with this category will be left blank.</p>
+                            <div class="text-right">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger">Yes, delete {{entityName}}</button> 
+                            </div>                                     
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
 
             <div class="list-options">
                 <!--

@@ -43,6 +43,7 @@ foreach ($entities as $entity) {
 		"countMB" => $countMB,
 		"countPA" => $countPA,
 		"countM3" => $countM3,
+		"displayValue" => $entity->getProdPricePrice(),
 	];
 }
 
@@ -53,6 +54,6 @@ echo $twig->render(
 			'entities' => $entitiesListing,
 			'entityName' => 'pricing category',
 			'entityPlural' => 'pricing categories',
-			'count' => $count,
+			'count' => $count,			
 		));
 ?>

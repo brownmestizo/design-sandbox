@@ -97,7 +97,10 @@
                     <div class="list-item">                        
                         <div class="list-row">
                             <div class="col-xs-4">                            
-                                {{ value['description'] }} - ${{ value['displayValue'] }}
+                                {{ value['description'] }} 
+                                {% if value['displayValue'] %}
+                                     - ${{value['displayValue'] }}
+                                {% endif %}
                             </div>
 
                             <div class="col-xs-2">

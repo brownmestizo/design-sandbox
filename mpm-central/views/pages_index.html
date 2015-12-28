@@ -14,8 +14,17 @@
     <div class="col-md-12">
         <h2 class="m-b-none"><a href="../index.html">Dashboard</a></h2>
     </div>
+
+    <div class="col-md-3">
+
+        <div class="widget style2 navy-bg text-center m-b-none">
+            <h1>{{ count }}</h1>
+            <h3>Total</h3>                                 
+        </div>                            
+
+    </div>
     
-    <div class="col-md-4">
+    <div class="col-md-3">
 
         <div class="widget style2 navy-bg text-center m-b-none">
             <h1>{{ countMb }}</h1>
@@ -24,7 +33,7 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
 
         <div class="widget style2 navy-bg text-center m-b-none">
             <h1>{{ countPa }}</h1>
@@ -33,7 +42,7 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
 
         <div class="widget style2 navy-bg text-center m-b-none">
             <h1>{{ countMt }}</h1>
@@ -134,35 +143,42 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-12">                                                     
                     <div class="widget lighter-grey-bg style3 text-center m-t-none">
-                        <h1><a href="requests/list_requests.php">5</a></h1>
+                        <h1><a href="requests/list_requests.php">{{ categories }}</a></h1>
                         <a href="requests/list_requests.php"><h3 class="text-yellow">Product categories</h3></a>
                     </div>
                 </div>
 
                  <div class="col-sm-6 col-lg-12">                                                                          
                     <div class="widget lighter-grey-bg style3 text-center m-t-none">
-                        <h1><a href="requests/list_requests.php">3</a></h1>
+                        <h1><a href="requests/list_requests.php">{{ pricingCategories }}</a></h1>
                         <a href="requests/list_requests.php"><h3 class="text-green">Pricing categories</h3></a>
                     </div>                    
                 </div>
 
                 <div class="col-sm-6 col-lg-12">
                     <div class="widget lighter-grey-bg style3 text-center m-t-none">
-                        <h1><a href="workorders/list_workorders.php">21</a></h1>
+                        <h1><a href="workorders/list_workorders.php">{{ eras }}</a></h1>
                         <a href="workorders/list_workorders.php"><h3 class="text-yellow">Model eras</h3></a>
                     </div>
                 </div>                        
 
                 <div class="col-sm-6 col-lg-12">
                     <div class="widget lighter-grey-bg style3 text-center m-t-none">
-                        <h1><a href="workorders/list_workorders.php">21</a></h1>
+                        <h1><a href="workorders/list_workorders.php">{{ shippingCategories }}</a></h1>
+                        <a href="workorders/list_workorders.php"><h3 class="text-yellow">Shipping categories</h3></a>
+                    </div>
+                </div>                        
+
+                <div class="col-sm-6 col-lg-12">
+                    <div class="widget lighter-grey-bg style3 text-center m-t-none">
+                        <h1><a href="workorders/list_workorders.php">{{ smallerModels }}</a></h1>
                         <a href="workorders/list_workorders.php"><h3 class="text-orange">Smaller models</h3></a>
                     </div>
                 </div>                        
 
                 <div class="col-sm-6 col-lg-12">
                     <div class="widget lighter-grey-bg style3 text-center m-t-none">
-                        <h1><a href="workorders/list_workorders.php">10</a></h1>
+                        <h1><a href="workorders/list_workorders.php">{{ stands }}</a></h1>
                         <a href="workorders/list_workorders.php"><h3 class="text-red">Stands</h3></a>
                     </div>
                 </div>                                                                                                                    

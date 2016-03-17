@@ -30,10 +30,12 @@
                 <div class="row">
                     <div class="col-md-12 list-filters clear">
                         <div class="btn-group">
-                            <a class="btn btn-block btn-primary" href="asset-crud-blank">Add new category</a>
+                            <a class="btn btn-block btn-primary" href="asset-crud-blank">Save</a>
                         </div>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#commentsmodal"><i class="fa fa-comments"></i> Comments</button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#commentsmodal">
+                            <i class="fa fa-comments"></i> Comments
+                            </button>
                         </div>
                         <div class="btn-group">
                             <span class="text-muted nobr"><strong>Created</strong> 16 Apr, 2014</span>
@@ -50,12 +52,88 @@
                     <div class="col-md-6">
                         <div class="ibox">
                             <div class="ibox-content m-b-md">
-                                <h2>
+                                <h2 class="m-b-md">
                                     <input class="form-control" placeholder="Product name" value="">                                    
                                 </h2>
 
-                                <div class="photo-container">
-                                    <img alt="image" class="fw-img" src="../img/equip/airway-management-trainer.jpg" />
+                                <div class="form-group">
+                                    <label>Product code</label>
+                                    <input class="form-control" placeholder="Product code">
+                                </div>       
+
+                                <div class="form-group">
+                                    <label class="m-b-xs">Website visibility</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="i-checks">
+                                                <label>
+                                                    <input type="checkbox" value=""> Modelbuffs
+                                                </label>
+                                            </div>   
+                                        </div>
+                                       <div class="col-md-4">
+                                            <div class="i-checks">
+                                                <label>
+                                                    <input type="checkbox" value=""> Planearts
+                                                </label>
+                                            </div>   
+                                        </div>      
+                                       <div class="col-md-4">
+                                            <div class="i-checks">
+                                                <label>
+                                                    <input type="checkbox" value=""> M3
+                                                </label>
+                                            </div>   
+                                        </div>                                                                          
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Model historic era</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div>                                  
+
+                                <div class="form-group">
+                                    <label>Alternative names</label>
+                                    <input class="form-control" placeholder="Separate alternative names by a comma">
+                                </div>      
+
+                                <div class="form-group">
+                                    <label>Aircraft registration</label>
+                                    <input class="form-control" placeholder="Aircraft registration">
+                                </div>    
+
+                                <div class="form-group">
+                                    <label>Model company</label>
+                                    <input class="form-control" placeholder="Model company">
+                                </div>                                    
+
+                                <div class="form-group">
+                                    <label>Related link</label>
+                                    <input class="form-control" placeholder="URL of a related link">
+                                </div>     
+
+                                <div class="form-group">
+                                    <label>Related text</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>     
+
+                                <div class="photo-container">                                    
                                     <div>
                                         <i class="fa fa-camera" data-toggle="modal" data-target="#profilemodal"></i>                                
                                     </div>
@@ -107,16 +185,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Type</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <label>Sub-type</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
@@ -133,56 +201,10 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label>Specifications</label>
-                                    <div class="row">
-                                        <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Weight</span>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control text-right">
-                                                <div class="input-group-addon right">
-                                                    kg
-                                                </div><!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Width</span>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control text-right">
-                                                <div class="input-group-addon right">
-                                                    cm
-                                                </div><!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Length</span>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm">
-                                                <div class="input-group-addon right">
-                                                    cm
-                                                </div><!-- /btn-group -->
-                                            </div>
-                                        </div>
-                                
-                                        <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Height</span>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control text-right">
-                                                <div class="input-group-addon right">
-                                                    cm
-                                                </div><!-- /btn-group -->
-                                            </div>
-                                        </div> 
-                                    </div>                          
-                                </div>      
                                     
                             </div>
                         </div> 
+
 
                         <div class="modal fade" id="resourcemodal">
                             <div class="modal-dialog">
@@ -254,12 +276,122 @@
                                     </div>
                                 </div><!--/.modal-content -->
                             </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal -->                                              
+                        </div><!-- /.modal -->      
 
-                    </div> <!-- END col-md-7 -->       
-         
 
-         
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Specifications</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Weight</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    kg
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Width</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Length</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right p-r-sm">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Height</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div> 
+                                    </div>                          
+                                </div>                                                                                       
+                            </div>
+                        </div>
+                     
+                    </div> <!-- END col-md-6-->       
+
+                    <div class="col-md-6">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>SEO</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+                            </div>
+                        </div> 
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Pricing</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+                            </div>
+                        </div> 
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Shipping</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+                            </div>
+                        </div>                         
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Related products</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+                            </div>
+                        </div>    
+                    </div> 
 
                 </div>
 

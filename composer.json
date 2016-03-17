@@ -3,7 +3,11 @@
         "propel/propel": "~2.0@dev",
         "slim/slim": "2.*",
         "twig/twig" : "~1.0",
-        "robmorgan/phinx": "^0.4.6"
+        "robmorgan/phinx": "^0.4.6",
+        "symfony/finder": "^2.8",
+        "symfony/form": "^2.8",
+        "symfony/twig-bridge": "^2.8",
+        "symfony/http-foundation": "^2.8"
     },
 	
 	"autoload": {

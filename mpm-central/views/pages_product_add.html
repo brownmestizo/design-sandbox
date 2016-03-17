@@ -133,37 +133,6 @@
                                     <input class="form-control" placeholder="Text that will appear as link">
                                 </div>     
 
-                                <div class="photo-container">                                    
-                                    <div>
-                                        <i class="fa fa-camera" data-toggle="modal" data-target="#profilemodal"></i>                                
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="profilemodal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-
-                                                <h3>Upload product photos</h3>
-
-                                                <div class="pull-right">                                            
-                                                    <a data-dismiss="modal">Done</a>
-                                                </div>     
-                                            </div>
-                                            <div class="modal-body">
-                                                <form id="my-awesome-dropzone" class="dropzone" action="#">
-                                                    <div class="dropzone-previews"></div>
-                                                </form>
-                                            
-                                                <div class="text-right m-t-md">
-                                                    <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-primary">Set as main photo</button>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.modal-content -->
-                                    </div><!-- /.modal-dialog -->
-                                </div><!-- /.modal -->
-                                
                             </div>
                         </div>
 
@@ -183,102 +152,13 @@
                                     <label>Description</label>
                                     <div class="form-control" contenteditable placeholder="Description"></div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label>Sub-type</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control"disabled>
-                                            <option  selected="selected">Choose an option</option>
-                                            <option value="30" >Adult</option>
-                                            <option value="38">Component</option>
-                                            <option value="41">Component</option>
-                                            <option value="31">Infant</option>
-                                            <option value="32">Laparoscopic</option>
-                                            <option value="33">Maternity</option>
-                                            <option value="34">Paediatric</option>
-                                            <option value="35">Ultrasound</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                    
+                                    <label>Keywords generated from description</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                                       
                             </div>
                         </div> 
-
-
-                        <div class="modal fade" id="resourcemodal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <a data-dismiss="modal">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-
-                                        <h3>Link a resource</h3>
-
-                                        <div class="pull-right">                                            
-                                            <a data-dismiss="modal">Done</a>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="input-group form-group">
-                                            <span class="input-group-addon left"><i class="fa fa-file"></i></span>
-                                            <input type="text" class="form-control clear-option" placeholder="Search by name of resource">
-                                            <a href="#" class="search-clear"> <i class="fa fa-times"></i></a>
-                                        </div>
-
-                                        <table class="table list-table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <i class="fa fa-file text-navy"></i>
-                                                </td>
-                                                <td>
-                                                    <a>QuickCheck - SimMan 3G </a> <span class="text-muted"><em>General</em></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fa fa-file text-navy"></i>
-                                                </td>
-                                                <td>
-                                                    <a>QuickCheck - SimMan Classic</a> <span class="text-muted"><em>Internal</em></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fa fa-file text-navy"></i>
-                                                </td>
-                                                <td>
-                                                    <a>QuickCheck - SimMan Essential</a> <span class="text-muted"><em>General</em></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fa fa-file text-navy"></i>
-                                                </td>
-                                                <td>
-                                                    <a>SimMan 3G Level 1 IPM Checklist</a> <span class="text-muted"><em>General</em></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fa fa-file text-navy"></i>
-                                                </td>
-                                                <td>
-                                                    <a>SimMan User Guide</a> <span class="text-muted"><em>Internal</em></span>
-                                                </td>
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div><!--/.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal -->      
-
-
+     
                         <div class="ibox">
                             <div class="ibox-title">
                                 <h3>Specifications</h3>
@@ -292,7 +172,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Weight</span>
+                                            <span class="inline-label control-label">Length/Width</span>
                                             <div class="input-group">
                                                 <input type="text" class="form-control text-right">
                                                 <div class="input-group-addon right">
@@ -302,7 +182,7 @@
                                         </div>
                                     
                                         <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Width</span>
+                                            <span class="inline-label control-label">Wing span</span>
                                             <div class="input-group">
                                                 <input type="text" class="form-control text-right">
                                                 <div class="input-group-addon right">
@@ -314,7 +194,7 @@
                                 
                                     <div class="row">
                                         <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Length</span>
+                                            <span class="inline-label control-label">Height</span>
                                             <div class="input-group">
                                                 <input type="text" class="form-control text-right p-r-sm">
                                                 <div class="input-group-addon right">
@@ -324,7 +204,7 @@
                                         </div>
                                 
                                         <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Height</span>
+                                            <span class="inline-label control-label">Scale</span>
                                             <div class="input-group">
                                                 <input type="text" class="form-control text-right">
                                                 <div class="input-group-addon right">
@@ -349,7 +229,19 @@
                                     </a>                           
                                 </div>
                             </div>
-                            <div class="ibox-content m-b-md">                                                        
+                            <div class="ibox-content m-b-md">       
+                                <div class="form-group">
+                                    <label>Page title</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                                                                               
+                                <div class="form-group">
+                                    <label>Meta description</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                               
+                                <div class="form-group">
+                                    <label>Page title</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                                                                                                           
                             </div>
                         </div> 
 
@@ -362,7 +254,27 @@
                                     </a>                           
                                 </div>
                             </div>
-                            <div class="ibox-content m-b-md">                                                        
+                            <div class="ibox-content m-b-md">
+
+                                <div class="form-group">
+                                    <label>Pricing category</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label>Regular price</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>  
+
+                                <div class="form-group">
+                                    <label>Sales price</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                                  
                             </div>
                         </div> 
 
@@ -376,8 +288,109 @@
                                 </div>
                             </div>
                             <div class="ibox-content m-b-md">                                                        
+
+                                <div class="form-group">
+                                    <label>Shipping category</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div> 
+
                             </div>
                         </div>                         
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Smaller model version</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Length/Width</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    kg
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Wing span</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Height</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right p-r-sm">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Scale</span>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-right">
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div> 
+                                    </div>                          
+                                </div>  
+
+                                <div class="form-group">
+                                    <label>Pricing category</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label>Regular price</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>  
+
+                                <div class="form-group">
+                                    <label>Sales price</label>
+                                    <input class="form-control" placeholder="Text that will appear as link">
+                                </div>                                    
+
+                                <div class="form-group">
+                                    <label>Shipping category</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="" id="">
+                                            <option value="1">Military airplanes - propeller</option>                                        
+                                        </select>
+                                    </div>
+                                </div> 
+
+                            </div>
+                        </div>   
 
                         <div class="ibox">
                             <div class="ibox-title">
@@ -389,6 +402,9 @@
                                 </div>
                             </div>
                             <div class="ibox-content m-b-md">                                                        
+                                <div class="text-center">
+                                    <button class="btn btn-grey">Add product</button>
+                                </div>
                             </div>
                         </div>    
                     </div> 

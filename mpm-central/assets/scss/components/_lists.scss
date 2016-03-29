@@ -1,11 +1,17 @@
 /* LISTS */
 
+ul {
+    list-style-type: disc;
+}
+
+/* Container */
 .list-container {
     display: table;
     table-layout: fixed;
     width: 100%;
 }
 
+/* Filters */
 .list-filters {
     margin-bottom: 10px;
 
@@ -23,10 +29,12 @@
     }
 }
 
+/* Results */
 .list-results {
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
+/* Item */
 .list-item {
     overflow: hidden;
     position: relative;
@@ -40,8 +48,7 @@
     box-sizing: border-box;
     position: relative;
     cursor: pointer;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    @include shadow-sm;
 
     &.no-link {
         cursor: default;
@@ -50,7 +57,7 @@
     &:hover {
         /* background: $light-accent-color; */
         border-left: 1px solid $accent-color;
-   
+
 
         /* .list-row-end {
             background: $light-accent-color;
@@ -82,10 +89,18 @@
         .list-summary {
             opacity: 0.5;
         }
-        .list-key,
-        .list-row-end {
+        .list-key {
             opacity: 0.5;
             text-decoration: line-through;
+        }
+
+        .list-row-end {
+            opacity: 0.5;
+
+            span.text-pink,
+            span.text-info {
+                text-decoration: line-through;
+            }
         }
     }
 
@@ -93,6 +108,7 @@
         margin-left: 36px;
         border-left-color: lighten($accent-color, 35%);
         background: $hover-grey;
+        border-right: 1px solid $hover-grey;
 
         .list-row-end {
             background:  $hover-grey;
@@ -134,7 +150,7 @@
     .list-item-new:hover {
         border-bottom-width: 2px;
         border-bottom-color: $accent-color !important;
-        border-left: 1px solid #FFF !important;     
+        border-left: 1px solid #FFF !important;
     }
 
     .list-item-new:active {
@@ -148,17 +164,16 @@
         }
     }
 
-
-.list-header {
-    background: #FFF !important;
-    h3 { margin: 0px; line-height: 22px; }
-}
-
-
-
+/* Row */
 .list-row {
     margin: 12px;
     min-height: 22px;
+
+    .initialsCircle {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-right: 5px;
+    }
 
     h2 {
         margin: 0;
@@ -171,7 +186,7 @@
     }
 }
 
-
+    /* Row end */
     .list-row-end {
         display: inline-block;
         height: 100%;
@@ -192,14 +207,14 @@
         }
 
         h3 {
-            display:inline; 
+            display:inline;
             color: $accent-color;
         }
 
         .preview {
             margin: 0 0 0 10px;
             display:inline;
-            
+
             i {
                 color: $light-grey;
 
@@ -216,74 +231,11 @@
                 color: $accent-color;
             }
         }
-
-        
     }
-
-.list-item-request {
-    
-    label { margin: 0; }
-
-    .list-summary { 
-        width: 100%;         
-        span:first-child { margin-bottom: 5px; }
-    }
-
-    .list-row-requests-status {
-        text-align: center;
-    }
-
-    .list-row-requests-submitted {
-        text-align: right;
-    }
-
-    .list-row-requests-progress {
-        label { 
-            float: left; 
-            clear: both; 
-        }
-
-        .list-row-requests-progress--header { 
-            display: none; 
-            float: left; 
-        }
-
-        span { 
-            span { margin-right: 5px;}
-            span:last-child { margin-right: 0; }
-        }
-    }
-
-    .progress { margin-top: 10px; margin-bottom: 10px; clear: both; }                
-}
-
-.list-item-workorder {
-
-    .list-item-workorder--createdDate {
-        text-align: right;
-    }
-
-    .list-item-workorder--urgency {
-        text-align: center;
-    }
-
-    .list-item-workorder--assignee {
-        small { clear: both; display: block; }
-    }
-
-    .list-item-workorder--createdDate {
-        span, small {
-            display: block;
-            clear: both;
-        }
-    }    
-}
-
 
 .list-child {
     display: block;
 }
-
 
 .no-pointer {
     cursor: default !important;
@@ -308,7 +260,7 @@
 
     button {
         margin-left: 5px;
-    }   
+    }
 }
 
 .listing {
@@ -318,7 +270,7 @@
     padding-bottom: 20px;
 }
 
-.list-preview {
+c-list-preview, .list-preview {
     display: table-cell;
     height: inherit;
     vertical-align: top;
@@ -338,11 +290,10 @@
 
     .dropdown {
         display: inline-block;
-    } 
-
+    }
 }
 
-.list-preview-hidden {
+c-list-preview.hidden, .list-preview-hidden {
     display: none;
 }
 
@@ -362,7 +313,6 @@
     }
 
     h3 {
-        margin: 0;
         display: inline;
     }
 
@@ -370,7 +320,7 @@
 
         .btn-group {
             margin-left: 5px;
-            margin-right: 0;      
+            margin-right: 0;
             margin-bottom: 5px;
         }
 
@@ -378,6 +328,69 @@
             font-weight: 400;
         }
 
+    }
+}
+
+/* CUSTOM: R&M requests */
+.list-item-request {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+    label { margin: 0; }
+
+    .list-summary {
+        width: 100%;
+        span:first-child { margin-bottom: 5px; }
+    }
+
+    .list-row-requests-status {
+        text-align: center;
+    }
+
+    .list-row-requests-submitted {
+        text-align: right;
+    }
+
+    .list-row-requests-progress {
+        label {
+            float: left;
+            clear: both;
+        }
+
+        .list-row-requests-progress--header {
+            display: none;
+            float: left;
+        }
+
+        span {
+            span { margin-right: 5px;}
+            span:last-child { margin-right: 0; }
+        }
+    }
+
+    .progress { margin-top: 10px; margin-bottom: 10px; clear: both; }
+}
+
+/* CUSTOM: R&M workorders */
+.list-item-workorder--createdDate {
+    text-align: right;
+}
+
+.list-item-workorder--urgency {
+    text-align: center;
+}
+
+.list-item-workorder--assignee {
+    small {
+        clear: both;
+        display: block;
+    }
+}
+
+.list-item-workorder--createdDate {
+    span, small {
+        display: block;
+        clear: both;
     }
 }
 
@@ -402,4 +415,39 @@
 
 .ibox-content .log:last-child {
     padding-bottom: 0 !important;
+}
+
+/* Verification of competency */
+
+.accounts_dates{
+    float:right;
+    text-align: right;
+    width:22%;
+    margin:20px 0;
+
+}
+
+.VEC_dates{
+    float:right;
+    text-align: right;
+    width:20%;
+    margin-top:10px;
+}
+
+.list-VEC{
+  width:60%;
+  float:left;
+
+}
+
+.VEC-badge{
+    float:left;
+    width:60px;
+
+}
+
+/* Basic list without bullet */
+ul.no-bullet {
+    list-style-type: none;
+    padding: 0;
 }

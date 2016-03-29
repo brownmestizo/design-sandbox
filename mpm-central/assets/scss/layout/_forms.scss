@@ -2,18 +2,75 @@
 
 textarea {
     resize: none;
+    min-height: 70px;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 7px 8px;
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    &:hover {
+        border: 1px solid $lightest-grey;
+    }
+
+    &:focus {
+        border-color: $light-grey;
+        -webkit-appearance: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid $lighter-grey;
+    }
+
+}
+
+textarea::-webkit-input-placeholder {
+    font-style: italic !important;
+}
+textarea:-moz-placeholder /* Firefox 18- */ {
+    font-style: italic !important;
+}
+
+textarea::-moz-placeholder /* Firefox 19+ */ {
+    font-style: italic !important;
+}
+textarea:-ms-input-placeholder {
+    font-style: italic !important;
 }
 
 .form-group {
     margin-bottom: 30px;
+    position: relative;
 
     &:last-child {
         margin-bottom: 0;
+    }
+
+    &:empty {
+        margin: 0 !important;
     }
 }
 
 .input-group-btn:first-child>.btn {
     margin-right: -2px;
+}
+
+.input-group .form-control {
+    font-size: 15px;
+}
+
+/* .input-group {
+    line-height: 30px;
+} */
+
+.select-dropdown::before {
+    content: "\f0dc ";
+    font-family: FontAwesome;
 }
 
 /* Form control */
@@ -29,10 +86,11 @@ textarea {
     border-color: $lighter-grey;
     color: $text-color;
     height: auto;
+    font-size: 15px;
 
     &:focus {
         border-color: $accent-color;
-        box-shadow: inset 0 -1px 0 $accent-color; 
+        box-shadow: inset 0 -1px 0 $accent-color;
     }
 
 }
@@ -41,16 +99,16 @@ textarea {
     border-width: 0 0 1px 0;
     border-color: $red;
     border-style: solid;
-    box-shadow: inset 0 -1px 0 $red; 
+    box-shadow: inset 0 -1px 0 $red;
 
     &:focus {
         border-color: $accent-color;
-        box-shadow: inset 0 -1px 0 $accent-color; 
+        box-shadow: inset 0 -1px 0 $accent-color;
     }
 }
 
-.form-control[disabled], 
-.form-control[readonly], 
+.form-control[disabled],
+.form-control[readonly],
 fieldset[disabled] .form-control {
   background: inherit;
   border-style: dotted;
@@ -68,13 +126,19 @@ h2 input.form-control {
 }
 
 
-select.form-control {
+select.form-control,
+c-datepicker input {
     cursor: pointer;
 }
 
 .form-control:focus, .single-line:focus {
     border-color: $accent-color !important;
     outline: none;
+}
+
+.has-success .form-control,
+.has-error .form-control {
+    box-shadow: none;
 }
 
 .has-success .form-control {
@@ -108,7 +172,11 @@ select.form-control {
     &:focus {
         border-color: none;
         box-shadow: none;
-    }   
+    }
+}
+
+input[placeholder] {
+    font-size: 15px;
 }
 
 
@@ -126,12 +194,12 @@ select.form-control {
         padding: 0 0 0 12px;
     }
 
-    &.left { 
+    &.left {
         padding: 6px 12px 6px 0;
     }
 
     &.right {
-        padding: 6px 0 6px 12px;    
+        padding: 6px 0 6px 12px;
     }
 
     h2 {
@@ -155,6 +223,20 @@ select.form-control {
 }
 
 
+/* YES/NO Switch label */
+
+.yesnoswitch {
+    .onoffswitch-inner:before {
+        content: "YES";
+    }
+
+    .onoffswitch-inner:after {
+        content: "NO";
+    }
+}
+
+
+
 /* Labels */
 
 .label {
@@ -166,7 +248,7 @@ select.form-control {
         margin: 0;
         font-weight: 700;
     }
-    
+
 }
 
 .inline-label {
@@ -217,7 +299,7 @@ label .small {
     label {
         font-weight: normal;
         margin-bottom: 5px !important;
-        margin-top: 5px !important;        
+        margin-top: 5px !important;
     }
     .icheckbox_square-steelblue {
         margin-right: 5px;
@@ -288,23 +370,64 @@ label .small {
 
 }
 
-.search-clear {
-    text-decoration: none;
-    position: absolute;
-    color: $accent-color;
-    z-index: 2;
+
+.list-search-custom {
+    width: auto;
+    overflow: hidden;
+    position: relative;
+
+    label {
+        position: absolute;
+        left: 14px;
+        top: 6px;
+        font-size: 18px;
+        color: darken($gray, 25%);
+        z-index: 2;
+    }
+
+    .search-clear {
+        text-decoration: none;
+        position: absolute;
+        font-size: 18px;
+        right: 11px;
+        top: 6px;
+        color: darken($gray, 25%);
+
+        &:hover {
+             color: darken($gray, 40%);
+        }
+    }
+
+    input {
+
+        &.form-control {
+            background-color: darken($gray, 4%);
+            border-radius: 2px;
+            border: medium none;
+            font-size: 15px;
+            height: 38px;
+            margin: 0;
+            z-index: 2000;
+            padding: 1px 45px;
+
+            &:focus {
+                border: 0;
+                box-shadow: none;
+            }
+        }
+    }
 }
 
 .input-group .search-clear,
 .page-search .search-clear {
-    top: 5px;
+    top: 6px;
     right: 0;
 }
 
 input {
     .clear-option {
         padding-right: 30px;
-    }  
+    }
 }
 
 
@@ -366,14 +489,177 @@ input {
     border-radius: 2px;
 
     .input-group-addon {
-        background-color: darken($gray, 4%);        
+        background-color: darken($gray, 4%);
     }
 
     input,
     input:focus,
     input:active,
-    input:hover { 
+    input:hover {
         border: 0;
         box-shadow: none;
     }
 }
+
+
+/* x-editable custom styles */
+
+.editableform {
+
+    .control-group {
+        line-height: inherit !important;
+        width: 100%;
+    }
+
+    .editable-input {
+        font-size: 15px;
+        width: 100%;
+
+        textarea {
+            border: 1px solid $lightest-grey;
+            font-size: 15px;
+            padding: 7px 8px;
+
+             &:focus {
+                border: 1px solid $lighter-grey !important;
+                box-shadow: none !important;
+            }
+        }
+
+        textarea.input-large {
+            width: 100%;
+        }
+
+        select {
+            padding: 0;
+            cursor: pointer;
+        }
+
+    }
+
+    .editable-buttons {
+        position: absolute;
+        right: 0;
+        margin-top: 3px;
+        margin-left: 0;
+        display: block;
+    }
+
+}
+
+div.editable {
+    padding: 7px 8px;
+    border: 1px solid white !important;
+
+    &:hover {
+        border: 1px solid $lighter-grey !important;
+    }
+}
+
+.editable-container.editable-inline,
+.editableform-loading,
+.editableform .form-control {
+    min-width: 150px !important;
+}
+
+.editable-container.editable-inline {
+    width: 100% !important;
+}
+
+/*
+ .editable-pre-wrapped {
+    padding: 7px 8px;
+
+    &:hover {
+        border: 1px solid $lightest-grey;
+    }
+} */
+
+.editable-click, a.editable-click, a.editable-click:hover {
+    font-weight: normal !important;
+}
+
+.editable-empty, .editable-empty:hover, .editable-empty:focus {
+    color: darken($light-grey, 20%) !important;
+}
+
+span.editable-click {
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+    line-height: 30px;
+    cursor: pointer;
+
+    &:hover {
+        border-bottom: 1px solid $lighter-grey !important;
+        line-height: 30px;
+
+
+        &:after {
+            content: "\00a0\00a0\f040";
+            font-family: FontAwesome;
+            color: $light-grey;
+        }
+    }
+}
+
+.editable-click.editable-disabled,
+.editable-click.editable-disabled:hover {
+    border-bottom: none !important;
+    outline:none !important;
+
+    &:after {
+        content: "";
+    }
+}
+
+
+/* select2 custom styles */
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0 !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 30px !important;
+}
+
+.select2 {
+    width: 100% !important;
+    outline: none !important;
+}
+
+.select2 .select2-container .select2-container--default,
+.select2 .select2-container .select2-container--default .select2-container--below,
+.select2-selection .select2-selection--single,
+.select2-container--default .select2-selection--single,
+.select2-selection__rendered,
+.selection {
+    outline: none !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $text-color !important;
+}
+
+/* bootstrap date picker custom styles */
+
+.datepicker td.active,
+.datepicker span.active.active,
+.datepicker span.active:hover.active {
+        background-color: $accent-color !important;
+        background-image: none !important;
+}
+
+.datepicker-dropdown {
+    overflow: hidden !important;
+}
+
+.datepicker .dropdown-menu {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+
+
+
+

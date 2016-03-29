@@ -1,0 +1,23 @@
+.chips {
+	display: inline-block;
+	height: 32px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 32px;
+	padding: 0 12px;
+	border-radius: 16px;
+	background-color: $lightest-grey;
+	margin-top: 10px;
+	margin-right: 4px;
+
+	i {
+		margin-left: 5px;
+		cursor: pointer;
+
+		&:hover {
+			color: #333;
+		}
+	}
+
+
+}

@@ -1,0 +1,276 @@
+/*doc
+---
+title: Layout
+name: 11_layout
+category: Base
+---
+
+##Grid system
+Concrete uses Bootstrap's default grid system that utilises *12 columns*,
+adapting to be a 724px and 1170px wide depending on your viewport.
+Below 767px viewports, the columns become fluid and stack vertically.
+
+Grid systems are used for creating page layouts through a series of rows
+and columns that house your content. Here's how the Bootstrap grid system works:
+
+* Rows must be placed within a <code>.container</code> (fixed-width)
+or <code>.container-fluid</code> (full-width) for proper alignment and padding.
+* Use rows to create horizontal groups of columns.
+* Content should be placed within columns, and only columns may be immediate
+children of rows.
+* Predefined grid classes like .row and .col-xs-4 are available for quickly
+making grid layouts. Less mixins can also be used for more semantic layouts.
+* Columns create gutters (gaps between column content) via padding. That padding
+is offset in rows for the first and last column via negative margin on <code>.rows.</code>
+* The negative margin is why the examples below are outdented. It's so that content
+within grid columns is lined up with non-grid content.
+* Grid columns are created by specifying the number of twelve available columns
+you wish to span. For example, three equal columns would use three <code>.col-xs-4</code>.
+* If more than 12 columns are placed within a single row, each group of extra columns will,
+as one unit, wrap onto a new line.
+* Grid classes apply to devices with screen widths greater than or equal to the
+breakpoint sizes, and override grid classes targeted at smaller devices. Therefore,
+e.g. applying any <code>.col-md-*</code> class to an element will not only affect
+its styling on medium devices but also on large devices if a <code>.col-lg-*</code> class is not present.
+
+
+##Two-column layout
+Inspired by Asana's "workspace" layout, our base layout (currently used
+in the request, work order, and search results pages) follows the same.
+
+##Two-column variations
+
+###Item/Preview layout
+We have created this layout which consists of an item pane (appears full-width by default)
+and a preview pane (visibility of which is toggled by its corresponding item pane).
+
+```html_example
+<div class="list-container">
+    <div class="listing">
+        <div class="list-results">
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        11 Oct, 2015
+                    </div>
+                    <div class="list-summary">
+                        <span class="text-red">
+                        <i class="fa fa-star"></i> DRAFT </span>
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span class="preview">
+                    <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        9 Jul, 2015
+                    </div>
+                    <div class="list-summary">
+                        <span class="text-red">
+                        <i class="fa fa-star"></i> DRAFT </span>
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span class="preview">
+                    <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        9 Jul, 2015
+                    </div>
+                    <div class="list-summary">
+                        <span class="text-red">
+                        <i class="fa fa-star"></i> DRAFT </span>
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span class="preview">
+                    <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        9 Jul, 2015
+                    </div>
+                    <div class="list-summary">
+                        <span class="text-red">
+                        <i class="fa fa-star"></i> DRAFT </span>
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span class="preview">
+                    <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        9 Jul, 2015
+                    </div>
+                    <div class="list-summary">
+                        <span class="text-red">
+                        <i class="fa fa-star"></i> DRAFT </span>
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span class="preview">
+                    <i class="fa fa-angle-double-right"></i>
+                    </span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+
+        </div>
+    </div>
+    <!-- END listing -->
+
+    <div class="list-preview">
+        <div class="ibox">
+            <div class="ibox-title modal-header">
+                <div class="pull-right">
+                    <div class="dropdown">
+                        <a class="action dropdown-toggle">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a>Edit</a></li>
+                            <li><a>Delete</a></li>
+                        </ul>
+
+                        <a class="close-link action">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <h2>
+                    <span class="text-muted">
+                        <i class="fa fa-clock-o"></i>
+                        2hrs 30mins
+                    </span><br>
+                    <a>Advanced Life Support</a>
+                </h2>
+            </div>
+            <div class="ibox-content">
+                <div class="form-group">
+                    <label>Discipline</label>
+                    <p>Nursing</p>
+                </div>
+                <div class="form-group">
+                    <label>Pocket Centre</label>
+                    <p>Lady Cilento Children's Hospital</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+```
+
+###Item/Action layout
+For this simple two column layout, create a <code>.row</code> and add the appropriate
+number of <code>.span*</code> columns. As this is a 12-column grid, each `.span*`
+spans a number of those 12 columns, and should always add up to 12 for each row
+(or the number of columns in the parent).
+
+Each column can then be filled with a widget or by an Inspinia element
+called <code>ibox</code>. The key to this layout is you put all of your data item
+widgets/iboxes to the left pane while your action widgets/iboxes to the right.
+
+```html_example
+<div class="row">
+    <div class="col-md-6">
+        <div class="ibox m-b-none">
+            <div class="ibox-title">
+                <div class="form-group">
+                    <h2 class="m-b-none">
+                        <div class="pull-right m-l-sm">
+                            <span class="label label-danger outline">
+                            <i class="fa fa-exclamation"></i> Urgent
+                            </span>
+                        </div>
+                        <span class="text-muted">
+                            <a>Sim Man</a>
+                        </span>
+                        <a>#123456</a>
+                    </h2>
+                    <p>Part-task trainer</p>
+                    <p>
+                        <span class="text-warning">
+                            <strong>On loan</strong>
+                        </span>
+                        until 16 May, 2016 at <a>Cairns Centre</a>, Cairns, QLD
+                    </p>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-group">
+                    <div class="alert alert-pink text-center">
+                        Repair
+                    </div>
+                    <p class="m-t-md">
+                        <strong>Requested by</strong>
+                        <a>Louise Dobson</a> - <a>Request #99</a><br>
+                        From <a><i class="fa fa-building"></i>
+                        Cairns Centre</a>, Cairns, QLD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- col-md-6 ends here -->
+
+    <div class="col-md-6">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h3>Assignee</h3>
+            </div>
+            <div class="ibox-content">
+                <div class="pull-right">
+                    <a class="btn-default btn btn-xs">Edit</a>
+                </div>
+                Unassigned
+            </div>
+        </div>
+        <div class="ibox">
+            <div class="ibox-title">
+                <h3>Photos</h3>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <p class="text-center m-t-sm">
+                    <button class="btn btn-grey" type="button">Upload photo</button>
+                </p>
+            </div>
+        </div>
+    </div> <!-- col-md-6 ends here -->
+</div>
+```
+
+*/

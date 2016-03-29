@@ -1,0 +1,69 @@
+/*doc
+---
+title: Labels
+name: 10_labels
+category: Base
+---
+
+```html_example
+<h1>Example heading <span class="label">Label</span></h1>
+<h2>Example heading <span class="label">Label</span></h2>
+<h3>Example heading <span class="label">Label</span></h3>
+<h4>Example heading <span class="label">Label</span></h4>
+<h5>Example heading <span class="label">Label</span></h5>
+<h6>Example heading <span class="label">Label</span></h6>
+```
+
+##Available variations
+Add any of the below mentioned modifier classes to change the appearance of a label.
+
+Label | Modifier Class
+----- | ---
+<span class="label label-default">Default</span> | <code>label-default</code>
+<span class="label label-primary">Primary</span> | <code>label-primary</code>
+<span class="label label-success">Success</span> | <code>label-success</code>
+<span class="label label-warning">Warning</span> | <code>label-warning</code>
+<span class="label label-danger">Danger</span> | <code>label-danger</code>
+<span class="label label-teal">Teal</span> | <code>label-teal</code>
+<span class="label label-deep-blue">Deep blue</span> | <code>label-deep-blue</code>
+<span class="label label-light-grey">Light grey</span> | <code>label-light-grey</code>
+<span class="label label-brown">Brown</span> | <code>label-brown</code>
+<span class="label label-pink">Pink</span> | <code>label-pink</code>
+<span class="label label-orange">Orange</span> | <code>label-orange</code>
+<span class="label label-invisible">Invisible</span> | <code>label-invisible</code>
+
+
+###Invisible label
+The invisible label can be used if you want to contain small nuggets of data
+using the basic label visual style but without any colour. As you can see above,
+the invisible label does not contain padding and if you position multiple of these 
+labels, they would be separated by a margin of 10px between each other. 
+
+```html_example
+<span class="label label-invisible">Uno</span></h1>
+<span class="label label-invisible">Dos</span></h2>
+<span class="label label-invisible">Tres</span></h3>
+<span class="label label-invisible">Quatro</span></h4>
+<span class="label label-invisible">Cinco</span></h5>
+<span class="label label-invisible">Sais</span></h6>
+```
+
+
+###Outline labels
+You can also revert the above modifier classes by adding the <code>outline</code> modifier class.
+
+Label | Modifier Class
+----- | ---
+<span class="label label-default outline">Default</span> | <code>label-default  outline</code>
+<span class="label label-primary outline">Primary</span> | <code>label-primary outline</code>
+<span class="label label-success outline">Success</span> | <code>label-success outline</code>
+<span class="label label-warning outline">Warning</span> | <code>label-warning outline</code>
+<span class="label label-danger outline">Danger</span> | <code>label-danger outline</code>
+<span class="label label-teal outline">Teal</span> | <code>label-teal outline</code>
+<span class="label label-deep-blue outline">Deep blue</span> | <code>label-deep-blue outline</code>
+<span class="label label-light-grey outline">Light grey</span> | <code>label-light-grey outline</code>
+<span class="label label-brown outline">Brown</span> | <code>label-brown outline</code>
+<span class="label label-pink outline">Pink</span> | <code>label-pink outline</code>
+<span class="label label-orange outline">Orange</span> | <code>label-orange outline</code>
+
+*/

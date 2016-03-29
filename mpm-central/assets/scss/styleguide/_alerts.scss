@@ -1,0 +1,62 @@
+/*doc
+---
+title: Alerts
+name: 9_alerts
+category: Base
+---
+
+<p class="lead">Flash messages, or alerts, inform users of successful or pending actions.
+Use them sparingly. Don’t show more than one at a time.</p>
+
+A basic alert box is just a transparently-bordered box with a <code>margin-bottom: 20px</code>
+and a <code>padding: 15px</code>. Please do not overwrite these values.
+
+```html_example
+<div class="alert" role="alert">This is a basic alert box.</div>
+```
+
+Add <code>.alert-warning</code> or <code>.alert-yellow</code> to the flash message to make it yellow.
+
+```html_example
+<div class="alert alert-warning" role="alert">
+    Warning! Something is wrong here.
+</div>
+```
+
+Add <code>.alert-success</code> or <code>.alert-green</code>  to the flash message to make it green.
+
+```html_example
+<div class="alert alert-success" role="alert">
+    Yes! This is to confirm you've done a great and solid job!
+</div>
+```
+
+Add <code>.alert-danger</code> or <code>.alert-red</code> to the flash message to make it red.
+
+```html_example
+<div class="alert alert-danger" role="alert">
+    Oopss. That's not right, and that's bad of you.
+</div>
+```
+
+###We have also created specific Concrete elements for Central.
+
+```html_example
+<div class="alert alert-pink" role="alert">
+    This is a Repair work order alert
+</div>
+```
+
+```html_example
+<div class="alert alert-info" role="alert">
+    This is a Service work order alert
+</div>
+```
+
+```html_example
+<div class="alert alert-orange" role="alert">
+    This is an Inspection work order alert
+</div>
+```
+
+*/

@@ -1,0 +1,66 @@
+/*doc
+---
+title: Typography
+name: 2_typography
+category: Base
+---
+
+<p class="lead">Typography is a powerful tool. When used effectively, the
+right font commands attention, elicits emotions, and above all, creates a
+voice. It’s why typography is such an essential component of our
+brand’s visual identity.</p>
+
+You can find most of the styles in <code>base/_typography.scss</code>
+
+##Font
+
+For this current project, we decided to move to the lighter, friendlier, and more
+legible, [Roboto](http://www.wired.com/2014/07/how-googles-new-font-tries-to-anticipate-the-future/).
+
+<h1 class="m-none">Roboto, Segoe UI, Fira Sans</h1>
+<p class="m-none">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+<p class="m-none">abcdefghijklmnopqrstuvwxyz</p>
+<p class="m-none">01234567890!@#$%^&*()</p>
+
+<div class="codeBlock">
+<div class="highlight">
+<pre>
+font-family: "Roboto", "Segoe UI", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Arial", sans-serif;;
+font-weight: 300;
+</pre>
+</div>
+</div>
+
+
+##Headings
+All HTML headings, `<h1>` through `<h6>`, are available. <code>.h1</code> through <code>.h6</code>
+classes are also available, for when you want to match the font styling of a heading but
+still want your text to be displayed inline.
+
+
+```html_example
+<h1>h1. Concrete heading</h1>
+<h2>h2. Concrete heading</h2>
+<h3>h3. Concrete heading</h3>
+<h4>h4. Concrete heading</h4>
+<h5>h5. Concrete heading</h5>
+<h6>h6. Concrete heading</h6>
+```
+
+
+Create lighter, secondary text in any heading with a generic `<small>` tag or the <code>.small</code> class.
+
+```html_example
+<h1>h1. Concrete heading <small>Secondary text</small></h1>
+<h2>h2. Concrete heading <small>Secondary text</small></h2>
+<h3>h3. Concrete heading <small>Secondary text</small></h3>
+<h4>h4. Concrete heading <small>Secondary text</small></h4>
+<h5>h5. Concrete heading <small>Secondary text</small></h5>
+<h6>h6. Concrete heading <small>Secondary text</small></h6>
+```
+
+
+
+
+*/

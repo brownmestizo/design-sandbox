@@ -1,0 +1,106 @@
+/*doc
+
+---
+title: Helpers
+name: helpers
+category: Base
+---
+
+##Contextual colours
+Convey meaning through color with a handful of emphasis utility classes.
+These may also be applied to links and will darken on hover just like our default link
+styles.
+
+```html_example
+<p class="text-info">Adele's awesome. Take that, Kanye. </p>
+<p class="text-success">Good job, Adele!</p>
+<p class="text-warning">Is that Kanye West behind you, Adele?</p>
+<p class="text-danger">Yes, it's Kanye West! Run, Adele, run!</p>
+
+<p class="text-purple">In use</p>
+<p class="text-navy">text-navy</p>
+
+<p class="text-orange">Inspection</p>
+<p class="text-pink">Repair</p>
+```
+
+Due to our fascination with colour names, we ended up creating aliases
+for the following class modifiers. We don't recommend using the colour aliases.
+We are currently working on deprecating these aliases in future releases.
+
+-------------------------------------------------
+Class modifier       | Alias
+---------------------|---------------------------
+<code>text-warning</code> | <code>text-yellow</code>, <code>text-mustard</code>
+<code>text-danger</code> | <code>text-red</code>
+<code>text-success</code> | <code>text-green</code>
+
+We also created a modifier class that you can use to dilute the opacity of a type element.
+
+```html_example
+<p class="text-info">Adele's awesome. Take that, Kanye. </p>
+<p class="text-info text-muted">Adele's awesome. Take that, Kanye. </p>
+
+<p class="text-success">Good job, Adele!</p>
+<p class="text-success text-muted">Good job, Adele!</p>
+```
+
+##Alignment classes
+
+Easily realign text to components with text alignment classes.
+
+```html_example
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+```
+
+##Contextual backgrounds
+
+Similar to the contextual text color classes, easily set the background of an
+element to any contextual class. Anchor components will darken on hover, just like the text classes.
+
+```html_example
+<div class="row">
+    <div class="col-lg-3">
+        <div class="swatch navy-bg">Navy</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch yellow-bg">Yellow</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch red-bg">Red</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch red-inverted-bg">Red (inv)</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch grey-bg">Grey</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch lighter-grey-bg">Grey lighter</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch gray-bg">Gray</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch info-bg">Info</div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="swatch green-bg">Green</div>
+    </div>
+</div>
+
+```
+
+*/

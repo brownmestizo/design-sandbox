@@ -1,0 +1,49 @@
+/*doc
+---
+title: Modals
+name: 6_modals
+category: Base
+---
+
+<p class="lead">Modals are used to display information to a user in an
+    in-site popup window.</p>
+
+```html_example
+<div class="modal-dialog">
+    <div class="modal-content">
+
+    <div class="modal-header">
+        <a class="pull-right">
+          <i class="fa fa-times"></i>
+        </a>
+        <h3>Log in</h3>
+    </div>
+
+    <div class="modal-body">
+        <form class="m-t" role="form" autocomplete="off">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email address">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn btn-primary block full-width m-t-lg m-b">
+                Log in
+            </button>
+
+            <a type="submit" class="btn btn-grey block full-width m-b">
+                Create an account
+            </a>
+
+            <p class="text-center m-b-none">
+                <a><small>Forgot password?</small></a>
+            </p>
+        </form>
+    </div>
+
+    </div>
+  </div>
+```
+*/

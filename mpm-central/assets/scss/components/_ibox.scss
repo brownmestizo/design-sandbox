@@ -3,13 +3,13 @@
 .ibox {
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    @include shadow-md;
+    @include shadow-sm;
 }
 
 .ibox-tools {
     display: inline-block;
     float: right;
-} 
+}
 
 .ibox-title .panel-heading,
 .ibox-title-alt .panel-heading {
@@ -22,7 +22,7 @@
     }
 
     .switch {
-        float: right; 
+        float: right;
         margin-left: 12px;
     }
 }
@@ -83,7 +83,7 @@
     display: inline-block;
     padding: 0;
     text-overflow: ellipsis;
-    margin: 3px 0 0 0;
+    margin:0;
 }
 
 .ibox-tools a {
@@ -98,4 +98,189 @@
 
 .panel-default > .panel-heading {
     color: $text-color;
+}
+
+
+
+/* Cards */
+.ibox-card {
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  .ibox-title {
+    padding: 0;
+    display: block;
+    height: auto;
+    position: relative;
+
+    h2.ellipsis { display: inline-block; }
+
+    .ibox-title-wrapper {
+      display: block;
+      position: relative;
+      padding: 20px;
+    }      
+  }
+
+
+  .listing-status {
+    display: block;
+    padding: 10px 20px;
+
+      p { margin: 0; }
+  }
+
+
+  /* Specific for course cards */
+  .course-description {
+    display: block;
+    min-height: 80px;
+  }
+
+  i.fa {
+    display: inline-block;
+    max-width: 20px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .btn-white {
+    color: $navy;
+  }
+
+}
+
+.ibox-card-mini {
+  
+}
+
+/* For ibox-cards that are clickable */
+.ibox-card-wh {
+  cursor: pointer;
+
+  &:hover {
+     box-shadow: 
+      0 8px 10px 1px rgba(0, 0, 0, .14), 
+      0 3px 14px 2px rgba(0, 0, 0, .12), 
+      0 5px 5px -3px rgba(0, 0, 0, .2);
+  }
+}
+
+.ibox-card-header {
+  .ibox-title {
+    position: static;
+
+    .ibox-title-wrapper {
+      position: static;
+    }
+  }
+  .course-name {
+    display: block;
+  }
+
+}
+
+/* PURPLE CARD */
+.card-purple {
+  @include card($purple);
+}
+
+/* ORANGE CARD */
+.card-orange {
+  @include card($orange);
+}
+
+/*TEAL CARD */
+.card-teal {
+  @include card($teal); 
+}
+
+
+/* CARD MODIFIERS */
+
+.card-elearning {
+  .ibox-title {
+    background-image: url("../../../img/pattern_educ.png");
+    background-size: cover;
+  }
+}
+
+.card-blended {
+  .ibox-title {
+    background-image: url("../../../img/pattern_educ.png");
+    background-repeat: cover;
+  }
+}
+
+.card-facetoface {
+  .ibox-title {
+    background-image: url("../../../img/pattern_educ.png");
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .ibox-card {
+      .listing-status {
+        position: bottom;
+        bottom: 0;
+      }
+
+      .ibox-title {
+        height: auto;
+
+        .ibox-title-wrapper {
+            position: relative;
+            
+            .ellipsis { @include ellipsis-auto(24px, 1.1, 2); }
+        }      
+      }
+
+      .course-description {
+        @include ellipsis(15px, 1.42857143, 4);
+      }    
+  }
+
+  .ibox-card-header {
+    .ibox-title {
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ibox-card {
+      .ibox-title {
+          height: 240px;
+
+          .ibox-title-wrapper {
+            position: absolute;
+            bottom: 0;
+          }      
+      }
+  }
+  .ibox-card-header {
+    .ibox-title {
+      height: auto;    
+
+        .ibox-title-wrapper {
+          position: static;
+        }
+    }
+  }  
+}
+
+@media only screen and (min-width: 1201px) {
+  .ibox-card {
+      .ibox-title {
+        height: 220px;
+      }
+  }
+  .ibox-card-header {
+    .ibox-title {
+      height: auto;
+    }
+  }  
 }

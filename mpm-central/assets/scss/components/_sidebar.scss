@@ -1,0 +1,48 @@
+c-sidebar {
+    c-sidebar-item {
+        position: relative;
+        display: block;
+        &.active > a {
+            color: white;
+        }
+    }
+}
+
+c-sidebar c-sidebar-item > a i {
+    margin-right: 6px;
+}
+
+c-sidebar c-sidebar-item > a {
+    color: #7e7e8f;
+    font-weight: 500;
+    padding: 14px 20px 15px 25px;
+    position: relative;
+    display: block;
+}
+
+c-sidebar c-sidebar-item > a:hover, c-sidebar > c-sidebar-item > a:focus {
+    background-color: #1E2028;
+    color: white;
+}
+
+c-sidebar c-sidebar-item.active {
+    border-left: 4px solid #556089;
+    background: #1E2028;
+
+    a {
+        padding-left: 21px;
+    }
+
+}
+
+.mini-navbar c-sidebar c-sidebar-item > a span {
+    display: none;
+}
+
+.mini-navbar c-sidebar c-sidebar-item > a {
+    font-size: 16px;
+}
+
+c-panel {
+    display: block;
+}

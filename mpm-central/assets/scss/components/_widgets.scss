@@ -67,7 +67,6 @@
     }
 
     &.style4 {
-
         padding: 12px 14px;
 
         label {
@@ -79,6 +78,13 @@
         }
     }
 
+     &.style5 {
+        padding: 14px;
+        p {
+            line-height: 18px;
+            margin: 0;
+        }
+    }
 
     &.mini-widget {
         margin: 0px;
@@ -101,7 +107,13 @@
         }
     }
 
-
+    .initialsCircle {
+        color: $accent-color;
+        width: 65px;
+        height: 65px;
+        line-height: 65px;
+        font-size: 26px;
+    }
 
 }
 

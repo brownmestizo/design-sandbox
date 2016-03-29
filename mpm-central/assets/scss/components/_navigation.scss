@@ -119,14 +119,19 @@
         a {
             padding: 12px 20px 12px 10px;
         }
-    }
-}
 
-.profile-name {
-    display: inline-block;
-    padding-top: 13px;
-    text-align: right;
-    line-height: 15px;
+        .profile-name {
+            padding: 0;
+            color: $accent-color;
+        }
+
+         .initialsCircle {
+            padding: 0;
+            color: $grey;
+        }
+    
+    }
+
 }
 
 .nav.navbar-top-links a {

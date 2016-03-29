@@ -2,10 +2,19 @@ h3 {
   font-size: 18px;
 }
 
+.lh-sm {
+    line-height: 16px;
+}
+
+.sub-heading {
+    font-size: 80%;
+    opacity: 0.5;
+    font-weight: bold;
+}
 
 .logo {
     font-family: 'ff-meta-web-pro', Arial, sans-serif;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     color: #FFF !important;
@@ -76,6 +85,10 @@ h3 {
 
 .text-orange {
     color: $orange;
+}
+
+.text-teal {
+    color: $teal;
 }
 
 .greyed-out {

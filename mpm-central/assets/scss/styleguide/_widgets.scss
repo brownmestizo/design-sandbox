@@ -1,0 +1,105 @@
+/*doc
+---
+title: Widgets
+name: 5_widgets
+category: Base
+---
+
+<p class="lead">A widget is basically a block with nice rounded corners.
+It is mostly used as a container for multi-line titles and multiple pieces of data
+    that are too long to be contained in an alert box.</p>
+
+Remember that their width depends on the <code>div</code> that contains them.
+
+Since a basic widget has a transparent background, you would most likely end up using
+one of our colour classes.
+
+```html_example
+<div class="widget">
+    This is a basic widget.
+</div>
+```
+
+```html_example
+<div class="widget style1 red-bg">
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <p>This is a sample paragraph</p>
+</div>
+```
+
+```html_example
+<div class="col-lg-10">
+    <div class="widget style2 navy-bg">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <p>This is a sample paragraph</p>
+    </div>
+</div>
+```
+
+```html_example
+<div class="col-lg-8">
+    <div class="widget style3 green-bg">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <p>This is a sample paragraph</p>
+    </div>
+</div>
+```
+
+```html_example
+<div class="col-lg-6">
+    <div class="widget style4 gray-bg">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <p>This is a sample paragraph</p>
+    </div>
+</div>
+```
+
+```html_example
+<div class="col-lg-4">
+    <div class="widget mini-widget lighter-grey-bg">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <p>This is a sample paragraph</p>
+    </div>
+</div>
+```
+
+A widget may also be formatted to look like a modal with a title bar and a text box.
+This can be achieved by splitting a widget to a <code>widget-head-color-box</code>
+and <code>widget-text-box</code>.
+
+```html_example
+<div class="widget-head-color-box navy-bg">
+    <h2 class="font-bold no-margins">
+        Widget title
+    </h2>
+</div>
+
+<div class="widget-text-box">
+    <div class="form-group">
+        <p>Text inside a widget.</p>
+    </div>
+</div>
+```
+
+You can also use a label/badge inside a widget.
+
+```html_example
+<div class="widget lighter-grey-bg style4 m-b-none clear">
+    <p>
+        Full body manikin
+        <label class="pull-right label label-primary">0</label>
+    </p>
+</div>
+```
+*/
+

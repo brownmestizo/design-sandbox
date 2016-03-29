@@ -1,6 +1,6 @@
 {
   "name": "design-sandbox",
-  "description": "Design Sandbox for Modelbuffs, Planears, M3",
+  "description": "Design Sandbox for Modelbuffs, Planearts, M3",
   "scripts": {
     "test": "grunt test"
   },

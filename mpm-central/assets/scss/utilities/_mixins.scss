@@ -2,24 +2,103 @@
 
 @mixin shadow-sm () {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 3px 1px -2px rgba(0, 0, 0, $shadow-two-opacity);
+              0 -1px 1px -2px rgba(0, 0, 0, $shadow-two-opacity);
 
     -web-kit-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 3px 1px -2px rgba(0, 0, 0, $shadow-two-opacity);
+              0 -2px 1px -2px rgba(0, 0, 0, $shadow-two-opacity);
 }
 
-@mixin shadow-md () {    
+@mixin shadow-md () {
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 3px 3px -2px rgba(0, 0, 0, $shadow-two-opacity);
+              0 -2px 3px -2px rgba(0, 0, 0, $shadow-two-opacity);
 
     -web-kit-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 3px 3px -2px rgba(0, 0, 0, $shadow-two-opacity);
+              0 -2px 3px -2px rgba(0, 0, 0, $shadow-two-opacity);
 }
 
 @mixin shadow-lg () {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 1px 10px 0 rgba(0, 0, 0, $shadow-two-opacity);
+              0 -2px 10px 0 rgba(0, 0, 0, $shadow-two-opacity);
 
     -web-kit-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-one-opacity),
-              0 1px 10px 0 rgba(0, 0, 0, $shadow-two-opacity);
+              0 -2px 10px 0 rgba(0, 0, 0, $shadow-two-opacity);
+}
+
+// Ellipsis for multi-line content
+@mixin ellipsis($font-size, $line-height, $lines-to-show) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Ellipsis for auto-height content
+@mixin ellipsis-auto($font-size, $line-height, $lines-to-show) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: auto; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// Mixin for the base card
+@mixin card($color) {
+  .ibox-title {
+    background-color: $color;
+    color: #FFF;  
+
+    .text-muted {
+      color: darken($color, 30%);
+    }    
+  }
+
+  .listing-status {
+    background-color: rgba(darken($color, 10%), .4);
+    color: rgba(#FFF, .7);
+  }
+  
+  h3 { 
+    color: $color;
+  }  
+
+  input {
+    background: none !important;
+    color: #FFF !important;
+    border-color: #FFF;
+
+    &:focus {
+      border-color: #FFF !important;
+      box-shadow: inset 0 -1px 0 #FFF !important;
+    }
+
+    &::-webkit-input-placeholder {
+       color: darken($color, 20%);
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       color: darken($color, 20%);  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: darken($color, 20%);
+    }
+
+    &:-ms-input-placeholder {  
+       color: darken($color, 20%);
+    }    
+  }
+
+
 }

@@ -1,0 +1,57 @@
+/*doc
+---
+title: Lists
+name: 13_lists
+category: Base
+---
+
+<p class="lead">The usual unordered and ordered lists still work. However, with Concrete
+we also used the list element as major component of our search results
+pages. In our Item/Preview layout, the item pane is essentially a list that
+    contains all search results/items (e.g. Usage events).</p>
+
+```html_example
+<div class="list-container">
+    <div class="listing">
+        <div class="list-results">
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        <span class="text-red">DRAFT</span>
+                    </div>
+                    <div class="list-summary">
+                        SCT
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span>5</span>
+                    <h3>0 hrs</h3>
+                    <span class="preview"><i class="fa fa-angle-double-right"></i></span>
+                </div>
+            </div>
+            <!-- END List item -->
+
+            <!-- List item -->
+            <div class="list-item">
+                <div class="list-row">
+                    <div class="list-key text-muted">
+                        <span class="text-red">DRAFT</span>
+                    </div>
+                    <div class="list-summary">
+                        Usage event title
+                    </div>
+                </div>
+                <div class="list-row-end">
+                    <span>2</span>
+                    <h3>0 hrs</h3>
+                    <span class="preview"><i class="fa fa-angle-double-right"></i></span>
+                </div>
+            </div>
+            <!-- END List item -->
+        </div>
+    </div>
+</div>
+```
+
+*/

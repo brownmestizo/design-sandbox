@@ -1,0 +1,115 @@
+/*doc
+---
+title: Tables
+name: _tables
+category: Base
+---
+
+<p class="lead">Provide pagination links for Central with our multi-page pagination component.</p>
+
+```html_example
+<div class="form-group">
+    <table class="table history">
+        <tbody>
+            <tr>
+                <td class="p-l-none">
+                    <strong>Inspection</strong><br>
+                    <a>Work order #244</a><br>
+                </td>
+                <td>
+                    <span class="small text-muted">
+                        Result
+                    </span><br>
+                    <span class="text-green">
+                        <i class="fa fa-check"></i>
+                        Passed
+                    </span>
+                </td>
+                <td class="text-right">
+                    Andrea Thompson<br>
+                    <a><i class="fa fa-map-marker"></i>
+                        Lady Cilento Children's Hospital
+                    </a><br>
+                    2 Nov, 2015
+                </td>
+            </tr>
+            <tr>
+                <td class="p-l-none">
+                    <strong>Repair</strong><br>
+                    <a>Work order #213</a>
+                </td>
+                <td>
+                    <span class="small text-muted">
+                        Time taken
+                    </span><br>
+                    <i class="fa fa-clock-o"></i> 1hr 40mins
+                </td>
+                <td class="text-right">
+                    Clinton Henderson<br>
+                    <a><i class="fa fa-map-marker"></i>
+                    CSDS</a><br>
+                    21 Oct, 2015
+                </td>
+            </tr>
+            <tr>
+                <td class="p-l-none">
+                    <strong>Inspection</strong><br>
+                    <a>Work order #195</a>
+                </td>
+                <td>
+                    <span class="small text-muted">
+                        Result
+                    </span><br>
+                    <span class="text-danger">
+                        <i class="fa fa-flag"></i>
+                        Flagged
+                    </span>
+                </td>
+                <td class="text-right">
+                    Andrea Thompson<br>
+                    <a><i class="fa fa-map-marker"></i>
+                    Lady Cilento Children's Hospital
+                    </a><br>
+                    17 Oct, 2015
+                </td>
+            </tr>
+            <tr>
+                <td class="p-l-none">
+                    <strong>Service</strong><br>
+                    <a>Work order #188</a>
+                </td>
+                <td>
+                    <span class="small text-muted">Time taken</span><br>
+                    <i class="fa fa-clock-o"></i> 3hr 15mins
+                </td>
+                <td class="text-right">
+                    Daniel Host<br>
+                    <a><i class="fa fa-map-marker"></i> CSDS</a><br>
+                    8 Oct, 2015
+                </td>
+            </tr>
+            <tr>
+                <td class="p-l-none">
+                    <strong>Repair</strong><br>
+                    <a>Work order #185</a><br>
+                </td>
+                <td>
+                    <span class="small text-muted">
+                    Time taken
+                    </span><br>
+                    <i class="fa fa-clock-o"></i> 1hr 40mins
+                </td>
+                <td class="text-right">
+                    Clinton Henderson<br>
+                    <a>
+                        <i class="fa fa-map-marker"></i> CSDS
+                    </a><br>
+                    29 Sep, 2015
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+```
+
+*/

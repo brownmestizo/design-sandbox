@@ -1,4 +1,4 @@
-/* MPM Central
+/* CSDS Central
 ================================================== */
 
 @import
@@ -26,6 +26,7 @@
 "inspinia/theme-config",
 "inspinia/skins",
 "inspinia/media",
+"inspinia/animate",
 
 /* CSDS Theme ================ */
 // Custom styles to override theme styles
@@ -54,18 +55,25 @@
 "components/widgets",
 "components/calendar",
 "components/alerts",
+"components/sidebar",
+"components/inputs",
+"components/chips",
 
 // Plugins
 "plugins/toastr",
+"plugins/iCheck/custom",
 "plugins/skspinner",
-"plugins/chartist",
+"plugins/select2-bootstrap",
+"plugins/charts",
+"plugins/dropzone",
 
 // Layout
 "layout/top_navigation",
 "layout/sidebar",
 "layout/forms",
 "layout/content",
+"layout/bootstrap",
 "layout/media", //media queries
 
 // Pages
-"pages/pages"
+"pages/pages";

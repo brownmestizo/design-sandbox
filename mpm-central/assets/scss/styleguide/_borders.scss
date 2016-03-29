@@ -1,0 +1,56 @@
+/*doc
+---
+title: Borders
+name: 8_borders
+category: Base
+---
+
+The <code>.border</code> class defines the border style and color with no width.
+Additional variations of this define the side(s) of the element
+
+```html_example
+<div class="row">
+    <div class="col-lg-3">
+        <div class="box b-t">
+            Top border
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-r">
+            Right border only
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-b">
+            Bottom border only
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-l">
+            Left border only
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-none">
+            No border
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box boxed b-t-none">
+            No top border
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-tb">
+            Top and bottom border only
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="box b-lr">
+            Left and right border only
+        </div>
+    </div>
+</div>
+```
+
+*/

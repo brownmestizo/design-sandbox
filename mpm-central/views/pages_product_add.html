@@ -53,12 +53,12 @@
                         <div class="ibox">
                             <div class="ibox-content m-b-md">
                                 <h2 class="m-b-md">
-                                    <input class="form-control" placeholder="Product name" value="">                                    
+                                    <input class="form-control" placeholder="Product name" value="" name="prod_name">                                    
                                 </h2>
 
                                 <div class="form-group">
                                     <label>Product code</label>
-                                    <input class="form-control" placeholder="Product code">
+                                    <input class="form-control" placeholder="Product code" name="prod_code">
                                 </div>       
 
                                 <div class="form-group">
@@ -67,21 +67,24 @@
                                         <div class="col-md-4">
                                             <div class="i-checks">
                                                 <label>
-                                                    <input type="checkbox" value=""> Modelbuffs
+                                                    <input type="checkbox" value="" name="mb"> Modelbuffs
+                                                    <!-- if checked, value should be 1, otherwise, nil -->
                                                 </label>
                                             </div>   
                                         </div>
                                        <div class="col-md-4">
                                             <div class="i-checks">
                                                 <label>
-                                                    <input type="checkbox" value=""> Planearts
+                                                    <input type="checkbox" value="pa"> Planearts
+                                                    <!-- if checked, value should be 1, otherwise, nil -->
                                                 </label>
                                             </div>   
                                         </div>      
                                        <div class="col-md-4">
                                             <div class="i-checks">
                                                 <label>
-                                                    <input type="checkbox" value=""> M3
+                                                    <input type="checkbox" value="" name="m3"> M3
+                                                    <!-- if checked, value should be 1, otherwise, nil -->
                                                 </label>
                                             </div>   
                                         </div>                                                                          
@@ -93,7 +96,10 @@
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
                                         <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
+                                            <option value="" name="prod_category">Select a category</option>
+                                            {% for category in categories %}                
+                                                <option value="{{ category.getMenuAlias() }}">{{ category.getMenuName() }}</option>
+                                            {% endfor %}                                                                           
                                         </select>
                                     </div>
                                 </div>
@@ -103,34 +109,38 @@
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
                                         <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
+                                            <option value="" name="prod_era">Select an era</option>
+                                            {% for era in eras %}                
+                                                <option value="{{ era.getEraId() }}">{{ era.getEraDescription() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
                                     </div>
                                 </div>                                  
 
                                 <div class="form-group">
                                     <label>Alternative names</label>
-                                    <input class="form-control" placeholder="Separate alternative names by a comma">
+                                    <input class="form-control" placeholder="Separate alternative names by a comma" name="prod_alt">
+                                    <!-- prod_alt should be split into prod_alt1, prod_alt2, prod_alt3, prod_alt4 -->
                                 </div>      
 
                                 <div class="form-group">
                                     <label>Aircraft registration</label>
-                                    <input class="form-control" placeholder="Aircraft registration">
+                                    <input class="form-control" placeholder="Aircraft registration" name="prod_aircraftreg">
                                 </div>    
 
                                 <div class="form-group">
                                     <label>Model company</label>
-                                    <input class="form-control" placeholder="Model company">
+                                    <input class="form-control" placeholder="Model company" name="prod_company">
                                 </div>                                    
 
                                 <div class="form-group">
                                     <label>Related link</label>
-                                    <input class="form-control" placeholder="URL of a related link">
+                                    <input class="form-control" placeholder="URI of a related link" name="prod_links">
                                 </div>     
 
                                 <div class="form-group">
                                     <label>Related text</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
+                                    <input class="form-control" placeholder="Text that will appear as link" name="prod_linkdescription">
                                 </div>     
 
                             </div>
@@ -147,15 +157,23 @@
                                 </div>
                             </div>
                             <div class="ibox-content m-b-md">
+                                <div class="form-group">
+                                    <label>Generic description</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+                                        <select class="form-control" name="prod_general" id="">
+                                            <option value="" name="prod_era">Select a category of description</option>
+                                            {% for genericDescription in genericDescriptions %}                
+                                                <option value="{{ era.getProdGeneral() }}">{{ genericDescription.getProdName() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
+                                    </div>
+                                </div>   
                                                                 
                                 <div class="form-group">
-                                    <label>Description</label>
-                                    <div class="form-control" contenteditable placeholder="Description"></div>
+                                    <label>Custom description</label>
+                                    <div class="form-control" contenteditable placeholder="Description" name="prod_writeup"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Keywords generated from description</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
-                                </div>                                       
                             </div>
                         </div> 
      
@@ -174,9 +192,9 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Length/Width</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right" name="prod_length">
                                                 <div class="input-group-addon right">
-                                                    kg
+                                                    in
                                                 </div><!-- /btn-group -->
                                             </div>
                                         </div>
@@ -184,7 +202,7 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Wing span</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right" name="prod_wingspan">
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
@@ -196,7 +214,7 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Height</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm">
+                                                <input type="text" class="form-control text-right p-r-sm" name="prod_height">
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
@@ -206,9 +224,9 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Scale</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right p-r-sm" name="prod_scale">
                                                 <div class="input-group-addon right">
-                                                    cm
+                                                    &nbsp;
                                                 </div><!-- /btn-group -->
                                             </div>
                                         </div> 
@@ -216,10 +234,7 @@
                                 </div>                                                                                       
                             </div>
                         </div>
-                     
-                    </div> <!-- END col-md-6-->       
 
-                    <div class="col-md-6">
                         <div class="ibox">
                             <div class="ibox-title">
                                 <h3>SEO</h3>
@@ -232,19 +247,21 @@
                             <div class="ibox-content m-b-md">       
                                 <div class="form-group">
                                     <label>Page title</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
+                                    <input class="form-control" placeholder="Custom text that will append the page title" name="prod_title">
                                 </div>                                                                               
                                 <div class="form-group">
                                     <label>Meta description</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
+                                    <input class="form-control" placeholder="Custom text that will appear in the <description> tag" name="prod_description">
                                 </div>                               
                                 <div class="form-group">
-                                    <label>Page title</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
-                                </div>                                                                                                           
+                                    <label>Keywords </label>
+                                    <input class="form-control" placeholder="Custom keywords that will append the product's automatically generated keywords" name="prod_keywords">
+                                </div>                                                                       
                             </div>
-                        </div> 
+                        </div>                      
+                    </div> <!-- END col-md-6-->       
 
+                    <div class="col-md-6">
                         <div class="ibox">
                             <div class="ibox-title">
                                 <h3>Pricing</h3>
@@ -260,20 +277,25 @@
                                     <label>Pricing category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
+                                        <select class="form-control" name="prod_price_id">
+                                            <option value="">Select a pricing category</option>
+                                            {% for pricingCategory in pricingCategories %}                
+                                                <option value="{{ pricingCategory.getProdPriceId() }}">{{ pricingCategory.getProdPriceName() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
                                     </div>
-                                </div> 
+                                </div>   
 
                                 <div class="form-group">
-                                    <label>Regular price</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
+                                    <label>Regular price (Optional)</label>
+                                    <input class="form-control" placeholder="This will override the regular price selected in the Pricing Category field" name="prod_normalprice">
+                                    <!-- this field will be saved in tbl_prod_prices against prod_id -->
                                 </div>  
 
                                 <div class="form-group">
-                                    <label>Sales price</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
+                                    <label>Sales price (Optional)</label>
+                                    <input class="form-control" placeholder="This will override any regular price against this product" name="prod_salesprice">
+                                    <!-- this field will be saved in tbl_prod_prices against prod_id -->
                                 </div>                                  
                             </div>
                         </div> 
@@ -293,11 +315,14 @@
                                     <label>Shipping category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
+                                        <select class="form-control" name="prod_category_shipping">
+                                            <option value="">Select a shipping category</option>
+                                            {% for shippingCategory in shippingCategories %}                
+                                                <option value="{{ shippingCategory.getProdPriceId() }}">{{ shippingCategory.getProdShippingName() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
                                     </div>
-                                </div> 
+                                </div>   
 
                             </div>
                         </div>                         
@@ -318,21 +343,23 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Length/Width</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right" name="sm_prod_length">
                                                 <div class="input-group-addon right">
-                                                    kg
+                                                    in
                                                 </div><!-- /btn-group -->
+                                                <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
                                             </div>
                                         </div>
                                     
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Wing span</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right" name="sm_prod_wingspan">
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
                                             </div>
+                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
                                         </div>
                                     </div>
                                 
@@ -340,21 +367,23 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Height</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm">
+                                                <input type="text" class="form-control text-right p-r-sm" name="sm_prod_height">
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
                                             </div>
+                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
                                         </div>
                                 
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Scale</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right">
+                                                <input type="text" class="form-control text-right p-r-sm" name="sm_prod_scale">
                                                 <div class="input-group-addon right">
-                                                    cm
+                                                    &nbsp;
                                                 </div><!-- /btn-group -->
                                             </div>
+                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
                                         </div> 
                                     </div>                          
                                 </div>  
@@ -363,31 +392,37 @@
                                     <label>Pricing category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
+                                        <select class="form-control" name="sm_prod_price_id">
+                                            <option value="">Select a pricing category</option>
+                                            {% for pricingCategory in pricingCategories %}                
+                                                <option value="{{ pricingCategory.getProdPriceId() }}">{{ pricingCategory.getProdPriceName() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
                                     </div>
-                                </div> 
+                                    <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
 
-                                <div class="form-group">
-                                    <label>Regular price</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
                                 </div>  
 
                                 <div class="form-group">
-                                    <label>Sales price</label>
-                                    <input class="form-control" placeholder="Text that will appear as link">
-                                </div>                                    
+                                    <label>Regular price (Optional)</label>
+                                    <input class="form-control" placeholder="This will override the regular price selected in the Pricing Category field" name="sm_rod_normalprice">
+                                    <!-- this field will be saved in tbl_prod_smaller against prod_id -->
+                                </div>  
+                        
 
                                 <div class="form-group">
                                     <label>Shipping category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="1">Military airplanes - propeller</option>                                        
-                                        </select>
+                                        <select class="form-control" name="sm_prod_shipping_price_id">
+                                            <option value="">Select a shipping category</option>
+                                            {% for shippingCategory in shippingCategories %}                
+                                                <option value="{{ shippingCategory.getProdPriceId() }}">{{ shippingCategory.getProdShippingName() }}</option>
+                                            {% endfor %}                                          
+                                            </select>
                                     </div>
-                                </div> 
+                                </div>   
+                                <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
 
                             </div>
                         </div>   
@@ -402,13 +437,83 @@
                                 </div>
                             </div>
                             <div class="ibox-content m-b-md">                                                        
+                                <div class="form-group m-b-xs">
+                                    <a class="btn-default btn btn-xs pull-right">Remove</a>
+                                    <a><i class="fa fa-cube"></i> Aerospatiale SN-601 Corvette</a>
+                                </div>                            
+                                <div class="form-group m-b-xs">
+                                    <a class="btn-default btn btn-xs pull-right">Remove</a>
+                                    <a><i class="fa fa-cube"></i> Martin Baltimore RAAF</a>                                    
+                                </div>                                   
                                 <div class="text-center">
-                                    <button class="btn btn-grey">Add product</button>
+                                    <button class="btn btn-grey" data-toggle="modal" data-target="#addRelatedProductModal">Add product</button>
                                 </div>
                             </div>
                         </div>    
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h3>Photos</h3>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>                           
+                                </div>
+                            </div>
+                            <div class="ibox-content m-b-md">                                                        
+
+                            </div>
+                            <!-- photos should be saved in tbl_prod_photos against prod_id of this product -->
+                            <!-- prod_solo1, prod_solo2, prod_solo3, prod_solo4 -->
+                            <!-- maximum of four photos -->
+                        </div>                           
                     </div> 
 
+                    <div class="modal fade" id="addRelatedProductModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a data-dismiss="modal" class="pull-right">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+
+                                    <h3>Add related product</h3>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <div class="list-search-custom m-b-sm m-t-sm">
+                                        <label><i class="fa fa-search"></i></label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                            <a href="#" class="search-clear"> <i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>    
+
+                                    <div class="i-checks m-b-xs">
+                                        <label>
+                                            <input type="checkbox" value=""> Aerospatiale SN-601 Corvette
+                                        </label>
+                                    </div> 
+
+                                    <div class="i-checks m-b-xs">
+                                        <label>
+                                            <input type="checkbox" value=""> Airbus A310-300 CSA
+                                        </label>
+                                    </div>                                     
+
+                                    <div class="i-checks m-b-xs">
+                                        <label>
+                                            <input type="checkbox" value=""> Airbus A320 Air Berlin
+                                        </label>
+                                    </div>                                                                         
+
+                                    <div class="text-right m-t-md">
+                                        <a type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#addRoleModal">Close</a> 
+                                    </div>       
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->   
                 </div>
 
             </div>

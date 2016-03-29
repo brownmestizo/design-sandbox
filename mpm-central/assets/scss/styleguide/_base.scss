@@ -1,0 +1,88 @@
+/*doc
+---
+title: Overview
+name: 0_base
+category: Base
+---
+
+<p class="lead">Over a dozen reusable components built to provide iconography, dropdowns,
+    input groups, navigation, alerts, and much more.</p>
+
+##Margins & Padding
+Margins and padding define the reading area of your page by separating main text from
+surrounding environment. They provide important visual relief in any document.
+
+With Concrete, we wanted to make the entire process of wireframing as flexible
+as possible. This meant giving the designers an ability to quickly add and strip
+margins and paddings on an element.
+
+##Example
+This is a typical <code>h1</code> tag. As you can see, by default, there's a considerable
+amount of top margin.
+
+```html_example
+<h1>Example of header</h1>
+```
+You can remove all margins, or you can also remove margins on a side by side basis.
+
+```html_example
+<h1 class="m-none">Example of header</h1>
+<h1 class="m-t-none">Example of header</h1>
+<h1 class="m-b-none">Example of header</h1>
+<h1 class="m-l-none">Example of header</h1>
+<h1 class="m-r-none">Example of header</h1>
+```
+
+```html_example
+<div class="row">
+    <div class="col-lg-2">
+        <div class="widget red-bg">Default padding</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="widget red-bg p-none">No padding</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="widget red-bg p-t-none">No top padding</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="widget red-bg p-b-none">No bottom padding</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="widget red-bg p-r-none">No right padding</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="widget red-bg p-l-none">No left padding</div>
+    </div>
+</div>
+```
+
+At this stage, it's easy to see the pattern. <code>p-r-none</code> obviously
+refers to `padding-right-none` and that <code>m-r-none</code> `means margin-right-none`.
+
+###Complete list of margin and padding modifier classes
+
+Padding class | Definition | Margin class | Definition
+--- | --- | --- | ----
+<code>p-none</code> | No padding | <code>m-none</code> | No margin
+<code>p-t-none</code> | No top padding | <code>m-t-none</code> | No top margin
+<code>p-t-xxs</code> | Super extra small top padding | <code>m-t-xxs</code> | Super extra small top margin
+<code>p-t-xs</code> | Extra small top padding | <code>m-t-xxs</code> | Extra small top margin
+<code>p-t-sm</code> | Small top padding | <code>m-t-sm</code> | Small top margin
+<code>p-t-m</code> | Medium top padding | <code>m-t-m</code> | Medium top margin
+<code>p-r-none</code> | No right padding | <code>m-r-none</code> | No right margin
+<code>p-r-xxs</code> | Super extra small right padding | <code>m-r-xxs</code> | Super extra small right margin
+<code>p-r-xs</code> | Extra small right padding | <code>m-r-xxs</code> | Extra small right margin
+<code>p-r-sm</code> | Small right padding | <code>m-r-sm</code> | Small right margin
+<code>p-r-m</code> | Medium right padding | <code>m-r-m</code> | Medium right margin
+<code>p-b-none</code> | No bottom padding | <code>m-b-none</code> | No bottom margin
+<code>p-b-xxs</code> | Super extra smal bottom padding | <code>m-b-xxs</code> | Super extr small bottom margin
+<code>p-b-xs</code> | Extra smallbottom padding | <code>m-b-xxs</code> | Extr small bottom margin
+<code>p-b-sm</code> | Small botto padding | <code>m-b-sm</code> | Small botto margin
+<code>p-b-m</code> | Medium bottom padding | <code>m-b-m</code> | Medium bottom margin
+<code>p-l-none</code> | No left padding | <code>m-l-none</code> | No left margin
+<code>p-l-xxs</code> | Super extra small left padding | <code>m-l-xxs</code> | Super extra small left margin
+<code>p-l-xs</code> | Extra small left padding | <code>m-l-xxs</code> | Extra small left margin
+<code>p-l-sm</code> | Small left padding | <code>m-l-sm</code> | Small left margin
+<code>p-l-m</code> | Medium left padding | <code>m-l-m</code> | Medium left margin
+
+*/

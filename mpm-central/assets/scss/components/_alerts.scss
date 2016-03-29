@@ -1,3 +1,16 @@
+.alert-small {
+    padding: 10px;
+}
+
+.alert-group {
+    .alert {
+        margin-bottom: 10px;
+    }
+    .alert:last-child {
+        margin-bottom: 20px;
+    }
+}
+
 .alert-warning,
 .alert-yellow {
     color: $mustard;
@@ -29,7 +42,7 @@
     border: 1px solid #8DC3A7;
 
     a {
-        border-bottom: 1px solid #8DC3A7;
+        border-bottom: 1px solid lighten($green, 57%);
         color: $green;
 
         &:hover {
@@ -51,6 +64,23 @@
     color: $red;
     border-color: lighten($red, 31%);
     background-color: lighten($red, 45%); 
+
+    a {
+        border-bottom: 1px solid lighten($red, 31%);
+        color: $red;
+
+        &:hover {
+            border-bottom: 1px solid $red;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
 }
 
 .alert-grey {
@@ -124,11 +154,33 @@
     }
 }
 
+.alert-note {
+    color: $text-color;
+    background-color: $light-accent-color;
+    border: 1px solid darken($light-accent-color, 15%);
+    
+    a {
+        border-bottom: 1px solid lighten($accent-color, 15%);
+        color: $accent-color;
+
+        &:hover {
+            border-bottom: 1px solid $accent-color;
+        }
+    }
+
+    a.btn {
+        color: white;
+        border-bottom: 0;
+        &:hover {
+            border-bottom: 0;
+        }
+    }
+}
+
 .alert-orange {
     color: $orange;
     border-color: $orange;
     border: 1px solid;
-
     background-color: lighten($orange, 40%);
 
     a {

@@ -1,0 +1,62 @@
+/*doc
+---
+title: Badges
+name: 11_badges
+category: Base
+---
+
+<p class="lead">Easily highlight new or unread items by adding a
+    <code><span class="badge"></code> to links and more.</p>
+
+```html_example
+<a>Inbox <span class="badge">42</span></a>
+```
+
+
+You can add the <code>.lg</code> modifier class to increase
+size of your badge. <em>No, Johnathan. I'm not talking about
+something else.</em>
+
+```html_example
+<a>Inbox <span class="badge lg">42</span></a>
+```
+
+##Available variations
+Add any of the below mentioned modifier classes to change the appearance of a label.
+
+Label | Modifier Class
+----- | ---
+<span class="badge badge-yellow">1</span> | <code>badge-yellow</code>
+<span class="badge badge-teal">2</span> | <code>badge-teal</code>
+<span class="badge badge-green">3</span> | <code>badge-green</code>
+<span class="badge badge-success">4</span> | <code>badge-success</code>
+<span class="badge badge-purple">5</span> | <code>badge-purple</code>
+<span class="badge badge-deep-blue">6</span> | <code>badge-deep-blue</code>
+<span class="badge badge-light-grey">7</span> | <code>badge-light-grey</code>
+<span class="badge badge-brown">8</span> | <code>badge-brown</code>
+<span class="badge badge-pink">9</span> | <code>badge-pink</code>
+<span class="badge badge-primary">10</span> | <code>badge-primary</code>
+<span class="badge badge-danger">11</span> | <code>badge-danger</code>
+<span class="badge badge-red">12</span> | <code>badge-red</code>
+<span class="badge badge-info">13</span> | <code>badge-info</code>
+<span class="badge badge-orange">14</span> | <code>badge-orange</code>
+
+Similar to labels, the <code>outline</code> modifier class is also available.
+
+Label | Modifier Class
+----- | ---
+<span class="badge badge-yellow outline">1</span> | <code>badge-yellow outline</code>
+<span class="badge badge-teal outline">2</span> | <code>badge-teal outline</code>
+<span class="badge badge-green outline">3</span> | <code>badge-green outline</code>
+<span class="badge badge-success outline">4</span> | <code>badge-success outline</code>
+<span class="badge badge-purple outline">5</span> | <code>badge-purple outline</code>
+<span class="badge badge-deep-blue outline">6</span> | <code>badge-deep-blue outline</code>
+<span class="badge badge-light-grey outline">7</span> | <code>badge-light-grey outline</code>
+<span class="badge badge-brown outline">8</span> | <code>badge-brown outline</code>
+<span class="badge badge-pink outline">9</span> | <code>badge-pink outline</code>
+<span class="badge badge-primary outline">10</span> | <code>badge-primary outline</code>
+<span class="badge badge-danger outline">11</span> | <code>badge-danger outline</code>
+<span class="badge badge-red outline">12</span> | <code>badge-red outline</code>
+<span class="badge badge-info outline">13</span> | <code>badge-info outline</code>
+<span class="badge badge-orange outline">14</span> | <code>badge-orange outline</code>
+*/

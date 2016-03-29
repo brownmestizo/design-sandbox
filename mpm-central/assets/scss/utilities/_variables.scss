@@ -2,9 +2,9 @@
 $font-stack: "Roboto", "Segoe UI", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
 
 // Shadows
-$shadow-one-opacity: 0.14 !default;
-$shadow-two-opacity: 0.10 !default;
-$shadow-three-opacity: 0.10 !default;
+$shadow-one-opacity: 0.2 !default;
+$shadow-two-opacity: 0.15 !default;
+$shadow-three-opacity: 0.15 !default;
 
 // Central palette
 $darker-navyblue: #131419;
@@ -22,7 +22,7 @@ $dark-gray: #c2c2c2;      // Default color
 $blue: #1c84c6;           // Success color
 $yellow: #f8ac59;         // Warrning color
 $red: #ed5565;            // Danger color
-$orange: #FF5E0C;         // Orange color
+$orange: #ff9800;         // Orange color
 
 // Original CSDS Central colours
 $teal: #39B4BF;
@@ -53,7 +53,7 @@ $grey: #676a6c;
 /* $input-border-color: #E0E0E0; */
 $border-grey: #e7eaec;
 $darker-border-grey:#DDDDDD;
-$hover-grey: #f5f5f5;
+$hover-grey: #f3f3f3;
 
 $text-color: $grey;             // Body text
 $dark-gray: $csds-dark-grey;    // Default colour

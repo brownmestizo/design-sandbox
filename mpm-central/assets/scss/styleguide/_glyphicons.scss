@@ -1,0 +1,92 @@
+
+
+/*doc
+---
+title: Glyphicons
+name: 9_glyphicons
+category: Base
+---
+
+<p class="lead">Includes over 250 glyphs in font format from the <a href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
+Font Awesome Icons set</a>. You can place Font Awesome icons just about anywhere with <code>i</code> tag.</p>
+
+You can place Font Awesome icons just about anywhere using the CSS Prefix fa and the icon's name.
+Font Awesome is designed to be used with inline elements (we like the `<i>` tag for brevity, but using a `<span>`
+is more semantically correct).
+
+```html_example
+<i class="fa fa-camera-retro"></i> fa-camera-retro
+```
+
+To increase icon sizes relative to their container, use the <code>fa-lg</code> (33% increase),
+<code>fa-2x</code>, <code>fa-3x</code>, <code>fa-4x</code>, or <code>fa-5x</code> classes.
+
+```html_example
+<i class="fa fa-camera-retro fa-lg"></i> fa-lg
+<i class="fa fa-camera-retro fa-2x"></i> fa-2x
+<i class="fa fa-camera-retro fa-3x"></i> fa-3x
+<i class="fa fa-camera-retro fa-4x"></i> fa-4x
+<i class="fa fa-camera-retro fa-5x"></i> fa-5x
+```
+
+Use <code>fa-border</code> and <code>fa-pull-right</code> or <code>fa-pull-left</code>
+for easy pull quotes or article icons.
+
+
+```html_example
+<i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
+...tomorrow we will run faster, stretch out our arms farther...
+And then one fine morning— So we beat on, boats against the
+current, borne back ceaselessly into the past.
+```
+
+##Central icons
+
+```html_example
+<div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+        <li>
+            <i class="fa fa-th fa-2x"></i><br />
+            <code>Dashboard</code>
+        </li>
+        <li>
+            <i class="fa fa-user fa-2x"></i><br />
+            <code>Accounts</code>
+        </li>
+        <li>
+            <i class="fa fa-clock-o fa-2x"></i><br />
+            <code>Bookings</code>
+        </li>
+        <li>
+            <i class="fa fa-list-alt fa-2x"></i><br />
+            <code>Courses</code>
+        </li>
+        <li>
+            <i class="fa fa-folder-o fa-2x"></i><br />
+            <code>Resources</code>
+        </li>
+        <li>
+            <i class="fa fa-building fa-2x"></i><br />
+            <code>Centres</code>
+        </li>
+        <li>
+            <i class="fa fa-bullseye fa-2x"></i><br />
+            <code>Equipment</code>
+        </li>
+        <li>
+            <i class="fa fa-cube fa-2x"></i><br />
+            <code>Products</code>
+        </li>
+        <li>
+            <i class="fa fa-truck fa-2x"></i><br />
+            <code>Orders</code>
+        </li>
+        <li>
+            <i class="fa fa-check-square-o fa-2x"></i><br />
+            <code>Tasks</code>
+        </li>
+    </ul>
+</div>
+```
+
+*/

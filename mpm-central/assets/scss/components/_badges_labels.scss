@@ -8,7 +8,7 @@ label {
     color: white;
     display: inline-block;
     vertical-align: middle;
-    
+
     &.outline {
         background-color: lighten($grey, 45%);
         color: $grey;
@@ -20,6 +20,14 @@ label {
         padding: 10px;
         font-weight: 500;
     }
+}
+
+label.error {
+    color: #cc5965;
+    display: inline-block;
+    margin-left: 0;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .sidebar-collapse .label {
@@ -34,8 +42,8 @@ label {
 
     &.outline {
         background-color: lighten($mustard, 45%);
-        color: $mustard;       
-        border: 1px solid $mustard; 
+        color: $mustard;
+        border: 1px solid $mustard;
     }
 }
 
@@ -46,8 +54,20 @@ label {
 
     &.outline {
         background-color: lighten($teal, 45%);
-        color: $teal;       
-        border: 1px solid $teal; 
+        color: $teal;
+        border: 1px solid $teal;
+    }
+}
+
+.label-purple, .badge-purple {
+    border: 1px solid $purple;
+    background-color: $purple;
+    color: white;
+
+    &.outline {
+        background-color: lighten($purple, 45%);
+        color: $purple;
+        border: 1px solid $purple;
     }
 }
 
@@ -59,8 +79,8 @@ label {
 
     &.outline {
         background-color: lighten($green, 57%);
-        color: $green;       
-        border: 1px solid $green; 
+        color: $green;
+        border: 1px solid $green;
     }
 }
 
@@ -71,8 +91,8 @@ label {
 
     &.outline {
         background-color: lighten($purple, 36%);
-        color: $purple;       
-        border: 1px solid $purple; 
+        color: $purple;
+        border: 1px solid $purple;
     }
 }
 
@@ -83,8 +103,8 @@ label {
 
     &.outline {
         background-color: lighten($deep-blue, 45%);
-        color: $deep-blue;       
-        border: 1px solid $deep-blue; 
+        color: $deep-blue;
+        border: 1px solid $deep-blue;
     }
 }
 
@@ -100,8 +120,8 @@ label {
 
     &.outline {
         background-color: lighten($brown, 45%);
-        color: $brown;       
-        border: 1px solid $brown; 
+        color: $brown;
+        border: 1px solid $brown;
     }
 }
 
@@ -112,8 +132,8 @@ label {
 
     &.outline {
         background-color: lighten($pink, 35%);
-        color: $pink;       
-        border: 1px solid $pink; 
+        color: $pink;
+        border: 1px solid $pink;
     }
 }
 
@@ -123,8 +143,8 @@ label {
 
   &.outline {
         background-color: lighten($accent-color, 45%);
-        color: $accent-color;     
-        border: 1px solid $accent-color;   
+        color: $accent-color;
+        border: 1px solid $accent-color;
     }
   }
 
@@ -136,8 +156,8 @@ label {
 
     &.outline {
         background-color: lighten($red, 45%);
-        color: $red;       
-        border: 1px solid $red; 
+        color: $red;
+        border: 1px solid $red;
     }
   }
 
@@ -146,8 +166,8 @@ label {
   background-color: $info;
     &.outline {
         background-color: lighten($info, 47%);
-        color: $info;     
-        border: 1px solid $info;   
+        color: $info;
+        border: 1px solid $info;
     }
 }
 
@@ -158,8 +178,8 @@ label {
 
     &.outline {
         background-color: lighten($orange, 36%);
-        color: $orange;       
-        border: 1px solid $orange; 
+        color: $orange;
+        border: 1px solid $orange;
     }
 }
 
@@ -167,6 +187,34 @@ label {
     border: 1px solid $light-grey;
     background-color: $light-grey;
 }
+
+
+.label-invisible {
+    border: none;
+    background-color: transparent;
+    color: $grey;
+    padding: 0px;
+    margin-left: 10px;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+
+    &.outline {
+        background-color: transparent;
+        padding: 3px 0px 3px 8px;
+        border: 1px solid $light-grey;
+
+        .btn:hover {
+            background-color: transparent !important;
+        }
+    }
+
+    &.outline:hover {
+        background-color: lighten($lighter-grey, 10%);
+    }
+}
+
 
 .badge {
     text-align: center;
@@ -182,3 +230,12 @@ label {
         margin-right: 5px;
     }
 }
+
+/*****NEW LABELS****/
+
+.label-transparent{
+    background-color:transparent;
+    font-size: 15px;
+    font-weight: 500;
+}
+

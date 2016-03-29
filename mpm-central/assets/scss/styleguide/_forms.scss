@@ -1,0 +1,176 @@
+/*doc
+---
+title: Forms
+name: 7_forms
+category: Base
+---
+
+##Basic example
+Individual form controls automatically receive some global styling.
+All textual `<input>`, `<textarea>`, and `<select>` elements with `.form-control`
+are set to `width: 100%`; by default.
+
+Wrap labels and controls in `.form-group` for optimum spacing.
+
+##Always add labels
+Screen readers will have trouble with your forms if you don't include a label for every input.
+
+```html_example
+<form>
+<div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1"
+            placeholder="Placeholder text">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"
+            placeholder="Placeholder text">
+    </div>
+    <div class="form-group">
+        <label>Pocket centre</label>
+        <div class="input-group">
+            <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
+            <select class="form-control">
+                <option value="Beaudesert">Beaudesert</option>
+                <option value="Roma">Roma</option>
+            </select>
+        </div>
+    </div>
+<button type="submit" class="btn btn-white">Cancel</button>
+<button type="submit" class="btn btn-primary pull-right">Submit</button>
+</form>
+```
+
+##Checkboxes and radios
+Checkboxes are for selecting one or several options in a list, while radios
+are for selecting one option from many.
+
+###Default (stacked)
+```html_example
+<div class="form-group">
+    <label>Simulation Coordinators/Educators</label>
+    <div class="i-checks2">
+        <label>
+            <input type="checkbox" value="">
+            Andrew Heasley
+        </label>
+    </div>
+    <div class="i-checks2">
+        <label>
+            <input type="checkbox" value="">
+            Tony Carter
+        </label>
+    </div>
+    <div class="i-checks2">
+        <label>
+            <input type="checkbox" value="">
+            Jane Harnischfeger
+        </label>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="radio i-checks2">
+      <label>
+        <input type="radio" name="optionsRadios" value="option1" checked>
+        Option one is this and that be sure to include why it's great
+      </label>
+    </div>
+    <div class="radio i-checks2">
+      <label>
+        <input type="radio" name="optionsRadios" value="option2">
+        Option two can be something else and selecting it will deselect option one
+      </label>
+    </div>
+    <div class="radio i-checks2 disabled">
+      <label>
+        <input type="radio" name="optionsRadios" value="option3" disabled>
+        Option three is disabled
+      </label>
+    </div>
+</div>
+```
+
+
+##Toggles
+
+On/off is the basic toggle.
+
+```html_example
+<form>
+    <div class="onoffswitch">
+        <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example511">
+        <label class="onoffswitch-label" for="example511">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</form>
+```
+
+To replace on/off with yes/no, just add a class modifier, `yesnoswitch` to the div container. 
+
+```html_example
+<form>
+    <div class="onoffswitch yesnoswitch">
+        <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example511">
+        <label class="onoffswitch-label" for="example511">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</form>
+```
+
+
+##Search input
+```html_example
+<form>
+<div class="list-search-custom m-b-sm">
+    <label><i class="fa fa-search"></i></label>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search equipment">
+        <a class="search-clear"> <i class="fa fa-times"></i></a>
+    </div>
+</div>
+</form>
+```
+
+##Textarea
+Form control which supports multiple lines of text.
+
+```html_example
+<form class="form-inline editableform">
+    <div class="control-group form-group">
+        <div>
+            <div class="editable-input">
+                <textarea class="form-control input-large"
+                    rows="0" placeholder="Click to add reason"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+```
+
+```html_example
+<form class="form-inline editableform m-b-lg">
+    <div class="control-group form-group">
+        <div>
+            <div class="editable-input">
+                <textarea class="form-control input-large" rows="5"></textarea>
+            </div>
+            <div class="editable-buttons">
+                <button type="button" class="btn btn-primary btn-sm editable-submit">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-sm editable-cancel">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+```
+
+*/

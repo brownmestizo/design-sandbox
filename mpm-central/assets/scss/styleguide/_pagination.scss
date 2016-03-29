@@ -1,0 +1,27 @@
+/*doc
+---
+title: Pagination
+name: pagination
+category: Base
+---
+
+<p class="lead">Provide pagination links for Central with our multi-page pagination component.</p>
+
+```html_example
+<div class="list-options">
+    <div class="btn-group m-r-sm">
+        <button type="button" class="btn btn-white">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="btn btn-white">1</button>
+        <button class="btn btn-white active">2</button>
+        <button class="btn btn-white">3</button>
+        <button class="btn btn-white">4</button>
+        <button type="button" class="btn btn-white">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+```
+
+*/

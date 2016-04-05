@@ -267,7 +267,7 @@
     clear: both;
 }
 
-.cart-actions button, .cart-actions .btn-cart, .cart-actions .wishlist {
+.cart-actions .button, .cart-actions .btn-cart, .cart-actions .wishlist {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
@@ -290,7 +290,7 @@
     -ms-transition: all 0.25s ease 0s;
 }
 
-button.first {
+.button.first {
     margin-right: 20px;
     margin-bottom: 10px;
 }

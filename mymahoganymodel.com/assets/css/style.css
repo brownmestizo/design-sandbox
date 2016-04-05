@@ -172,12 +172,12 @@ a:focus, a.link {
   background: #2d3e50; }
 
 /* line 175, ../../../assets/scss/skins/skin-11.scss */
-.cart-actions button, .cart-actions .wishlist {
+.cart-actions .button, .cart-actions .wishlist {
   background: none repeat scroll 0 0 #2d3e50;
   border: 2px solid #2ecc71; }
 
 /* line 180, ../../../assets/scss/skins/skin-11.scss */
-.cart-actions button:hover {
+.cart-actions .button:hover {
   background: #fff;
   color: #2ecc71;
   border: solid 2px #2d3e50; }

@@ -15,7 +15,7 @@ $featuredProducts = TblProdInfoQuery::create()
 	->find();	
 
 echo $twig->render(
-	'pages_index.html', 
+	'page_index.html', 
 		array(
 			'newProducts' => $newProducts, 
 			'featuredProducts' => $featuredProducts, 

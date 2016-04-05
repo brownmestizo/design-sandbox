@@ -18,7 +18,7 @@ $productsPager = TblProdInfoQuery::create()
 	->paginate($page = $pageNumber, $maxPerPage = $maxResultsPerPage);
 
 echo $twig->render(
-    'pages_category.html', 
+    'page_category.html', 
         array(
         	'image_url' => $generated_image_url,
             'productsPager' => $productsPager,

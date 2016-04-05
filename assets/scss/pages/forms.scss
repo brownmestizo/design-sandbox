@@ -66,7 +66,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     height: 36px;
 }
 
-.btn {
+.btn, .button {
     border: medium none;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -80,6 +80,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     -moz-transition: all 0.25s linear 0s;
     -ms-transition: all 0.25s linear 0s;
     -o-transition: all 0.25s linear 0s;
+    text-align: center;
 }
 
 .btn-lg {

@@ -172,12 +172,12 @@ a:focus, a.link {
     background: #F17370;
 }
 
-.cart-actions button, .cart-actions .wishlist {
+.cart-actions .button, .cart-actions .wishlist {
     background: none repeat scroll 0 0 #F17370;
     border: 2px solid #F26663;
 }
 
-.cart-actions button:hover {
+.cart-actions .button:hover {
     background: #fff;
     color: #F26663;
     border: solid 2px #F17370;

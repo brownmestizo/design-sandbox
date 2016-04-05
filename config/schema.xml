@@ -190,16 +190,6 @@
     <column name="prod_id" phpName="ProdId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
     <column name="prod_normalprice" phpName="ProdNormalprice" type="LONGVARCHAR" required="true"/>
     <column name="prod_salesprice" phpName="ProdSalesprice" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_asia" phpName="ProdShippingAsia" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_europe" phpName="ProdShippingEurope" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_usa" phpName="ProdShippingUsa" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_canada" phpName="ProdShippingCanada" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_au" phpName="ProdShippingAu" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_asia_parcel" phpName="ProdShippingAsiaParcel" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_europe_parcel" phpName="ProdShippingEuropeParcel" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_usa_parcel" phpName="ProdShippingUsaParcel" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_canada_parcel" phpName="ProdShippingCanadaParcel" type="LONGVARCHAR" required="true"/>
-    <column name="prod_shipping_au_parcel" phpName="ProdShippingAuParcel" type="LONGVARCHAR" required="true"/>
     <column name="prod_customprice" phpName="ProdCustomprice" type="LONGVARCHAR" required="true"/>
     <index name="prod_id">
       <index-column name="prod_id"/>

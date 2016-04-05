@@ -28,7 +28,7 @@
                         </div> 
 
                         <div class="action-control">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-primary" href="cart.php">
                                 <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
                             </a>
                         </div>

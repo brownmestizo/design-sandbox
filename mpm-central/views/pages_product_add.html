@@ -45,47 +45,34 @@
                         </div>
                     </div><!-- END col -->                
                 </div><!-- END row -->
-                
-                            
-                <div class="row">
 
+                {{ form_start(form) }}
+                <div class="row">
                     <div class="col-md-6">
                         <div class="ibox">
                             <div class="ibox-content m-b-md">
                                 <h2 class="m-b-md">
-                                    <input class="form-control" placeholder="Product name" value="" name="prod_name">                                    
+                                    {{ form_widget(form.prod_name) }}
                                 </h2>
 
-                                <div class="form-group">
-                                    <label>Product code</label>
-                                    <input class="form-control" placeholder="Product code" name="prod_code">
-                                </div>       
+                                {{ form_row(form.prod_code) }}
 
                                 <div class="form-group">
                                     <label class="m-b-xs">Website visibility</label>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="i-checks">
-                                                <label>
-                                                    <input type="checkbox" value="" name="mb"> Modelbuffs
-                                                    <!-- if checked, value should be 1, otherwise, nil -->
-                                                </label>
+                                                {{ form_row(form.mb) }}
                                             </div>   
                                         </div>
                                        <div class="col-md-4">
                                             <div class="i-checks">
-                                                <label>
-                                                    <input type="checkbox" value="pa"> Planearts
-                                                    <!-- if checked, value should be 1, otherwise, nil -->
-                                                </label>
+                                                {{ form_row(form.pa) }}
                                             </div>   
                                         </div>      
                                        <div class="col-md-4">
                                             <div class="i-checks">
-                                                <label>
-                                                    <input type="checkbox" value="" name="m3"> M3
-                                                    <!-- if checked, value should be 1, otherwise, nil -->
-                                                </label>
+                                                {{ form_row(form.m3) }}
                                             </div>   
                                         </div>                                                                          
                                     </div>
@@ -95,12 +82,7 @@
                                     <label>Category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="" name="prod_category">Select a category</option>
-                                            {% for category in categories %}                
-                                                <option value="{{ category.getMenuAlias() }}">{{ category.getMenuName() }}</option>
-                                            {% endfor %}                                                                           
-                                        </select>
+                                        {{ form_widget(form.prod_category) }}
                                     </div>
                                 </div>
 
@@ -108,41 +90,15 @@
                                     <label>Model historic era</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="" id="">
-                                            <option value="" name="prod_era">Select an era</option>
-                                            {% for era in eras %}                
-                                                <option value="{{ era.getEraId() }}">{{ era.getEraDescription() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.prod_era) }}
                                     </div>
                                 </div>                                  
 
-                                <div class="form-group">
-                                    <label>Alternative names</label>
-                                    <input class="form-control" placeholder="Separate alternative names by a comma" name="prod_alt">
-                                    <!-- prod_alt should be split into prod_alt1, prod_alt2, prod_alt3, prod_alt4 -->
-                                </div>      
-
-                                <div class="form-group">
-                                    <label>Aircraft registration</label>
-                                    <input class="form-control" placeholder="Aircraft registration" name="prod_aircraftreg">
-                                </div>    
-
-                                <div class="form-group">
-                                    <label>Model company</label>
-                                    <input class="form-control" placeholder="Model company" name="prod_company">
-                                </div>                                    
-
-                                <div class="form-group">
-                                    <label>Related link</label>
-                                    <input class="form-control" placeholder="URI of a related link" name="prod_links">
-                                </div>     
-
-                                <div class="form-group">
-                                    <label>Related text</label>
-                                    <input class="form-control" placeholder="Text that will appear as link" name="prod_linkdescription">
-                                </div>     
-
+                                {{ form_row(form.prod_alt) }}
+                                {{ form_row(form.prod_aircraftreg) }}
+                                {{ form_row(form.prod_company) }}
+                                {{ form_row(form.prod_links) }}
+                                {{ form_row(form.prod_linkdescription) }}
                             </div>
                         </div>
 
@@ -161,19 +117,11 @@
                                     <label>Generic description</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="prod_general" id="">
-                                            <option value="" name="prod_era">Select a category of description</option>
-                                            {% for genericDescription in genericDescriptions %}                
-                                                <option value="{{ era.getProdGeneral() }}">{{ genericDescription.getProdName() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.prod_general) }}
                                     </div>
-                                </div>   
-                                                                
-                                <div class="form-group">
-                                    <label>Custom description</label>
-                                    <div class="form-control" contenteditable placeholder="Description" name="prod_writeup"></div>
                                 </div>
+
+                                {{ form_row(form.prod_writeup) }}
                             </div>
                         </div> 
      
@@ -192,7 +140,10 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Length/Width</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right" name="prod_length">
+                                                {{ form_widget(form.prod_length, {
+                                                'attr': {'class': 'form-control text-right'}
+                                                }) }}
+
                                                 <div class="input-group-addon right">
                                                     in
                                                 </div><!-- /btn-group -->
@@ -202,7 +153,9 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Wing span</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right" name="prod_wingspan">
+                                                {{ form_widget(form.prod_wingspan, {
+                                                'attr': {'class': 'form-control text-right'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
@@ -214,7 +167,9 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Height</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm" name="prod_height">
+                                                {{ form_widget(form.prod_height, {
+                                                'attr': {'class': 'form-control text-right p-r-sm'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
@@ -224,7 +179,9 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Scale</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm" name="prod_scale">
+                                                {{ form_widget(form.prod_scale, {
+                                                'attr': {'class': 'form-control text-right p-r-sm'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     &nbsp;
                                                 </div><!-- /btn-group -->
@@ -244,19 +201,10 @@
                                     </a>                           
                                 </div>
                             </div>
-                            <div class="ibox-content m-b-md">       
-                                <div class="form-group">
-                                    <label>Page title</label>
-                                    <input class="form-control" placeholder="Custom text that will append the page title" name="prod_title">
-                                </div>                                                                               
-                                <div class="form-group">
-                                    <label>Meta description</label>
-                                    <input class="form-control" placeholder="Custom text that will appear in the <description> tag" name="prod_description">
-                                </div>                               
-                                <div class="form-group">
-                                    <label>Keywords </label>
-                                    <input class="form-control" placeholder="Custom keywords that will append the product's automatically generated keywords" name="prod_keywords">
-                                </div>                                                                       
+                            <div class="ibox-content m-b-md">
+                                {{ form_row(form.prod_title) }}
+                                {{ form_row(form.prod_description) }}
+                                {{ form_row(form.prod_keywords) }}
                             </div>
                         </div>                      
                     </div> <!-- END col-md-6-->       
@@ -277,26 +225,12 @@
                                     <label>Pricing category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="prod_price_id">
-                                            <option value="">Select a pricing category</option>
-                                            {% for pricingCategory in pricingCategories %}                
-                                                <option value="{{ pricingCategory.getProdPriceId() }}">{{ pricingCategory.getProdPriceName() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.prod_price_id) }}
                                     </div>
-                                </div>   
+                                </div>
 
-                                <div class="form-group">
-                                    <label>Regular price (Optional)</label>
-                                    <input class="form-control" placeholder="This will override the regular price selected in the Pricing Category field" name="prod_normalprice">
-                                    <!-- this field will be saved in tbl_prod_prices against prod_id -->
-                                </div>  
-
-                                <div class="form-group">
-                                    <label>Sales price (Optional)</label>
-                                    <input class="form-control" placeholder="This will override any regular price against this product" name="prod_salesprice">
-                                    <!-- this field will be saved in tbl_prod_prices against prod_id -->
-                                </div>                                  
+                                {{ form_row(form.tbl_prod_prices.prod_normalprice) }}
+                                {{ form_row(form.tbl_prod_prices.prod_salesprice) }}
                             </div>
                         </div> 
 
@@ -315,12 +249,8 @@
                                     <label>Shipping category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="prod_category_shipping">
-                                            <option value="">Select a shipping category</option>
-                                            {% for shippingCategory in shippingCategories %}                
-                                                <option value="{{ shippingCategory.getProdPriceId() }}">{{ shippingCategory.getProdShippingName() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.prod_category_shipping) }}
+
                                     </div>
                                 </div>   
 
@@ -343,83 +273,77 @@
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Length/Width</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right" name="sm_prod_length">
+                                                {{ form_widget(form.tbl_prod_smaller.sm_prod_length, {
+                                                'attr': {'class': 'form-control text-right'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     in
                                                 </div><!-- /btn-group -->
                                                 <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
                                             </div>
                                         </div>
-                                    
+
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Wing span</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right" name="sm_prod_wingspan">
-                                                <div class="input-group-addon right">
-                                                    cm
-                                                </div><!-- /btn-group -->
-                                            </div>
-                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
-                                        </div>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-lg-6 m-b-sm">
-                                            <span class="inline-label control-label">Height</span>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm" name="sm_prod_height">
+                                                {{ form_widget(form.tbl_prod_smaller.sm_prod_wingspan, {
+                                                'attr': {'class': 'form-control text-right'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     cm
                                                 </div><!-- /btn-group -->
                                             </div>
                                             <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
                                         </div>
-                                
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-sm">
+                                            <span class="inline-label control-label">Height</span>
+                                            <div class="input-group">
+                                                {{ form_widget(form.tbl_prod_smaller.sm_prod_height, {
+                                                'attr': {'class': 'form-control text-right p-r-sm'}
+                                                }) }}
+                                                <div class="input-group-addon right">
+                                                    cm
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
+                                        </div>
+
                                         <div class="col-lg-6 m-b-sm">
                                             <span class="inline-label control-label">Scale</span>
                                             <div class="input-group">
-                                                <input type="text" class="form-control text-right p-r-sm" name="sm_prod_scale">
+                                                {{ form_widget(form.tbl_prod_smaller.sm_prod_scale, {
+                                                'attr': {'class': 'form-control text-right p-r-sm'}
+                                                }) }}
                                                 <div class="input-group-addon right">
                                                     &nbsp;
                                                 </div><!-- /btn-group -->
                                             </div>
-                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
-                                        </div> 
-                                    </div>                          
-                                </div>  
+                                            <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label>Pricing category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="sm_prod_price_id">
-                                            <option value="">Select a pricing category</option>
-                                            {% for pricingCategory in pricingCategories %}                
-                                                <option value="{{ pricingCategory.getProdPriceId() }}">{{ pricingCategory.getProdPriceName() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.tbl_prod_smaller.sm_prod_price_id) }}
                                     </div>
                                     <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
 
                                 </div>  
 
-                                <div class="form-group">
-                                    <label>Regular price (Optional)</label>
-                                    <input class="form-control" placeholder="This will override the regular price selected in the Pricing Category field" name="sm_rod_normalprice">
-                                    <!-- this field will be saved in tbl_prod_smaller against prod_id -->
-                                </div>  
+                                {{ form_row(form.tbl_prod_smaller.sm_prod_normalprice) }}
                         
 
                                 <div class="form-group">
                                     <label>Shipping category</label>
                                     <div class="input-group">
                                         <span class="input-group-addon left"><i class="fa fa-sort"></i></span>
-                                        <select class="form-control" name="sm_prod_shipping_price_id">
-                                            <option value="">Select a shipping category</option>
-                                            {% for shippingCategory in shippingCategories %}                
-                                                <option value="{{ shippingCategory.getProdPriceId() }}">{{ shippingCategory.getProdShippingName() }}</option>
-                                            {% endfor %}                                          
-                                            </select>
+                                        {{ form_widget(form.tbl_prod_smaller.sm_prod_shipping_price_id) }}
                                     </div>
                                 </div>   
                                 <!-- this would be saved in tbl_prod_smaller against the prod_id of this product -->                                            
@@ -461,7 +385,7 @@
                                 </div>
                             </div>
                             <div class="ibox-content m-b-md">                                                        
-
+                                {{ form_widget(form.photos) }}
                             </div>
                             <!-- photos should be saved in tbl_prod_photos against prod_id of this product -->
                             <!-- prod_solo1, prod_solo2, prod_solo3, prod_solo4 -->
@@ -515,6 +439,7 @@
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->   
                 </div>
+                {{ form_end(form) }}
 
             </div>
 

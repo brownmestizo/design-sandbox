@@ -7,11 +7,13 @@
         "symfony/finder": "^2.8",
         "symfony/form": "^2.8",
         "symfony/twig-bridge": "^2.8",
-        "symfony/http-foundation": "^2.8"
+        "symfony/http-foundation": "^2.8",
+        "symfony/validator": "~2.8"
     },
 	
 	"autoload": {
-	    "classmap": ["config/generated-classes/"]
+	    "classmap": ["config/generated-classes/"],
+        "psr-0": { "": "mpm-central/src/" }
 	}    
 
 }

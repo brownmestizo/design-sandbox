@@ -191,7 +191,7 @@ class TblProdPricesTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('prod_id', 'ProdId', 'INTEGER', true, null, null);
+        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_info', 'prod_id', true, null, null);
         $this->addColumn('prod_normalprice', 'ProdNormalprice', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_salesprice', 'ProdSalesprice', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_shipping_asia', 'ProdShippingAsia', 'LONGVARCHAR', true, null, null);

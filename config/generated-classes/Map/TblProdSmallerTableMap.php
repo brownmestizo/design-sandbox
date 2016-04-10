@@ -166,7 +166,7 @@ class TblProdSmallerTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addPrimaryKey('prod_id', 'ProdId', 'INTEGER', true, null, null);
+        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_info', 'prod_id', true, null, null);
         $this->addColumn('sm_enable_id', 'SmEnableId', 'INTEGER', true, null, null);
         $this->addColumn('sm_prod_length', 'SmProdLength', 'LONGVARCHAR', true, null, null);
         $this->addColumn('sm_prod_wingspan', 'SmProdWingspan', 'LONGVARCHAR', true, null, null);

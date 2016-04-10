@@ -206,7 +206,7 @@ class TblProdPhotosTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('prod_id', 'ProdId', 'INTEGER', true, null, null);
+        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_info', 'prod_id', true, null, null);
         $this->addColumn('prod_solo_1', 'ProdSolo1', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_solo_2', 'ProdSolo2', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_solo_3', 'ProdSolo3', 'LONGVARCHAR', true, null, null);

@@ -3,10 +3,6 @@ use Form\ProductForm;
 use Symfony\Bridge\Twig\Extension\FormExtension;
 use Symfony\Bridge\Twig\Form\TwigRenderer;
 use Symfony\Bridge\Twig\Form\TwigRendererEngine;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationExtension;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Forms;
@@ -50,6 +46,8 @@ $loader = new Twig_Loader_Filesystem('views/');
 $twig = new Twig_Environment($loader);
 $formFactory = createFormFactory($twig);
 
+$request = Request::createFromGlobals();
+$product = \TblProdInfoQuery::create()->findByProdId($request->get('id'))->getFirst();
 
 $categories = TblMenusQuery::create()
     ->orderByMenuName('ASC')
@@ -71,7 +69,7 @@ $genericDescriptions = TblGeneralQuery::create()
     ->orderByProdName('ASC')
     ->find();
 
-$form = $formFactory->createBuilder(ProductForm::class, null, [
+$form = $formFactory->createBuilder(ProductForm::class, $product, [
     'shippingCategories' => makeChoice($shippingCategories, 'getProdShippingName', 'getProdShippingPriceId'),
     'pricingCategories' => makeChoice($pricingCategories, 'getProdPriceName', 'getProdPriceId'),
     'genericDescriptions' => makeChoice($genericDescriptions, 'getProdName', 'getProdGeneral'),

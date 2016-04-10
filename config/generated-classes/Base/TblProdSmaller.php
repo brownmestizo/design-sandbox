@@ -469,6 +469,10 @@ abstract class TblProdSmaller implements ActiveRecordInterface
             $this->modifiedColumns[TblProdSmallerTableMap::COL_PROD_ID] = true;
         }
 
+        if ($this->singleTblProdInfo !== null && $this->singleTblProdInfo->getProdId() !== $v) {
+            $this->singleTblProdInfo = null;
+        }
+
         return $this;
     } // setProdId()
 
@@ -864,6 +868,13 @@ abstract class TblProdSmaller implements ActiveRecordInterface
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
+            if ($this->singleTblProdInfo !== null) {
+                if ($this->singleTblProdInfo->isModified() || $this->singleTblProdInfo->isNew()) {
+                    $affectedRows += $this->singleTblProdInfo->save($con);
+                }
+                $this->setTblProdInfo($this->singleTblProdInfo);
+            }
+
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -873,12 +884,6 @@ abstract class TblProdSmaller implements ActiveRecordInterface
                     $affectedRows += $this->doUpdate($con);
                 }
                 $this->resetModified();
-            }
-
-            if ($this->singleTblProdInfo !== null) {
-                if (!$this->singleTblProdInfo->isDeleted() && ($this->singleTblProdInfo->isNew() || $this->singleTblProdInfo->isModified())) {
-                    $affectedRows += $this->singleTblProdInfo->save($con);
-                }
             }
 
             $this->alreadyInSave = false;
@@ -1451,8 +1456,10 @@ abstract class TblProdSmaller implements ActiveRecordInterface
     public function getTblProdInfo(ConnectionInterface $con = null)
     {
 
-        if ($this->singleTblProdInfo === null && !$this->isNew()) {
-            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->getPrimaryKey(), $con);
+        if ($this->singleTblProdInfo === null && ($this->prod_id !== null)) {
+            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->prod_id, $con);
+            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
+            $this->singleTblProdInfo->setTblProdSmaller($this);
         }
 
         return $this->singleTblProdInfo;
@@ -1467,10 +1474,15 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function setTblProdInfo(ChildTblProdInfo $v = null)
     {
+        if ($v === null) {
+            $this->setProdId(NULL);
+        } else {
+            $this->setProdId($v->getProdId());
+        }
+
         $this->singleTblProdInfo = $v;
 
-        // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
-        if ($v !== null && $v->getTblProdSmaller(null, false) === null) {
+        if ($v !== null) {
             $v->setTblProdSmaller($this);
         }
 

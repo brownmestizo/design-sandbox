@@ -943,18 +943,6 @@ abstract class TblProdInfo implements ActiveRecordInterface
             $this->modifiedColumns[TblProdInfoTableMap::COL_PROD_ID] = true;
         }
 
-        if ($this->aTblProdPhotos !== null && $this->aTblProdPhotos->getProdId() !== $v) {
-            $this->aTblProdPhotos = null;
-        }
-
-        if ($this->aTblProdPrices !== null && $this->aTblProdPrices->getProdId() !== $v) {
-            $this->aTblProdPrices = null;
-        }
-
-        if ($this->aTblProdSmaller !== null && $this->aTblProdSmaller->getProdId() !== $v) {
-            $this->aTblProdSmaller = null;
-        }
-
         return $this;
     } // setProdId()
 
@@ -2001,32 +1989,11 @@ abstract class TblProdInfo implements ActiveRecordInterface
                 $this->setTblMenus($this->aTblMenus);
             }
 
-            if ($this->aTblProdPhotos !== null) {
-                if ($this->aTblProdPhotos->isModified() || $this->aTblProdPhotos->isNew()) {
-                    $affectedRows += $this->aTblProdPhotos->save($con);
-                }
-                $this->setTblProdPhotos($this->aTblProdPhotos);
-            }
-
-            if ($this->aTblProdPrices !== null) {
-                if ($this->aTblProdPrices->isModified() || $this->aTblProdPrices->isNew()) {
-                    $affectedRows += $this->aTblProdPrices->save($con);
-                }
-                $this->setTblProdPrices($this->aTblProdPrices);
-            }
-
             if ($this->aTblProdPricing !== null) {
                 if ($this->aTblProdPricing->isModified() || $this->aTblProdPricing->isNew()) {
                     $affectedRows += $this->aTblProdPricing->save($con);
                 }
                 $this->setTblProdPricing($this->aTblProdPricing);
-            }
-
-            if ($this->aTblProdSmaller !== null) {
-                if ($this->aTblProdSmaller->isModified() || $this->aTblProdSmaller->isNew()) {
-                    $affectedRows += $this->aTblProdSmaller->save($con);
-                }
-                $this->setTblProdSmaller($this->aTblProdSmaller);
             }
 
             if ($this->aTblShippingCategories !== null) {
@@ -2037,6 +2004,7 @@ abstract class TblProdInfo implements ActiveRecordInterface
             }
 
             if ($this->isNew() || $this->isModified()) {
+
                 // persist changes
                 if ($this->isNew()) {
                     $this->doInsert($con);
@@ -2044,7 +2012,27 @@ abstract class TblProdInfo implements ActiveRecordInterface
                 } else {
                     $affectedRows += $this->doUpdate($con);
                 }
+
                 $this->resetModified();
+            }
+
+
+            if ($this->aTblProdPhotos !== null) {
+                if (!$this->aTblProdPhotos->isDeleted() && ($this->aTblProdPhotos->isNew() || $this->aTblProdPhotos->isModified())) {
+                    $affectedRows += $this->aTblProdPhotos->save($con);
+                }
+            }
+
+            if ($this->aTblProdPrices !== null) {
+                if (!$this->aTblProdPrices->isDeleted() && ($this->aTblProdPrices->isNew() || $this->aTblProdPrices->isModified())) {
+                    $affectedRows += $this->aTblProdPrices->save($con);
+                }
+            }
+
+            if ($this->aTblProdSmaller !== null) {
+                if (!$this->aTblProdSmaller->isDeleted() && ($this->aTblProdSmaller->isNew() || $this->aTblProdSmaller->isModified())) {
+                    $affectedRows += $this->aTblProdSmaller->save($con);
+                }
             }
 
             $this->alreadyInSave = false;
@@ -3382,19 +3370,13 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function setTblProdPhotos(ChildTblProdPhotos $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-
         $this->aTblProdPhotos = $v;
 
+        // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
         // Add binding for other direction of this 1:1 relationship.
-        if ($v !== null) {
+        if ($v !== null && $v->getTblProdInfo(null) === null) {
             $v->setTblProdInfo($this);
         }
-
 
         return $this;
     }
@@ -3409,10 +3391,8 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function getTblProdPhotos(ConnectionInterface $con = null)
     {
-        if ($this->aTblProdPhotos === null && ($this->prod_id !== null)) {
-            $this->aTblProdPhotos = ChildTblProdPhotosQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->aTblProdPhotos->setTblProdInfo($this);
+        if ($this->aTblProdPhotos === null && !$this->isNew()) {
+            $this->aTblProdPhotos = ChildTblProdPhotosQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->aTblProdPhotos;
@@ -3427,19 +3407,12 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function setTblProdPrices(ChildTblProdPrices $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-
         $this->aTblProdPrices = $v;
 
         // Add binding for other direction of this 1:1 relationship.
-        if ($v !== null) {
+        if ($v !== null && $v->getTblProdInfo(null) === null) {
             $v->setTblProdInfo($this);
         }
-
 
         return $this;
     }
@@ -3454,10 +3427,8 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function getTblProdPrices(ConnectionInterface $con = null)
     {
-        if ($this->aTblProdPrices === null && ($this->prod_id !== null)) {
-            $this->aTblProdPrices = ChildTblProdPricesQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->aTblProdPrices->setTblProdInfo($this);
+        if ($this->aTblProdPrices === null && !$this->isNew()) {
+            $this->aTblProdPrices = ChildTblProdPricesQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->aTblProdPrices;
@@ -3523,16 +3494,10 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function setTblProdSmaller(ChildTblProdSmaller $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-
         $this->aTblProdSmaller = $v;
 
         // Add binding for other direction of this 1:1 relationship.
-        if ($v !== null) {
+        if ($v !== null && $v->getTblProdInfo(null) === null) {
             $v->setTblProdInfo($this);
         }
 
@@ -3550,10 +3515,8 @@ abstract class TblProdInfo implements ActiveRecordInterface
      */
     public function getTblProdSmaller(ConnectionInterface $con = null)
     {
-        if ($this->aTblProdSmaller === null && ($this->prod_id !== null)) {
-            $this->aTblProdSmaller = ChildTblProdSmallerQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->aTblProdSmaller->setTblProdInfo($this);
+        if ($this->aTblProdSmaller === null && !$this->isNew()) {
+            $this->aTblProdSmaller = ChildTblProdSmallerQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->aTblProdSmaller;
@@ -3832,5 +3795,4 @@ abstract class TblProdInfo implements ActiveRecordInterface
 
         throw new BadMethodCallException(sprintf('Call to undefined method: %s.', $name));
     }
-
 }

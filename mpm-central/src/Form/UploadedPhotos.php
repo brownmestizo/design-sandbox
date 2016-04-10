@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class UploadedPhotos
 {
     /** @var UploadedFile */
-    public  $p1;
+    public $p1;
     /** @var UploadedFile */
-    public  $p2;
+    public $p2;
     /** @var UploadedFile */
-    public  $p3;
+    public $p3;
     /** @var UploadedFile */
-    public  $p4;
+    public $p4;
 
     public function getFileDirectory()
     {
@@ -29,7 +29,10 @@ class UploadedPhotos
 
     public function getTblPhotos(\TblProdInfo $info)
     {
-        $photos = new \TblProdPhotos();
+        $photos = \TblProdPhotosQuery::create()->findByProdId($info->getProdId())->getFirst();
+        if (!$photos) {
+            $photos = new \TblProdPhotos();
+        }
         $photos->setProdSolo1($this->uploadFile($info->getProdId(), 1));
         $photos->setProdSolo2($this->uploadFile($info->getProdId(), 2));
         $photos->setProdSolo3($this->uploadFile($info->getProdId(), 3));

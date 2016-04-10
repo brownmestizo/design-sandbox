@@ -69,6 +69,16 @@ $genericDescriptions = TblGeneralQuery::create()
     ->orderByProdName('ASC')
     ->find();
 
+if (!$product->getTblProdPrices()) {
+    $product->setTblProdPrices(new \TblProdPrices());
+}
+if (!$product->getTblProdSmaller()) {
+    $product->setTblProdSmaller(new \TblProdSmaller());
+}
+if (!$product->getTblProdPhotos()) {
+    $product->setTblProdPhotos(new \TblProdPhotos());
+}
+
 $form = $formFactory->createBuilder(ProductForm::class, $product, [
     'shippingCategories' => makeChoice($shippingCategories, 'getProdShippingName', 'getProdShippingPriceId'),
     'pricingCategories' => makeChoice($pricingCategories, 'getProdPriceName', 'getProdPriceId'),

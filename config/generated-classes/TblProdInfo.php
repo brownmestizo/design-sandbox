@@ -75,14 +75,12 @@ class TblProdInfo extends BaseTblProdInfo
     public function postInsert(ConnectionInterface $con = null)
     {
         $photos = $this->photos->getTblPhotos($this);
-        $this->setTblProdPhotos($photos);
         $photos->save($con);
     }
 
     public function preUpdate(ConnectionInterface $con = null)
     {
         $photos = $this->photos->getTblPhotos($this);
-        $this->setTblProdPhotos($photos);
         $photos->save($con);
         
         return true;

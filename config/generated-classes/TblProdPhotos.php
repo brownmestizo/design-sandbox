@@ -14,5 +14,12 @@ use Base\TblProdPhotos as BaseTblProdPhotos;
  */
 class TblProdPhotos extends BaseTblProdPhotos
 {
-
+    public function __construct()
+    {
+        $this->setProdSolo1('');
+        $this->setProdSolo2('');
+        $this->setProdSolo3('');
+        $this->setProdSolo4('');
+        parent::__construct();
+    }
 }

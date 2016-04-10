@@ -29,14 +29,27 @@ class UploadedPhotos
 
     public function getTblPhotos(\TblProdInfo $info)
     {
-        $photos = \TblProdPhotosQuery::create()->findByProdId($info->getProdId())->getFirst();
-        if (!$photos) {
+        if (!$photos = $info->getTblProdPhotos()) {
             $photos = new \TblProdPhotos();
+            $info->setTblProdPhotos($photos);
         }
-        $photos->setProdSolo1($this->uploadFile($info->getProdId(), 1));
-        $photos->setProdSolo2($this->uploadFile($info->getProdId(), 2));
-        $photos->setProdSolo3($this->uploadFile($info->getProdId(), 3));
-        $photos->setProdSolo4($this->uploadFile($info->getProdId(), 4));
+
+        $v = $this->uploadFile($info->getProdId(), 1);
+        if ($v) {
+            $photos->setProdSolo1($v);
+        }
+        $v = $this->uploadFile($info->getProdId(), 2);
+        if ($v) {
+            $photos->setProdSolo2($v);
+        }
+        $v = $this->uploadFile($info->getProdId(), 3);
+        if ($v) {
+            $photos->setProdSolo3($v);
+        }
+        $v = $this->uploadFile($info->getProdId(), 4);
+        if ($v) {
+            $photos->setProdSolo4($v);
+        }
 
         return $photos;
     }
@@ -46,7 +59,7 @@ class UploadedPhotos
         /** @var UploadedFile $file */
         $file = $this->{'p' . $num};
         if (!$file) {
-            return '';
+            return null;
         }
 
         $ext = strtolower($file->getClientOriginalExtension());
@@ -59,6 +72,7 @@ class UploadedPhotos
             @unlink($this->getFileDirectory() . '/' . $fileName);
         }
         $file->move($this->getFileDirectory(), $fileName);
+        $this->{'p' . $num} = null;
 
         return $fileName;
     }

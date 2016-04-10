@@ -14,5 +14,5 @@ use Base\TblProdPrices as BaseTblProdPrices;
  */
 class TblProdPrices extends BaseTblProdPrices
 {
-
+    
 }

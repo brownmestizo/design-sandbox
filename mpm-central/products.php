@@ -13,9 +13,9 @@ $categories = TblMenusQuery::create()
 
 $productsPager = TblProdInfoQuery::create()
 	->orderByProdId('DESC')	
-	->paginate($page = $pageNumber, $maxPerPage = $maxResultsPerPage);
+	->paginate($pageNumber, $maxResultsPerPage);
 
-$count = TblProdInfoQuery::create()->count();
+$count = $productsPager->getNbResults();
 
 
 echo $twig->render(
@@ -27,4 +27,3 @@ echo $twig->render(
 			'count' => $count,			
 			'remainingProducts' =>$maxPerPage,
 		));
-?>

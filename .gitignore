@@ -5,3 +5,4 @@ node_modules/
 .sass-cache/
 bower_components/
 .idea/
+mpm-central/assets/img/prod

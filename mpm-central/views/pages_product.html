@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col-md-12 list-options"> 
 
-            <div class="btn-group-count"><h3><strong>1-{{remainingProducts}}</strong> of <strong>{{ count }}</strong> products</h3></div>  
+            <div class="btn-group-count"><h3><strong>{{ productsPager.firstIndex }}-{{ productsPager.lastIndex }}</strong> of <strong>{{ count }}</strong> products</h3></div>
 
             <div class="pull-right">                              
                 <h3>{{ count }} results</h3>                     
@@ -107,19 +107,7 @@
 
             </div>
 
-            <div class="list-options">
-                <div class="btn-group m-r-sm">
-                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
-                    <button class="btn btn-white">1</button>
-                    <button class="btn btn-white active">2</button>
-                    <button class="btn btn-white">3</button>
-                    <button class="btn btn-white">4</button>
-                    <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i> </button>
-                </div>
-            
-                <div class="pull-right m-t-xxs"><h3>{{count}} results</h3></div>
-            </div>
-           
+            {% include "partials/pagination.html.twig" with {"p": productsPager} %}
 
         </div> <!-- END listing -->
 

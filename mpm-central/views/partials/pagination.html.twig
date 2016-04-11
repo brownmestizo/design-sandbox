@@ -1,0 +1,38 @@
+{% if p.lastPage > 1 %}
+    <div class="list-options">
+        <div class="btn-group m-r-sm">
+            {% if p.page>1 %}
+                <a href="?page={{ p.previousPage }}" class="btn btn-white"><i class="fa fa-chevron-left"></i></a>
+            {% endif %}
+            {% set startPage = p.links[0] %}
+            {% set endPage = p.links[p.links|length - 1] %}
+            {% if startPage > 1 %}
+                <a href="?page=1" class="btn btn-white">1</a>
+                {% if startPage == 3 %}
+                    <a href="?page=2" class="btn btn-white">2</a>
+                {% elseif startPage != 2 %}
+                    <span class="btn btn-white">&hellip;</span>
+                {% endif %}
+            {% endif %}
+            {% for i in p.links %}
+                <a href="?page={{ i }}" class="btn btn-white{% if p.page==i %}active{% endif %}">{{ i }}</a>
+            {% endfor %}
+            {% if p.lastPage > endPage %}
+                {% if p.lastPage > (endPage + 1) %}
+                    {% if p.lastPage > (endPage + 2) %}
+                        <span class="btn btn-white">&hellip;</span>
+                    {% else %}
+                        <a href="?page={{ p.lastPage-1 }}" class="btn btn-white">{{ p.lastPage -1 }}</a>
+                    {% endif %}
+                {% endif %}
+                <a href="?page={{ p.lastPage }}" class="btn btn-white">{{ p.lastPage }}</a>
+            {% endif %}
+
+            {% if p.lastPage!=p.nextPage %}
+                <a href="?page={{ p.nextPage }}" class="btn btn-white"><i class="fa fa-chevron-right"></i></a>
+            {% endif %}
+        </div>
+
+        <div class="pull-right m-t-xxs"><h3>{{ count }} results</h3></div>
+    </div>
+{% endif %}

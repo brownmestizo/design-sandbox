@@ -26,11 +26,13 @@
     </div>
 </div><!-- END row -->
 
-            <div class="wrapper wrapper-content  animated fadeInRight">              
+            <div class="wrapper wrapper-content  animated fadeInRight">
+                {{ form_start(form) }}
+
                 <div class="row">
                     <div class="col-md-12 list-filters clear">
                         <div class="btn-group">
-                            <a class="btn btn-block btn-primary" href="asset-crud-blank">Save</a>
+                            <input type="submit" class="btn btn-block btn-primary" value="Save">
                         </div>
                         <div class="btn-group">
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#commentsmodal">
@@ -46,7 +48,6 @@
                     </div><!-- END col -->                
                 </div><!-- END row -->
 
-                {{ form_start(form) }}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="ibox">

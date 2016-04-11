@@ -10,10 +10,10 @@
 {% block content %}
 
 <div class="row wrapper white-bg page-heading">
-    
+
     <div class="col-lg-8 col-md-6 col-xs-6">
         <h2><a href="../index.html">Products</a></h2>
-        <ol class="breadcrumb">           
+        <ol class="breadcrumb">
             <li class="active">
                 Products search
             </li>
@@ -29,52 +29,40 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
+        {{ form_start(form) }}
         <div class="col-md-12 list-filters">
+            {{ form_widget(form.categories) }}
+            {{ form_widget(form.status) }}
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    {% for category in categories %}                
-                        <li class="i-checks"><a><label> <input type="checkbox" value=""> {{ category.getMenuName() }} </label></a></li>
-                    {% endfor %}
-                </ul>
+            <input type="submit" value="Search" class="btn btn-default" />
             </div>
-
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Status <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li class="i-checks"><a><label> <input type="checkbox" value=""> Active</label></a></li>
-                    <li class="i-checks"><a><label> <input type="checkbox" value=""> Inactive </label></a></li>
-                </ul>
+                <a onclick="$(this).parents('form').find('input[type=checkbox]').removeAttr('checked');return false;" href="#">Clear all filters</a>
             </div>
-
-            <div class="btn-group">
-                <a>Clear all filters</a>
-            </div>
-
-
-        </div><!-- END col  -->               
+            {{ form_end(form) }}
+        </div><!-- END col  -->
     </div><!-- END row -->
 
     <div class="row">
-        <div class="col-md-12 list-options"> 
+        <div class="col-md-12 list-options">
 
             <div class="btn-group-count"><h3><strong>{{ productsPager.firstIndex }}-{{ productsPager.lastIndex }}</strong> of <strong>{{ count }}</strong> products</h3></div>
 
-            <div class="pull-right">                              
-                <h3>{{ count }} results</h3>                     
+            <div class="pull-right">
+                <h3>{{ count }} results</h3>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li><a><i></i> Spreadsheet <span class="text-muted">(xls)</span></a></li>
                     </ul>
                 </div>
-            </div>                                                                        
+            </div>
 
         </div><!-- END col -->
-    </div> <!-- END row --> 
+    </div> <!-- END row -->
 
     <div class="list-container">
-        
+
         <div class="listing">
             <div class="list-results">
 
@@ -82,12 +70,12 @@
                     <div class="list-item">
                         <div class="list-row">
                             <div class="list-key">
-                                
+
                                 <span class="text-orange {% if product.Mb != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
                                 <span class="text-purple {% if product.Pa != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
                                 <span class="text-info {% if product.M3 != 1 %} greyed-out {% endif %}"><i class="fa fa-circle"></i></span>
                             </div>
-                            <div class="list-summary">                                    
+                            <div class="list-summary">
                                 {{ product.getProdName() }}
                             </div>
                         </div>
@@ -100,9 +88,9 @@
                                 </em>
                             </span>
                             <span><i class="fa fa-dollar"></i> {{ product.getTblProdPricing().getProdPricePrice() }}</span>
-                            <span class="text-danger"><i class="fa fa-remove"></i></span>                                                                                                                  
+                            <span class="text-danger"><i class="fa fa-remove"></i></span>
                         </div>
-                    </div>              
+                    </div>
                 {% endfor %}
 
             </div>

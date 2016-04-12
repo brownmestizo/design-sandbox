@@ -8,9 +8,10 @@
             <label for="main-search">
                 <i class="fa fa-search"></i>
             </label>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
+            <form role="search" class="navbar-form-custom" action="/mpm-central/products.php">
                 <div class="form-group">
-                    <input type="text" placeholder="Search products" class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder="Search products" class="form-control"
+                           name="search[search]" id="top-search">
                 </div>
             </form>
             <a href="#" class="search-clear"> <i class="fa fa-times"></i></a>

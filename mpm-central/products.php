@@ -32,6 +32,9 @@ if ($filter->isValid()) {
     if ($search->categories) {
         $productsQuery->filterByProdCategory($search->categories);
     }
+    if ($search->search) {
+        $productsQuery->filterByProdName('%' . $search->search . '%', ' LIKE ');
+    }
 }
 
 $productsPager = $productsQuery->paginate($pageNumber, $maxResultsPerPage);

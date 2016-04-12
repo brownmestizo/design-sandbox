@@ -31,11 +31,11 @@ $genericDescriptions = TblGeneralQuery::create()
 $builder  = new FormBuilder($twig);
 
 $form = $builder->getForm(ProductForm::class, null, [
-    'shippingCategories' => $formBuilder->makeChoice($shippingCategories, 'getProdShippingName', 'getProdShippingPriceId'),
-    'pricingCategories' => $formBuilder->makeChoice($pricingCategories, 'getProdPriceName', 'getProdPriceId'),
-    'genericDescriptions' => $formBuilder->makeChoice($genericDescriptions, 'getProdName', 'getProdGeneral'),
-    'eras' => $formBuilder->makeChoice($eras, 'getEraDescription', 'getEraId'),
-    'categories' => $formBuilder->makeChoice($categories, 'getMenuName', 'getMenuAlias')
+    'shippingCategories' => $builder->makeChoice($shippingCategories, 'getProdShippingName', 'getProdShippingPriceId'),
+    'pricingCategories' => $builder->makeChoice($pricingCategories, 'getProdPriceName', 'getProdPriceId'),
+    'genericDescriptions' => $builder->makeChoice($genericDescriptions, 'getProdName', 'getProdGeneral'),
+    'eras' => $builder->makeChoice($eras, 'getEraDescription', 'getEraId'),
+    'categories' => $builder->makeChoice($categories, 'getMenuName', 'getMenuAlias')
 ]);
 
 $form->handleRequest(Request::createFromGlobals());

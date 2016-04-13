@@ -5,8 +5,8 @@ $loader = new Twig_Loader_Filesystem('views/');
 $twig = new Twig_Environment($loader);
 
 $newProducts = TblProdInfoQuery::create()
-	->orderByProdId('asc')
-	->limit(4)
+	->orderByProdId('desc')
+	->limit(8)
 	->find();
 
 $featuredProducts = TblProdInfoQuery::create()

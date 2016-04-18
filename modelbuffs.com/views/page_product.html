@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 
-{% block title %}Modelbuffs - Product Page{% endblock %}
+{% block title %}Modelbuffs - {{ product.getProdName() }}{% endblock %}
 
 {% block content %}
 
@@ -95,21 +95,10 @@
                     <p>Shipping and choice of stand may increase the price of this model.</p>
                 </div>
 
-                <!--
+                
                 <div class="productFilter">
                     <div class="row">
-                        <div class="col-xs-3">
-                            <select class="form-control" data-bind="
-                                value: selectedQty,
-                                options: qty, 
-                                optionsCaption: 'Qty', 
-                                optionsText: 'optionText',
-                                optionsValue: 'optionValue'
-                                ">
-                            </select>
-                        </div>
-
-                        <div class="col-xs-9">                 
+                        <div class="col-xs-12">                 
                             <select class="form-control" data-bind="
                                 value: selectedStand, 
                                 options: stands, 
@@ -122,32 +111,31 @@
                             ></select>
                         </div>
                     </div>
-                </div>
-                -->
+                </div>                
                 <!-- productFilter -->
 
                 <div class="cart-actions">
                     
                     <div class="row">
-                        <div class="col-xs-8 addto">                    
-                            
+                        <div class="col-sm-2 col-xs-12 addto">                                                
+                            <select class="form-control form-control-lg" data-bind="
+                                value: selectedQty,
+                                options: qty, 
+                                optionsCaption: 'Qty', 
+                                optionsText: 'optionText',
+                                optionsValue: 'optionValue'
+                                ">
+                            </select>
+                        </div>                      
+                        <div class="col-sm-6 col-xs-12 addto">                                                
                             <a 
                                 class="button btn-block btn-cart cart first"
                                 title="Add to Cart"
                                 href="cart.php">
                                 Add to Cart
                             </a>
-                            
-                            <!-- <a class="link-wishlist wishlist">Add to Wishlist</a> -->
                         </div>                    
-                        <div class="col-xs-4">
-                            <!--
-                            <div class="pull-right product-price">
-                                <span class="price-sales">
-                                    $<span data-bind="text: totalPrice "></span>
-                                </span>
-                            </div>
-                            -->
+                        <div class="col-sm-4 col-xs-12">
                             <div class="pull-right product-price">
                                 <span class="price-sales">
                                     ${{ product.getTblProdPricing().getProdPricePrice() }}
@@ -160,7 +148,7 @@
 
                     <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> 8-10 weeks</h3>
                     <h3 style="display:none" class="incaps"><i class="fa fa-minus-circle color-out"></i> Out of stock</h3>
-                    <h3 class="incaps"><i class="fa fa-lock"></i> Secure online ordering</h3>
+                    <h3 class="incaps pull-right"><i class="fa fa-lock"></i> Secure online ordering</h3>
                 </div>
                 <!--/.cart-actions-->
 
@@ -187,7 +175,7 @@
                         
                         {% if product.getProdGeneral() %}
                             <li class={{ activeProdGeneral }}>
-                                <a href="#size" data-toggle="tab">General Product Information</a>
+                                <a href="#size" data-toggle="tab">General product description</a>
                             </li>
                         {% endif %}
                     </ul>
@@ -202,7 +190,13 @@
 
                         {% if product.getProdGeneral() %}
                             <div class="tab-pane {{activeProdGeneral}}" id="size">                                                   
-                                {{ product.getTblGeneral().getProdDescription()|displayHtml }}
+                                {{ product.getTblGeneral().getProdDescription(
+                                    product.getProdName(),
+                                    product.getProdAlt1(),
+                                    product.getProdAlt2(),
+                                    product.getProdAlt3(),
+                                    product.getProdAlt4()
+                                    )|displayHtml }}
                             </div>
                         {% endif %}
                     </div>

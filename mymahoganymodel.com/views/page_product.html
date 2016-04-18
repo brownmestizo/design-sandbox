@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 
-{% block title %}Modelbuffs - Product Page{% endblock %}
+{% block title %}Modelbuffs - {{ product.getProdName() }}{% endblock %}
 
 {% block content %}
 
@@ -202,7 +202,13 @@
 
                         {% if product.getProdGeneral() %}
                             <div class="tab-pane {{activeProdGeneral}}" id="size">                                                   
-                                {{ product.getTblGeneral().getProdDescription()|displayHtml }}
+
+                                {{ product.getTblGeneral().getProdDescription(
+                                    [product.getProdName(),
+                                    product.getProdAlt1(),
+                                    product.getProdAlt2(),
+                                    product.getProdAlt3(),
+                                    product.getProdAlt4()])|displayHtml }}
                             </div>
                         {% endif %}
                     </div>

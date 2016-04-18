@@ -15,9 +15,9 @@ use Base\TblGeneral as BaseTblGeneral;
 class TblGeneral extends BaseTblGeneral
 {
 
-	public function getProdDescription() {
+	public function getProdDescription($prod_name=null, $prod_alt1=null, $prod_alt2=null, $prod_alt3=null, $prod_alt4=null) {
 
-		$alternateNames = array($this->prod_name, $this->prod_alt1, $this->prod_alt2, $this->prod_alt3, $this->prod_alt4);
+		$alternateNames = array($prod_name, $prod_alt1, $prod_alt2, $prod_alt3, $prod_alt4);
 
 		$var = $this->prod_description;
 

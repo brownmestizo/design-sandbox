@@ -22,8 +22,8 @@ echo $twig->render(
         array(
             'product' => $product,
             'image_url' => $generated_image_url,
-            'relatedProducts'=>$relatedProducts,
-            'stands'=>$stands, 
+            'relatedProducts' => $relatedProducts,
+            'stands' => $stands
             ));
 
 ?>

@@ -8091,11 +8091,15 @@ ul.list-border li:hover {
   margin-bottom: 10px; }
 
 /* line 51, ../scss/pages/forms.scss */
+select.form-control-lg {
+  height: 50px; }
+
+/* line 55, ../scss/pages/forms.scss */
 .form-control:focus {
   box-shadow: NONE;
   outline: 0 none; }
 
-/* line 56, ../scss/pages/forms.scss */
+/* line 60, ../scss/pages/forms.scss */
 input[type="text"], input[type="password"], input[type="email"] {
   border-color: #DDDDDD;
   -webkit-border-radius: 3px 0 0 3px;
@@ -8108,7 +8112,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   margin-bottom: 10px;
   height: 36px; }
 
-/* line 69, ../scss/pages/forms.scss */
+/* line 73, ../scss/pages/forms.scss */
 .btn, .button {
   border: medium none;
   -webkit-border-radius: 4px;
@@ -8125,7 +8129,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   -o-transition: all 0.25s linear 0s;
   text-align: center; }
 
-/* line 86, ../scss/pages/forms.scss */
+/* line 90, ../scss/pages/forms.scss */
 .btn-lg {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -8134,7 +8138,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   line-height: 1.33;
   padding: 10px 16px; }
 
-/* line 95, ../scss/pages/forms.scss */
+/* line 99, ../scss/pages/forms.scss */
 .btn-sm {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -8143,7 +8147,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   line-height: 1.5;
   padding: 4px 8px; }
 
-/* line 104, ../scss/pages/forms.scss */
+/* line 108, ../scss/pages/forms.scss */
 .btn-xs {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -8152,7 +8156,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   line-height: 1.5;
   padding: 1px 5px; }
 
-/* line 113, ../scss/pages/forms.scss */
+/* line 117, ../scss/pages/forms.scss */
 .btn-lg {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -8161,146 +8165,146 @@ input[type="text"], input[type="password"], input[type="email"] {
   line-height: 1.471;
   padding: 10px 20px; }
 
-/* line 122, ../scss/pages/forms.scss */
+/* line 126, ../scss/pages/forms.scss */
 .btn-thin {
   border: 1px solid #BDC3C7;
   color: #BDC3C7;
   background: none; }
 
-/* line 128, ../scss/pages/forms.scss */
+/* line 132, ../scss/pages/forms.scss */
 .btn-default {
   background-color: #BDC3C7;
   color: #FFFFFF; }
 
-/* line 133, ../scss/pages/forms.scss */
+/* line 137, ../scss/pages/forms.scss */
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   background-color: #CACFD2;
   border-color: #CACFD2;
   color: #FFFFFF; }
 
-/* line 139, ../scss/pages/forms.scss */
+/* line 143, ../scss/pages/forms.scss */
 .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   background: #A1A6A9; }
 
-/* line 143, ../scss/pages/forms.scss */
+/* line 147, ../scss/pages/forms.scss */
 .btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default.active[disabled], fieldset[disabled] .btn-default.active {
   background-color: #BDC3C7; }
 
-/* line 147, ../scss/pages/forms.scss */
+/* line 151, ../scss/pages/forms.scss */
 .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary.active[disabled], fieldset[disabled] .btn-primary.active {
   background-color: #1ABC9C; }
 
-/* line 151, ../scss/pages/forms.scss */
+/* line 155, ../scss/pages/forms.scss */
 .btn-dark {
   background-color: #34495e;
   color: #FFFFFF; }
 
-/* line 156, ../scss/pages/forms.scss */
+/* line 160, ../scss/pages/forms.scss */
 .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open .dropdown-toggle.btn-dark {
   background-color: #20354a;
   border-color: #20354a;
   color: #FFFFFF; }
 
-/* line 162, ../scss/pages/forms.scss */
+/* line 166, ../scss/pages/forms.scss */
 .btn-dark:active, .btn-dark.active, .open .dropdown-toggle.btn-dark {
   background: #20354a; }
 
-/* line 166, ../scss/pages/forms.scss */
+/* line 170, ../scss/pages/forms.scss */
 .btn-info {
   background-color: #3498DB;
   color: #FFFFFF; }
 
-/* line 171, ../scss/pages/forms.scss */
+/* line 175, ../scss/pages/forms.scss */
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
   background-color: #5DADE2;
   border-color: #5DADE2;
   color: #FFFFFF; }
 
-/* line 177, ../scss/pages/forms.scss */
+/* line 181, ../scss/pages/forms.scss */
 .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
   background: #2C81BA; }
 
-/* line 181, ../scss/pages/forms.scss */
+/* line 185, ../scss/pages/forms.scss */
 .btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info.active[disabled], fieldset[disabled] .btn-info.active {
   background-color: #3498DB; }
 
-/* line 185, ../scss/pages/forms.scss */
+/* line 189, ../scss/pages/forms.scss */
 .btn-danger {
   background-color: #E74C3C;
   color: #FFFFFF; }
 
-/* line 190, ../scss/pages/forms.scss */
+/* line 194, ../scss/pages/forms.scss */
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
   background-color: #EC7063;
   border-color: #EC7063;
   color: #FFFFFF; }
 
-/* line 196, ../scss/pages/forms.scss */
+/* line 200, ../scss/pages/forms.scss */
 .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
   background: #C44133; }
 
-/* line 200, ../scss/pages/forms.scss */
+/* line 204, ../scss/pages/forms.scss */
 .btn-danger.disabled, .btn-danger[disabled], fieldset[disabled] .btn-danger, .btn-danger.disabled:hover, .btn-danger[disabled]:hover, fieldset[disabled] .btn-danger:hover, .btn-danger.disabled:focus, .btn-danger[disabled]:focus, fieldset[disabled] .btn-danger:focus, .btn-danger.disabled:active, .btn-danger[disabled]:active, fieldset[disabled] .btn-danger:active, .btn-danger.disabled.active, .btn-danger.active[disabled], fieldset[disabled] .btn-danger.active {
   background-color: #E74C3C; }
 
-/* line 204, ../scss/pages/forms.scss */
+/* line 208, ../scss/pages/forms.scss */
 .btn-success {
   background-color: #2ECC71;
   color: #FFFFFF; }
 
-/* line 209, ../scss/pages/forms.scss */
+/* line 213, ../scss/pages/forms.scss */
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
   background-color: #58D68D;
   border-color: #58D68D;
   color: #FFFFFF; }
 
-/* line 215, ../scss/pages/forms.scss */
+/* line 219, ../scss/pages/forms.scss */
 .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
   background: #27AD60; }
 
-/* line 219, ../scss/pages/forms.scss */
+/* line 223, ../scss/pages/forms.scss */
 .btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success.active[disabled], fieldset[disabled] .btn-success.active {
   background-color: #2ECC71; }
 
-/* line 223, ../scss/pages/forms.scss */
+/* line 227, ../scss/pages/forms.scss */
 .btn-warning {
   background-color: #F1C40F;
   color: #FFFFFF; }
 
-/* line 228, ../scss/pages/forms.scss */
+/* line 232, ../scss/pages/forms.scss */
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
   background-color: #F5D313;
   border-color: #F5D313;
   color: #FFFFFF; }
 
-/* line 234, ../scss/pages/forms.scss */
+/* line 238, ../scss/pages/forms.scss */
 .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
   background: #CDA70D; }
 
-/* line 238, ../scss/pages/forms.scss */
+/* line 242, ../scss/pages/forms.scss */
 .btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning.active[disabled], fieldset[disabled] .btn-warning.active {
   background-color: #F1C40F; }
 
-/* line 242, ../scss/pages/forms.scss */
+/* line 246, ../scss/pages/forms.scss */
 .btn-inverse {
   background-color: #34495E;
   color: #FFFFFF; }
 
-/* line 247, ../scss/pages/forms.scss */
+/* line 251, ../scss/pages/forms.scss */
 .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active, .btn-inverse.active, .open .dropdown-toggle.btn-inverse {
   background-color: #415B76;
   border-color: #415B76;
   color: #FFFFFF; }
 
-/* line 253, ../scss/pages/forms.scss */
+/* line 257, ../scss/pages/forms.scss */
 .btn-inverse:active, .btn-inverse.active, .open .dropdown-toggle.btn-inverse {
   background: #2C3E50; }
 
-/* line 257, ../scss/pages/forms.scss */
+/* line 261, ../scss/pages/forms.scss */
 .btn-inverse.disabled, .btn-inverse[disabled], fieldset[disabled] .btn-inverse, .btn-inverse.disabled:hover, .btn-inverse[disabled]:hover, fieldset[disabled] .btn-inverse:hover, .btn-inverse.disabled:focus, .btn-inverse[disabled]:focus, fieldset[disabled] .btn-inverse:focus, .btn-inverse.disabled:active, .btn-inverse[disabled]:active, fieldset[disabled] .btn-inverse:active, .btn-inverse.disabled.active, .btn-inverse.active[disabled], fieldset[disabled] .btn-inverse.active {
   background-color: #34495E; }
 
-/* line 261, ../scss/pages/forms.scss */
+/* line 265, ../scss/pages/forms.scss */
 .btn-stroke-dark, .btn-stroke-light {
   background: transparent;
   font-family: "Oswald", Helvetica Neue, Arial, sans-serif;
@@ -8311,27 +8315,27 @@ input[type="text"], input[type="password"], input[type="email"] {
   min-width: 200px;
   text-transform: uppercase; }
 
-/* line 272, ../scss/pages/forms.scss */
+/* line 276, ../scss/pages/forms.scss */
 .btn-stroke-dark {
   border: 2px solid #2c3e50;
   color: #2c3e50 !important; }
 
-/* line 277, ../scss/pages/forms.scss */
+/* line 281, ../scss/pages/forms.scss */
 .btn-stroke-dark:hover {
   background: #2c3e50;
   color: #fff !important; }
 
-/* line 282, ../scss/pages/forms.scss */
+/* line 286, ../scss/pages/forms.scss */
 .btn-stroke-light {
   border: 2px solid #fff;
   color: #fff !important; }
 
-/* line 287, ../scss/pages/forms.scss */
+/* line 291, ../scss/pages/forms.scss */
 .btn-stroke-light:hover {
   background: #fff;
   color: #2c3e50 !important; }
 
-/* line 292, ../scss/pages/forms.scss */
+/* line 296, ../scss/pages/forms.scss */
 .btn-site {
   padding: 5px 0;
   color: #fff;
@@ -8346,7 +8350,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   -moz-transition: all .3s ease;
   -o-transition: all .3s ease; }
 
-/* line 307, ../scss/pages/forms.scss */
+/* line 311, ../scss/pages/forms.scss */
 .fb_button {
   background: #658AD0;
   color: #FFFFFF;
@@ -8354,52 +8358,52 @@ input[type="text"], input[type="password"], input[type="email"] {
   text-align: center;
   text-decoration: none; }
 
-/* line 315, ../scss/pages/forms.scss */
+/* line 319, ../scss/pages/forms.scss */
 .btn-fb {
   background: #658AD0;
   color: #FFFFFF; }
 
-/* line 320, ../scss/pages/forms.scss */
+/* line 324, ../scss/pages/forms.scss */
 .fb_button:hover, .btn-fb:hover {
   background: #4E6FAE;
   color: #fff;
   text-decoration: none; }
 
-/* line 326, ../scss/pages/forms.scss */
+/* line 330, ../scss/pages/forms.scss */
 .btn-tw {
   background: #1DADEB;
   color: #FFFFFF; }
 
-/* line 331, ../scss/pages/forms.scss */
+/* line 335, ../scss/pages/forms.scss */
 .btn-tw:hover {
   background: #35C5FF;
   color: #fff;
   text-decoration: none; }
 
-/* line 337, ../scss/pages/forms.scss */
+/* line 341, ../scss/pages/forms.scss */
 p.required, .required sup {
   color: #E74C3C; }
 
-/* line 341, ../scss/pages/forms.scss */
+/* line 345, ../scss/pages/forms.scss */
 .pagination li.active a {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.2) inset; }
 
-/* line 345, ../scss/pages/forms.scss */
+/* line 349, ../scss/pages/forms.scss */
 .checkbox {
   padding-left: 0;
   margin-left: 0; }
 
-/* line 350, ../scss/pages/forms.scss */
+/* line 354, ../scss/pages/forms.scss */
 legend {
   padding-bottom: 10px; }
 
-/* line 354, ../scss/pages/forms.scss */
+/* line 358, ../scss/pages/forms.scss */
 .alert {
   border: none;
   border-left: 5px solid rgba(0, 0, 0, 0.1);
   border-radius: 0; }
 
-/* line 360, ../scss/pages/forms.scss */
+/* line 364, ../scss/pages/forms.scss */
 .alert .close {
   font-size: 30px;
   line-height: 20px; }
@@ -8622,10 +8626,6 @@ legend {
 /* line 222, ../scss/pages/navigation.scss */
 .userMenu li a:hover {
   opacity: 0.9; }
-
-/* line 226, ../scss/pages/navigation.scss */
-.phone-number span {
-  float: left; }
 
 /***  ------- Main Navigation onhover issue for ipad and mobile ------- ***/
 @media (min-width: 979px) {
@@ -8963,7 +8963,7 @@ legend {
   font-size: 16px;
   font-weight: bold;
   line-height: normal;
-  margin-bottom: 0;
+  margin-bottom: 6px;
   text-transform: uppercase; }
 
 /* line 577, ../scss/pages/navigation.scss */
@@ -11609,7 +11609,7 @@ h5.parallaxSubtitle {
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
-  margin: 15px 20px 0 0;
+  margin: 15px 0 0 0;
   text-transform: uppercase; }
 
 /* line 322, ../scss/pages/product-details.scss */
@@ -13370,6 +13370,10 @@ div.quickview {
 /* line 993, ../scss/pages/responsive-custom.scss */
 .rating-here .fa, .rating .fa {
   color: #E7711B; }
+
+/* line 2, ../scss/pages/tables.scss */
+table td {
+  padding: 5px !important; }
 
 /* line 1, ../scss/pages/custom.scss */
 .snipcart-overwrite #snipcart-footer {

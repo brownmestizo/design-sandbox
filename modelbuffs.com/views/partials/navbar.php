@@ -1,6 +1,6 @@
 <!-- Fixed navbar start -->
 <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
-    <!--
+    
     <div class="navbar-top">
         <div class="container">
             <div class="row">
@@ -23,33 +23,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
-                    <div class="pull-right">
-                        <ul class="userMenu">
-                            <li>
-                                <a href="account-1.html">
-                                    <span class="hidden-xs"> My Account</span>
-                                    <i class="glyphicon glyphicon-user hide visible-xs "></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#ModalLogin">
-                                    <span class="hidden-xs">Sign In</span>
-                                    <i class="glyphicon glyphicon-log-in hide visible-xs "></i>
-                                </a>
-                            </li>
-                            <li class="hidden-xs">
-                                <a href="#" data-toggle="modal" data-target="#ModalSignup">
-                                    Create Account
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    -->
+    
 
 
     <div class="container">
@@ -63,28 +40,20 @@
             <a class="navbar-brand " href="index.php"> <img src="../images/logo.png" alt="Modelbuffs"> </a>
         </div>
 
-        <!-- this part is duplicate from cartMenu  keep it for mobile -->
+
+        <!-- this part is duplicate from cartMenu keep it for mobile -->
         <div class="navbar-cart  collapse">
             <div class="cartMenu static-search-box  col-lg-4 col-xs-12 col-md-4 ">
                 <div class="w100 miniCartTable scroll-pane">                    
                     <table>
                         <tbody>                        
                             <tr class="miniCartProduct">
-                                <td style="20%" class="miniCartProductThumb">
-                                    <div><a href="product-details-style4.html"> <img src="../images/product/3.jpg" alt="img"> </a>
-                                    </div>
-                                </td>
-                                <td style="40%">
+                                <td style="60%">
                                     <div class="miniCartDescription">
-                                        <h4><a href="product-details-style4.html">Aermacchi M-346 Italian Air Force</a></h4>
-
-
-                                        <div class="price"><span> $8.80 </span></div>
+                                        <h4><a href="product-details-style4.html">Aermacchi M-346 Italian Air Force</a></h4>                                        
                                     </div>
                                 </td>
-                                <td style="10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                <td style="15%" class="miniCartSubtotal"><span> $8.80 </span></td>
-                                <td style="5%" class="delete"><a> x </a></td>
+                                <td style="30%" class="miniCartSubtotal"><span> $8.80 </span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -222,19 +191,12 @@
                                 <tbody>
                                 <?php for ($i=1; $i<=6; $i++) { ?>
                                     <tr class="miniCartProduct">
-                                        <td style="width:20%" class="miniCartProductThumb">
-                                            <div><a href="product-details-style4.html"> <img src="../images/product/3.jpg" alt="img">
-                                            </a></div>
-                                        </td>
-                                        <td style="width:40%">
+                                        <td style="width:60%">
                                             <div class="miniCartDescription">
                                                 <h4><a href="product-details-style4.html">Aermacchi M-346 Italian Air Force</a></h4>
-                                                <div class="price"><span> $22 </span></div>
                                             </div>
                                         </td>
-                                        <td style="width:10%" class="miniCartQuantity"><a> X 1 </a></td>
-                                        <td style="width:15%" class="miniCartSubtotal"><span> $33 </span></td>
-                                        <td style="width:5%" class="delete"><a> x </a></td>
+                                        <td style="width:30%" class="miniCartSubtotal text-right"><span> $33 </span></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -243,7 +205,7 @@
                         <!--/.miniCartTable-->
 
                         <div class="miniCartFooter text-right">
-                            <h3 class="text-right subtotal"> Subtotal: $210 </h3>
+                            <h3 class="text-right subtotal m-b-lg"> Subtotal: $210 </h3>
                             <a class="btn btn-sm btn-danger"> <i class="fa fa-shopping-cart"> </i> VIEW CART </a>
                             <a href="checkout-0.html" class="btn btn-sm btn-primary"> CHECKOUT </a>
                         </div>

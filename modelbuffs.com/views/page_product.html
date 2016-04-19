@@ -79,6 +79,8 @@
                 <h3 class="product-code">Product Code : {{ product.getProdCode() }}</h3>
                 <input type="hidden" id="productID" value="{{ product.getProdId() }}" />
 
+                <div class="alert alert-info">This product has a smaller version.</div>
+
                 <hr />
 
                 <div class="product-stats m-b-xs">
@@ -99,6 +101,16 @@
                 <div class="productFilter">
                     <div class="row">
                         <div class="col-xs-12">                 
+                            <label>Model size</label>
+                            <select class="form-control">
+                                <option value="1">Regular model (${{ product.getTblProdPricing().getProdPricePrice() }})</option>
+                                <option value="2">Smaller model ($140.00)</option>
+                            </select>
+                        </div>
+                    </div>                
+                    <div class="row">
+                        <div class="col-xs-12">      
+                            <label>Stand (additional cost)</label>           
                             <select class="form-control" data-bind="
                                 value: selectedStand, 
                                 options: stands, 

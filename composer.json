@@ -13,7 +13,10 @@
 	
 	"autoload": {
 	    "classmap": ["config/generated-classes/"],
-        "psr-0": { "": "mpm-central/src/" }
+        "psr-4": {
+          "": ["mpm-central/src/", "lib/src/"],
+          "MB\\": ["modelbuffs.com/src/"]
+        }
 	}    
 
 }

@@ -14,5 +14,8 @@ use Base\TblStands as BaseTblStands;
  */
 class TblStands extends BaseTblStands
 {
-
+    public function getStandNameWithPrice()
+    {
+        return sprintf('%s ($%s)', $this->getStandName(), $this->getStandPrice());
+    }
 }

@@ -17,8 +17,9 @@
 
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-7">
-            <h1 class="section-title-inner"><span><i
-                    class="glyphicon glyphicon-shopping-cart"></i> Shopping cart </span></h1>
+            <h1 class="section-title-inner">
+                <span><i class="glyphicon glyphicon-shopping-cart"></i> Shopping cart </span>
+            </h1>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar">
             <h4 class="caps"><a class="back"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
@@ -30,7 +31,7 @@
         <div class="col-lg-9 col-md-9 col-sm-7">
             <div class="row userInfo">
                 <div class="col-xs-12 col-sm-12">
-                    <div class="cartContent w100">
+                    <div class="cartContent w100 m-b-lg">
                         <table class="cartTable table-responsive" style="width:100%">
                             <tbody>
 
@@ -103,6 +104,20 @@
                     </div>
                     <!--cartContent-->
 
+                    <h1 class="section-title-inner">
+                        <span><i class="fa fa-truck"></i> Shipping </span>
+                    </h1>
+
+                    <div class="cartContent w100 m-t-m">
+
+                        
+                        <h3>Please select your country of destination</h3>
+                        <div id="prefetch">
+                          <input class="typeahead" type="text" placeholder="Countries">
+                        </div>
+
+                    </div>
+                    <!--cartContent-->
                     <div class="cartFooter w100">
                         <div class="box-footer">
                             <div class="pull-left"><a class="btn btn-default back"> <i
@@ -131,14 +146,22 @@
                                 <tbody>
                                 <tr>
                                     <td> Estimated total</td>
-                                    <td class=" site-color" id="total-price">$216.51</td>
-                                </tr>                                
+                                    <td class="site-color"><strong>$216.51</strong></td>
+                                </tr>   
+                                <tr>
+                                    <td> Shipping</td>
+                                    <td class="site-color"><strong>$216.51</strong></td>
+                                </tr> 
+                                <tr>
+                                    <td> Total</td>
+                                    <td class="site-color" id="total-price">$216.51</td>
+                                </tr>                                                                                                               
                                 </tbody>
                             </table>
                         </div>
 
-                        <a class="btn btn-primary btn-lg btn-block m-t-lg" title="checkout" href="shipping.php">
-                        Compute shipping charges &nbsp; 
+                        <a class="btn btn-primary btn-lg btn-block m-t-lg" title="checkout" href="checkout-0.html">
+                        Proceed to payment &nbsp; 
                         <i class="fa fa-arrow-right"></i> 
                         </a>                        
 
@@ -156,5 +179,11 @@
     <div style="clear:both"></div>
 </div>
 <!-- /.main-container -->
+
+{% block customjs %}
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+<script type="text/javascript" src="http://twitter.github.io/typeahead.js/js/examples.js"></script>
+{% endblock %}
 
 {% endblock %}

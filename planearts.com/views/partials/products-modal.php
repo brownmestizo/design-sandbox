@@ -32,7 +32,7 @@
 
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 modal-details no-padding">
                 <div class="modal-details-inner">
-                    <h1 class="product-title">[Product Name]</h1>
+                    <h1 class="product-title">[Product Name1]</h1>
 
                     <h3>Product Code : <span class="product-code">[Code]</span></h3>
 
@@ -54,16 +54,6 @@
                                 <option value="pineapple">6</option>
                                 <option value="peaches">7</option>
                                 <option value="cherries">8</option>
-                            </select>
-                        </div>
-                        <div class="filterBox">
-                            <select>
-                                <option value="" selected>Stands</option>
-                                <option value="1">Solid Mahogany with Stainless Steel Arm</option>
-                                <option value="2">Solid Mahogany</option>
-                                <option value="3">Solid Mahogany Oblong with Stainless Steel Arm</option>
-                                <option value="4">Solid Mahogany Matte Black</option>
-                                <option value="5">Solid Mahogany Black with Customized Logo</option>
                             </select>
                         </div>
                     </div>

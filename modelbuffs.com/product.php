@@ -1,12 +1,18 @@
 <?php
 
 use Form\FormBuilder;
+use MB\Cart\SessionCartStorage;
 use MB\Form\ProductChoiceForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 
 require_once '../lib/init.php';
+$request = Request::createFromGlobals();
 
+if (!$request->get('id')) {
+    throw new \Exception('product not found', 404);
+}
 
 $filter_displayHtml = new Twig_SimpleFilter('displayHtml', function ($string) {
     echo html_entity_decode($string, ENT_QUOTES, 'UTF-8');
@@ -17,11 +23,11 @@ $twig = new Twig_Environment($loader);
 $twig->addFilter($filter_displayHtml);
 
 $productQuery = new TblProdInfoQuery();
-$product = $productQuery->findPK($_GET['id']);
+$product = $productQuery->findPK($request->get('id'));
 
 $pricingQuery = new TblProdPricingQuery();
 
-$relatedProducts = TblProdInfoQuery::create()->findPKs(explode(" ", $product->getProdRelated()));
+$relatedProducts = TblProdInfoQuery::create()->findPKs($product->getRelatedProductsIds());
 
 $standsQuery = new TblStandsQuery();
 $stands = TblStandsQuery::create()->orderByStandId()->find();
@@ -30,12 +36,27 @@ $builder = new FormBuilder($twig);
 $form = $builder->getForm(ProductChoiceForm::class, null, [
     'stands' => $builder->makeChoice($stands, 'getStandNameWithPrice', 'getStandId'),
     'price' => sprintf('Regular model ($%s)', $product->getTblProdPricing()->getProdPricePrice()),
+    'method' => 'POST',
 ]);
 
-$form->handleRequest(Request::createFromGlobals());
+$form->handleRequest($request);
 
 if ($form->isValid()) {
+    /** @var \MB\Form\ProductChoiceDTO $addedItem */
+    $addedItem = $form->getData();
+    $cs = new SessionCartStorage();
+    foreach ($stands as $s) {
+        if ($s->getStandId() == $addedItem->stand) {
+            $stand = $s;
+            break;
+        }
+    }
+    $addUseCase = new \MB\Cart\AddToCartUseCase($cs, $product, $stand, $addedItem->quantity, $addedItem->product);
+    $addUseCase->execute();
 
+    $resp = new RedirectResponse('/modelbuffs.com/cart.php');
+    $resp->send();
+    return;
 }
 
 $jsData = [

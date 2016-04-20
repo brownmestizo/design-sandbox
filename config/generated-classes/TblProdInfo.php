@@ -101,4 +101,9 @@ class TblProdInfo extends BaseTblProdInfo
     {
         $this->photos = $photos;
     }
+
+    public function getRelatedProductsIds()
+    {
+        return explode(" ", $this->getProdRelated());
+    }
 }

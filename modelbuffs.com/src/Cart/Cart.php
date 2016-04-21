@@ -12,6 +12,11 @@ class Cart
         $this->items = [];
     }
 
+    public function getItems()
+    {
+        return $this->items;
+    }
+
     public function addItem(CartItem $cartItem)
     {
         $this->items[] = $cartItem;
@@ -37,7 +42,7 @@ class Cart
     public function price()
     {
         return array_reduce($this->items, function ($r, CartItem $ci) {
-            return $r + $ci->price();
+            return $r + $ci->totalPrice();
         }, 0);
     }
 }

@@ -38,66 +38,32 @@
                                 <td style="width:15%">Product</td>
                                 <td style="width:40%">Details</td>
                                 <td style="width:10%" class="delete">&nbsp;</td>
-                                <td style="width:20%">Discount</td>
+                                <td style="width:20%">Count</td>
                                 <td style="width:15%">Total</td>
                             </tr>
-
+                            {% for p in cart.items %}
                             <tr class="CartProduct">
                                 <td class="CartProductThumb">
-                                    <div><a href="product-details-style4.html"><img src="images/product/a1.jpg" alt="img"></a>
-                                    </div>
+                                    <div><a href="product-details-style4.html"><img
+                                            src="{{ generated_image_url~p.product.photo }}" alt="img"></a></div>
                                 </td>
                                 <td>
                                     <div class="CartDescription">
-                                        <h4 class="m-b-none"><a href="product-details-style4.html">AAI Textron Aerosonde Mk 4.4.5 Model ($149.50)</a></h4>
-                                        <span class="size">Solid Mahogany with Stainless Steel Arm ($10)</span>
+                                        <h4 class="m-b-none"><a href="product-details-style4.html">{{ p.product.name }}
+                                            (${{ p.product.price }})</a></h4>
+                                        <span class="size">{{ p.stand.name }} (${{ p.stand.price }})</span>
 
-                                        <div class="price"><span>$158.80</span></div>
+                                        <div class="price item-price"><span>${{ p.price }}</span></div>
                                     </div>
                                 </td>
-                                <td class="delete"><a title="Delete"> <i
+                                <td class="delete"><a href="?action=delete&id={{ p.id }}" title="Delete"> <i
                                         class="glyphicon glyphicon-trash fa-2x"></i></a></td>
-                                <td><input class="quanitySniper" type="text" value="2" name="quanitySniper"></td>
-                                <td class="price">$300</td>
+                                <td><input class="quanitySniper" data-current="{{ p.totalPrice }}"
+                                           data-price="{{ p.price }}" data-id="{{ p.id }}" type="text"
+                                           value="{{ p.quantity }}" name="quanitySniper"></td>
+                                <td class="price item-price-{{ p.id }}">${{ p.totalPrice }}</td>
                             </tr>
-
-                            <tr class="CartProduct">
-                                <td class="CartProductThumb">
-                                    <div><a href="product-details-style4.html"><img src="images/product/a1.jpg" alt="img"></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="CartDescription">
-                                        <h4 class="m-b-none"><a href="product.php?id=6564">Vickers VC10 101 Squadron 90th Anniversary Scheme ($149.50)</a></h4>
-                                        <span class="size">Solid Mahogany with Stainless Steel Arm ($10)</span>
-
-                                        <div class="price"><span>$158.80</span></div>
-                                    </div>
-                                </td>
-                                <td class="delete"><a title="Delete"> <i
-                                        class="glyphicon glyphicon-trash fa-2x"></i></a></td>
-                                <td><input class="quanitySniper" type="text" value="2" name="quanitySniper"></td>
-                                <td class="price">$300</td>
-                            </tr>
-
-                            <tr class="CartProduct">
-                                <td class="CartProductThumb">
-                                    <div><a href="product.php?id=6564"><img src="images/product/a1.jpg" alt="img"></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="CartDescription">
-                                        <h4 class="m-b-none"><a href="product.php?id=6564">Aermacchi M-346 Italian Air Force ($149.50)</a></h4>
-                                        <span class="size">Solid Mahogany with Stainless Steel Arm ($10)</span>
-
-                                        <div class="price"><span>$158.80</span></div>
-                                    </div>
-                                </td>
-                                <td class="delete"><a title="Delete"> <i
-                                        class="glyphicon glyphicon-trash fa-2x"></i></a></td>
-                                <td><input class="quanitySniper" type="text" value="2" name="quanitySniper"></td>
-                                <td class="price">$300</td>
-                            </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -131,16 +97,16 @@
                                 <tbody>
                                 <tr>
                                     <td> Estimated total</td>
-                                    <td class=" site-color" id="total-price">$216.51</td>
-                                </tr>                                
+                                    <td class="site-color total-price" id="total-price" data-price="{{ cart.price }}">${{ cart.price }}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <a class="btn btn-primary btn-lg btn-block m-t-lg" title="checkout" href="shipping.php">
-                        Compute shipping charges &nbsp; 
-                        <i class="fa fa-arrow-right"></i> 
-                        </a>                        
+                            Compute shipping charges &nbsp;
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -157,4 +123,40 @@
 </div>
 <!-- /.main-container -->
 
+{% endblock %}
+
+{% block customjs %}
+<script>
+    !(function () {
+        var totalPrice = $('#total-price'),
+                totals = $('.total-price');
+                changeTotalPrice = function (deltaPrice) {
+                    var price = totalPrice.data('price'),
+                            newPrice = price*1 + deltaPrice;
+                    totalPrice.data('price', newPrice);
+                    totals.html('$' + newPrice);
+                },
+                updateCart = function (id, qty) {
+                    $.post('?action=change', {'id': id, 'q': qty});
+                }
+                ;
+        $('.quanitySniper').change(function () {
+                    this.value = Math.round(this.value);
+                    if (this.value < 1) {
+                        this.value = 1;
+                    }
+                    var value = this.value,
+                            id = this.getAttribute('data-id'),
+                            price = this.getAttribute('data-price'),
+                            currentPrice = this.getAttribute('data-current'),
+                            newPrice = price * value,
+                            delta = newPrice - currentPrice;
+                            this.setAttribute('data-current', newPrice);
+                    changeTotalPrice(delta);
+                    $('.item-price-' + id).html('$' + newPrice);
+                    updateCart(id, value);
+                }
+        );
+    })();
+</script>
 {% endblock %}

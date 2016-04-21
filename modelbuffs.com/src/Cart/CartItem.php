@@ -54,9 +54,14 @@ class CartItem
         return $this->id;
     }
 
-    public function price()
+    public function totalPrice()
     {
         return $this->quantity * ($this->product->getPrice() + $this->stand->getPrice());
+    }
+
+    public function price()
+    {
+        return $this->product->getPrice() + $this->stand->getPrice();
     }
 
     public function changeQty($newQty)

@@ -5,8 +5,7 @@
  *	v1.24
  */
 /* clearfix */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:700);
 /* line 7, ../scss/base/owl.carousel.scss */
 .owl-carousel .owl-wrapper:after {
   content: ".";
@@ -6420,7 +6419,7 @@ This less file only for category 2 pages.
 
 /* line 283, ../scss/base/category-2.scss */
 .panel-flat .panel-heading .panel-title {
-  font-family: Oswald;
+  font-family: Roboto;
   text-transform: uppercase; }
 
 /* line 287, ../scss/base/category-2.scss */
@@ -6452,7 +6451,7 @@ This less file only for category 2 pages.
 
 /* line 308, ../scss/base/category-2.scss */
 .panel-flat .maxlist-more {
-  font-family: Oswald;
+  font-family: Roboto;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.5px;
@@ -7864,7 +7863,7 @@ citecolor {
 /* =============================================================== */
 /* FOUNDATION
 /* =============================================================== */
-/* line 9, ../scss/pages/foundation.scss */
+/* line 7, ../scss/pages/foundation.scss */
 a {
   color: #34495E;
   text-decoration: none;
@@ -7874,29 +7873,28 @@ a {
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in; }
 
-/* line 19, ../scss/pages/foundation.scss */
+/* line 17, ../scss/pages/foundation.scss */
 a:hover, a:focus {
   text-decoration: none;
   cursor: pointer; }
 
-/* line 24, ../scss/pages/foundation.scss */
+/* line 22, ../scss/pages/foundation.scss */
 ul, ol {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-/* line 30, ../scss/pages/foundation.scss */
+/* line 28, ../scss/pages/foundation.scss */
 body {
   margin: 0;
   padding: 0;
   color: #34495E;
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 21px;
   position: relative;
   background: #fff; }
 
-/* line 41, ../scss/pages/foundation.scss */
+/* line 38, ../scss/pages/foundation.scss */
 hr {
   margin: 10px 0; }
 
@@ -7904,62 +7902,66 @@ hr {
 /* TYPOGRAPHY + GLOBAL CLASS
 /* =============================================================== */
 /* line 5, ../scss/pages/typography.scss */
+body {
+  font-family: 'Roboto', sans-serif; }
+
+/* line 9, ../scss/pages/typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   margin: 0; }
 
-/* line 11, ../scss/pages/typography.scss */
+/* line 15, ../scss/pages/typography.scss */
 h1 {
   font-size: 30px;
   line-height: 35px; }
 
-/* line 16, ../scss/pages/typography.scss */
+/* line 20, ../scss/pages/typography.scss */
 h2 {
   font-size: 24px;
   line-height: 28px; }
 
-/* line 21, ../scss/pages/typography.scss */
+/* line 25, ../scss/pages/typography.scss */
 h3 {
   font-size: 20px;
   line-height: 24px; }
 
-/* line 26, ../scss/pages/typography.scss */
+/* line 30, ../scss/pages/typography.scss */
 h4 {
   font-size: 17px;
   line-height: 20px; }
 
-/* line 31, ../scss/pages/typography.scss */
+/* line 35, ../scss/pages/typography.scss */
 h5 {
   font-size: 14px;
   line-height: 20px; }
 
-/* line 36, ../scss/pages/typography.scss */
+/* line 40, ../scss/pages/typography.scss */
 h6 {
   font-size: 12px;
   line-height: 20px; }
 
-/* line 41, ../scss/pages/typography.scss */
+/* line 45, ../scss/pages/typography.scss */
 p.lead {
   font-size: 20px;
   line-height: 1.4; }
 
-/* line 46, ../scss/pages/typography.scss */
+/* line 50, ../scss/pages/typography.scss */
 h3 code {
   font-size: 14px;
   font-weight: normal; }
 
-/* line 51, ../scss/pages/typography.scss */
+/* line 55, ../scss/pages/typography.scss */
 .block-title-1 {
   display: block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
   margin: 15px 20px 0 0;
   text-transform: uppercase; }
 
-/* line 61, ../scss/pages/typography.scss */
+/* line 65, ../scss/pages/typography.scss */
 .block-title-2 {
   border-bottom: 1px solid #CECECE;
   font-size: 13px;
@@ -7969,7 +7971,7 @@ h3 code {
   position: relative;
   text-transform: uppercase; }
 
-/* line 71, ../scss/pages/typography.scss */
+/* line 75, ../scss/pages/typography.scss */
 .block-title-3 {
   border-bottom: 1px solid #CECECE;
   font-weight: bold;
@@ -7978,7 +7980,7 @@ h3 code {
   position: relative;
   text-transform: uppercase; }
 
-/* line 80, ../scss/pages/typography.scss */
+/* line 84, ../scss/pages/typography.scss */
 .block-title-4 {
   display: inline;
   font-size: 20px;
@@ -7988,7 +7990,7 @@ h3 code {
   padding: 0 12px;
   text-transform: uppercase; }
 
-/* line 90, ../scss/pages/typography.scss */
+/* line 94, ../scss/pages/typography.scss */
 .block-title-5 {
   display: block;
   font-size: 16px;
@@ -7998,220 +8000,220 @@ h3 code {
   padding: 0;
   text-transform: uppercase; }
 
-/* line 100, ../scss/pages/typography.scss */
+/* line 104, ../scss/pages/typography.scss */
 .border-title {
   border-bottom: 1px solid #CECECE;
   margin: 0 0 15px;
   padding: 10px 0 10px; }
 
 /* Helper class */
-/* line 109, ../scss/pages/typography.scss */
+/* line 113, ../scss/pages/typography.scss */
 .error label.error {
   color: red; }
 
-/* line 113, ../scss/pages/typography.scss */
+/* line 117, ../scss/pages/typography.scss */
 .section-block {
   margin-bottom: 30px; }
 
-/* line 117, ../scss/pages/typography.scss */
+/* line 121, ../scss/pages/typography.scss */
 .uppercase {
   text-transform: uppercase; }
 
-/* line 121, ../scss/pages/typography.scss */
+/* line 125, ../scss/pages/typography.scss */
 .underline {
   text-decoration: underline; }
 
-/* line 125, ../scss/pages/typography.scss */
+/* line 129, ../scss/pages/typography.scss */
 .relative {
   position: relative; }
 
-/* line 129, ../scss/pages/typography.scss */
+/* line 133, ../scss/pages/typography.scss */
 .no-padding {
   padding: 0 !important; }
 
 /* Margins */
-/* line 136, ../scss/pages/typography.scss */
+/* line 140, ../scss/pages/typography.scss */
 .no-margin {
   margin: 0 !important; }
 
-/* line 140, ../scss/pages/typography.scss */
+/* line 144, ../scss/pages/typography.scss */
 .no-margin-right,
 .m-r-none {
   margin-right: 0; }
 
-/* line 145, ../scss/pages/typography.scss */
+/* line 149, ../scss/pages/typography.scss */
 .no-margin-left,
 .m-l-none {
   margin-left: 0; }
 
-/* line 150, ../scss/pages/typography.scss */
+/* line 154, ../scss/pages/typography.scss */
 .no-margin-top,
 .m-t-none {
   margin-top: 0; }
 
-/* line 155, ../scss/pages/typography.scss */
+/* line 159, ../scss/pages/typography.scss */
 .no-margin-bottom,
 .m-b-none {
   margin-bottom: 0; }
 
-/* line 161, ../scss/pages/typography.scss */
+/* line 165, ../scss/pages/typography.scss */
 .m-t-xs {
   margin-top: 5px; }
 
-/* line 165, ../scss/pages/typography.scss */
+/* line 169, ../scss/pages/typography.scss */
 .m-b-xs {
   margin-bottom: 5px; }
 
-/* line 169, ../scss/pages/typography.scss */
+/* line 173, ../scss/pages/typography.scss */
 .m-r-xs {
   margin-right: 5px; }
 
-/* line 173, ../scss/pages/typography.scss */
+/* line 177, ../scss/pages/typography.scss */
 .m-l-xs {
   margin-left: 5px; }
 
-/* line 178, ../scss/pages/typography.scss */
+/* line 182, ../scss/pages/typography.scss */
 .no-border {
   border: 0; }
 
-/* line 182, ../scss/pages/typography.scss */
+/* line 186, ../scss/pages/typography.scss */
 .width100, .w100 {
   width: 100%; }
 
-/* line 186, ../scss/pages/typography.scss */
+/* line 190, ../scss/pages/typography.scss */
 .width50, .w50 {
   width: 100%;
   display: block; }
 
-/* line 191, ../scss/pages/typography.scss */
+/* line 195, ../scss/pages/typography.scss */
 .full-container {
   width: 100%;
   display: block;
   clear: both; }
 
-/* line 197, ../scss/pages/typography.scss */
+/* line 201, ../scss/pages/typography.scss */
 .float-right {
   float: right; }
 
-/* line 201, ../scss/pages/typography.scss */
+/* line 205, ../scss/pages/typography.scss */
 .float-left {
   float: left; }
 
-/* line 205, ../scss/pages/typography.scss */
+/* line 209, ../scss/pages/typography.scss */
 .maxheight100 {
   max-height: 100px; }
 
-/* line 209, ../scss/pages/typography.scss */
+/* line 213, ../scss/pages/typography.scss */
 .maxheight200 {
   max-height: 200px; }
 
-/* line 213, ../scss/pages/typography.scss */
+/* line 217, ../scss/pages/typography.scss */
 .maxheight300 {
   max-height: 300px; }
 
-/* line 217, ../scss/pages/typography.scss */
+/* line 221, ../scss/pages/typography.scss */
 .maxheight400 {
   max-height: 400px; }
 
-/* line 221, ../scss/pages/typography.scss */
+/* line 225, ../scss/pages/typography.scss */
 .maxheight500 {
   max-height: 500px; }
 
-/* line 225, ../scss/pages/typography.scss */
+/* line 229, ../scss/pages/typography.scss */
 .maxheight600 {
   max-height: 600px; }
 
-/* line 229, ../scss/pages/typography.scss */
+/* line 233, ../scss/pages/typography.scss */
 .maxheight700 {
   max-height: 700px; }
 
-/* line 233, ../scss/pages/typography.scss */
+/* line 237, ../scss/pages/typography.scss */
 .maxwidth100 {
   max-width: 100px; }
 
-/* line 237, ../scss/pages/typography.scss */
+/* line 241, ../scss/pages/typography.scss */
 .maxwidtht200 {
   max-width: 200px; }
 
-/* line 241, ../scss/pages/typography.scss */
+/* line 245, ../scss/pages/typography.scss */
 .maxwidth300 {
   max-width: 300px; }
 
-/* line 245, ../scss/pages/typography.scss */
+/* line 249, ../scss/pages/typography.scss */
 .maxwidth400 {
   max-width: 400px; }
 
-/* line 249, ../scss/pages/typography.scss */
+/* line 253, ../scss/pages/typography.scss */
 .maxwidth500 {
   max-width: 500px; }
 
-/* line 253, ../scss/pages/typography.scss */
+/* line 257, ../scss/pages/typography.scss */
 .maxwidth600 {
   max-width: 600px; }
 
-/* line 257, ../scss/pages/typography.scss */
+/* line 261, ../scss/pages/typography.scss */
 .maxwidth700 {
   max-width: 700px; }
 
-/* line 261, ../scss/pages/typography.scss */
+/* line 265, ../scss/pages/typography.scss */
 .padd {
   margin-top: 60px; }
 
-/* line 265, ../scss/pages/typography.scss */
+/* line 269, ../scss/pages/typography.scss */
 .globalPadding {
   padding: 50px 0; }
 
-/* line 269, ../scss/pages/typography.scss */
+/* line 273, ../scss/pages/typography.scss */
 .globalPaddingTop {
   padding: 50px 0 0; }
 
-/* line 273, ../scss/pages/typography.scss */
+/* line 277, ../scss/pages/typography.scss */
 .globalPaddingBottom {
   padding-bottom: 50px; }
 
-/* line 277, ../scss/pages/typography.scss */
+/* line 281, ../scss/pages/typography.scss */
 .hr2 {
   border-width: 2px;
   border-color: #DDDDDD; }
 
-/* line 282, ../scss/pages/typography.scss */
+/* line 286, ../scss/pages/typography.scss */
 .hr3 {
   border-width: 4px;
   border-color: #DDDDDD; }
 
-/* line 287, ../scss/pages/typography.scss */
+/* line 291, ../scss/pages/typography.scss */
 ul.list-dot li {
   list-style: inside disc; }
 
-/* line 291, ../scss/pages/typography.scss */
+/* line 295, ../scss/pages/typography.scss */
 ul.list-number li {
   list-style: inside decimal; }
 
-/* line 295, ../scss/pages/typography.scss */
+/* line 299, ../scss/pages/typography.scss */
 ul.list {
   list-style: disc;
   padding-left: 40px; }
 
-/* line 300, ../scss/pages/typography.scss */
+/* line 304, ../scss/pages/typography.scss */
 ul.list ul {
   list-style: circle;
   padding-left: 40px; }
 
-/* line 305, ../scss/pages/typography.scss */
+/* line 309, ../scss/pages/typography.scss */
 ul.list-check {
   list-style: none; }
 
-/* line 309, ../scss/pages/typography.scss */
+/* line 313, ../scss/pages/typography.scss */
 ul.list-border li {
   border-bottom: 1px solid #E0EDED;
   display: block;
   padding: 10px 15px; }
 
-/* line 315, ../scss/pages/typography.scss */
+/* line 319, ../scss/pages/typography.scss */
 ul.list-border li:hover {
   background: #ebebeb; }
 
-/* line 319, ../scss/pages/typography.scss */
+/* line 323, ../scss/pages/typography.scss */
 .transitionfx {
   transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
@@ -8219,16 +8221,16 @@ ul.list-border li:hover {
   -o-transition: all 0.25s ease 0s;
   -ms-transition: all 0.25s ease 0s; }
 
-/* line 327, ../scss/pages/typography.scss */
+/* line 331, ../scss/pages/typography.scss */
 .hw100 {
   height: 100%;
   width: 100%; }
 
-/* line 332, ../scss/pages/typography.scss */
+/* line 336, ../scss/pages/typography.scss */
 .display-table {
   display: table; }
 
-/* line 336, ../scss/pages/typography.scss */
+/* line 340, ../scss/pages/typography.scss */
 .display-table-cell {
   display: table-cell;
   vertical-align: middle; }
@@ -8261,7 +8263,7 @@ ul.list-border li:hover {
 /* line 26, ../scss/pages/forms.scss */
 .modal-title-site {
   color: #FFFFFF;
-  font-family: Oswald;
+  font-family: Roboto;
   font-size: 38px;
   font-weight: lighter;
   padding: 13px 0;
@@ -8500,7 +8502,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 /* line 265, ../scss/pages/forms.scss */
 .btn-stroke-dark, .btn-stroke-light {
   background: transparent;
-  font-family: "Oswald", Helvetica Neue, Arial, sans-serif;
+  font-family: "Roboto", Helvetica Neue, Arial, sans-serif;
   letter-spacing: 2px;
   padding: 15px 20px;
   text-align: center;
@@ -9048,7 +9050,7 @@ legend {
 /* line 462, ../scss/pages/navigation.scss */
 .promo-1 {
   color: #FFFFFF;
-  font-family: Oswald, Helvetica Neue;
+  font-family: Roboto, Helvetica Neue;
   margin-bottom: 15px;
   font-weight: lighter;
   padding: 5px 0;
@@ -9358,7 +9360,7 @@ legend {
 /* line 99, ../scss/pages/homepage-slider.scss */
 .box-4in .price, .box-text-table .dealprice {
   display: block;
-  font-family: oswald, Helvetica Neue, Arial, Helvetica, sans-serif;
+  font-family: Roboto, Helvetica Neue, Arial, Helvetica, sans-serif;
   font-size: 26px;
   font-weight: lighter;
   margin-bottom: 15px; }
@@ -9399,13 +9401,13 @@ legend {
 .box-text h1, .box-text-cell-inner h1 {
   font-size: 36px;
   letter-spacing: 3px;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase; }
 
 /* line 147, ../scss/pages/homepage-slider.scss */
 .box-text p, .box-text-cell-inner p {
-  font-family: Oswald;
+  font-family: Roboto;
   font-weight: lighter; }
 
 /* line 152, ../scss/pages/homepage-slider.scss */
@@ -9582,7 +9584,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 .box-price-tag .price {
   background: #fff;
   color: #2c3e50;
-  font-family: oswald;
+  font-family: Roboto;
   font-size: 28px;
   font-weight: normal;
   letter-spacing: 2px;
@@ -10045,7 +10047,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   display: block;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   float: left;
-  font-family: Oswald, Helvetica Neue;
+  font-family: Roboto, Helvetica Neue;
   font-size: 15px;
   font-weight: normal;
   list-style: none outside none;
@@ -10105,7 +10107,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 
 /* line 44, ../scss/pages/homepage-look--2.scss */
 .sectionCategoryIntro h1 {
-  font-family: Oswald;
+  font-family: Roboto;
   font-size: 22px;
   font-weight: lighter;
   letter-spacing: 2px;
@@ -10182,7 +10184,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 
 /* line 124, ../scss/pages/homepage-look--2.scss */
 #productShowCase .product-title {
-  font-family: oswald;
+  font-family: Roboto;
   font-size: 24px;
   font-weight: normal;
   letter-spacing: 0.25px;
@@ -10219,7 +10221,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
 /* line 162, ../scss/pages/homepage-look--2.scss */
 .boxes-title-1 {
   background: #ebebeb;
-  font-family: Oswald;
+  font-family: Roboto;
   font-weight: normal;
   letter-spacing: 1px;
   margin-bottom: 30px;
@@ -10343,7 +10345,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   color: white;
   display: block;
   font-size: 20px;
-  font-family: Oswald;
+  font-family: Roboto;
   font-weight: normal;
   letter-spacing: 3px;
   padding: 0 10px;
@@ -10713,9 +10715,10 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -o-transition: all 0.5s ease 0s;
   min-height: 180px;
   max-height: 180px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 100%; }
 
-/* line 325, ../scss/pages/main-container.scss */
+/* line 326, ../scss/pages/main-container.scss */
 .product:hover .image a img {
   transform: scale(1.15) rotate(-1.5deg);
   -webkit-transform: scale(1.1) rotate(-1.5deg);
@@ -10723,7 +10726,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -ms-transform: scale(1.1) rotate(-1.5deg);
   -o-transform: scale(1.1) rotate(-1.5deg); }
 
-/* line 333, ../scss/pages/main-container.scss */
+/* line 334, ../scss/pages/main-container.scss */
 .promotion {
   position: absolute;
   z-index: 10;
@@ -10737,34 +10740,34 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
-/* line 347, ../scss/pages/main-container.scss */
+/* line 348, ../scss/pages/main-container.scss */
 .description {
   margin: 0 auto;
   min-height: 50px;
   max-width: 235px; }
 
-/* line 353, ../scss/pages/main-container.scss */
+/* line 354, ../scss/pages/main-container.scss */
 .list-view .description {
   margin: 0 auto;
   min-height: auto;
   max-width: 100%; }
 
-/* line 359, ../scss/pages/main-container.scss */
+/* line 360, ../scss/pages/main-container.scss */
 .promotion {
   line-height: 18px; }
 
-/* line 363, ../scss/pages/main-container.scss */
+/* line 364, ../scss/pages/main-container.scss */
 .new-product {
   color: #FFFFFF;
   display: inline-block;
   float: left;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: lighter;
   height: 100%;
   padding: 3px 10px; }
 
-/* line 374, ../scss/pages/main-container.scss */
+/* line 375, ../scss/pages/main-container.scss */
 .discount {
   background: #eb5e58;
   /* old browser */
@@ -10772,13 +10775,13 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   color: #fff;
   display: inline-block;
   float: left;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: lighter;
   height: 100%;
   padding: 3px 5px; }
 
-/* line 387, ../scss/pages/main-container.scss */
+/* line 388, ../scss/pages/main-container.scss */
 .item h4 {
   margin: 0;
   min-height: 45px;
@@ -10790,15 +10793,15 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   padding: 0;
   line-height: 24px; }
 
-/* line 399, ../scss/pages/main-container.scss */
+/* line 400, ../scss/pages/main-container.scss */
 .item h4 a {
   color: #2c3e50;
-  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase; }
 
-/* line 407, ../scss/pages/main-container.scss */
+/* line 408, ../scss/pages/main-container.scss */
 .description p {
   color: #7F8C8D;
   font-size: 14px;
@@ -10807,14 +10810,14 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   overflow: hidden;
   line-height: 18px; }
 
-/* line 416, ../scss/pages/main-container.scss */
+/* line 417, ../scss/pages/main-container.scss */
 .price {
   font-size: 18px;
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 10px; }
 
-/* line 423, ../scss/pages/main-container.scss */
+/* line 424, ../scss/pages/main-container.scss */
 .action-control {
   border: 0;
   display: block;
@@ -10822,11 +10825,11 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   padding: 5px 0 10px;
   width: 100%; }
 
-/* line 431, ../scss/pages/main-container.scss */
+/* line 432, ../scss/pages/main-container.scss */
 .action-control a {
   cursor: pointer; }
 
-/* line 435, ../scss/pages/main-container.scss */
+/* line 436, ../scss/pages/main-container.scss */
 .cart a {
   font-size: 20px;
   color: #2c3e50;
@@ -10838,12 +10841,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s; }
 
-/* line 447, ../scss/pages/main-container.scss */
+/* line 448, ../scss/pages/main-container.scss */
 .load-more-block {
   padding-bottom: 30px;
   position: relative; }
 
-/* line 452, ../scss/pages/main-container.scss */
+/* line 453, ../scss/pages/main-container.scss */
 .load-more-block .btn-thin {
   background: #fff;
   z-index: 2;
@@ -10853,7 +10856,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -moz-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF;
   -o-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF; }
 
-/* line 462, ../scss/pages/main-container.scss */
+/* line 463, ../scss/pages/main-container.scss */
 .load-more-block:after {
   background: none repeat scroll 0 0 #DDDDDD;
   content: "";
@@ -10865,12 +10868,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   width: 40%;
   z-index: 1; }
 
-/* line 474, ../scss/pages/main-container.scss */
+/* line 475, ../scss/pages/main-container.scss */
 .featureImg a {
   display: block;
   overflow: hidden; }
 
-/* line 479, ../scss/pages/main-container.scss */
+/* line 480, ../scss/pages/main-container.scss */
 .featureImg a img {
   transition: all 0.4s ease 0s;
   -webkit-transition: all 0.4s ease 0s;
@@ -10878,7 +10881,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -o-transition: all 0.4s ease 0s;
   -ms-transition: all 0.4s ease 0s; }
 
-/* line 487, ../scss/pages/main-container.scss */
+/* line 488, ../scss/pages/main-container.scss */
 .featureImg a img:hover {
   transform: scale(1.1) rotate(-1.1deg);
   -webkit-transform: scale(1.1) rotate(-1.1deg);
@@ -11636,7 +11639,7 @@ h5.parallaxSubtitle {
 
 /* line 146, ../scss/pages/product-details.scss */
 .product-code {
-  font-family: oswald, Helvetica Neue, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 14px;
   font-weight: lighter;
   letter-spacing: 1px;
@@ -11693,7 +11696,7 @@ h5.parallaxSubtitle {
 
 /* line 207, ../scss/pages/product-details.scss */
 .nav-tabs li a {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 200;
   letter-spacing: 2px;
@@ -11763,7 +11766,7 @@ h5.parallaxSubtitle {
   color: #FFFFFF;
   display: block;
   float: left;
-  font-family: Oswald, Helvetica Neue, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 18px;
   font-weight: lighter;
   line-height: 1em;
@@ -11798,7 +11801,7 @@ h5.parallaxSubtitle {
 .incaps {
   display: block;
   float: left;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
@@ -11984,25 +11987,24 @@ tr.CartProduct td:nth-child(2) {
 
 /* line 64, ../scss/pages/right-sidebar.scss */
 .item h4 a {
-  font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal; }
 
-/* line 69, ../scss/pages/right-sidebar.scss */
+/* line 68, ../scss/pages/right-sidebar.scss */
 .couponForm input[type="text"] {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
   height: 33px; }
 
-/* line 76, ../scss/pages/right-sidebar.scss */
+/* line 75, ../scss/pages/right-sidebar.scss */
 .couponForm .btn {
   border-radius: 0 3px 3px 0; }
 
-/* line 80, ../scss/pages/right-sidebar.scss */
+/* line 79, ../scss/pages/right-sidebar.scss */
 span.success, p.success div.success {
   color: #8BB418; }
 
-/* line 84, ../scss/pages/right-sidebar.scss */
+/* line 83, ../scss/pages/right-sidebar.scss */
 #total-price {
   font-size: 22px;
   font-weight: bold; }
@@ -12419,7 +12421,7 @@ div.quickview {
 /* line 21, ../scss/pages/product-modal.scss */
 .btn-quickview {
   border-radius: 2px;
-  font-family: "Oswald", Helvetica Neue, Arial, sans-serif;
+  font-family: "Roboto", Helvetica Neue, Arial, sans-serif;
   letter-spacing: 2px;
   color: #2c3e50 !important;
   text-transform: uppercase;
@@ -12629,7 +12631,7 @@ div.quickview {
 /* line 34, ../scss/pages/subscribe-modal.scss */
 #modalAds h3 {
   color: #444;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 26px;
   font-weight: normal;
   letter-spacing: 1px;
@@ -12639,7 +12641,7 @@ div.quickview {
 /* line 44, ../scss/pages/subscribe-modal.scss */
 .discountLg {
   color: #000;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 46px;
   font-weight: bold;
   letter-spacing: 3px;
@@ -12719,7 +12721,7 @@ div.quickview {
   color: #000;
   display: inline-block;
   clear: both;
-  font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   left: 2px;
   margin-top: 20px;
   text-decoration: underline;

@@ -320,6 +320,7 @@
     min-height: 180px;
     max-height: 180px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .product:hover .image a img {
@@ -364,7 +365,7 @@
     color: #FFFFFF;
     display: inline-block;
     float: left;
-    font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: lighter;
     height: 100%;
@@ -377,7 +378,7 @@
     color: #fff;
     display: inline-block;
     float: left;
-    font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: lighter;
     height: 100%;
@@ -398,7 +399,7 @@
 
 .item h4 a {
     color: #2c3e50;
-    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;

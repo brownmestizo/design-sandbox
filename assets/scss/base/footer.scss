@@ -1,0 +1,180 @@
+
+
+/* =============================================================== */
+/*  FOOTER
+/* =============================================================== */
+
+.gap {
+    height: 30px;
+    width: 100%;
+    clear: both;
+    display: block;
+}
+
+.footer {
+    background: #EDEFF1;
+    height: auto;
+    padding-bottom: 30px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #DDDDDD;
+
+    p {
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h3 {
+        border-bottom: 1px solid #BAC1C8;
+        color: #54697E;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        padding: 40px 0 10px;
+        text-transform: uppercase;
+    }   
+
+    ul {
+        font-size: 13px;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 15px;
+        color: #7F8C8D;
+    }
+
+    ul li a {
+        padding: 0 0 5px 0;
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+.supportLi h4 {
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: normal;
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+}
+
+.newsLatterBox input#appendedInputButton {
+    background: #FFFFFF;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    clear: both;
+    width: 100%;
+}
+
+.newsLatterBox .btn {
+    border: medium none;
+    @include border-top-radius(3px);
+    @include border-right-radius(3px);
+    @include border-bottom-radius(3px);
+    @include border-left-radius(3px);    
+    display: inline-block;
+    height: 40px;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.newsLatterBox {
+    overflow: hidden;
+}
+
+.bg-gray {
+    background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
+    box-shadow: 0 1px 0 #B4B3B3;
+}
+
+
+.social {
+    li {
+        background: none repeat scroll 0 0 #B5B5B5;
+        border: 2px solid #B5B5B5;
+        @include border-top-radius(50%);
+        @include border-right-radius(50%);
+        @include border-bottom-radius(50%);
+        @include border-left-radius(50%);
+
+        float: left;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 8px 0 0;
+        padding: 0;
+        text-align: center;
+        width: 36px;
+        
+        @include transition(all 0.5s ease 0s);        
+    }
+
+    li:hover {
+        @include transform(scale(1.15) rotate(360deg));
+    }
+
+    li a {
+        color: #EDEFF1;
+    }
+
+    li:hover {
+        border: 2px solid #2c3e50;
+        background: #2c3e50;
+    }
+
+    li a i {
+        font-size: 16px;
+        margin: 7px 0 0 5px !important;
+        color: #EDEFF1 !important;
+    }    
+}
+
+
+.footer-bottom {
+    background: #E3E3E3;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer-bottom p.pull-left {
+    padding-top: 6px;
+}
+
+.paymentMethodImg img {
+    margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .footer-bottom p.pull-left {
+        float: none !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .paymentMethodImg {
+        width: 100%;
+        float: none !important;
+        text-align: center;
+    }
+
+    .paymentMethodImg img {
+        display: inline-block;
+        float: none !important;
+        max-height: 24px;
+    }
+}

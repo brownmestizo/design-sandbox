@@ -10,16 +10,22 @@
                         <ul class="userMenu ">
                             <li>
                                 <a href="#">
-                                    <span class="hidden-xs">HELP</span>
+                                    <span class="hidden-xs">FAQs</span>
                                     <i class="glyphicon glyphicon-info-sign hide visible-xs "></i>
                                 </a>
                             </li>
                             <li class="phone-number">
-                                <a href="callto:+88016000000">
-                                    <span> <i class="glyphicon glyphicon-phone-alt "></i></span>
-                                    <span class="hidden-xs" style="margin-left:5px"> 88 01680 53 1352 </span>
+                                <a href="mailto:sales@modelbuffs.com">
+                                    <span> <i class="fa fa-envelope"></i></span>
+                                    <span class="hidden-xs" style="margin-left:5px"> CONTACT US </span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="#">
+                                    <span class="hidden-xs">Terms and Conditions</span>
+                                    <i class="glyphicon glyphicon-info-sign hide visible-xs "></i>
+                                </a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>

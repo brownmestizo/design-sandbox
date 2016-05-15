@@ -10791,9 +10791,21 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   line-height: 20px;
   margin: 25px 10px 0 10px;
   padding: 0;
-  line-height: 24px; }
+  line-height: 24px;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: auto;
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 24px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
-/* line 400, ../scss/base/main-container.scss */
+/* line 401, ../scss/base/main-container.scss */
 .item h4 a {
   color: #2c3e50;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -10801,7 +10813,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   text-decoration: none;
   text-transform: uppercase; }
 
-/* line 408, ../scss/base/main-container.scss */
+/* line 409, ../scss/base/main-container.scss */
 .description p {
   color: #7F8C8D;
   font-size: 14px;
@@ -10810,14 +10822,14 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   overflow: hidden;
   line-height: 18px; }
 
-/* line 417, ../scss/base/main-container.scss */
+/* line 418, ../scss/base/main-container.scss */
 .price {
   font-size: 18px;
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 10px; }
 
-/* line 424, ../scss/base/main-container.scss */
+/* line 425, ../scss/base/main-container.scss */
 .action-control {
   border: 0;
   display: block;
@@ -10825,11 +10837,11 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   padding: 5px 0 10px;
   width: 100%; }
 
-/* line 432, ../scss/base/main-container.scss */
+/* line 433, ../scss/base/main-container.scss */
 .action-control a {
   cursor: pointer; }
 
-/* line 436, ../scss/base/main-container.scss */
+/* line 437, ../scss/base/main-container.scss */
 .cart a {
   font-size: 20px;
   color: #2c3e50;
@@ -10841,12 +10853,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s; }
 
-/* line 448, ../scss/base/main-container.scss */
+/* line 449, ../scss/base/main-container.scss */
 .load-more-block {
   padding-bottom: 30px;
   position: relative; }
 
-/* line 453, ../scss/base/main-container.scss */
+/* line 454, ../scss/base/main-container.scss */
 .load-more-block .btn-thin {
   background: #fff;
   z-index: 2;
@@ -10856,7 +10868,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -moz-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF;
   -o-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF; }
 
-/* line 463, ../scss/base/main-container.scss */
+/* line 464, ../scss/base/main-container.scss */
 .load-more-block:after {
   background: none repeat scroll 0 0 #DDDDDD;
   content: "";
@@ -10868,12 +10880,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   width: 40%;
   z-index: 1; }
 
-/* line 475, ../scss/base/main-container.scss */
+/* line 476, ../scss/base/main-container.scss */
 .featureImg a {
   display: block;
   overflow: hidden; }
 
-/* line 480, ../scss/base/main-container.scss */
+/* line 481, ../scss/base/main-container.scss */
 .featureImg a img {
   transition: all 0.4s ease 0s;
   -webkit-transition: all 0.4s ease 0s;
@@ -10881,7 +10893,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -o-transition: all 0.4s ease 0s;
   -ms-transition: all 0.4s ease 0s; }
 
-/* line 488, ../scss/base/main-container.scss */
+/* line 489, ../scss/base/main-container.scss */
 .featureImg a img:hover {
   transform: scale(1.1) rotate(-1.1deg);
   -webkit-transform: scale(1.1) rotate(-1.1deg);

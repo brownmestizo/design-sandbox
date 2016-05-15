@@ -1,0 +1,27 @@
+// Ellipsis for multi-line content
+@mixin ellipsis($font-size, $line-height, $lines-to-show) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Ellipsis for auto-height content
+@mixin ellipsis-auto($font-size, $line-height, $lines-to-show) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: auto; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

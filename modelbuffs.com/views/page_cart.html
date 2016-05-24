@@ -92,15 +92,22 @@
                 <div class="w100 costDetails">
                     <div class="table-block" id="order-detail-content">
 
-                        <div class="w100 cartMiniTable m-b-lg">
+                        <div class="w100 cartMiniTable">
                             <table id="cart-summary" class="std table">
                                 <tbody>
                                 <tr>
-                                    <td> Estimated total</td>
+                                    <td colspan="2">Order Summary</td>
+                                </tr>                                
+                                <tr>
+                                    <td>Estimated total</td>
                                     <td class="site-color total-price" id="total-price" data-price="{{ cart.price }}">${{ cart.price }}</td>
                                 </tr>
                                 </tbody>
                             </table>
+
+                            <div class="p-xxs">
+                                <small>Tax and shipping costs, discounts, and gift cards will be applied during checkout.</small>
+                            </div>
                         </div>
 
                         <a class="btn btn-primary btn-lg btn-block m-t-lg" title="checkout" href="shipping.php">

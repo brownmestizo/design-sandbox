@@ -330,15 +330,17 @@ input[type="text"], input[type="password"], input[type="email"] {
 .btn-tw {
     background: #1DADEB;
     color: #FFFFFF;
+
+    &:hover {
+        background: #35C5FF;
+        color: #fff;
+        text-decoration: none;
+    }    
 }
 
-.btn-tw:hover {
-    background: #35C5FF;
-    color: #fff;
-    text-decoration: none;
-}
 
-p.required, .required sup {
+p.required, 
+.required sup {
     color: #E74C3C;
 }
 
@@ -359,9 +361,16 @@ legend {
     border: none;
     border-left: 5px solid rgba(0, 0, 0, 0.1);
     border-radius: 0;
+
+    .close {
+        font-size: 30px;
+        line-height: 20px;
+    }    
 }
 
-.alert .close {
-    font-size: 30px;
-    line-height: 20px;
+
+/* Custom radio classes */
+.icr {
+    text-shadow: none;
+    font-family: 'Roboto', sans-serif;
 }

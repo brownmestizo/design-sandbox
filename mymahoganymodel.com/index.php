@@ -1,8 +1,9 @@
 <?php
+use MB\Templating\Templater;
+
 require_once '../lib/init.php';
 
-$loader = new Twig_Loader_Filesystem('views/');
-$twig = new Twig_Environment($loader);
+$twig = Templater::getTwig();
 
 $newProducts = TblProdInfoQuery::create()
 	->orderByProdId('desc')

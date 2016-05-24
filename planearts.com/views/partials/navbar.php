@@ -10,16 +10,22 @@
                         <ul class="userMenu ">
                             <li>
                                 <a href="#">
-                                    <span class="hidden-xs">HELP</span>
+                                    <span class="hidden-xs">FAQs</span>
                                     <i class="glyphicon glyphicon-info-sign hide visible-xs "></i>
                                 </a>
                             </li>
                             <li class="phone-number">
-                                <a href="callto:+88016000000">
-                                    <span> <i class="glyphicon glyphicon-phone-alt "></i></span>
-                                    <span class="hidden-xs" style="margin-left:5px"> 88 01680 53 1352 </span>
+                                <a href="mailto:sales@modelbuffs.com">
+                                    <span> <i class="fa fa-envelope"></i></span>
+                                    <span class="hidden-xs" style="margin-left:5px"> CONTACT US </span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="#">
+                                    <span class="hidden-xs">Terms and Conditions</span>
+                                    <i class="glyphicon glyphicon-info-sign hide visible-xs "></i>
+                                </a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
@@ -27,7 +33,7 @@
         </div>
     </div>
     
-
+    {% set c = get_cart() %}
 
     <div class="container">
         <div class="navbar-header">
@@ -36,7 +42,7 @@
                 <span class="icon-bar"> </span> <span class="icon-bar"> </span></button>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart">
                 <i class="fa fa-shopping-cart colorWhite"> </i>
-                <span class="cartRespons colorWhite"> Cart ($210.00) </span></button>
+                <span class="cartRespons colorWhite"> Cart (<span class="total-price">${{ c.price }}</span>) </span></button>
             <a class="navbar-brand " href="index.php"> <img src="../images/logo.png" alt="Modelbuffs"> </a>
         </div>
 
@@ -46,22 +52,24 @@
             <div class="cartMenu static-search-box  col-lg-4 col-xs-12 col-md-4 ">
                 <div class="w100 miniCartTable scroll-pane">                    
                     <table>
-                        <tbody>                        
+                        <tbody>
+                        {% for i in c.items %}
                             <tr class="miniCartProduct">
                                 <td style="60%">
                                     <div class="miniCartDescription">
-                                        <h4><a href="product-details-style4.html">Aermacchi M-346 Italian Air Force</a></h4>                                        
+                                        <h4><a href="product-details-style4.html">{{ i.product.name }}</a></h4>
                                     </div>
                                 </td>
-                                <td style="30%" class="miniCartSubtotal"><span> $8.80 </span></td>
+                                <td style="30%" class="miniCartSubtotal"><span class="item-price-{{ i.id }}">${{ i.totalPrice }}</span></td>
                             </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>
                 <!--/.miniCartTable-->
 
                 <div class="miniCartFooter  miniCartFooterInMobile text-right">
-                    <h3 class="text-right subtotal"> Subtotal: $210 </h3>
+                    <h3 class="text-right subtotal"> Subtotal: <span class="total-price">${{ c.price }}</span> </h3>
                     <a class="btn btn-sm btn-danger"> <i class="fa fa-shopping-cart"> </i> VIEW CART </a>
                     <a href="checkout-0.html" class="btn btn-sm btn-primary"> CHECKOUT </a>
                 </div>
@@ -182,23 +190,23 @@
                 <div class="dropdown  cartMenu static-search-box">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart"> </i>
-                        <span class="cartRespons"> Cart ($210.00) </span> <b class="caret"> </b>
+                        <span class="cartRespons"> Cart (<span class="total-price">${{ c.price }}</span>) </span> <b class="caret"> </b>
                     </a>
 
                     <div class="dropdown-menu col-lg-4 col-xs-12 col-md-4 ">
                         <div class="w100 miniCartTable scroll-pane">
                             <table>
                                 <tbody>
-                                <?php for ($i=1; $i<=6; $i++) { ?>
-                                    <tr class="miniCartProduct">
-                                        <td style="width:60%">
-                                            <div class="miniCartDescription">
-                                                <h4><a href="product-details-style4.html">Aermacchi M-346 Italian Air Force</a></h4>
-                                            </div>
-                                        </td>
-                                        <td style="width:30%" class="miniCartSubtotal text-right"><span> $33 </span></td>
-                                    </tr>
-                                <?php } ?>
+                                {% for i in c.items %}
+                                <tr class="miniCartProduct">
+                                    <td style="60%">
+                                        <div class="miniCartDescription">
+                                            <h4><a href="product-details-style4.html">{{ i.product.name }}</a></h4>
+                                        </div>
+                                    </td>
+                                    <td style="30%" class="miniCartSubtotal text-right"><span class="item-price-{{ i.id }}">${{ i.totalPrice }}</span></td>
+                                </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>

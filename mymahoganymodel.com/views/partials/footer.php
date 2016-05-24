@@ -2,53 +2,31 @@
 <div class="footer" id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <h3> Support </h3>
                 <ul>
                     <li class="supportLi">
-                        <p> Lorem ipsum dolor sit amet, consectetur </p>
-                        <h4>
-                            <a class="inline" href="callto:+88016000000">
-                                <strong> <i class="fa fa-phone"> </i> 880160 000 000</strong>
-                            </a>
-                        </h4>
-                        <h4>
+                        <p class="m-b-lg"> Trademark and Copyright Notice: Paypal, Yahoo Messenger and MSN Messenger and other related entities. All rights reserved. </p>
+                        <h5>
                             <a class="inline" href="mailto:sales@modelbuffs.com">
                                 <i class="fa fa-envelope-o"> </i> sales@modelbuffs.com
                             </a>
-                        </h4>
+                        </h5>
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                <h3> Shop </h3>
-                <ul>
-                    <li><a href="index.html"> Home </a></li>
-                    <li><a href="category.html"> Category </a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12">
                 <h3> Information </h3>
                 <ul>
-                    <li><a href="product-details-style4.html"> Product Details </a></li>
-                    <li><a href="cart.html"> Cart </a></li>
-                    <li><a href="about-us.html"> About us </a></li>
-                    <li><a href="contact-us-2.html"> Contact us</a></li>
-                    <li><a href="terms-conditions.html"> Terms &amp; Conditions </a></li>
+                    <li><a href=""> Pantone color chart </a></li>
+                    <li><a href=""> Production process </a></li>
+                    <li><a href=""> Terms and Conditions </a></li>
+                    <li><a href=""> Sitemap</a></li>                    
                 </ul>
             </div>
-            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                <h3> My Account </h3>
-                <ul>
-                    <li><a href="account-1.html"> Account Login </a></li>
-                    <li><a href="account.html"> My Account </a></li>
-                    <li><a href="my-address.html"> My Address </a></li>
-                    <li><a href="wishlist.html"> Wish List </a></li>
-                    <li><a href="order-list.html"> Order list </a></li>
-                    <li><a href="order-status.html"> Order Status </a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12">
                 <h3> Stay in touch </h3>
                 <ul>
                     <li>
@@ -61,7 +39,7 @@
                     </li>
                 </ul>
                 <ul class="social">
-                    <li><a href="http://facebook.com"> <i class=" fa fa-facebook"> &nbsp; </i> </a></li>
+                    <li><a href="http://facebook.com"> <i class="fa fa-facebook"> &nbsp; </i> </a></li>
                     <li><a href="http://twitter.com"> <i class="fa fa-twitter"> &nbsp; </i> </a></li>
                     <li><a href="https://plus.google.com"> <i class="fa fa-google-plus"> &nbsp; </i> </a></li>
                     <li><a href="http://youtube.com"> <i class="fa fa-pinterest"> &nbsp; </i> </a></li>

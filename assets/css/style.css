@@ -8568,40 +8568,45 @@ input[type="text"], input[type="password"], input[type="email"] {
 .btn-tw {
   background: #1DADEB;
   color: #FFFFFF; }
+  /* line 334, ../scss/base/forms.scss */
+  .btn-tw:hover {
+    background: #35C5FF;
+    color: #fff;
+    text-decoration: none; }
 
-/* line 335, ../scss/base/forms.scss */
-.btn-tw:hover {
-  background: #35C5FF;
-  color: #fff;
-  text-decoration: none; }
-
-/* line 341, ../scss/base/forms.scss */
-p.required, .required sup {
+/* line 342, ../scss/base/forms.scss */
+p.required,
+.required sup {
   color: #E74C3C; }
 
-/* line 345, ../scss/base/forms.scss */
+/* line 347, ../scss/base/forms.scss */
 .pagination li.active a {
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.2) inset; }
 
-/* line 349, ../scss/base/forms.scss */
+/* line 351, ../scss/base/forms.scss */
 .checkbox {
   padding-left: 0;
   margin-left: 0; }
 
-/* line 354, ../scss/base/forms.scss */
+/* line 356, ../scss/base/forms.scss */
 legend {
   padding-bottom: 10px; }
 
-/* line 358, ../scss/base/forms.scss */
+/* line 360, ../scss/base/forms.scss */
 .alert {
   border: none;
   border-left: 5px solid rgba(0, 0, 0, 0.1);
   border-radius: 0; }
+  /* line 365, ../scss/base/forms.scss */
+  .alert .close {
+    font-size: 30px;
+    line-height: 20px; }
 
-/* line 364, ../scss/base/forms.scss */
-.alert .close {
-  font-size: 30px;
-  line-height: 20px; }
+/* Custom radio classes */
+/* line 373, ../scss/base/forms.scss */
+.icr {
+  text-shadow: none;
+  font-family: 'Roboto', sans-serif; }
 
 /* =============================================================== */
 /* CUSTOMIZE NAVBAR
@@ -11943,73 +11948,69 @@ tr.CartProduct td:nth-child(2) {
   text-align: right;
   text-transform: uppercase; }
 
-/* line 16, ../scss/base/right-sidebar.scss */
+/* line 18, ../scss/base/right-sidebar.scss */
 .rightSidebar #cart-summary {
   margin-top: 0; }
-
-/* line 20, ../scss/base/right-sidebar.scss */
-.rightSidebar #cart-summary tr:first-child td {
-  border: none; }
-
-/* line 24, ../scss/base/right-sidebar.scss */
-.cartMiniTable {
-  border: 1px solid #DDDDDD;
-  padding: 10px; }
-
-/* line 29, ../scss/base/right-sidebar.scss */
+  /* line 21, ../scss/base/right-sidebar.scss */
+  .rightSidebar #cart-summary tr:first-child td {
+    border: none;
+    font-size: 16px;
+    font-weight: bold; }
+/* line 28, ../scss/base/right-sidebar.scss */
 .rightSidebar img {
   max-width: 100%; }
-
-/* line 36, ../scss/base/right-sidebar.scss */
-.categoryListPanel {
-  background: #EBEDEF; }
-
-/* line 40, ../scss/base/right-sidebar.scss */
-.contentBox {
-  margin-bottom: 15px; }
-
-/* line 44, ../scss/base/right-sidebar.scss */
+/* line 32, ../scss/base/right-sidebar.scss */
 .rightSidebar .product-image img {
   float: left;
   max-width: 100%;
   width: 90px;
   margin-right: 10px; }
-
-/* line 51, ../scss/base/right-sidebar.scss */
+/* line 39, ../scss/base/right-sidebar.scss */
 .rightSidebar .product {
   padding: 10px 0; }
-
-/* line 55, ../scss/base/right-sidebar.scss */
+/* line 43, ../scss/base/right-sidebar.scss */
 .rightSidebar .item {
   border-bottom: 1px solid #DDDDDD;
   margin-bottom: 0; }
+  /* line 47, ../scss/base/right-sidebar.scss */
+  .rightSidebar .item h4 {
+    margin-top: 0; }
 
-/* line 60, ../scss/base/right-sidebar.scss */
-.rightSidebar .item h4 {
-  margin-top: 0; }
+/* line 57, ../scss/base/right-sidebar.scss */
+.cartMiniTable {
+  border: 1px solid #DDDDDD;
+  padding: 10px; }
 
-/* line 64, ../scss/base/right-sidebar.scss */
+/* line 62, ../scss/base/right-sidebar.scss */
+.categoryListPanel {
+  background: #EBEDEF; }
+
+/* line 66, ../scss/base/right-sidebar.scss */
+.contentBox {
+  margin-bottom: 15px; }
+
+/* line 72, ../scss/base/right-sidebar.scss */
 .item h4 a {
   font-weight: normal; }
 
-/* line 68, ../scss/base/right-sidebar.scss */
+/* line 76, ../scss/base/right-sidebar.scss */
 .couponForm input[type="text"] {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
   height: 33px; }
 
-/* line 75, ../scss/base/right-sidebar.scss */
+/* line 83, ../scss/base/right-sidebar.scss */
 .couponForm .btn {
   border-radius: 0 3px 3px 0; }
 
-/* line 79, ../scss/base/right-sidebar.scss */
+/* line 87, ../scss/base/right-sidebar.scss */
 span.success, p.success div.success {
   color: #8BB418; }
 
-/* line 83, ../scss/base/right-sidebar.scss */
+/* line 91, ../scss/base/right-sidebar.scss */
 #total-price {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold; }
 
 /* =============================================================== */
@@ -13700,7 +13701,10 @@ div.quickview {
 .rating-here .fa, .rating .fa {
   color: #E7711B; }
 
-/* line 2, ../scss/base/tables.scss */
+/* line 4, ../scss/base/tables.scss */
+table.no-border tbody > tr > td {
+  border: none; }
+/* line 9, ../scss/base/tables.scss */
 table td {
   padding: 5px !important; }
 

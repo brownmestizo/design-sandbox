@@ -59,7 +59,7 @@ class TblShippingCountriesTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 5;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class TblShippingCountriesTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 5;
 
     /**
      * the column name for the cty_id field
@@ -97,16 +97,6 @@ class TblShippingCountriesTableMap extends TableMap
     const COL_ZONE_ID = 'tbl_shipping_countries.zone_id';
 
     /**
-     * the column name for the airparcel_firstkg field
-     */
-    const COL_AIRPARCEL_FIRSTKG = 'tbl_shipping_countries.airparcel_firstkg';
-
-    /**
-     * the column name for the airparcel_secondkg field
-     */
-    const COL_AIRPARCEL_SECONDKG = 'tbl_shipping_countries.airparcel_secondkg';
-
-    /**
      * The default string format for model objects of the related table
      */
     const DEFAULT_STRING_FORMAT = 'YAML';
@@ -118,11 +108,11 @@ class TblShippingCountriesTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('CtyId', 'CtyName', 'CtyPriority', 'CtyEconomy', 'ZoneId', 'AirparcelFirstkg', 'AirparcelSecondkg', ),
-        self::TYPE_CAMELNAME     => array('ctyId', 'ctyName', 'ctyPriority', 'ctyEconomy', 'zoneId', 'airparcelFirstkg', 'airparcelSecondkg', ),
-        self::TYPE_COLNAME       => array(TblShippingCountriesTableMap::COL_CTY_ID, TblShippingCountriesTableMap::COL_CTY_NAME, TblShippingCountriesTableMap::COL_CTY_PRIORITY, TblShippingCountriesTableMap::COL_CTY_ECONOMY, TblShippingCountriesTableMap::COL_ZONE_ID, TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG, TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG, ),
-        self::TYPE_FIELDNAME     => array('cty_id', 'cty_name', 'cty_priority', 'cty_economy', 'zone_id', 'airparcel_firstkg', 'airparcel_secondkg', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('CtyId', 'CtyName', 'CtyPriority', 'CtyEconomy', 'ZoneId', ),
+        self::TYPE_CAMELNAME     => array('ctyId', 'ctyName', 'ctyPriority', 'ctyEconomy', 'zoneId', ),
+        self::TYPE_COLNAME       => array(TblShippingCountriesTableMap::COL_CTY_ID, TblShippingCountriesTableMap::COL_CTY_NAME, TblShippingCountriesTableMap::COL_CTY_PRIORITY, TblShippingCountriesTableMap::COL_CTY_ECONOMY, TblShippingCountriesTableMap::COL_ZONE_ID, ),
+        self::TYPE_FIELDNAME     => array('cty_id', 'cty_name', 'cty_priority', 'cty_economy', 'zone_id', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, )
     );
 
     /**
@@ -132,11 +122,11 @@ class TblShippingCountriesTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('CtyId' => 0, 'CtyName' => 1, 'CtyPriority' => 2, 'CtyEconomy' => 3, 'ZoneId' => 4, 'AirparcelFirstkg' => 5, 'AirparcelSecondkg' => 6, ),
-        self::TYPE_CAMELNAME     => array('ctyId' => 0, 'ctyName' => 1, 'ctyPriority' => 2, 'ctyEconomy' => 3, 'zoneId' => 4, 'airparcelFirstkg' => 5, 'airparcelSecondkg' => 6, ),
-        self::TYPE_COLNAME       => array(TblShippingCountriesTableMap::COL_CTY_ID => 0, TblShippingCountriesTableMap::COL_CTY_NAME => 1, TblShippingCountriesTableMap::COL_CTY_PRIORITY => 2, TblShippingCountriesTableMap::COL_CTY_ECONOMY => 3, TblShippingCountriesTableMap::COL_ZONE_ID => 4, TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG => 5, TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG => 6, ),
-        self::TYPE_FIELDNAME     => array('cty_id' => 0, 'cty_name' => 1, 'cty_priority' => 2, 'cty_economy' => 3, 'zone_id' => 4, 'airparcel_firstkg' => 5, 'airparcel_secondkg' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('CtyId' => 0, 'CtyName' => 1, 'CtyPriority' => 2, 'CtyEconomy' => 3, 'ZoneId' => 4, ),
+        self::TYPE_CAMELNAME     => array('ctyId' => 0, 'ctyName' => 1, 'ctyPriority' => 2, 'ctyEconomy' => 3, 'zoneId' => 4, ),
+        self::TYPE_COLNAME       => array(TblShippingCountriesTableMap::COL_CTY_ID => 0, TblShippingCountriesTableMap::COL_CTY_NAME => 1, TblShippingCountriesTableMap::COL_CTY_PRIORITY => 2, TblShippingCountriesTableMap::COL_CTY_ECONOMY => 3, TblShippingCountriesTableMap::COL_ZONE_ID => 4, ),
+        self::TYPE_FIELDNAME     => array('cty_id' => 0, 'cty_name' => 1, 'cty_priority' => 2, 'cty_economy' => 3, 'zone_id' => 4, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, )
     );
 
     /**
@@ -161,8 +151,6 @@ class TblShippingCountriesTableMap extends TableMap
         $this->addColumn('cty_priority', 'CtyPriority', 'LONGVARCHAR', false, null, null);
         $this->addColumn('cty_economy', 'CtyEconomy', 'LONGVARCHAR', false, null, null);
         $this->addColumn('zone_id', 'ZoneId', 'INTEGER', false, null, null);
-        $this->addColumn('airparcel_firstkg', 'AirparcelFirstkg', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('airparcel_secondkg', 'AirparcelSecondkg', 'LONGVARCHAR', false, null, null);
     } // initialize()
 
     /**
@@ -215,7 +203,7 @@ class TblShippingCountriesTableMap extends TableMap
                 : self::translateFieldName('CtyId', TableMap::TYPE_PHPNAME, $indexType)
         ];
     }
-    
+
     /**
      * The class that the tableMap will make instances of.
      *
@@ -276,7 +264,7 @@ class TblShippingCountriesTableMap extends TableMap
     public static function populateObjects(DataFetcherInterface $dataFetcher)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = static::getOMClass(false);
         // populate the object(s)
@@ -318,16 +306,12 @@ class TblShippingCountriesTableMap extends TableMap
             $criteria->addSelectColumn(TblShippingCountriesTableMap::COL_CTY_PRIORITY);
             $criteria->addSelectColumn(TblShippingCountriesTableMap::COL_CTY_ECONOMY);
             $criteria->addSelectColumn(TblShippingCountriesTableMap::COL_ZONE_ID);
-            $criteria->addSelectColumn(TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG);
-            $criteria->addSelectColumn(TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG);
         } else {
             $criteria->addSelectColumn($alias . '.cty_id');
             $criteria->addSelectColumn($alias . '.cty_name');
             $criteria->addSelectColumn($alias . '.cty_priority');
             $criteria->addSelectColumn($alias . '.cty_economy');
             $criteria->addSelectColumn($alias . '.zone_id');
-            $criteria->addSelectColumn($alias . '.airparcel_firstkg');
-            $criteria->addSelectColumn($alias . '.airparcel_secondkg');
         }
     }
 

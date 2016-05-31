@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_prod_shipping' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblProdShipping implements ActiveRecordInterface 
+abstract class TblProdShipping implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,91 +61,91 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * The value for the prod_shipping_price_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_shipping_price_id;
 
     /**
      * The value for the prod_shipping_name field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_name;
 
     /**
      * The value for the prod_shipping_description field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_description;
 
     /**
      * The value for the prod_shipping_asia field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_asia;
 
     /**
      * The value for the prod_shipping_europe field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_europe;
 
     /**
      * The value for the prod_shipping_usa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_usa;
 
     /**
      * The value for the prod_shipping_canada field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_canada;
 
     /**
      * The value for the prod_shipping_au field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_au;
 
     /**
      * The value for the prod_shipping_asia_parcel field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_asia_parcel;
 
     /**
      * The value for the prod_shipping_europe_parcel field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_europe_parcel;
 
     /**
      * The value for the prod_shipping_usa_parcel field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_usa_parcel;
 
     /**
      * The value for the prod_shipping_canada_parcel field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_canada_parcel;
 
     /**
      * The value for the prod_shipping_au_parcel field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_au_parcel;
@@ -375,17 +375,17 @@ abstract class TblProdShipping implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_shipping_price_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdShippingPriceId()
@@ -395,7 +395,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_name] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingName()
@@ -405,7 +405,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_description] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingDescription()
@@ -415,7 +415,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_asia] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingAsia()
@@ -425,7 +425,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_europe] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingEurope()
@@ -435,7 +435,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_usa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingUsa()
@@ -445,7 +445,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_canada] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingCanada()
@@ -455,7 +455,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_au] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingAu()
@@ -465,7 +465,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_asia_parcel] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingAsiaParcel()
@@ -475,7 +475,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_europe_parcel] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingEuropeParcel()
@@ -485,7 +485,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_usa_parcel] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingUsaParcel()
@@ -495,7 +495,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_canada_parcel] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingCanadaParcel()
@@ -505,7 +505,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_au_parcel] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingAuParcel()
@@ -515,7 +515,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_price_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -535,7 +535,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -555,7 +555,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_description] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -575,7 +575,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_asia] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -595,7 +595,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_europe] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -615,7 +615,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_usa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -635,7 +635,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_canada] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -655,7 +655,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_au] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -675,7 +675,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_asia_parcel] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -695,7 +695,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_europe_parcel] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -715,7 +715,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_usa_parcel] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -735,7 +735,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_canada_parcel] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -755,7 +755,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_au_parcel] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdShipping The current object (for fluent API support)
      */
@@ -974,8 +974,8 @@ abstract class TblProdShipping implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1102,43 +1102,43 @@ abstract class TblProdShipping implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_shipping_price_id':                        
+                    case 'prod_shipping_price_id':
                         $stmt->bindValue($identifier, $this->prod_shipping_price_id, PDO::PARAM_INT);
                         break;
-                    case 'prod_shipping_name':                        
+                    case 'prod_shipping_name':
                         $stmt->bindValue($identifier, $this->prod_shipping_name, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_description':                        
+                    case 'prod_shipping_description':
                         $stmt->bindValue($identifier, $this->prod_shipping_description, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_asia':                        
+                    case 'prod_shipping_asia':
                         $stmt->bindValue($identifier, $this->prod_shipping_asia, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_europe':                        
+                    case 'prod_shipping_europe':
                         $stmt->bindValue($identifier, $this->prod_shipping_europe, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_usa':                        
+                    case 'prod_shipping_usa':
                         $stmt->bindValue($identifier, $this->prod_shipping_usa, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_canada':                        
+                    case 'prod_shipping_canada':
                         $stmt->bindValue($identifier, $this->prod_shipping_canada, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_au':                        
+                    case 'prod_shipping_au':
                         $stmt->bindValue($identifier, $this->prod_shipping_au, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_asia_parcel':                        
+                    case 'prod_shipping_asia_parcel':
                         $stmt->bindValue($identifier, $this->prod_shipping_asia_parcel, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_europe_parcel':                        
+                    case 'prod_shipping_europe_parcel':
                         $stmt->bindValue($identifier, $this->prod_shipping_europe_parcel, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_usa_parcel':                        
+                    case 'prod_shipping_usa_parcel':
                         $stmt->bindValue($identifier, $this->prod_shipping_usa_parcel, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_canada_parcel':                        
+                    case 'prod_shipping_canada_parcel':
                         $stmt->bindValue($identifier, $this->prod_shipping_canada_parcel, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_au_parcel':                        
+                    case 'prod_shipping_au_parcel':
                         $stmt->bindValue($identifier, $this->prod_shipping_au_parcel, PDO::PARAM_STR);
                         break;
                 }
@@ -1289,7 +1289,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -1550,7 +1550,7 @@ abstract class TblProdShipping implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1692,6 +1692,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1701,7 +1704,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1711,6 +1716,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1720,7 +1728,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1730,6 +1740,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1739,7 +1752,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1749,6 +1764,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1758,7 +1776,9 @@ abstract class TblProdShipping implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

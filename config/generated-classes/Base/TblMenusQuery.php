@@ -18,7 +18,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_menus' table.
  *
- * 
+ *
  *
  * @method     ChildTblMenusQuery orderByMenuId($order = Criteria::ASC) Order by the menu_id column
  * @method     ChildTblMenusQuery orderByMenuAlias($order = Criteria::ASC) Order by the menu_alias column
@@ -193,21 +193,27 @@ abstract class TblMenusQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblMenusTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblMenusTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblMenusTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -225,7 +231,7 @@ abstract class TblMenusQuery extends ModelCriteria
     {
         $sql = 'SELECT menu_id, menu_alias, menu_name, menu_status, menu_title, menu_description, menu_writeup, menu_status_pa, menu_description_pa, menu_writeup_pa, menu_status_m3, menu_description_m3, menu_writeup_m3, menu_writeupkeywords, menu_writeupkeywords_pa, menu_writeupkeywords_m3 FROM tbl_menus WHERE menu_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -929,9 +935,9 @@ abstract class TblMenusQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblMenusTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblMenusTableMap::clearRelatedInstancePool();
 

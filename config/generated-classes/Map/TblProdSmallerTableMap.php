@@ -166,7 +166,7 @@ class TblProdSmallerTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(false);
         // columns
-        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_info', 'prod_id', true, null, null);
+        $this->addPrimaryKey('prod_id', 'ProdId', 'INTEGER', true, null, null);
         $this->addColumn('sm_enable_id', 'SmEnableId', 'INTEGER', true, null, null);
         $this->addColumn('sm_prod_length', 'SmProdLength', 'LONGVARCHAR', true, null, null);
         $this->addColumn('sm_prod_wingspan', 'SmProdWingspan', 'LONGVARCHAR', true, null, null);
@@ -234,7 +234,7 @@ class TblProdSmallerTableMap extends TableMap
                 : self::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)
         ];
     }
-    
+
     /**
      * The class that the tableMap will make instances of.
      *
@@ -295,7 +295,7 @@ class TblProdSmallerTableMap extends TableMap
     public static function populateObjects(DataFetcherInterface $dataFetcher)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = static::getOMClass(false);
         // populate the object(s)

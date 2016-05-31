@@ -18,7 +18,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_prod_smaller' table.
  *
- * 
+ *
  *
  * @method     ChildTblProdSmallerQuery orderByProdId($order = Criteria::ASC) Order by the prod_id column
  * @method     ChildTblProdSmallerQuery orderBySmEnableId($order = Criteria::ASC) Order by the sm_enable_id column
@@ -158,21 +158,27 @@ abstract class TblProdSmallerQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdSmallerTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblProdSmallerTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblProdSmallerTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -190,7 +196,7 @@ abstract class TblProdSmallerQuery extends ModelCriteria
     {
         $sql = 'SELECT prod_id, sm_enable_id, sm_prod_length, sm_prod_wingspan, sm_prod_height, sm_prod_scale, sm_prod_price_id, sm_prod_normalprice, sm_prod_shipping_price_id FROM tbl_prod_smaller WHERE prod_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -739,9 +745,9 @@ abstract class TblProdSmallerQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblProdSmallerTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblProdSmallerTableMap::clearRelatedInstancePool();
 

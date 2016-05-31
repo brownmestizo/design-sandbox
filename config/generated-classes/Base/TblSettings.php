@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_settings' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblSettings implements ActiveRecordInterface 
+abstract class TblSettings implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,21 +61,21 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * The value for the settings_id field.
-     * 
+     *
      * @var        int
      */
     protected $settings_id;
 
     /**
      * The value for the settings_name field.
-     * 
+     *
      * @var        string
      */
     protected $settings_name;
 
     /**
      * The value for the settings_value field.
-     * 
+     *
      * @var        string
      */
     protected $settings_value;
@@ -305,17 +305,17 @@ abstract class TblSettings implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [settings_id] column value.
-     * 
+     *
      * @return int
      */
     public function getSettingsId()
@@ -325,7 +325,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * Get the [settings_name] column value.
-     * 
+     *
      * @return string
      */
     public function getSettingsName()
@@ -335,7 +335,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * Get the [settings_value] column value.
-     * 
+     *
      * @return string
      */
     public function getSettingsValue()
@@ -345,7 +345,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * Set the value of [settings_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblSettings The current object (for fluent API support)
      */
@@ -365,7 +365,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * Set the value of [settings_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblSettings The current object (for fluent API support)
      */
@@ -385,7 +385,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
     /**
      * Set the value of [settings_value] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblSettings The current object (for fluent API support)
      */
@@ -574,8 +574,8 @@ abstract class TblSettings implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -668,13 +668,13 @@ abstract class TblSettings implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'settings_id':                        
+                    case 'settings_id':
                         $stmt->bindValue($identifier, $this->settings_id, PDO::PARAM_INT);
                         break;
-                    case 'settings_name':                        
+                    case 'settings_name':
                         $stmt->bindValue($identifier, $this->settings_name, PDO::PARAM_STR);
                         break;
-                    case 'settings_value':                        
+                    case 'settings_value':
                         $stmt->bindValue($identifier, $this->settings_value, PDO::PARAM_STR);
                         break;
                 }
@@ -778,7 +778,7 @@ abstract class TblSettings implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -948,7 +948,7 @@ abstract class TblSettings implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns NULL since this table doesn't have a primary key.
      * This method exists only for BC and is deprecated!
@@ -1074,6 +1074,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1083,7 +1086,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1093,6 +1098,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1102,7 +1110,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1112,6 +1122,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1121,7 +1134,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1131,6 +1146,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1140,7 +1158,9 @@ abstract class TblSettings implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

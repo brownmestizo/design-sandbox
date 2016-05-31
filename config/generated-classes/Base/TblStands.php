@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_stands' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblStands implements ActiveRecordInterface 
+abstract class TblStands implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,7 +61,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * The value for the stand_id field.
-     * 
+     *
      * Note: this column has a database default value of: 0
      * @var        int
      */
@@ -69,14 +69,14 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * The value for the stand_name field.
-     * 
+     *
      * @var        string
      */
     protected $stand_name;
 
     /**
      * The value for the stand_price field.
-     * 
+     *
      * Note: this column has a database default value of: 0
      * @var        int
      */
@@ -84,21 +84,21 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * The value for the mb field.
-     * 
+     *
      * @var        int
      */
     protected $mb;
 
     /**
      * The value for the pa field.
-     * 
+     *
      * @var        int
      */
     protected $pa;
 
     /**
      * The value for the m3 field.
-     * 
+     *
      * @var        int
      */
     protected $m3;
@@ -342,17 +342,17 @@ abstract class TblStands implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [stand_id] column value.
-     * 
+     *
      * @return int
      */
     public function getStandId()
@@ -362,7 +362,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Get the [stand_name] column value.
-     * 
+     *
      * @return string
      */
     public function getStandName()
@@ -372,7 +372,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Get the [stand_price] column value.
-     * 
+     *
      * @return int
      */
     public function getStandPrice()
@@ -382,7 +382,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Get the [mb] column value.
-     * 
+     *
      * @return int
      */
     public function getMb()
@@ -392,7 +392,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Get the [pa] column value.
-     * 
+     *
      * @return int
      */
     public function getPa()
@@ -402,7 +402,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Get the [m3] column value.
-     * 
+     *
      * @return int
      */
     public function getM3()
@@ -412,7 +412,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [stand_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -432,7 +432,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [stand_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -452,7 +452,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [stand_price] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -472,7 +472,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [mb] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -492,7 +492,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [pa] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -512,7 +512,7 @@ abstract class TblStands implements ActiveRecordInterface
 
     /**
      * Set the value of [m3] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblStands The current object (for fluent API support)
      */
@@ -718,8 +718,8 @@ abstract class TblStands implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -821,22 +821,22 @@ abstract class TblStands implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'stand_id':                        
+                    case 'stand_id':
                         $stmt->bindValue($identifier, $this->stand_id, PDO::PARAM_INT);
                         break;
-                    case 'stand_name':                        
+                    case 'stand_name':
                         $stmt->bindValue($identifier, $this->stand_name, PDO::PARAM_STR);
                         break;
-                    case 'stand_price':                        
+                    case 'stand_price':
                         $stmt->bindValue($identifier, $this->stand_price, PDO::PARAM_INT);
                         break;
-                    case 'mb':                        
+                    case 'mb':
                         $stmt->bindValue($identifier, $this->mb, PDO::PARAM_INT);
                         break;
-                    case 'pa':                        
+                    case 'pa':
                         $stmt->bindValue($identifier, $this->pa, PDO::PARAM_INT);
                         break;
-                    case 'm3':                        
+                    case 'm3':
                         $stmt->bindValue($identifier, $this->m3, PDO::PARAM_INT);
                         break;
                 }
@@ -952,7 +952,7 @@ abstract class TblStands implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -1150,7 +1150,7 @@ abstract class TblStands implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1279,6 +1279,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1288,7 +1291,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1298,6 +1303,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1307,7 +1315,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1317,6 +1327,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1326,7 +1339,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1336,6 +1351,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1345,7 +1363,9 @@ abstract class TblStands implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

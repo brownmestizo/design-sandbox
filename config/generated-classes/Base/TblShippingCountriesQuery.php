@@ -17,23 +17,19 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_shipping_countries' table.
  *
- * 
+ *
  *
  * @method     ChildTblShippingCountriesQuery orderByCtyId($order = Criteria::ASC) Order by the cty_id column
  * @method     ChildTblShippingCountriesQuery orderByCtyName($order = Criteria::ASC) Order by the cty_name column
  * @method     ChildTblShippingCountriesQuery orderByCtyPriority($order = Criteria::ASC) Order by the cty_priority column
  * @method     ChildTblShippingCountriesQuery orderByCtyEconomy($order = Criteria::ASC) Order by the cty_economy column
  * @method     ChildTblShippingCountriesQuery orderByZoneId($order = Criteria::ASC) Order by the zone_id column
- * @method     ChildTblShippingCountriesQuery orderByAirparcelFirstkg($order = Criteria::ASC) Order by the airparcel_firstkg column
- * @method     ChildTblShippingCountriesQuery orderByAirparcelSecondkg($order = Criteria::ASC) Order by the airparcel_secondkg column
  *
  * @method     ChildTblShippingCountriesQuery groupByCtyId() Group by the cty_id column
  * @method     ChildTblShippingCountriesQuery groupByCtyName() Group by the cty_name column
  * @method     ChildTblShippingCountriesQuery groupByCtyPriority() Group by the cty_priority column
  * @method     ChildTblShippingCountriesQuery groupByCtyEconomy() Group by the cty_economy column
  * @method     ChildTblShippingCountriesQuery groupByZoneId() Group by the zone_id column
- * @method     ChildTblShippingCountriesQuery groupByAirparcelFirstkg() Group by the airparcel_firstkg column
- * @method     ChildTblShippingCountriesQuery groupByAirparcelSecondkg() Group by the airparcel_secondkg column
  *
  * @method     ChildTblShippingCountriesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     ChildTblShippingCountriesQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -50,9 +46,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTblShippingCountries findOneByCtyName(string $cty_name) Return the first ChildTblShippingCountries filtered by the cty_name column
  * @method     ChildTblShippingCountries findOneByCtyPriority(string $cty_priority) Return the first ChildTblShippingCountries filtered by the cty_priority column
  * @method     ChildTblShippingCountries findOneByCtyEconomy(string $cty_economy) Return the first ChildTblShippingCountries filtered by the cty_economy column
- * @method     ChildTblShippingCountries findOneByZoneId(int $zone_id) Return the first ChildTblShippingCountries filtered by the zone_id column
- * @method     ChildTblShippingCountries findOneByAirparcelFirstkg(string $airparcel_firstkg) Return the first ChildTblShippingCountries filtered by the airparcel_firstkg column
- * @method     ChildTblShippingCountries findOneByAirparcelSecondkg(string $airparcel_secondkg) Return the first ChildTblShippingCountries filtered by the airparcel_secondkg column *
+ * @method     ChildTblShippingCountries findOneByZoneId(int $zone_id) Return the first ChildTblShippingCountries filtered by the zone_id column *
 
  * @method     ChildTblShippingCountries requirePk($key, ConnectionInterface $con = null) Return the ChildTblShippingCountries by primary key and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblShippingCountries requireOne(ConnectionInterface $con = null) Return the first ChildTblShippingCountries matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -62,8 +56,6 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTblShippingCountries requireOneByCtyPriority(string $cty_priority) Return the first ChildTblShippingCountries filtered by the cty_priority column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblShippingCountries requireOneByCtyEconomy(string $cty_economy) Return the first ChildTblShippingCountries filtered by the cty_economy column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblShippingCountries requireOneByZoneId(int $zone_id) Return the first ChildTblShippingCountries filtered by the zone_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblShippingCountries requireOneByAirparcelFirstkg(string $airparcel_firstkg) Return the first ChildTblShippingCountries filtered by the airparcel_firstkg column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblShippingCountries requireOneByAirparcelSecondkg(string $airparcel_secondkg) Return the first ChildTblShippingCountries filtered by the airparcel_secondkg column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildTblShippingCountries[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildTblShippingCountries objects based on current ModelCriteria
  * @method     ChildTblShippingCountries[]|ObjectCollection findByCtyId(int $cty_id) Return ChildTblShippingCountries objects filtered by the cty_id column
@@ -71,8 +63,6 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTblShippingCountries[]|ObjectCollection findByCtyPriority(string $cty_priority) Return ChildTblShippingCountries objects filtered by the cty_priority column
  * @method     ChildTblShippingCountries[]|ObjectCollection findByCtyEconomy(string $cty_economy) Return ChildTblShippingCountries objects filtered by the cty_economy column
  * @method     ChildTblShippingCountries[]|ObjectCollection findByZoneId(int $zone_id) Return ChildTblShippingCountries objects filtered by the zone_id column
- * @method     ChildTblShippingCountries[]|ObjectCollection findByAirparcelFirstkg(string $airparcel_firstkg) Return ChildTblShippingCountries objects filtered by the airparcel_firstkg column
- * @method     ChildTblShippingCountries[]|ObjectCollection findByAirparcelSecondkg(string $airparcel_secondkg) Return ChildTblShippingCountries objects filtered by the airparcel_secondkg column
  * @method     ChildTblShippingCountries[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
  *
  */
@@ -135,21 +125,27 @@ abstract class TblShippingCountriesQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblShippingCountriesTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblShippingCountriesTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblShippingCountriesTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -165,9 +161,9 @@ abstract class TblShippingCountriesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT cty_id, cty_name, cty_priority, cty_economy, zone_id, airparcel_firstkg, airparcel_secondkg FROM tbl_shipping_countries WHERE cty_id = :p0';
+        $sql = 'SELECT cty_id, cty_name, cty_priority, cty_economy, zone_id FROM tbl_shipping_countries WHERE cty_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -425,64 +421,6 @@ abstract class TblShippingCountriesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the airparcel_firstkg column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByAirparcelFirstkg('fooValue');   // WHERE airparcel_firstkg = 'fooValue'
-     * $query->filterByAirparcelFirstkg('%fooValue%'); // WHERE airparcel_firstkg LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $airparcelFirstkg The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblShippingCountriesQuery The current query, for fluid interface
-     */
-    public function filterByAirparcelFirstkg($airparcelFirstkg = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($airparcelFirstkg)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $airparcelFirstkg)) {
-                $airparcelFirstkg = str_replace('*', '%', $airparcelFirstkg);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG, $airparcelFirstkg, $comparison);
-    }
-
-    /**
-     * Filter the query on the airparcel_secondkg column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByAirparcelSecondkg('fooValue');   // WHERE airparcel_secondkg = 'fooValue'
-     * $query->filterByAirparcelSecondkg('%fooValue%'); // WHERE airparcel_secondkg LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $airparcelSecondkg The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblShippingCountriesQuery The current query, for fluid interface
-     */
-    public function filterByAirparcelSecondkg($airparcelSecondkg = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($airparcelSecondkg)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $airparcelSecondkg)) {
-                $airparcelSecondkg = str_replace('*', '%', $airparcelSecondkg);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG, $airparcelSecondkg, $comparison);
-    }
-
-    /**
      * Exclude object from result
      *
      * @param   ChildTblShippingCountries $tblShippingCountries Object to remove from the list of results
@@ -549,9 +487,9 @@ abstract class TblShippingCountriesQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblShippingCountriesTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblShippingCountriesTableMap::clearRelatedInstancePool();
 

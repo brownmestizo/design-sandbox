@@ -23,11 +23,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_prod_prices' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblProdPrices implements ActiveRecordInterface 
+abstract class TblProdPrices implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -63,98 +63,28 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
     /**
      * The value for the prod_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_id;
 
     /**
      * The value for the prod_normalprice field.
-     * 
+     *
      * @var        string
      */
     protected $prod_normalprice;
 
     /**
      * The value for the prod_salesprice field.
-     * 
+     *
      * @var        string
      */
     protected $prod_salesprice;
 
     /**
-     * The value for the prod_shipping_asia field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_asia;
-
-    /**
-     * The value for the prod_shipping_europe field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_europe;
-
-    /**
-     * The value for the prod_shipping_usa field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_usa;
-
-    /**
-     * The value for the prod_shipping_canada field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_canada;
-
-    /**
-     * The value for the prod_shipping_au field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_au;
-
-    /**
-     * The value for the prod_shipping_asia_parcel field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_asia_parcel;
-
-    /**
-     * The value for the prod_shipping_europe_parcel field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_europe_parcel;
-
-    /**
-     * The value for the prod_shipping_usa_parcel field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_usa_parcel;
-
-    /**
-     * The value for the prod_shipping_canada_parcel field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_canada_parcel;
-
-    /**
-     * The value for the prod_shipping_au_parcel field.
-     * 
-     * @var        string
-     */
-    protected $prod_shipping_au_parcel;
-
-    /**
      * The value for the prod_customprice field.
-     * 
+     *
      * @var        string
      */
     protected $prod_customprice;
@@ -389,17 +319,17 @@ abstract class TblProdPrices implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdId()
@@ -409,7 +339,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
     /**
      * Get the [prod_normalprice] column value.
-     * 
+     *
      * @return string
      */
     public function getProdNormalprice()
@@ -419,7 +349,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
     /**
      * Get the [prod_salesprice] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSalesprice()
@@ -428,108 +358,8 @@ abstract class TblProdPrices implements ActiveRecordInterface
     }
 
     /**
-     * Get the [prod_shipping_asia] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingAsia()
-    {
-        return $this->prod_shipping_asia;
-    }
-
-    /**
-     * Get the [prod_shipping_europe] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingEurope()
-    {
-        return $this->prod_shipping_europe;
-    }
-
-    /**
-     * Get the [prod_shipping_usa] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingUsa()
-    {
-        return $this->prod_shipping_usa;
-    }
-
-    /**
-     * Get the [prod_shipping_canada] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingCanada()
-    {
-        return $this->prod_shipping_canada;
-    }
-
-    /**
-     * Get the [prod_shipping_au] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingAu()
-    {
-        return $this->prod_shipping_au;
-    }
-
-    /**
-     * Get the [prod_shipping_asia_parcel] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingAsiaParcel()
-    {
-        return $this->prod_shipping_asia_parcel;
-    }
-
-    /**
-     * Get the [prod_shipping_europe_parcel] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingEuropeParcel()
-    {
-        return $this->prod_shipping_europe_parcel;
-    }
-
-    /**
-     * Get the [prod_shipping_usa_parcel] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingUsaParcel()
-    {
-        return $this->prod_shipping_usa_parcel;
-    }
-
-    /**
-     * Get the [prod_shipping_canada_parcel] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingCanadaParcel()
-    {
-        return $this->prod_shipping_canada_parcel;
-    }
-
-    /**
-     * Get the [prod_shipping_au_parcel] column value.
-     * 
-     * @return string
-     */
-    public function getProdShippingAuParcel()
-    {
-        return $this->prod_shipping_au_parcel;
-    }
-
-    /**
      * Get the [prod_customprice] column value.
-     * 
+     *
      * @return string
      */
     public function getProdCustomprice()
@@ -539,7 +369,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdPrices The current object (for fluent API support)
      */
@@ -554,16 +384,12 @@ abstract class TblProdPrices implements ActiveRecordInterface
             $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_ID] = true;
         }
 
-        if ($this->singleTblProdInfo !== null && $this->singleTblProdInfo->getProdId() !== $v) {
-            $this->singleTblProdInfo = null;
-        }
-
         return $this;
     } // setProdId()
 
     /**
      * Set the value of [prod_normalprice] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPrices The current object (for fluent API support)
      */
@@ -583,7 +409,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_salesprice] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPrices The current object (for fluent API support)
      */
@@ -602,208 +428,8 @@ abstract class TblProdPrices implements ActiveRecordInterface
     } // setProdSalesprice()
 
     /**
-     * Set the value of [prod_shipping_asia] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingAsia($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_asia !== $v) {
-            $this->prod_shipping_asia = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA] = true;
-        }
-
-        return $this;
-    } // setProdShippingAsia()
-
-    /**
-     * Set the value of [prod_shipping_europe] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingEurope($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_europe !== $v) {
-            $this->prod_shipping_europe = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE] = true;
-        }
-
-        return $this;
-    } // setProdShippingEurope()
-
-    /**
-     * Set the value of [prod_shipping_usa] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingUsa($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_usa !== $v) {
-            $this->prod_shipping_usa = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_USA] = true;
-        }
-
-        return $this;
-    } // setProdShippingUsa()
-
-    /**
-     * Set the value of [prod_shipping_canada] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingCanada($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_canada !== $v) {
-            $this->prod_shipping_canada = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA] = true;
-        }
-
-        return $this;
-    } // setProdShippingCanada()
-
-    /**
-     * Set the value of [prod_shipping_au] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingAu($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_au !== $v) {
-            $this->prod_shipping_au = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_AU] = true;
-        }
-
-        return $this;
-    } // setProdShippingAu()
-
-    /**
-     * Set the value of [prod_shipping_asia_parcel] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingAsiaParcel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_asia_parcel !== $v) {
-            $this->prod_shipping_asia_parcel = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL] = true;
-        }
-
-        return $this;
-    } // setProdShippingAsiaParcel()
-
-    /**
-     * Set the value of [prod_shipping_europe_parcel] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingEuropeParcel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_europe_parcel !== $v) {
-            $this->prod_shipping_europe_parcel = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL] = true;
-        }
-
-        return $this;
-    } // setProdShippingEuropeParcel()
-
-    /**
-     * Set the value of [prod_shipping_usa_parcel] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingUsaParcel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_usa_parcel !== $v) {
-            $this->prod_shipping_usa_parcel = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL] = true;
-        }
-
-        return $this;
-    } // setProdShippingUsaParcel()
-
-    /**
-     * Set the value of [prod_shipping_canada_parcel] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingCanadaParcel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_canada_parcel !== $v) {
-            $this->prod_shipping_canada_parcel = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL] = true;
-        }
-
-        return $this;
-    } // setProdShippingCanadaParcel()
-
-    /**
-     * Set the value of [prod_shipping_au_parcel] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblProdPrices The current object (for fluent API support)
-     */
-    public function setProdShippingAuParcel($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->prod_shipping_au_parcel !== $v) {
-            $this->prod_shipping_au_parcel = $v;
-            $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL] = true;
-        }
-
-        return $this;
-    } // setProdShippingAuParcel()
-
-    /**
      * Set the value of [prod_customprice] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPrices The current object (for fluent API support)
      */
@@ -866,37 +492,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : TblProdPricesTableMap::translateFieldName('ProdSalesprice', TableMap::TYPE_PHPNAME, $indexType)];
             $this->prod_salesprice = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingAsia', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_asia = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingEurope', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_europe = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingUsa', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_usa = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingCanada', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_canada = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingAu', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_au = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingAsiaParcel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_asia_parcel = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingEuropeParcel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_europe_parcel = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingUsaParcel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_usa_parcel = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingCanadaParcel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_canada_parcel = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : TblProdPricesTableMap::translateFieldName('ProdShippingAuParcel', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->prod_shipping_au_parcel = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 13 + $startcol : TblProdPricesTableMap::translateFieldName('ProdCustomprice', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : TblProdPricesTableMap::translateFieldName('ProdCustomprice', TableMap::TYPE_PHPNAME, $indexType)];
             $this->prod_customprice = (null !== $col) ? (string) $col : null;
             $this->resetModified();
 
@@ -906,7 +502,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 14; // 14 = TblProdPricesTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 4; // 4 = TblProdPricesTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\TblProdPrices'), 0, $e);
@@ -1027,8 +623,8 @@ abstract class TblProdPrices implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1068,13 +664,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
-            if ($this->singleTblProdInfo !== null) {
-                if ($this->singleTblProdInfo->isModified() || $this->singleTblProdInfo->isNew()) {
-                    $affectedRows += $this->singleTblProdInfo->save($con);
-                }
-                $this->setTblProdInfo($this->singleTblProdInfo);
-            }
-
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -1084,6 +673,12 @@ abstract class TblProdPrices implements ActiveRecordInterface
                     $affectedRows += $this->doUpdate($con);
                 }
                 $this->resetModified();
+            }
+
+            if ($this->singleTblProdInfo !== null) {
+                if (!$this->singleTblProdInfo->isDeleted() && ($this->singleTblProdInfo->isNew() || $this->singleTblProdInfo->isModified())) {
+                    $affectedRows += $this->singleTblProdInfo->save($con);
+                }
             }
 
             $this->alreadyInSave = false;
@@ -1107,6 +702,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
         $index = 0;
 
         $this->modifiedColumns[TblProdPricesTableMap::COL_PROD_ID] = true;
+        if (null !== $this->prod_id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . TblProdPricesTableMap::COL_PROD_ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_ID)) {
@@ -1117,36 +715,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
         }
         if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SALESPRICE)) {
             $modifiedColumns[':p' . $index++]  = 'prod_salesprice';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_asia';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_europe';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_USA)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_usa';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_canada';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_AU)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_au';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_asia_parcel';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_europe_parcel';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_usa_parcel';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_canada_parcel';
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL)) {
-            $modifiedColumns[':p' . $index++]  = 'prod_shipping_au_parcel';
         }
         if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_CUSTOMPRICE)) {
             $modifiedColumns[':p' . $index++]  = 'prod_customprice';
@@ -1162,46 +730,16 @@ abstract class TblProdPrices implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_id':                        
+                    case 'prod_id':
                         $stmt->bindValue($identifier, $this->prod_id, PDO::PARAM_INT);
                         break;
-                    case 'prod_normalprice':                        
+                    case 'prod_normalprice':
                         $stmt->bindValue($identifier, $this->prod_normalprice, PDO::PARAM_STR);
                         break;
-                    case 'prod_salesprice':                        
+                    case 'prod_salesprice':
                         $stmt->bindValue($identifier, $this->prod_salesprice, PDO::PARAM_STR);
                         break;
-                    case 'prod_shipping_asia':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_asia, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_europe':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_europe, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_usa':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_usa, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_canada':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_canada, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_au':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_au, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_asia_parcel':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_asia_parcel, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_europe_parcel':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_europe_parcel, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_usa_parcel':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_usa_parcel, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_canada_parcel':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_canada_parcel, PDO::PARAM_STR);
-                        break;
-                    case 'prod_shipping_au_parcel':                        
-                        $stmt->bindValue($identifier, $this->prod_shipping_au_parcel, PDO::PARAM_STR);
-                        break;
-                    case 'prod_customprice':                        
+                    case 'prod_customprice':
                         $stmt->bindValue($identifier, $this->prod_customprice, PDO::PARAM_STR);
                         break;
                 }
@@ -1276,36 +814,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
                 return $this->getProdSalesprice();
                 break;
             case 3:
-                return $this->getProdShippingAsia();
-                break;
-            case 4:
-                return $this->getProdShippingEurope();
-                break;
-            case 5:
-                return $this->getProdShippingUsa();
-                break;
-            case 6:
-                return $this->getProdShippingCanada();
-                break;
-            case 7:
-                return $this->getProdShippingAu();
-                break;
-            case 8:
-                return $this->getProdShippingAsiaParcel();
-                break;
-            case 9:
-                return $this->getProdShippingEuropeParcel();
-                break;
-            case 10:
-                return $this->getProdShippingUsaParcel();
-                break;
-            case 11:
-                return $this->getProdShippingCanadaParcel();
-                break;
-            case 12:
-                return $this->getProdShippingAuParcel();
-                break;
-            case 13:
                 return $this->getProdCustomprice();
                 break;
             default:
@@ -1341,26 +849,16 @@ abstract class TblProdPrices implements ActiveRecordInterface
             $keys[0] => $this->getProdId(),
             $keys[1] => $this->getProdNormalprice(),
             $keys[2] => $this->getProdSalesprice(),
-            $keys[3] => $this->getProdShippingAsia(),
-            $keys[4] => $this->getProdShippingEurope(),
-            $keys[5] => $this->getProdShippingUsa(),
-            $keys[6] => $this->getProdShippingCanada(),
-            $keys[7] => $this->getProdShippingAu(),
-            $keys[8] => $this->getProdShippingAsiaParcel(),
-            $keys[9] => $this->getProdShippingEuropeParcel(),
-            $keys[10] => $this->getProdShippingUsaParcel(),
-            $keys[11] => $this->getProdShippingCanadaParcel(),
-            $keys[12] => $this->getProdShippingAuParcel(),
-            $keys[13] => $this->getProdCustomprice(),
+            $keys[3] => $this->getProdCustomprice(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->singleTblProdInfo) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfo';
@@ -1371,7 +869,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfo';
                 }
-        
+
                 $result[$key] = $this->singleTblProdInfo->toArray($keyType, $includeLazyLoadColumns, $alreadyDumpedObjects, true);
             }
         }
@@ -1418,36 +916,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
                 $this->setProdSalesprice($value);
                 break;
             case 3:
-                $this->setProdShippingAsia($value);
-                break;
-            case 4:
-                $this->setProdShippingEurope($value);
-                break;
-            case 5:
-                $this->setProdShippingUsa($value);
-                break;
-            case 6:
-                $this->setProdShippingCanada($value);
-                break;
-            case 7:
-                $this->setProdShippingAu($value);
-                break;
-            case 8:
-                $this->setProdShippingAsiaParcel($value);
-                break;
-            case 9:
-                $this->setProdShippingEuropeParcel($value);
-                break;
-            case 10:
-                $this->setProdShippingUsaParcel($value);
-                break;
-            case 11:
-                $this->setProdShippingCanadaParcel($value);
-                break;
-            case 12:
-                $this->setProdShippingAuParcel($value);
-                break;
-            case 13:
                 $this->setProdCustomprice($value);
                 break;
         } // switch()
@@ -1486,37 +954,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
             $this->setProdSalesprice($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setProdShippingAsia($arr[$keys[3]]);
-        }
-        if (array_key_exists($keys[4], $arr)) {
-            $this->setProdShippingEurope($arr[$keys[4]]);
-        }
-        if (array_key_exists($keys[5], $arr)) {
-            $this->setProdShippingUsa($arr[$keys[5]]);
-        }
-        if (array_key_exists($keys[6], $arr)) {
-            $this->setProdShippingCanada($arr[$keys[6]]);
-        }
-        if (array_key_exists($keys[7], $arr)) {
-            $this->setProdShippingAu($arr[$keys[7]]);
-        }
-        if (array_key_exists($keys[8], $arr)) {
-            $this->setProdShippingAsiaParcel($arr[$keys[8]]);
-        }
-        if (array_key_exists($keys[9], $arr)) {
-            $this->setProdShippingEuropeParcel($arr[$keys[9]]);
-        }
-        if (array_key_exists($keys[10], $arr)) {
-            $this->setProdShippingUsaParcel($arr[$keys[10]]);
-        }
-        if (array_key_exists($keys[11], $arr)) {
-            $this->setProdShippingCanadaParcel($arr[$keys[11]]);
-        }
-        if (array_key_exists($keys[12], $arr)) {
-            $this->setProdShippingAuParcel($arr[$keys[12]]);
-        }
-        if (array_key_exists($keys[13], $arr)) {
-            $this->setProdCustomprice($arr[$keys[13]]);
+            $this->setProdCustomprice($arr[$keys[3]]);
         }
     }
 
@@ -1568,36 +1006,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
         if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SALESPRICE)) {
             $criteria->add(TblProdPricesTableMap::COL_PROD_SALESPRICE, $this->prod_salesprice);
         }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA, $this->prod_shipping_asia);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE, $this->prod_shipping_europe);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_USA)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_USA, $this->prod_shipping_usa);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA, $this->prod_shipping_canada);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_AU)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_AU, $this->prod_shipping_au);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL, $this->prod_shipping_asia_parcel);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL, $this->prod_shipping_europe_parcel);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL, $this->prod_shipping_usa_parcel);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL, $this->prod_shipping_canada_parcel);
-        }
-        if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL)) {
-            $criteria->add(TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL, $this->prod_shipping_au_parcel);
-        }
         if ($this->isColumnModified(TblProdPricesTableMap::COL_PROD_CUSTOMPRICE)) {
             $criteria->add(TblProdPricesTableMap::COL_PROD_CUSTOMPRICE, $this->prod_customprice);
         }
@@ -1644,7 +1052,7 @@ abstract class TblProdPrices implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1689,16 +1097,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
     {
         $copyObj->setProdNormalprice($this->getProdNormalprice());
         $copyObj->setProdSalesprice($this->getProdSalesprice());
-        $copyObj->setProdShippingAsia($this->getProdShippingAsia());
-        $copyObj->setProdShippingEurope($this->getProdShippingEurope());
-        $copyObj->setProdShippingUsa($this->getProdShippingUsa());
-        $copyObj->setProdShippingCanada($this->getProdShippingCanada());
-        $copyObj->setProdShippingAu($this->getProdShippingAu());
-        $copyObj->setProdShippingAsiaParcel($this->getProdShippingAsiaParcel());
-        $copyObj->setProdShippingEuropeParcel($this->getProdShippingEuropeParcel());
-        $copyObj->setProdShippingUsaParcel($this->getProdShippingUsaParcel());
-        $copyObj->setProdShippingCanadaParcel($this->getProdShippingCanadaParcel());
-        $copyObj->setProdShippingAuParcel($this->getProdShippingAuParcel());
         $copyObj->setProdCustomprice($this->getProdCustomprice());
 
         if ($deepCopy) {
@@ -1763,9 +1161,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function getTblProdInfo(ConnectionInterface $con = null)
     {
-        if ($this->singleTblProdInfo === null && ($this->prod_id !== null)) {
-            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->prod_id, $con);
-            $this->singleTblProdInfo->setTblProdPrices($this);
+
+        if ($this->singleTblProdInfo === null && !$this->isNew()) {
+            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->singleTblProdInfo;
@@ -1780,16 +1178,10 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function setTblProdInfo(ChildTblProdInfo $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-        
         $this->singleTblProdInfo = $v;
 
         // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
-        if ($v !== null) {
+        if ($v !== null && $v->getTblProdPrices(null, false) === null) {
             $v->setTblProdPrices($this);
         }
 
@@ -1806,16 +1198,6 @@ abstract class TblProdPrices implements ActiveRecordInterface
         $this->prod_id = null;
         $this->prod_normalprice = null;
         $this->prod_salesprice = null;
-        $this->prod_shipping_asia = null;
-        $this->prod_shipping_europe = null;
-        $this->prod_shipping_usa = null;
-        $this->prod_shipping_canada = null;
-        $this->prod_shipping_au = null;
-        $this->prod_shipping_asia_parcel = null;
-        $this->prod_shipping_europe_parcel = null;
-        $this->prod_shipping_usa_parcel = null;
-        $this->prod_shipping_canada_parcel = null;
-        $this->prod_shipping_au_parcel = null;
         $this->prod_customprice = null;
         $this->alreadyInSave = false;
         $this->clearAllReferences();
@@ -1860,6 +1242,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1869,7 +1254,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1879,6 +1266,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1888,7 +1278,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1898,6 +1290,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1907,7 +1302,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1917,6 +1314,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1926,7 +1326,9 @@ abstract class TblProdPrices implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

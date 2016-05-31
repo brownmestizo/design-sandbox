@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_shipping_economy' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblShippingEconomy implements ActiveRecordInterface 
+abstract class TblShippingEconomy implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,175 +61,175 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * The value for the weight_ide field.
-     * 
+     *
      * @var        int
      */
     protected $weight_ide;
 
     /**
      * The value for the weight_name field.
-     * 
+     *
      * @var        string
      */
     protected $weight_name;
 
     /**
      * The value for the a field.
-     * 
+     *
      * @var        string
      */
     protected $a;
 
     /**
      * The value for the b field.
-     * 
+     *
      * @var        string
      */
     protected $b;
 
     /**
      * The value for the c field.
-     * 
+     *
      * @var        string
      */
     protected $c;
 
     /**
      * The value for the d field.
-     * 
+     *
      * @var        string
      */
     protected $d;
 
     /**
      * The value for the e field.
-     * 
+     *
      * @var        string
      */
     protected $e;
 
     /**
      * The value for the f field.
-     * 
+     *
      * @var        string
      */
     protected $f;
 
     /**
      * The value for the g field.
-     * 
+     *
      * @var        string
      */
     protected $g;
 
     /**
      * The value for the h field.
-     * 
+     *
      * @var        string
      */
     protected $h;
 
     /**
      * The value for the k field.
-     * 
+     *
      * @var        string
      */
     protected $k;
 
     /**
      * The value for the n field.
-     * 
+     *
      * @var        string
      */
     protected $n;
 
     /**
      * The value for the o field.
-     * 
+     *
      * @var        string
      */
     protected $o;
 
     /**
      * The value for the p field.
-     * 
+     *
      * @var        string
      */
     protected $p;
 
     /**
      * The value for the q field.
-     * 
+     *
      * @var        string
      */
     protected $q;
 
     /**
      * The value for the r field.
-     * 
+     *
      * @var        string
      */
     protected $r;
 
     /**
      * The value for the t field.
-     * 
+     *
      * @var        string
      */
     protected $t;
 
     /**
      * The value for the u field.
-     * 
+     *
      * @var        string
      */
     protected $u;
 
     /**
      * The value for the v field.
-     * 
+     *
      * @var        string
      */
     protected $v;
 
     /**
      * The value for the w field.
-     * 
+     *
      * @var        string
      */
     protected $w;
 
     /**
      * The value for the x field.
-     * 
+     *
      * @var        string
      */
     protected $x;
 
     /**
      * The value for the y field.
-     * 
+     *
      * @var        string
      */
     protected $y;
 
     /**
      * The value for the z field.
-     * 
+     *
      * @var        string
      */
     protected $z;
 
     /**
      * The value for the aa field.
-     * 
+     *
      * @var        string
      */
     protected $aa;
 
     /**
      * The value for the ab field.
-     * 
+     *
      * @var        string
      */
     protected $ab;
@@ -459,17 +459,17 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [weight_ide] column value.
-     * 
+     *
      * @return int
      */
     public function getWeightIde()
@@ -479,7 +479,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [weight_name] column value.
-     * 
+     *
      * @return string
      */
     public function getWeightName()
@@ -489,7 +489,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [a] column value.
-     * 
+     *
      * @return string
      */
     public function getA()
@@ -499,7 +499,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [b] column value.
-     * 
+     *
      * @return string
      */
     public function getB()
@@ -509,7 +509,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [c] column value.
-     * 
+     *
      * @return string
      */
     public function getC()
@@ -519,7 +519,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [d] column value.
-     * 
+     *
      * @return string
      */
     public function getD()
@@ -529,7 +529,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [e] column value.
-     * 
+     *
      * @return string
      */
     public function getE()
@@ -539,7 +539,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [f] column value.
-     * 
+     *
      * @return string
      */
     public function getF()
@@ -549,7 +549,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [g] column value.
-     * 
+     *
      * @return string
      */
     public function getG()
@@ -559,7 +559,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [h] column value.
-     * 
+     *
      * @return string
      */
     public function getH()
@@ -569,7 +569,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [k] column value.
-     * 
+     *
      * @return string
      */
     public function getK()
@@ -579,7 +579,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [n] column value.
-     * 
+     *
      * @return string
      */
     public function getN()
@@ -589,7 +589,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [o] column value.
-     * 
+     *
      * @return string
      */
     public function getO()
@@ -599,7 +599,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [p] column value.
-     * 
+     *
      * @return string
      */
     public function getP()
@@ -609,7 +609,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [q] column value.
-     * 
+     *
      * @return string
      */
     public function getQ()
@@ -619,7 +619,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [r] column value.
-     * 
+     *
      * @return string
      */
     public function getR()
@@ -629,7 +629,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [t] column value.
-     * 
+     *
      * @return string
      */
     public function getT()
@@ -639,7 +639,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [u] column value.
-     * 
+     *
      * @return string
      */
     public function getU()
@@ -649,7 +649,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [v] column value.
-     * 
+     *
      * @return string
      */
     public function getV()
@@ -659,7 +659,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [w] column value.
-     * 
+     *
      * @return string
      */
     public function getW()
@@ -669,7 +669,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [x] column value.
-     * 
+     *
      * @return string
      */
     public function getX()
@@ -679,7 +679,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [y] column value.
-     * 
+     *
      * @return string
      */
     public function getY()
@@ -689,7 +689,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [z] column value.
-     * 
+     *
      * @return string
      */
     public function getZ()
@@ -699,7 +699,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [aa] column value.
-     * 
+     *
      * @return string
      */
     public function getAa()
@@ -709,7 +709,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Get the [ab] column value.
-     * 
+     *
      * @return string
      */
     public function getAb()
@@ -719,7 +719,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [weight_ide] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -739,7 +739,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [weight_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -759,7 +759,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [a] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -779,7 +779,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [b] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -799,7 +799,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [c] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -819,7 +819,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [d] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -839,7 +839,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [e] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -859,7 +859,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [f] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -879,7 +879,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [g] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -899,7 +899,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [h] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -919,7 +919,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [k] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -939,7 +939,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [n] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -959,7 +959,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [o] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -979,7 +979,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [p] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -999,7 +999,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [q] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1019,7 +1019,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [r] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1039,7 +1039,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [t] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1059,7 +1059,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [u] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1079,7 +1079,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [v] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1099,7 +1099,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [w] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1119,7 +1119,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [x] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1139,7 +1139,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [y] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1159,7 +1159,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [z] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1179,7 +1179,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [aa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1199,7 +1199,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
     /**
      * Set the value of [ab] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingEconomy The current object (for fluent API support)
      */
@@ -1454,8 +1454,8 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1618,79 +1618,79 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'weight_ide':                        
+                    case 'weight_ide':
                         $stmt->bindValue($identifier, $this->weight_ide, PDO::PARAM_INT);
                         break;
-                    case 'weight_name':                        
+                    case 'weight_name':
                         $stmt->bindValue($identifier, $this->weight_name, PDO::PARAM_STR);
                         break;
-                    case 'A':                        
+                    case 'A':
                         $stmt->bindValue($identifier, $this->a, PDO::PARAM_STR);
                         break;
-                    case 'B':                        
+                    case 'B':
                         $stmt->bindValue($identifier, $this->b, PDO::PARAM_STR);
                         break;
-                    case 'C':                        
+                    case 'C':
                         $stmt->bindValue($identifier, $this->c, PDO::PARAM_STR);
                         break;
-                    case 'D':                        
+                    case 'D':
                         $stmt->bindValue($identifier, $this->d, PDO::PARAM_STR);
                         break;
-                    case 'E':                        
+                    case 'E':
                         $stmt->bindValue($identifier, $this->e, PDO::PARAM_STR);
                         break;
-                    case 'F':                        
+                    case 'F':
                         $stmt->bindValue($identifier, $this->f, PDO::PARAM_STR);
                         break;
-                    case 'G':                        
+                    case 'G':
                         $stmt->bindValue($identifier, $this->g, PDO::PARAM_STR);
                         break;
-                    case 'H':                        
+                    case 'H':
                         $stmt->bindValue($identifier, $this->h, PDO::PARAM_STR);
                         break;
-                    case 'K':                        
+                    case 'K':
                         $stmt->bindValue($identifier, $this->k, PDO::PARAM_STR);
                         break;
-                    case 'N':                        
+                    case 'N':
                         $stmt->bindValue($identifier, $this->n, PDO::PARAM_STR);
                         break;
-                    case 'O':                        
+                    case 'O':
                         $stmt->bindValue($identifier, $this->o, PDO::PARAM_STR);
                         break;
-                    case 'P':                        
+                    case 'P':
                         $stmt->bindValue($identifier, $this->p, PDO::PARAM_STR);
                         break;
-                    case 'Q':                        
+                    case 'Q':
                         $stmt->bindValue($identifier, $this->q, PDO::PARAM_STR);
                         break;
-                    case 'R':                        
+                    case 'R':
                         $stmt->bindValue($identifier, $this->r, PDO::PARAM_STR);
                         break;
-                    case 'T':                        
+                    case 'T':
                         $stmt->bindValue($identifier, $this->t, PDO::PARAM_STR);
                         break;
-                    case 'U':                        
+                    case 'U':
                         $stmt->bindValue($identifier, $this->u, PDO::PARAM_STR);
                         break;
-                    case 'V':                        
+                    case 'V':
                         $stmt->bindValue($identifier, $this->v, PDO::PARAM_STR);
                         break;
-                    case 'W':                        
+                    case 'W':
                         $stmt->bindValue($identifier, $this->w, PDO::PARAM_STR);
                         break;
-                    case 'X':                        
+                    case 'X':
                         $stmt->bindValue($identifier, $this->x, PDO::PARAM_STR);
                         break;
-                    case 'Y':                        
+                    case 'Y':
                         $stmt->bindValue($identifier, $this->y, PDO::PARAM_STR);
                         break;
-                    case 'Z':                        
+                    case 'Z':
                         $stmt->bindValue($identifier, $this->z, PDO::PARAM_STR);
                         break;
-                    case 'AA':                        
+                    case 'AA':
                         $stmt->bindValue($identifier, $this->aa, PDO::PARAM_STR);
                         break;
-                    case 'AB':                        
+                    case 'AB':
                         $stmt->bindValue($identifier, $this->ab, PDO::PARAM_STR);
                         break;
                 }
@@ -1889,7 +1889,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -2258,7 +2258,7 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -2424,6 +2424,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -2433,7 +2436,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -2443,6 +2448,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -2452,7 +2460,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -2462,6 +2472,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -2471,7 +2484,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -2481,6 +2496,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -2490,7 +2508,9 @@ abstract class TblShippingEconomy implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

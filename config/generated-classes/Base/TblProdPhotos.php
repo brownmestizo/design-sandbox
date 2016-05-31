@@ -23,11 +23,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_prod_photos' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblProdPhotos implements ActiveRecordInterface 
+abstract class TblProdPhotos implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -63,119 +63,119 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * The value for the prod_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_id;
 
     /**
      * The value for the prod_solo_1 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_1;
 
     /**
      * The value for the prod_solo_2 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_2;
 
     /**
      * The value for the prod_solo_3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_3;
 
     /**
      * The value for the prod_solo_4 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_4;
 
     /**
      * The value for the prod_solo_1_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_1_pa;
 
     /**
      * The value for the prod_solo_2_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_2_pa;
 
     /**
      * The value for the prod_solo_3_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_3_pa;
 
     /**
      * The value for the prod_solo_4_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_4_pa;
 
     /**
      * The value for the prod_solo_1_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_1_m3;
 
     /**
      * The value for the prod_solo_2_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_2_m3;
 
     /**
      * The value for the prod_solo_3_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_3_m3;
 
     /**
      * The value for the prod_solo_4_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_4_m3;
 
     /**
      * The value for the prod_solo_1_blank field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_1_blank;
 
     /**
      * The value for the prod_solo_2_blank field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_2_blank;
 
     /**
      * The value for the prod_solo_3_blank field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_3_blank;
 
     /**
      * The value for the prod_solo_4_blank field.
-     * 
+     *
      * @var        string
      */
     protected $prod_solo_4_blank;
@@ -410,17 +410,17 @@ abstract class TblProdPhotos implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdId()
@@ -430,7 +430,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_1] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo1()
@@ -440,7 +440,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_2] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo2()
@@ -450,7 +450,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo3()
@@ -460,7 +460,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_4] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo4()
@@ -470,7 +470,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_1_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo1Pa()
@@ -480,7 +480,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_2_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo2Pa()
@@ -490,7 +490,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_3_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo3Pa()
@@ -500,7 +500,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_4_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo4Pa()
@@ -510,7 +510,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_1_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo1M3()
@@ -520,7 +520,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_2_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo2M3()
@@ -530,7 +530,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_3_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo3M3()
@@ -540,7 +540,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_4_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo4M3()
@@ -550,7 +550,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_1_blank] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo1Blank()
@@ -560,7 +560,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_2_blank] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo2Blank()
@@ -570,7 +570,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_3_blank] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo3Blank()
@@ -580,7 +580,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_solo_4_blank] column value.
-     * 
+     *
      * @return string
      */
     public function getProdSolo4Blank()
@@ -590,7 +590,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -604,17 +604,13 @@ abstract class TblProdPhotos implements ActiveRecordInterface
             $this->prod_id = $v;
             $this->modifiedColumns[TblProdPhotosTableMap::COL_PROD_ID] = true;
         }
-        
-        if ($this->singleTblProdInfo !== null && $this->singleTblProdInfo->getProdId() !== $v) {
-            $this->singleTblProdInfo = null;
-        }
 
         return $this;
     } // setProdId()
 
     /**
      * Set the value of [prod_solo_1] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -634,7 +630,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_2] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -654,7 +650,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -674,7 +670,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_4] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -694,7 +690,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_1_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -714,7 +710,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_2_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -734,7 +730,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_3_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -754,7 +750,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_4_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -774,7 +770,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_1_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -794,7 +790,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_2_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -814,7 +810,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_3_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -834,7 +830,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_4_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -854,7 +850,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_1_blank] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -874,7 +870,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_2_blank] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -894,7 +890,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_3_blank] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -914,7 +910,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_solo_4_blank] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPhotos The current object (for fluent API support)
      */
@@ -1147,8 +1143,8 @@ abstract class TblProdPhotos implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1188,13 +1184,6 @@ abstract class TblProdPhotos implements ActiveRecordInterface
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
-            if ($this->singleTblProdInfo !== null) {
-                if ($this->singleTblProdInfo->isModified() || $this->singleTblProdInfo->isNew()) {
-                    $affectedRows += $this->singleTblProdInfo->save($con);
-                }
-                $this->setTblProdInfo($this->singleTblProdInfo);
-            }
-
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -1204,6 +1193,12 @@ abstract class TblProdPhotos implements ActiveRecordInterface
                     $affectedRows += $this->doUpdate($con);
                 }
                 $this->resetModified();
+            }
+
+            if ($this->singleTblProdInfo !== null) {
+                if (!$this->singleTblProdInfo->isDeleted() && ($this->singleTblProdInfo->isNew() || $this->singleTblProdInfo->isModified())) {
+                    $affectedRows += $this->singleTblProdInfo->save($con);
+                }
             }
 
             $this->alreadyInSave = false;
@@ -1227,6 +1222,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
         $index = 0;
 
         $this->modifiedColumns[TblProdPhotosTableMap::COL_PROD_ID] = true;
+        if (null !== $this->prod_id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . TblProdPhotosTableMap::COL_PROD_ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(TblProdPhotosTableMap::COL_PROD_ID)) {
@@ -1291,55 +1289,55 @@ abstract class TblProdPhotos implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_id':                        
+                    case 'prod_id':
                         $stmt->bindValue($identifier, $this->prod_id, PDO::PARAM_INT);
                         break;
-                    case 'prod_solo_1':                        
+                    case 'prod_solo_1':
                         $stmt->bindValue($identifier, $this->prod_solo_1, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_2':                        
+                    case 'prod_solo_2':
                         $stmt->bindValue($identifier, $this->prod_solo_2, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_3':                        
+                    case 'prod_solo_3':
                         $stmt->bindValue($identifier, $this->prod_solo_3, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_4':                        
+                    case 'prod_solo_4':
                         $stmt->bindValue($identifier, $this->prod_solo_4, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_1_pa':                        
+                    case 'prod_solo_1_pa':
                         $stmt->bindValue($identifier, $this->prod_solo_1_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_2_pa':                        
+                    case 'prod_solo_2_pa':
                         $stmt->bindValue($identifier, $this->prod_solo_2_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_3_pa':                        
+                    case 'prod_solo_3_pa':
                         $stmt->bindValue($identifier, $this->prod_solo_3_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_4_pa':                        
+                    case 'prod_solo_4_pa':
                         $stmt->bindValue($identifier, $this->prod_solo_4_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_1_m3':                        
+                    case 'prod_solo_1_m3':
                         $stmt->bindValue($identifier, $this->prod_solo_1_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_2_m3':                        
+                    case 'prod_solo_2_m3':
                         $stmt->bindValue($identifier, $this->prod_solo_2_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_3_m3':                        
+                    case 'prod_solo_3_m3':
                         $stmt->bindValue($identifier, $this->prod_solo_3_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_4_m3':                        
+                    case 'prod_solo_4_m3':
                         $stmt->bindValue($identifier, $this->prod_solo_4_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_1_blank':                        
+                    case 'prod_solo_1_blank':
                         $stmt->bindValue($identifier, $this->prod_solo_1_blank, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_2_blank':                        
+                    case 'prod_solo_2_blank':
                         $stmt->bindValue($identifier, $this->prod_solo_2_blank, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_3_blank':                        
+                    case 'prod_solo_3_blank':
                         $stmt->bindValue($identifier, $this->prod_solo_3_blank, PDO::PARAM_STR);
                         break;
-                    case 'prod_solo_4_blank':                        
+                    case 'prod_solo_4_blank':
                         $stmt->bindValue($identifier, $this->prod_solo_4_blank, PDO::PARAM_STR);
                         break;
                 }
@@ -1507,10 +1505,10 @@ abstract class TblProdPhotos implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->singleTblProdInfo) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfo';
@@ -1521,7 +1519,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfo';
                 }
-        
+
                 $result[$key] = $this->singleTblProdInfo->toArray($keyType, $includeLazyLoadColumns, $alreadyDumpedObjects, true);
             }
         }
@@ -1821,7 +1819,7 @@ abstract class TblProdPhotos implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1944,9 +1942,8 @@ abstract class TblProdPhotos implements ActiveRecordInterface
     public function getTblProdInfo(ConnectionInterface $con = null)
     {
 
-        if ($this->singleTblProdInfo === null && ($this->prod_id !== null)) {
-            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->prod_id, $con);
-            $this->singleTblProdInfo->setTblProdPhotos($this);
+        if ($this->singleTblProdInfo === null && !$this->isNew()) {
+            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->singleTblProdInfo;
@@ -1961,16 +1958,10 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function setTblProdInfo(ChildTblProdInfo $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-
         $this->singleTblProdInfo = $v;
 
         // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
-        if ($v !== null) {
+        if ($v !== null && $v->getTblProdPhotos(null, false) === null) {
             $v->setTblProdPhotos($this);
         }
 
@@ -2044,6 +2035,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -2053,7 +2047,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -2063,6 +2059,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -2072,7 +2071,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -2082,6 +2083,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -2091,7 +2095,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -2101,6 +2107,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -2110,7 +2119,9 @@ abstract class TblProdPhotos implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

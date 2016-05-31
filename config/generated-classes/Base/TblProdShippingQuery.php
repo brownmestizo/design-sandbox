@@ -17,7 +17,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_prod_shipping' table.
  *
- * 
+ *
  *
  * @method     ChildTblProdShippingQuery orderByProdShippingPriceId($order = Criteria::ASC) Order by the prod_shipping_price_id column
  * @method     ChildTblProdShippingQuery orderByProdShippingName($order = Criteria::ASC) Order by the prod_shipping_name column
@@ -165,21 +165,27 @@ abstract class TblProdShippingQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdShippingTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblProdShippingTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblProdShippingTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -197,7 +203,7 @@ abstract class TblProdShippingQuery extends ModelCriteria
     {
         $sql = 'SELECT prod_shipping_price_id, prod_shipping_name, prod_shipping_description, prod_shipping_asia, prod_shipping_europe, prod_shipping_usa, prod_shipping_canada, prod_shipping_au, prod_shipping_asia_parcel, prod_shipping_europe_parcel, prod_shipping_usa_parcel, prod_shipping_canada_parcel, prod_shipping_au_parcel FROM tbl_prod_shipping WHERE prod_shipping_price_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -741,9 +747,9 @@ abstract class TblProdShippingQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblProdShippingTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblProdShippingTableMap::clearRelatedInstancePool();
 

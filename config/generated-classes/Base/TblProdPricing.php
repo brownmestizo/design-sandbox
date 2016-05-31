@@ -8,6 +8,7 @@ use \TblProdPricing as ChildTblProdPricing;
 use \TblProdPricingQuery as ChildTblProdPricingQuery;
 use \Exception;
 use \PDO;
+use Map\TblProdInfoTableMap;
 use Map\TblProdPricingTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
@@ -25,11 +26,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_prod_pricing' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblProdPricing implements ActiveRecordInterface 
+abstract class TblProdPricing implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -65,28 +66,28 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * The value for the prod_price_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_price_id;
 
     /**
      * The value for the prod_price_name field.
-     * 
+     *
      * @var        string
      */
     protected $prod_price_name;
 
     /**
      * The value for the prod_price_description field.
-     * 
+     *
      * @var        string
      */
     protected $prod_price_description;
 
     /**
      * The value for the prod_price_price field.
-     * 
+     *
      * @var        string
      */
     protected $prod_price_price;
@@ -328,17 +329,17 @@ abstract class TblProdPricing implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_price_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdPriceId()
@@ -348,7 +349,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Get the [prod_price_name] column value.
-     * 
+     *
      * @return string
      */
     public function getProdPriceName()
@@ -358,7 +359,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Get the [prod_price_description] column value.
-     * 
+     *
      * @return string
      */
     public function getProdPriceDescription()
@@ -368,7 +369,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Get the [prod_price_price] column value.
-     * 
+     *
      * @return string
      */
     public function getProdPricePrice()
@@ -378,7 +379,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_price_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdPricing The current object (for fluent API support)
      */
@@ -398,7 +399,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_price_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPricing The current object (for fluent API support)
      */
@@ -418,7 +419,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_price_description] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPricing The current object (for fluent API support)
      */
@@ -438,7 +439,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_price_price] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdPricing The current object (for fluent API support)
      */
@@ -632,8 +633,8 @@ abstract class TblProdPricing implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -750,16 +751,16 @@ abstract class TblProdPricing implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_price_id':                        
+                    case 'prod_price_id':
                         $stmt->bindValue($identifier, $this->prod_price_id, PDO::PARAM_INT);
                         break;
-                    case 'prod_price_name':                        
+                    case 'prod_price_name':
                         $stmt->bindValue($identifier, $this->prod_price_name, PDO::PARAM_STR);
                         break;
-                    case 'prod_price_description':                        
+                    case 'prod_price_description':
                         $stmt->bindValue($identifier, $this->prod_price_description, PDO::PARAM_STR);
                         break;
-                    case 'prod_price_price':                        
+                    case 'prod_price_price':
                         $stmt->bindValue($identifier, $this->prod_price_price, PDO::PARAM_STR);
                         break;
                 }
@@ -875,10 +876,10 @@ abstract class TblProdPricing implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->collTblProdInfos) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfos';
@@ -889,7 +890,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfos';
                 }
-        
+
                 $result[$key] = $this->collTblProdInfos->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
@@ -1072,7 +1073,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1215,7 +1216,10 @@ abstract class TblProdPricing implements ActiveRecordInterface
         if (null !== $this->collTblProdInfos && !$overrideExisting) {
             return;
         }
-        $this->collTblProdInfos = new ObjectCollection();
+
+        $collectionClassName = TblProdInfoTableMap::getTableMap()->getCollectionClassName();
+
+        $this->collTblProdInfos = new $collectionClassName;
         $this->collTblProdInfos->setModel('\TblProdInfo');
     }
 
@@ -1292,7 +1296,7 @@ abstract class TblProdPricing implements ActiveRecordInterface
         /** @var ChildTblProdInfo[] $tblProdInfosToDelete */
         $tblProdInfosToDelete = $this->getTblProdInfos(new Criteria(), $con)->diff($tblProdInfos);
 
-        
+
         $this->tblProdInfosScheduledForDeletion = $tblProdInfosToDelete;
 
         foreach ($tblProdInfosToDelete as $tblProdInfoRemoved) {
@@ -1629,6 +1633,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1638,7 +1645,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1648,6 +1657,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1657,7 +1669,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1667,6 +1681,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1676,7 +1693,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1686,6 +1705,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1695,7 +1717,9 @@ abstract class TblProdPricing implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

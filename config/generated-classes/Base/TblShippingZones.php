@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_shipping_zones' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblShippingZones implements ActiveRecordInterface 
+abstract class TblShippingZones implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,21 +61,21 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * The value for the zone_id field.
-     * 
+     *
      * @var        int
      */
     protected $zone_id;
 
     /**
      * The value for the zone_name field.
-     * 
+     *
      * @var        string
      */
     protected $zone_name;
 
     /**
      * The value for the zone_desc field.
-     * 
+     *
      * @var        string
      */
     protected $zone_desc;
@@ -305,17 +305,17 @@ abstract class TblShippingZones implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [zone_id] column value.
-     * 
+     *
      * @return int
      */
     public function getZoneId()
@@ -325,7 +325,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * Get the [zone_name] column value.
-     * 
+     *
      * @return string
      */
     public function getZoneName()
@@ -335,7 +335,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * Get the [zone_desc] column value.
-     * 
+     *
      * @return string
      */
     public function getZoneDesc()
@@ -345,7 +345,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * Set the value of [zone_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingZones The current object (for fluent API support)
      */
@@ -365,7 +365,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * Set the value of [zone_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingZones The current object (for fluent API support)
      */
@@ -385,7 +385,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
     /**
      * Set the value of [zone_desc] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingZones The current object (for fluent API support)
      */
@@ -574,8 +574,8 @@ abstract class TblShippingZones implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -672,13 +672,13 @@ abstract class TblShippingZones implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'zone_id':                        
+                    case 'zone_id':
                         $stmt->bindValue($identifier, $this->zone_id, PDO::PARAM_INT);
                         break;
-                    case 'zone_name':                        
+                    case 'zone_name':
                         $stmt->bindValue($identifier, $this->zone_name, PDO::PARAM_STR);
                         break;
-                    case 'zone_desc':                        
+                    case 'zone_desc':
                         $stmt->bindValue($identifier, $this->zone_desc, PDO::PARAM_STR);
                         break;
                 }
@@ -789,7 +789,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -960,7 +960,7 @@ abstract class TblShippingZones implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1082,6 +1082,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1091,7 +1094,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1101,6 +1106,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1110,7 +1118,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1120,6 +1130,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1129,7 +1142,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1139,6 +1154,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1148,7 +1166,9 @@ abstract class TblShippingZones implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

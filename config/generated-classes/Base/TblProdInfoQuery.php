@@ -18,7 +18,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_prod_info' table.
  *
- * 
+ *
  *
  * @method     ChildTblProdInfoQuery orderByProdId($order = Criteria::ASC) Order by the prod_id column
  * @method     ChildTblProdInfoQuery orderByProdPriceId($order = Criteria::ASC) Order by the prod_price_id column
@@ -353,21 +353,27 @@ abstract class TblProdInfoQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdInfoTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblProdInfoTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblProdInfoTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -385,7 +391,7 @@ abstract class TblProdInfoQuery extends ModelCriteria
     {
         $sql = 'SELECT prod_id, prod_price_id, prod_name, prod_alt1, prod_alt2, prod_alt3, prod_alt4, prod_code, prod_category, prod_category_shipping, prod_writeup, prod_length, prod_wingspan, prod_height, prod_scale, prod_links, prod_linkdescription, prod_front, prod_keywords, prod_keywords_writeup, prod_title, prod_description, prod_general, prod_era, prod_company, prod_related, prod_related_pa, prod_related_m3, prod_related2, prod_saveas, prod_aircraftreg, mb, pa, m3 FROM tbl_prod_info WHERE prod_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -2264,9 +2270,9 @@ abstract class TblProdInfoQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblProdInfoTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblProdInfoTableMap::clearRelatedInstancePool();
 

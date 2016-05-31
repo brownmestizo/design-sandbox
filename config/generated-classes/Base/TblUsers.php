@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_users' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblUsers implements ActiveRecordInterface 
+abstract class TblUsers implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,28 +61,28 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * The value for the user_id field.
-     * 
+     *
      * @var        int
      */
     protected $user_id;
 
     /**
      * The value for the user_username field.
-     * 
+     *
      * @var        string
      */
     protected $user_username;
 
     /**
      * The value for the user_password field.
-     * 
+     *
      * @var        string
      */
     protected $user_password;
 
     /**
      * The value for the user_lastlogin field.
-     * 
+     *
      * @var        string
      */
     protected $user_lastlogin;
@@ -312,17 +312,17 @@ abstract class TblUsers implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [user_id] column value.
-     * 
+     *
      * @return int
      */
     public function getUserId()
@@ -332,7 +332,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Get the [user_username] column value.
-     * 
+     *
      * @return string
      */
     public function getUserUsername()
@@ -342,7 +342,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Get the [user_password] column value.
-     * 
+     *
      * @return string
      */
     public function getUserPassword()
@@ -352,7 +352,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Get the [user_lastlogin] column value.
-     * 
+     *
      * @return string
      */
     public function getUserLastlogin()
@@ -362,7 +362,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Set the value of [user_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblUsers The current object (for fluent API support)
      */
@@ -382,7 +382,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Set the value of [user_username] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblUsers The current object (for fluent API support)
      */
@@ -402,7 +402,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Set the value of [user_password] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblUsers The current object (for fluent API support)
      */
@@ -422,7 +422,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
     /**
      * Set the value of [user_lastlogin] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblUsers The current object (for fluent API support)
      */
@@ -614,8 +614,8 @@ abstract class TblUsers implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -715,16 +715,16 @@ abstract class TblUsers implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'user_id':                        
+                    case 'user_id':
                         $stmt->bindValue($identifier, $this->user_id, PDO::PARAM_INT);
                         break;
-                    case 'user_username':                        
+                    case 'user_username':
                         $stmt->bindValue($identifier, $this->user_username, PDO::PARAM_STR);
                         break;
-                    case 'user_password':                        
+                    case 'user_password':
                         $stmt->bindValue($identifier, $this->user_password, PDO::PARAM_STR);
                         break;
-                    case 'user_lastlogin':                        
+                    case 'user_lastlogin':
                         $stmt->bindValue($identifier, $this->user_lastlogin, PDO::PARAM_STR);
                         break;
                 }
@@ -839,7 +839,7 @@ abstract class TblUsers implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -1019,7 +1019,7 @@ abstract class TblUsers implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1143,6 +1143,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1152,7 +1155,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1162,6 +1167,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1171,7 +1179,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1181,6 +1191,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1190,7 +1203,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1200,6 +1215,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1209,7 +1227,9 @@ abstract class TblUsers implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

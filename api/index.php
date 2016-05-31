@@ -32,6 +32,13 @@
 	    echo $stands->toJSON();
 	});	
 
+	$app->get('/fedex/countries', function () {
+	    $standQuery = new TblShippingCountriesQuery();
+	    $stands = $standQuery->orderByCtyId()->find();	    
+	    echo $stands->toJSON();	    
+	});	
+
+
 	$app->get('/price/:product', function ($product) {
 		$product = TblProdInfoQuery::create()
 		->select(array('prod_price_id'))

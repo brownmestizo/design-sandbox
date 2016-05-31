@@ -8,6 +8,7 @@ use \TblShippingCategories as ChildTblShippingCategories;
 use \TblShippingCategoriesQuery as ChildTblShippingCategoriesQuery;
 use \Exception;
 use \PDO;
+use Map\TblProdInfoTableMap;
 use Map\TblShippingCategoriesTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
@@ -25,11 +26,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_shipping_categories' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblShippingCategories implements ActiveRecordInterface 
+abstract class TblShippingCategories implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -65,28 +66,28 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * The value for the prod_shipping_price_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_shipping_price_id;
 
     /**
      * The value for the prod_shipping_name field.
-     * 
+     *
      * @var        string
      */
     protected $prod_shipping_name;
 
     /**
      * The value for the weight_ide field.
-     * 
+     *
      * @var        int
      */
     protected $weight_ide;
 
     /**
      * The value for the weight_idp field.
-     * 
+     *
      * @var        int
      */
     protected $weight_idp;
@@ -328,17 +329,17 @@ abstract class TblShippingCategories implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_shipping_price_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdShippingPriceId()
@@ -348,7 +349,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Get the [prod_shipping_name] column value.
-     * 
+     *
      * @return string
      */
     public function getProdShippingName()
@@ -358,7 +359,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Get the [weight_ide] column value.
-     * 
+     *
      * @return int
      */
     public function getWeightIde()
@@ -368,7 +369,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Get the [weight_idp] column value.
-     * 
+     *
      * @return int
      */
     public function getWeightIdp()
@@ -378,7 +379,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_price_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingCategories The current object (for fluent API support)
      */
@@ -398,7 +399,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_shipping_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingCategories The current object (for fluent API support)
      */
@@ -418,7 +419,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Set the value of [weight_ide] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingCategories The current object (for fluent API support)
      */
@@ -438,7 +439,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
     /**
      * Set the value of [weight_idp] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingCategories The current object (for fluent API support)
      */
@@ -632,8 +633,8 @@ abstract class TblShippingCategories implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -751,16 +752,16 @@ abstract class TblShippingCategories implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_shipping_price_id':                        
+                    case 'prod_shipping_price_id':
                         $stmt->bindValue($identifier, $this->prod_shipping_price_id, PDO::PARAM_INT);
                         break;
-                    case 'prod_shipping_name':                        
+                    case 'prod_shipping_name':
                         $stmt->bindValue($identifier, $this->prod_shipping_name, PDO::PARAM_STR);
                         break;
-                    case 'weight_ide':                        
+                    case 'weight_ide':
                         $stmt->bindValue($identifier, $this->weight_ide, PDO::PARAM_INT);
                         break;
-                    case 'weight_idp':                        
+                    case 'weight_idp':
                         $stmt->bindValue($identifier, $this->weight_idp, PDO::PARAM_INT);
                         break;
                 }
@@ -876,10 +877,10 @@ abstract class TblShippingCategories implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->collTblProdInfos) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfos';
@@ -890,7 +891,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfos';
                 }
-        
+
                 $result[$key] = $this->collTblProdInfos->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
@@ -1073,7 +1074,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1216,7 +1217,10 @@ abstract class TblShippingCategories implements ActiveRecordInterface
         if (null !== $this->collTblProdInfos && !$overrideExisting) {
             return;
         }
-        $this->collTblProdInfos = new ObjectCollection();
+
+        $collectionClassName = TblProdInfoTableMap::getTableMap()->getCollectionClassName();
+
+        $this->collTblProdInfos = new $collectionClassName;
         $this->collTblProdInfos->setModel('\TblProdInfo');
     }
 
@@ -1293,7 +1297,7 @@ abstract class TblShippingCategories implements ActiveRecordInterface
         /** @var ChildTblProdInfo[] $tblProdInfosToDelete */
         $tblProdInfosToDelete = $this->getTblProdInfos(new Criteria(), $con)->diff($tblProdInfos);
 
-        
+
         $this->tblProdInfosScheduledForDeletion = $tblProdInfosToDelete;
 
         foreach ($tblProdInfosToDelete as $tblProdInfoRemoved) {
@@ -1630,6 +1634,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1639,7 +1646,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1649,6 +1658,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1658,7 +1670,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1668,6 +1682,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1677,7 +1694,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1687,6 +1706,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1696,7 +1718,9 @@ abstract class TblShippingCategories implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

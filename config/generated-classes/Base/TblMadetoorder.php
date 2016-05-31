@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_madetoorder' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblMadetoorder implements ActiveRecordInterface 
+abstract class TblMadetoorder implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,7 +61,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * The value for the mad_id field.
-     * 
+     *
      * Note: this column has a database default value of: 0
      * @var        int
      */
@@ -69,70 +69,70 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * The value for the mad_name field.
-     * 
+     *
      * @var        string
      */
     protected $mad_name;
 
     /**
      * The value for the mad_email field.
-     * 
+     *
      * @var        string
      */
     protected $mad_email;
 
     /**
      * The value for the mad_color field.
-     * 
+     *
      * @var        string
      */
     protected $mad_color;
 
     /**
      * The value for the mad_length field.
-     * 
+     *
      * @var        string
      */
     protected $mad_length;
 
     /**
      * The value for the mad_mark field.
-     * 
+     *
      * @var        string
      */
     protected $mad_mark;
 
     /**
      * The value for the mad_rem field.
-     * 
+     *
      * @var        string
      */
     protected $mad_rem;
 
     /**
      * The value for the mad_url field.
-     * 
+     *
      * @var        string
      */
     protected $mad_url;
 
     /**
      * The value for the mad_photo field.
-     * 
+     *
      * @var        string
      */
     protected $mad_photo;
 
     /**
      * The value for the mad_photo2 field.
-     * 
+     *
      * @var        string
      */
     protected $mad_photo2;
 
     /**
      * The value for the mad_photo3 field.
-     * 
+     *
      * @var        string
      */
     protected $mad_photo3;
@@ -375,17 +375,17 @@ abstract class TblMadetoorder implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [mad_id] column value.
-     * 
+     *
      * @return int
      */
     public function getMadId()
@@ -395,7 +395,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_name] column value.
-     * 
+     *
      * @return string
      */
     public function getMadName()
@@ -405,7 +405,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_email] column value.
-     * 
+     *
      * @return string
      */
     public function getMadEmail()
@@ -415,7 +415,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_color] column value.
-     * 
+     *
      * @return string
      */
     public function getMadColor()
@@ -425,7 +425,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_length] column value.
-     * 
+     *
      * @return string
      */
     public function getMadLength()
@@ -435,7 +435,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_mark] column value.
-     * 
+     *
      * @return string
      */
     public function getMadMark()
@@ -445,7 +445,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_rem] column value.
-     * 
+     *
      * @return string
      */
     public function getMadRem()
@@ -455,7 +455,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_url] column value.
-     * 
+     *
      * @return string
      */
     public function getMadUrl()
@@ -465,7 +465,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_photo] column value.
-     * 
+     *
      * @return string
      */
     public function getMadPhoto()
@@ -475,7 +475,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_photo2] column value.
-     * 
+     *
      * @return string
      */
     public function getMadPhoto2()
@@ -485,7 +485,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Get the [mad_photo3] column value.
-     * 
+     *
      * @return string
      */
     public function getMadPhoto3()
@@ -495,7 +495,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -515,7 +515,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -535,7 +535,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_email] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -555,7 +555,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_color] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -575,7 +575,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_length] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -595,7 +595,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_mark] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -615,7 +615,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_rem] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -635,7 +635,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_url] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -655,7 +655,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_photo] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -675,7 +675,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_photo2] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -695,7 +695,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
     /**
      * Set the value of [mad_photo3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMadetoorder The current object (for fluent API support)
      */
@@ -912,8 +912,8 @@ abstract class TblMadetoorder implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1030,37 +1030,37 @@ abstract class TblMadetoorder implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'mad_id':                        
+                    case 'mad_id':
                         $stmt->bindValue($identifier, $this->mad_id, PDO::PARAM_INT);
                         break;
-                    case 'mad_name':                        
+                    case 'mad_name':
                         $stmt->bindValue($identifier, $this->mad_name, PDO::PARAM_STR);
                         break;
-                    case 'mad_email':                        
+                    case 'mad_email':
                         $stmt->bindValue($identifier, $this->mad_email, PDO::PARAM_STR);
                         break;
-                    case 'mad_color':                        
+                    case 'mad_color':
                         $stmt->bindValue($identifier, $this->mad_color, PDO::PARAM_STR);
                         break;
-                    case 'mad_length':                        
+                    case 'mad_length':
                         $stmt->bindValue($identifier, $this->mad_length, PDO::PARAM_STR);
                         break;
-                    case 'mad_mark':                        
+                    case 'mad_mark':
                         $stmt->bindValue($identifier, $this->mad_mark, PDO::PARAM_STR);
                         break;
-                    case 'mad_rem':                        
+                    case 'mad_rem':
                         $stmt->bindValue($identifier, $this->mad_rem, PDO::PARAM_STR);
                         break;
-                    case 'mad_url':                        
+                    case 'mad_url':
                         $stmt->bindValue($identifier, $this->mad_url, PDO::PARAM_STR);
                         break;
-                    case 'mad_photo':                        
+                    case 'mad_photo':
                         $stmt->bindValue($identifier, $this->mad_photo, PDO::PARAM_STR);
                         break;
-                    case 'mad_photo2':                        
+                    case 'mad_photo2':
                         $stmt->bindValue($identifier, $this->mad_photo2, PDO::PARAM_STR);
                         break;
-                    case 'mad_photo3':                        
+                    case 'mad_photo3':
                         $stmt->bindValue($identifier, $this->mad_photo3, PDO::PARAM_STR);
                         break;
                 }
@@ -1196,7 +1196,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -1439,7 +1439,7 @@ abstract class TblMadetoorder implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1578,6 +1578,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1587,7 +1590,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1597,6 +1602,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1606,7 +1614,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1616,6 +1626,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1625,7 +1638,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1635,6 +1650,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1644,7 +1662,9 @@ abstract class TblMadetoorder implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

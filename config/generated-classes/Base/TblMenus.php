@@ -9,6 +9,7 @@ use \TblProdInfoQuery as ChildTblProdInfoQuery;
 use \Exception;
 use \PDO;
 use Map\TblMenusTableMap;
+use Map\TblProdInfoTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
@@ -25,11 +26,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_menus' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblMenus implements ActiveRecordInterface 
+abstract class TblMenus implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -65,112 +66,112 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * The value for the menu_id field.
-     * 
+     *
      * @var        int
      */
     protected $menu_id;
 
     /**
      * The value for the menu_alias field.
-     * 
+     *
      * @var        string
      */
     protected $menu_alias;
 
     /**
      * The value for the menu_name field.
-     * 
+     *
      * @var        string
      */
     protected $menu_name;
 
     /**
      * The value for the menu_status field.
-     * 
+     *
      * @var        string
      */
     protected $menu_status;
 
     /**
      * The value for the menu_title field.
-     * 
+     *
      * @var        string
      */
     protected $menu_title;
 
     /**
      * The value for the menu_description field.
-     * 
+     *
      * @var        string
      */
     protected $menu_description;
 
     /**
      * The value for the menu_writeup field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeup;
 
     /**
      * The value for the menu_status_pa field.
-     * 
+     *
      * @var        string
      */
     protected $menu_status_pa;
 
     /**
      * The value for the menu_description_pa field.
-     * 
+     *
      * @var        string
      */
     protected $menu_description_pa;
 
     /**
      * The value for the menu_writeup_pa field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeup_pa;
 
     /**
      * The value for the menu_status_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $menu_status_m3;
 
     /**
      * The value for the menu_description_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $menu_description_m3;
 
     /**
      * The value for the menu_writeup_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeup_m3;
 
     /**
      * The value for the menu_writeupkeywords field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeupkeywords;
 
     /**
      * The value for the menu_writeupkeywords_pa field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeupkeywords_pa;
 
     /**
      * The value for the menu_writeupkeywords_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $menu_writeupkeywords_m3;
@@ -412,17 +413,17 @@ abstract class TblMenus implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [menu_id] column value.
-     * 
+     *
      * @return int
      */
     public function getMenuId()
@@ -432,7 +433,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_alias] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuAlias()
@@ -442,7 +443,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_name] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuName()
@@ -452,7 +453,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_status] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuStatus()
@@ -462,7 +463,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_title] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuTitle()
@@ -472,7 +473,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_description] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuDescription()
@@ -482,7 +483,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeup] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteup()
@@ -492,7 +493,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_status_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuStatusPa()
@@ -502,7 +503,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_description_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuDescriptionPa()
@@ -512,7 +513,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeup_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteupPa()
@@ -522,7 +523,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_status_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuStatusM3()
@@ -532,7 +533,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_description_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuDescriptionM3()
@@ -542,7 +543,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeup_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteupM3()
@@ -552,7 +553,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeupkeywords] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteupkeywords()
@@ -562,7 +563,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeupkeywords_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteupkeywordsPa()
@@ -572,7 +573,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Get the [menu_writeupkeywords_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getMenuWriteupkeywordsM3()
@@ -582,7 +583,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -602,7 +603,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_alias] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -622,7 +623,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -642,7 +643,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_status] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -662,7 +663,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_title] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -682,7 +683,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_description] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -702,7 +703,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeup] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -722,7 +723,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_status_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -742,7 +743,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_description_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -762,7 +763,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeup_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -782,7 +783,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_status_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -802,7 +803,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_description_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -822,7 +823,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeup_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -842,7 +843,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeupkeywords] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -862,7 +863,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeupkeywords_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -882,7 +883,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
     /**
      * Set the value of [menu_writeupkeywords_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblMenus The current object (for fluent API support)
      */
@@ -1112,8 +1113,8 @@ abstract class TblMenus implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1266,52 +1267,52 @@ abstract class TblMenus implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'menu_id':                        
+                    case 'menu_id':
                         $stmt->bindValue($identifier, $this->menu_id, PDO::PARAM_INT);
                         break;
-                    case 'menu_alias':                        
+                    case 'menu_alias':
                         $stmt->bindValue($identifier, $this->menu_alias, PDO::PARAM_STR);
                         break;
-                    case 'menu_name':                        
+                    case 'menu_name':
                         $stmt->bindValue($identifier, $this->menu_name, PDO::PARAM_STR);
                         break;
-                    case 'menu_status':                        
+                    case 'menu_status':
                         $stmt->bindValue($identifier, $this->menu_status, PDO::PARAM_STR);
                         break;
-                    case 'menu_title':                        
+                    case 'menu_title':
                         $stmt->bindValue($identifier, $this->menu_title, PDO::PARAM_STR);
                         break;
-                    case 'menu_description':                        
+                    case 'menu_description':
                         $stmt->bindValue($identifier, $this->menu_description, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeup':                        
+                    case 'menu_writeup':
                         $stmt->bindValue($identifier, $this->menu_writeup, PDO::PARAM_STR);
                         break;
-                    case 'menu_status_pa':                        
+                    case 'menu_status_pa':
                         $stmt->bindValue($identifier, $this->menu_status_pa, PDO::PARAM_STR);
                         break;
-                    case 'menu_description_pa':                        
+                    case 'menu_description_pa':
                         $stmt->bindValue($identifier, $this->menu_description_pa, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeup_pa':                        
+                    case 'menu_writeup_pa':
                         $stmt->bindValue($identifier, $this->menu_writeup_pa, PDO::PARAM_STR);
                         break;
-                    case 'menu_status_m3':                        
+                    case 'menu_status_m3':
                         $stmt->bindValue($identifier, $this->menu_status_m3, PDO::PARAM_STR);
                         break;
-                    case 'menu_description_m3':                        
+                    case 'menu_description_m3':
                         $stmt->bindValue($identifier, $this->menu_description_m3, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeup_m3':                        
+                    case 'menu_writeup_m3':
                         $stmt->bindValue($identifier, $this->menu_writeup_m3, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeupkeywords':                        
+                    case 'menu_writeupkeywords':
                         $stmt->bindValue($identifier, $this->menu_writeupkeywords, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeupkeywords_pa':                        
+                    case 'menu_writeupkeywords_pa':
                         $stmt->bindValue($identifier, $this->menu_writeupkeywords_pa, PDO::PARAM_STR);
                         break;
-                    case 'menu_writeupkeywords_m3':                        
+                    case 'menu_writeupkeywords_m3':
                         $stmt->bindValue($identifier, $this->menu_writeupkeywords_m3, PDO::PARAM_STR);
                         break;
                 }
@@ -1475,10 +1476,10 @@ abstract class TblMenus implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->collTblProdInfos) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfos';
@@ -1489,7 +1490,7 @@ abstract class TblMenus implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfos';
                 }
-        
+
                 $result[$key] = $this->collTblProdInfos->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
@@ -1780,7 +1781,7 @@ abstract class TblMenus implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1935,7 +1936,10 @@ abstract class TblMenus implements ActiveRecordInterface
         if (null !== $this->collTblProdInfos && !$overrideExisting) {
             return;
         }
-        $this->collTblProdInfos = new ObjectCollection();
+
+        $collectionClassName = TblProdInfoTableMap::getTableMap()->getCollectionClassName();
+
+        $this->collTblProdInfos = new $collectionClassName;
         $this->collTblProdInfos->setModel('\TblProdInfo');
     }
 
@@ -2012,7 +2016,7 @@ abstract class TblMenus implements ActiveRecordInterface
         /** @var ChildTblProdInfo[] $tblProdInfosToDelete */
         $tblProdInfosToDelete = $this->getTblProdInfos(new Criteria(), $con)->diff($tblProdInfos);
 
-        
+
         $this->tblProdInfosScheduledForDeletion = $tblProdInfosToDelete;
 
         foreach ($tblProdInfosToDelete as $tblProdInfoRemoved) {
@@ -2361,6 +2365,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -2370,7 +2377,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -2380,6 +2389,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -2389,7 +2401,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -2399,6 +2413,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -2408,7 +2425,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -2418,6 +2437,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -2427,7 +2449,9 @@ abstract class TblMenus implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

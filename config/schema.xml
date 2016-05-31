@@ -262,8 +262,6 @@
     <column name="cty_priority" phpName="CtyPriority" type="LONGVARCHAR"/>
     <column name="cty_economy" phpName="CtyEconomy" type="LONGVARCHAR"/>
     <column name="zone_id" phpName="ZoneId" type="INTEGER"/>
-    <column name="airparcel_firstkg" phpName="AirparcelFirstkg" type="LONGVARCHAR"/>
-    <column name="airparcel_secondkg" phpName="AirparcelSecondkg" type="LONGVARCHAR"/>
     <vendor type="mysql">
       <parameter name="Engine" value="InnoDB"/>
     </vendor>

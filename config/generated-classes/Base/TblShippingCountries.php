@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_shipping_countries' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblShippingCountries implements ActiveRecordInterface 
+abstract class TblShippingCountries implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,52 +61,38 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * The value for the cty_id field.
-     * 
+     *
      * @var        int
      */
     protected $cty_id;
 
     /**
      * The value for the cty_name field.
-     * 
+     *
      * @var        string
      */
     protected $cty_name;
 
     /**
      * The value for the cty_priority field.
-     * 
+     *
      * @var        string
      */
     protected $cty_priority;
 
     /**
      * The value for the cty_economy field.
-     * 
+     *
      * @var        string
      */
     protected $cty_economy;
 
     /**
      * The value for the zone_id field.
-     * 
+     *
      * @var        int
      */
     protected $zone_id;
-
-    /**
-     * The value for the airparcel_firstkg field.
-     * 
-     * @var        string
-     */
-    protected $airparcel_firstkg;
-
-    /**
-     * The value for the airparcel_secondkg field.
-     * 
-     * @var        string
-     */
-    protected $airparcel_secondkg;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -333,17 +319,17 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [cty_id] column value.
-     * 
+     *
      * @return int
      */
     public function getCtyId()
@@ -353,7 +339,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Get the [cty_name] column value.
-     * 
+     *
      * @return string
      */
     public function getCtyName()
@@ -363,7 +349,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Get the [cty_priority] column value.
-     * 
+     *
      * @return string
      */
     public function getCtyPriority()
@@ -373,7 +359,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Get the [cty_economy] column value.
-     * 
+     *
      * @return string
      */
     public function getCtyEconomy()
@@ -383,7 +369,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Get the [zone_id] column value.
-     * 
+     *
      * @return int
      */
     public function getZoneId()
@@ -392,28 +378,8 @@ abstract class TblShippingCountries implements ActiveRecordInterface
     }
 
     /**
-     * Get the [airparcel_firstkg] column value.
-     * 
-     * @return string
-     */
-    public function getAirparcelFirstkg()
-    {
-        return $this->airparcel_firstkg;
-    }
-
-    /**
-     * Get the [airparcel_secondkg] column value.
-     * 
-     * @return string
-     */
-    public function getAirparcelSecondkg()
-    {
-        return $this->airparcel_secondkg;
-    }
-
-    /**
      * Set the value of [cty_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingCountries The current object (for fluent API support)
      */
@@ -433,7 +399,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Set the value of [cty_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingCountries The current object (for fluent API support)
      */
@@ -453,7 +419,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Set the value of [cty_priority] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingCountries The current object (for fluent API support)
      */
@@ -473,7 +439,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Set the value of [cty_economy] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblShippingCountries The current object (for fluent API support)
      */
@@ -493,7 +459,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
     /**
      * Set the value of [zone_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblShippingCountries The current object (for fluent API support)
      */
@@ -510,46 +476,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
         return $this;
     } // setZoneId()
-
-    /**
-     * Set the value of [airparcel_firstkg] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblShippingCountries The current object (for fluent API support)
-     */
-    public function setAirparcelFirstkg($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->airparcel_firstkg !== $v) {
-            $this->airparcel_firstkg = $v;
-            $this->modifiedColumns[TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG] = true;
-        }
-
-        return $this;
-    } // setAirparcelFirstkg()
-
-    /**
-     * Set the value of [airparcel_secondkg] column.
-     * 
-     * @param string $v new value
-     * @return $this|\TblShippingCountries The current object (for fluent API support)
-     */
-    public function setAirparcelSecondkg($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->airparcel_secondkg !== $v) {
-            $this->airparcel_secondkg = $v;
-            $this->modifiedColumns[TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG] = true;
-        }
-
-        return $this;
-    } // setAirparcelSecondkg()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -601,12 +527,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : TblShippingCountriesTableMap::translateFieldName('ZoneId', TableMap::TYPE_PHPNAME, $indexType)];
             $this->zone_id = (null !== $col) ? (int) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : TblShippingCountriesTableMap::translateFieldName('AirparcelFirstkg', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->airparcel_firstkg = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : TblShippingCountriesTableMap::translateFieldName('AirparcelSecondkg', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->airparcel_secondkg = (null !== $col) ? (string) $col : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -615,7 +535,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = TblShippingCountriesTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 5; // 5 = TblShippingCountriesTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\TblShippingCountries'), 0, $e);
@@ -734,8 +654,8 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -827,12 +747,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         if ($this->isColumnModified(TblShippingCountriesTableMap::COL_ZONE_ID)) {
             $modifiedColumns[':p' . $index++]  = 'zone_id';
         }
-        if ($this->isColumnModified(TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG)) {
-            $modifiedColumns[':p' . $index++]  = 'airparcel_firstkg';
-        }
-        if ($this->isColumnModified(TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG)) {
-            $modifiedColumns[':p' . $index++]  = 'airparcel_secondkg';
-        }
 
         $sql = sprintf(
             'INSERT INTO tbl_shipping_countries (%s) VALUES (%s)',
@@ -844,26 +758,20 @@ abstract class TblShippingCountries implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'cty_id':                        
+                    case 'cty_id':
                         $stmt->bindValue($identifier, $this->cty_id, PDO::PARAM_INT);
                         break;
-                    case 'cty_name':                        
+                    case 'cty_name':
                         $stmt->bindValue($identifier, $this->cty_name, PDO::PARAM_STR);
                         break;
-                    case 'cty_priority':                        
+                    case 'cty_priority':
                         $stmt->bindValue($identifier, $this->cty_priority, PDO::PARAM_STR);
                         break;
-                    case 'cty_economy':                        
+                    case 'cty_economy':
                         $stmt->bindValue($identifier, $this->cty_economy, PDO::PARAM_STR);
                         break;
-                    case 'zone_id':                        
+                    case 'zone_id':
                         $stmt->bindValue($identifier, $this->zone_id, PDO::PARAM_INT);
-                        break;
-                    case 'airparcel_firstkg':                        
-                        $stmt->bindValue($identifier, $this->airparcel_firstkg, PDO::PARAM_STR);
-                        break;
-                    case 'airparcel_secondkg':                        
-                        $stmt->bindValue($identifier, $this->airparcel_secondkg, PDO::PARAM_STR);
                         break;
                 }
             }
@@ -942,12 +850,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
             case 4:
                 return $this->getZoneId();
                 break;
-            case 5:
-                return $this->getAirparcelFirstkg();
-                break;
-            case 6:
-                return $this->getAirparcelSecondkg();
-                break;
             default:
                 return null;
                 break;
@@ -982,14 +884,12 @@ abstract class TblShippingCountries implements ActiveRecordInterface
             $keys[2] => $this->getCtyPriority(),
             $keys[3] => $this->getCtyEconomy(),
             $keys[4] => $this->getZoneId(),
-            $keys[5] => $this->getAirparcelFirstkg(),
-            $keys[6] => $this->getAirparcelSecondkg(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -1038,12 +938,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
             case 4:
                 $this->setZoneId($value);
                 break;
-            case 5:
-                $this->setAirparcelFirstkg($value);
-                break;
-            case 6:
-                $this->setAirparcelSecondkg($value);
-                break;
         } // switch()
 
         return $this;
@@ -1084,12 +978,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         }
         if (array_key_exists($keys[4], $arr)) {
             $this->setZoneId($arr[$keys[4]]);
-        }
-        if (array_key_exists($keys[5], $arr)) {
-            $this->setAirparcelFirstkg($arr[$keys[5]]);
-        }
-        if (array_key_exists($keys[6], $arr)) {
-            $this->setAirparcelSecondkg($arr[$keys[6]]);
         }
     }
 
@@ -1147,12 +1035,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         if ($this->isColumnModified(TblShippingCountriesTableMap::COL_ZONE_ID)) {
             $criteria->add(TblShippingCountriesTableMap::COL_ZONE_ID, $this->zone_id);
         }
-        if ($this->isColumnModified(TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG)) {
-            $criteria->add(TblShippingCountriesTableMap::COL_AIRPARCEL_FIRSTKG, $this->airparcel_firstkg);
-        }
-        if ($this->isColumnModified(TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG)) {
-            $criteria->add(TblShippingCountriesTableMap::COL_AIRPARCEL_SECONDKG, $this->airparcel_secondkg);
-        }
 
         return $criteria;
     }
@@ -1196,7 +1078,7 @@ abstract class TblShippingCountries implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1243,8 +1125,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         $copyObj->setCtyPriority($this->getCtyPriority());
         $copyObj->setCtyEconomy($this->getCtyEconomy());
         $copyObj->setZoneId($this->getZoneId());
-        $copyObj->setAirparcelFirstkg($this->getAirparcelFirstkg());
-        $copyObj->setAirparcelSecondkg($this->getAirparcelSecondkg());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setCtyId(NULL); // this is a auto-increment column, so set to default value
@@ -1285,8 +1165,6 @@ abstract class TblShippingCountries implements ActiveRecordInterface
         $this->cty_priority = null;
         $this->cty_economy = null;
         $this->zone_id = null;
-        $this->airparcel_firstkg = null;
-        $this->airparcel_secondkg = null;
         $this->alreadyInSave = false;
         $this->clearAllReferences();
         $this->resetModified();
@@ -1326,6 +1204,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1335,7 +1216,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1345,6 +1228,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1354,7 +1240,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1364,6 +1252,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1373,7 +1264,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1383,6 +1276,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1392,7 +1288,9 @@ abstract class TblShippingCountries implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

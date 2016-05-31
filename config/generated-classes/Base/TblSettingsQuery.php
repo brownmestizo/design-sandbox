@@ -17,7 +17,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_settings' table.
  *
- * 
+ *
  *
  * @method     ChildTblSettingsQuery orderBySettingsId($order = Criteria::ASC) Order by the settings_id column
  * @method     ChildTblSettingsQuery orderBySettingsName($order = Criteria::ASC) Order by the settings_name column
@@ -321,9 +321,9 @@ abstract class TblSettingsQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblSettingsTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblSettingsTableMap::clearRelatedInstancePool();
 

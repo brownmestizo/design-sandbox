@@ -18,36 +18,16 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_prod_prices' table.
  *
- * 
+ *
  *
  * @method     ChildTblProdPricesQuery orderByProdId($order = Criteria::ASC) Order by the prod_id column
  * @method     ChildTblProdPricesQuery orderByProdNormalprice($order = Criteria::ASC) Order by the prod_normalprice column
  * @method     ChildTblProdPricesQuery orderByProdSalesprice($order = Criteria::ASC) Order by the prod_salesprice column
- * @method     ChildTblProdPricesQuery orderByProdShippingAsia($order = Criteria::ASC) Order by the prod_shipping_asia column
- * @method     ChildTblProdPricesQuery orderByProdShippingEurope($order = Criteria::ASC) Order by the prod_shipping_europe column
- * @method     ChildTblProdPricesQuery orderByProdShippingUsa($order = Criteria::ASC) Order by the prod_shipping_usa column
- * @method     ChildTblProdPricesQuery orderByProdShippingCanada($order = Criteria::ASC) Order by the prod_shipping_canada column
- * @method     ChildTblProdPricesQuery orderByProdShippingAu($order = Criteria::ASC) Order by the prod_shipping_au column
- * @method     ChildTblProdPricesQuery orderByProdShippingAsiaParcel($order = Criteria::ASC) Order by the prod_shipping_asia_parcel column
- * @method     ChildTblProdPricesQuery orderByProdShippingEuropeParcel($order = Criteria::ASC) Order by the prod_shipping_europe_parcel column
- * @method     ChildTblProdPricesQuery orderByProdShippingUsaParcel($order = Criteria::ASC) Order by the prod_shipping_usa_parcel column
- * @method     ChildTblProdPricesQuery orderByProdShippingCanadaParcel($order = Criteria::ASC) Order by the prod_shipping_canada_parcel column
- * @method     ChildTblProdPricesQuery orderByProdShippingAuParcel($order = Criteria::ASC) Order by the prod_shipping_au_parcel column
  * @method     ChildTblProdPricesQuery orderByProdCustomprice($order = Criteria::ASC) Order by the prod_customprice column
  *
  * @method     ChildTblProdPricesQuery groupByProdId() Group by the prod_id column
  * @method     ChildTblProdPricesQuery groupByProdNormalprice() Group by the prod_normalprice column
  * @method     ChildTblProdPricesQuery groupByProdSalesprice() Group by the prod_salesprice column
- * @method     ChildTblProdPricesQuery groupByProdShippingAsia() Group by the prod_shipping_asia column
- * @method     ChildTblProdPricesQuery groupByProdShippingEurope() Group by the prod_shipping_europe column
- * @method     ChildTblProdPricesQuery groupByProdShippingUsa() Group by the prod_shipping_usa column
- * @method     ChildTblProdPricesQuery groupByProdShippingCanada() Group by the prod_shipping_canada column
- * @method     ChildTblProdPricesQuery groupByProdShippingAu() Group by the prod_shipping_au column
- * @method     ChildTblProdPricesQuery groupByProdShippingAsiaParcel() Group by the prod_shipping_asia_parcel column
- * @method     ChildTblProdPricesQuery groupByProdShippingEuropeParcel() Group by the prod_shipping_europe_parcel column
- * @method     ChildTblProdPricesQuery groupByProdShippingUsaParcel() Group by the prod_shipping_usa_parcel column
- * @method     ChildTblProdPricesQuery groupByProdShippingCanadaParcel() Group by the prod_shipping_canada_parcel column
- * @method     ChildTblProdPricesQuery groupByProdShippingAuParcel() Group by the prod_shipping_au_parcel column
  * @method     ChildTblProdPricesQuery groupByProdCustomprice() Group by the prod_customprice column
  *
  * @method     ChildTblProdPricesQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
@@ -76,16 +56,6 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTblProdPrices findOneByProdId(int $prod_id) Return the first ChildTblProdPrices filtered by the prod_id column
  * @method     ChildTblProdPrices findOneByProdNormalprice(string $prod_normalprice) Return the first ChildTblProdPrices filtered by the prod_normalprice column
  * @method     ChildTblProdPrices findOneByProdSalesprice(string $prod_salesprice) Return the first ChildTblProdPrices filtered by the prod_salesprice column
- * @method     ChildTblProdPrices findOneByProdShippingAsia(string $prod_shipping_asia) Return the first ChildTblProdPrices filtered by the prod_shipping_asia column
- * @method     ChildTblProdPrices findOneByProdShippingEurope(string $prod_shipping_europe) Return the first ChildTblProdPrices filtered by the prod_shipping_europe column
- * @method     ChildTblProdPrices findOneByProdShippingUsa(string $prod_shipping_usa) Return the first ChildTblProdPrices filtered by the prod_shipping_usa column
- * @method     ChildTblProdPrices findOneByProdShippingCanada(string $prod_shipping_canada) Return the first ChildTblProdPrices filtered by the prod_shipping_canada column
- * @method     ChildTblProdPrices findOneByProdShippingAu(string $prod_shipping_au) Return the first ChildTblProdPrices filtered by the prod_shipping_au column
- * @method     ChildTblProdPrices findOneByProdShippingAsiaParcel(string $prod_shipping_asia_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_asia_parcel column
- * @method     ChildTblProdPrices findOneByProdShippingEuropeParcel(string $prod_shipping_europe_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_europe_parcel column
- * @method     ChildTblProdPrices findOneByProdShippingUsaParcel(string $prod_shipping_usa_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_usa_parcel column
- * @method     ChildTblProdPrices findOneByProdShippingCanadaParcel(string $prod_shipping_canada_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_canada_parcel column
- * @method     ChildTblProdPrices findOneByProdShippingAuParcel(string $prod_shipping_au_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_au_parcel column
  * @method     ChildTblProdPrices findOneByProdCustomprice(string $prod_customprice) Return the first ChildTblProdPrices filtered by the prod_customprice column *
 
  * @method     ChildTblProdPrices requirePk($key, ConnectionInterface $con = null) Return the ChildTblProdPrices by primary key and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -94,32 +64,12 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTblProdPrices requireOneByProdId(int $prod_id) Return the first ChildTblProdPrices filtered by the prod_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblProdPrices requireOneByProdNormalprice(string $prod_normalprice) Return the first ChildTblProdPrices filtered by the prod_normalprice column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblProdPrices requireOneByProdSalesprice(string $prod_salesprice) Return the first ChildTblProdPrices filtered by the prod_salesprice column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingAsia(string $prod_shipping_asia) Return the first ChildTblProdPrices filtered by the prod_shipping_asia column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingEurope(string $prod_shipping_europe) Return the first ChildTblProdPrices filtered by the prod_shipping_europe column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingUsa(string $prod_shipping_usa) Return the first ChildTblProdPrices filtered by the prod_shipping_usa column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingCanada(string $prod_shipping_canada) Return the first ChildTblProdPrices filtered by the prod_shipping_canada column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingAu(string $prod_shipping_au) Return the first ChildTblProdPrices filtered by the prod_shipping_au column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingAsiaParcel(string $prod_shipping_asia_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_asia_parcel column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingEuropeParcel(string $prod_shipping_europe_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_europe_parcel column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingUsaParcel(string $prod_shipping_usa_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_usa_parcel column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingCanadaParcel(string $prod_shipping_canada_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_canada_parcel column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildTblProdPrices requireOneByProdShippingAuParcel(string $prod_shipping_au_parcel) Return the first ChildTblProdPrices filtered by the prod_shipping_au_parcel column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildTblProdPrices requireOneByProdCustomprice(string $prod_customprice) Return the first ChildTblProdPrices filtered by the prod_customprice column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildTblProdPrices[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildTblProdPrices objects based on current ModelCriteria
  * @method     ChildTblProdPrices[]|ObjectCollection findByProdId(int $prod_id) Return ChildTblProdPrices objects filtered by the prod_id column
  * @method     ChildTblProdPrices[]|ObjectCollection findByProdNormalprice(string $prod_normalprice) Return ChildTblProdPrices objects filtered by the prod_normalprice column
  * @method     ChildTblProdPrices[]|ObjectCollection findByProdSalesprice(string $prod_salesprice) Return ChildTblProdPrices objects filtered by the prod_salesprice column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingAsia(string $prod_shipping_asia) Return ChildTblProdPrices objects filtered by the prod_shipping_asia column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingEurope(string $prod_shipping_europe) Return ChildTblProdPrices objects filtered by the prod_shipping_europe column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingUsa(string $prod_shipping_usa) Return ChildTblProdPrices objects filtered by the prod_shipping_usa column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingCanada(string $prod_shipping_canada) Return ChildTblProdPrices objects filtered by the prod_shipping_canada column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingAu(string $prod_shipping_au) Return ChildTblProdPrices objects filtered by the prod_shipping_au column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingAsiaParcel(string $prod_shipping_asia_parcel) Return ChildTblProdPrices objects filtered by the prod_shipping_asia_parcel column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingEuropeParcel(string $prod_shipping_europe_parcel) Return ChildTblProdPrices objects filtered by the prod_shipping_europe_parcel column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingUsaParcel(string $prod_shipping_usa_parcel) Return ChildTblProdPrices objects filtered by the prod_shipping_usa_parcel column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingCanadaParcel(string $prod_shipping_canada_parcel) Return ChildTblProdPrices objects filtered by the prod_shipping_canada_parcel column
- * @method     ChildTblProdPrices[]|ObjectCollection findByProdShippingAuParcel(string $prod_shipping_au_parcel) Return ChildTblProdPrices objects filtered by the prod_shipping_au_parcel column
  * @method     ChildTblProdPrices[]|ObjectCollection findByProdCustomprice(string $prod_customprice) Return ChildTblProdPrices objects filtered by the prod_customprice column
  * @method     ChildTblProdPrices[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
  *
@@ -183,21 +133,27 @@ abstract class TblProdPricesQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdPricesTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblProdPricesTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblProdPricesTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -213,9 +169,9 @@ abstract class TblProdPricesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT prod_id, prod_normalprice, prod_salesprice, prod_shipping_asia, prod_shipping_europe, prod_shipping_usa, prod_shipping_canada, prod_shipping_au, prod_shipping_asia_parcel, prod_shipping_europe_parcel, prod_shipping_usa_parcel, prod_shipping_canada_parcel, prod_shipping_au_parcel, prod_customprice FROM tbl_prod_prices WHERE prod_id = :p0';
+        $sql = 'SELECT prod_id, prod_normalprice, prod_salesprice, prod_customprice FROM tbl_prod_prices WHERE prod_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -403,296 +359,6 @@ abstract class TblProdPricesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the prod_shipping_asia column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingAsia('fooValue');   // WHERE prod_shipping_asia = 'fooValue'
-     * $query->filterByProdShippingAsia('%fooValue%'); // WHERE prod_shipping_asia LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingAsia The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingAsia($prodShippingAsia = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingAsia)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingAsia)) {
-                $prodShippingAsia = str_replace('*', '%', $prodShippingAsia);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA, $prodShippingAsia, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_europe column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingEurope('fooValue');   // WHERE prod_shipping_europe = 'fooValue'
-     * $query->filterByProdShippingEurope('%fooValue%'); // WHERE prod_shipping_europe LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingEurope The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingEurope($prodShippingEurope = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingEurope)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingEurope)) {
-                $prodShippingEurope = str_replace('*', '%', $prodShippingEurope);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE, $prodShippingEurope, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_usa column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingUsa('fooValue');   // WHERE prod_shipping_usa = 'fooValue'
-     * $query->filterByProdShippingUsa('%fooValue%'); // WHERE prod_shipping_usa LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingUsa The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingUsa($prodShippingUsa = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingUsa)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingUsa)) {
-                $prodShippingUsa = str_replace('*', '%', $prodShippingUsa);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_USA, $prodShippingUsa, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_canada column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingCanada('fooValue');   // WHERE prod_shipping_canada = 'fooValue'
-     * $query->filterByProdShippingCanada('%fooValue%'); // WHERE prod_shipping_canada LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingCanada The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingCanada($prodShippingCanada = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingCanada)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingCanada)) {
-                $prodShippingCanada = str_replace('*', '%', $prodShippingCanada);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA, $prodShippingCanada, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_au column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingAu('fooValue');   // WHERE prod_shipping_au = 'fooValue'
-     * $query->filterByProdShippingAu('%fooValue%'); // WHERE prod_shipping_au LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingAu The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingAu($prodShippingAu = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingAu)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingAu)) {
-                $prodShippingAu = str_replace('*', '%', $prodShippingAu);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_AU, $prodShippingAu, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_asia_parcel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingAsiaParcel('fooValue');   // WHERE prod_shipping_asia_parcel = 'fooValue'
-     * $query->filterByProdShippingAsiaParcel('%fooValue%'); // WHERE prod_shipping_asia_parcel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingAsiaParcel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingAsiaParcel($prodShippingAsiaParcel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingAsiaParcel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingAsiaParcel)) {
-                $prodShippingAsiaParcel = str_replace('*', '%', $prodShippingAsiaParcel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL, $prodShippingAsiaParcel, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_europe_parcel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingEuropeParcel('fooValue');   // WHERE prod_shipping_europe_parcel = 'fooValue'
-     * $query->filterByProdShippingEuropeParcel('%fooValue%'); // WHERE prod_shipping_europe_parcel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingEuropeParcel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingEuropeParcel($prodShippingEuropeParcel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingEuropeParcel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingEuropeParcel)) {
-                $prodShippingEuropeParcel = str_replace('*', '%', $prodShippingEuropeParcel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL, $prodShippingEuropeParcel, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_usa_parcel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingUsaParcel('fooValue');   // WHERE prod_shipping_usa_parcel = 'fooValue'
-     * $query->filterByProdShippingUsaParcel('%fooValue%'); // WHERE prod_shipping_usa_parcel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingUsaParcel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingUsaParcel($prodShippingUsaParcel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingUsaParcel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingUsaParcel)) {
-                $prodShippingUsaParcel = str_replace('*', '%', $prodShippingUsaParcel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL, $prodShippingUsaParcel, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_canada_parcel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingCanadaParcel('fooValue');   // WHERE prod_shipping_canada_parcel = 'fooValue'
-     * $query->filterByProdShippingCanadaParcel('%fooValue%'); // WHERE prod_shipping_canada_parcel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingCanadaParcel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingCanadaParcel($prodShippingCanadaParcel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingCanadaParcel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingCanadaParcel)) {
-                $prodShippingCanadaParcel = str_replace('*', '%', $prodShippingCanadaParcel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL, $prodShippingCanadaParcel, $comparison);
-    }
-
-    /**
-     * Filter the query on the prod_shipping_au_parcel column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByProdShippingAuParcel('fooValue');   // WHERE prod_shipping_au_parcel = 'fooValue'
-     * $query->filterByProdShippingAuParcel('%fooValue%'); // WHERE prod_shipping_au_parcel LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $prodShippingAuParcel The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildTblProdPricesQuery The current query, for fluid interface
-     */
-    public function filterByProdShippingAuParcel($prodShippingAuParcel = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($prodShippingAuParcel)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $prodShippingAuParcel)) {
-                $prodShippingAuParcel = str_replace('*', '%', $prodShippingAuParcel);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL, $prodShippingAuParcel, $comparison);
-    }
-
-    /**
      * Filter the query on the prod_customprice column
      *
      * Example usage:
@@ -861,9 +527,9 @@ abstract class TblProdPricesQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblProdPricesTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblProdPricesTableMap::clearRelatedInstancePool();
 

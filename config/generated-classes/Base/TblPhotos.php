@@ -21,11 +21,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_photos' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblPhotos implements ActiveRecordInterface 
+abstract class TblPhotos implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -61,21 +61,21 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * The value for the photo_id field.
-     * 
+     *
      * @var        int
      */
     protected $photo_id;
 
     /**
      * The value for the photo_name field.
-     * 
+     *
      * @var        string
      */
     protected $photo_name;
 
     /**
      * The value for the prod_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_id;
@@ -305,17 +305,17 @@ abstract class TblPhotos implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [photo_id] column value.
-     * 
+     *
      * @return int
      */
     public function getPhotoId()
@@ -325,7 +325,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * Get the [photo_name] column value.
-     * 
+     *
      * @return string
      */
     public function getPhotoName()
@@ -335,7 +335,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * Get the [prod_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdId()
@@ -345,7 +345,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [photo_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblPhotos The current object (for fluent API support)
      */
@@ -365,7 +365,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [photo_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblPhotos The current object (for fluent API support)
      */
@@ -385,7 +385,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblPhotos The current object (for fluent API support)
      */
@@ -574,8 +574,8 @@ abstract class TblPhotos implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -672,13 +672,13 @@ abstract class TblPhotos implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'photo_id':                        
+                    case 'photo_id':
                         $stmt->bindValue($identifier, $this->photo_id, PDO::PARAM_INT);
                         break;
-                    case 'photo_name':                        
+                    case 'photo_name':
                         $stmt->bindValue($identifier, $this->photo_name, PDO::PARAM_STR);
                         break;
-                    case 'prod_id':                        
+                    case 'prod_id':
                         $stmt->bindValue($identifier, $this->prod_id, PDO::PARAM_INT);
                         break;
                 }
@@ -789,7 +789,7 @@ abstract class TblPhotos implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
 
         return $result;
     }
@@ -960,7 +960,7 @@ abstract class TblPhotos implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1082,6 +1082,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1091,7 +1094,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1101,6 +1106,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1110,7 +1118,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1120,6 +1130,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1129,7 +1142,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1139,6 +1154,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1148,7 +1166,9 @@ abstract class TblPhotos implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

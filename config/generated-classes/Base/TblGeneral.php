@@ -9,6 +9,7 @@ use \TblProdInfoQuery as ChildTblProdInfoQuery;
 use \Exception;
 use \PDO;
 use Map\TblGeneralTableMap;
+use Map\TblProdInfoTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
@@ -25,11 +26,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_general' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblGeneral implements ActiveRecordInterface 
+abstract class TblGeneral implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -65,77 +66,77 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * The value for the prod_general field.
-     * 
+     *
      * @var        int
      */
     protected $prod_general;
 
     /**
      * The value for the prod_name field.
-     * 
+     *
      * @var        string
      */
     protected $prod_name;
 
     /**
      * The value for the prod_description field.
-     * 
+     *
      * @var        string
      */
     protected $prod_description;
 
     /**
      * The value for the prod_description_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_description_pa;
 
     /**
      * The value for the prod_description_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_description_m3;
 
     /**
      * The value for the prod_keywords field.
-     * 
+     *
      * @var        string
      */
     protected $prod_keywords;
 
     /**
      * The value for the prod_keywords_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_keywords_pa;
 
     /**
      * The value for the prod_keywords_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_keywords_m3;
 
     /**
      * The value for the prod_writeupkeywords field.
-     * 
+     *
      * @var        string
      */
     protected $prod_writeupkeywords;
 
     /**
      * The value for the prod_writeupkeywords_pa field.
-     * 
+     *
      * @var        string
      */
     protected $prod_writeupkeywords_pa;
 
     /**
      * The value for the prod_writeupkeywords_m3 field.
-     * 
+     *
      * @var        string
      */
     protected $prod_writeupkeywords_m3;
@@ -377,17 +378,17 @@ abstract class TblGeneral implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_general] column value.
-     * 
+     *
      * @return int
      */
     public function getProdGeneral()
@@ -397,7 +398,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_name] column value.
-     * 
+     *
      * @return string
      */
     public function getProdName()
@@ -407,7 +408,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_description] column value.
-     * 
+     *
      * @return string
      */
     public function getProdDescription()
@@ -417,7 +418,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_description_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdDescriptionPa()
@@ -427,7 +428,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_description_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdDescriptionM3()
@@ -437,7 +438,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_keywords] column value.
-     * 
+     *
      * @return string
      */
     public function getProdKeywords()
@@ -447,7 +448,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_keywords_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdKeywordsPa()
@@ -457,7 +458,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_keywords_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdKeywordsM3()
@@ -467,7 +468,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_writeupkeywords] column value.
-     * 
+     *
      * @return string
      */
     public function getProdWriteupkeywords()
@@ -477,7 +478,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_writeupkeywords_pa] column value.
-     * 
+     *
      * @return string
      */
     public function getProdWriteupkeywordsPa()
@@ -487,7 +488,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Get the [prod_writeupkeywords_m3] column value.
-     * 
+     *
      * @return string
      */
     public function getProdWriteupkeywordsM3()
@@ -497,7 +498,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_general] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -517,7 +518,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_name] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -537,7 +538,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_description] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -557,7 +558,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_description_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -577,7 +578,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_description_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -597,7 +598,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_keywords] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -617,7 +618,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_keywords_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -637,7 +638,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_keywords_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -657,7 +658,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_writeupkeywords] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -677,7 +678,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_writeupkeywords_pa] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -697,7 +698,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_writeupkeywords_m3] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblGeneral The current object (for fluent API support)
      */
@@ -912,8 +913,8 @@ abstract class TblGeneral implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -1051,37 +1052,37 @@ abstract class TblGeneral implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_general':                        
+                    case 'prod_general':
                         $stmt->bindValue($identifier, $this->prod_general, PDO::PARAM_INT);
                         break;
-                    case 'prod_name':                        
+                    case 'prod_name':
                         $stmt->bindValue($identifier, $this->prod_name, PDO::PARAM_STR);
                         break;
-                    case 'prod_description':                        
+                    case 'prod_description':
                         $stmt->bindValue($identifier, $this->prod_description, PDO::PARAM_STR);
                         break;
-                    case 'prod_description_pa':                        
+                    case 'prod_description_pa':
                         $stmt->bindValue($identifier, $this->prod_description_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_description_m3':                        
+                    case 'prod_description_m3':
                         $stmt->bindValue($identifier, $this->prod_description_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_keywords':                        
+                    case 'prod_keywords':
                         $stmt->bindValue($identifier, $this->prod_keywords, PDO::PARAM_STR);
                         break;
-                    case 'prod_keywords_pa':                        
+                    case 'prod_keywords_pa':
                         $stmt->bindValue($identifier, $this->prod_keywords_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_keywords_m3':                        
+                    case 'prod_keywords_m3':
                         $stmt->bindValue($identifier, $this->prod_keywords_m3, PDO::PARAM_STR);
                         break;
-                    case 'prod_writeupkeywords':                        
+                    case 'prod_writeupkeywords':
                         $stmt->bindValue($identifier, $this->prod_writeupkeywords, PDO::PARAM_STR);
                         break;
-                    case 'prod_writeupkeywords_pa':                        
+                    case 'prod_writeupkeywords_pa':
                         $stmt->bindValue($identifier, $this->prod_writeupkeywords_pa, PDO::PARAM_STR);
                         break;
-                    case 'prod_writeupkeywords_m3':                        
+                    case 'prod_writeupkeywords_m3':
                         $stmt->bindValue($identifier, $this->prod_writeupkeywords_m3, PDO::PARAM_STR);
                         break;
                 }
@@ -1225,10 +1226,10 @@ abstract class TblGeneral implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->collTblProdInfos) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfos';
@@ -1239,7 +1240,7 @@ abstract class TblGeneral implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfos';
                 }
-        
+
                 $result[$key] = $this->collTblProdInfos->toArray(null, false, $keyType, $includeLazyLoadColumns, $alreadyDumpedObjects);
             }
         }
@@ -1485,7 +1486,7 @@ abstract class TblGeneral implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1635,7 +1636,10 @@ abstract class TblGeneral implements ActiveRecordInterface
         if (null !== $this->collTblProdInfos && !$overrideExisting) {
             return;
         }
-        $this->collTblProdInfos = new ObjectCollection();
+
+        $collectionClassName = TblProdInfoTableMap::getTableMap()->getCollectionClassName();
+
+        $this->collTblProdInfos = new $collectionClassName;
         $this->collTblProdInfos->setModel('\TblProdInfo');
     }
 
@@ -1712,7 +1716,7 @@ abstract class TblGeneral implements ActiveRecordInterface
         /** @var ChildTblProdInfo[] $tblProdInfosToDelete */
         $tblProdInfosToDelete = $this->getTblProdInfos(new Criteria(), $con)->diff($tblProdInfos);
 
-        
+
         $this->tblProdInfosScheduledForDeletion = $tblProdInfosToDelete;
 
         foreach ($tblProdInfosToDelete as $tblProdInfoRemoved) {
@@ -2056,6 +2060,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -2065,7 +2072,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -2075,6 +2084,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -2084,7 +2096,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -2094,6 +2108,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -2103,7 +2120,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -2113,6 +2132,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -2122,7 +2144,9 @@ abstract class TblGeneral implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

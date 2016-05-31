@@ -18,7 +18,7 @@ use Propel\Runtime\Exception\PropelException;
 /**
  * Base class that represents a query for the 'tbl_prod_photos' table.
  *
- * 
+ *
  *
  * @method     ChildTblProdPhotosQuery orderByProdId($order = Criteria::ASC) Order by the prod_id column
  * @method     ChildTblProdPhotosQuery orderByProdSolo1($order = Criteria::ASC) Order by the prod_solo_1 column
@@ -198,21 +198,27 @@ abstract class TblProdPhotosQuery extends ModelCriteria
         if ($key === null) {
             return null;
         }
-        if ((null !== ($obj = TblProdPhotosTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key))) && !$this->formatter) {
-            // the object is already in the instance pool
-            return $obj;
-        }
+
         if ($con === null) {
             $con = Propel::getServiceContainer()->getReadConnection(TblProdPhotosTableMap::DATABASE_NAME);
         }
+
         $this->basePreSelect($con);
-        if ($this->formatter || $this->modelAlias || $this->with || $this->select
-         || $this->selectColumns || $this->asColumns || $this->selectModifiers
-         || $this->map || $this->having || $this->joins) {
+
+        if (
+            $this->formatter || $this->modelAlias || $this->with || $this->select
+            || $this->selectColumns || $this->asColumns || $this->selectModifiers
+            || $this->map || $this->having || $this->joins
+        ) {
             return $this->findPkComplex($key, $con);
-        } else {
-            return $this->findPkSimple($key, $con);
         }
+
+        if ((null !== ($obj = TblProdPhotosTableMap::getInstanceFromPool(null === $key || is_scalar($key) || is_callable([$key, '__toString']) ? (string) $key : $key)))) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+
+        return $this->findPkSimple($key, $con);
     }
 
     /**
@@ -230,7 +236,7 @@ abstract class TblProdPhotosQuery extends ModelCriteria
     {
         $sql = 'SELECT prod_id, prod_solo_1, prod_solo_2, prod_solo_3, prod_solo_4, prod_solo_1_pa, prod_solo_2_pa, prod_solo_3_pa, prod_solo_4_pa, prod_solo_1_m3, prod_solo_2_m3, prod_solo_3_m3, prod_solo_4_m3, prod_solo_1_blank, prod_solo_2_blank, prod_solo_3_blank, prod_solo_4_blank FROM tbl_prod_photos WHERE prod_id = :p0';
         try {
-            $stmt = $con->prepare($sql);            
+            $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
             $stmt->execute();
         } catch (Exception $e) {
@@ -963,9 +969,9 @@ abstract class TblProdPhotosQuery extends ModelCriteria
         // for more than one table or we could emulating ON DELETE CASCADE, etc.
         return $con->transaction(function () use ($con, $criteria) {
             $affectedRows = 0; // initialize var to track total num of affected rows
-            
+
             TblProdPhotosTableMap::removeInstanceFromPool($criteria);
-        
+
             $affectedRows += ModelCriteria::delete($con);
             TblProdPhotosTableMap::clearRelatedInstancePool();
 

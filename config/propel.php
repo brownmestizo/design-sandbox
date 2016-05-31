@@ -21,7 +21,12 @@ return [
         'generator' => [
             'defaultConnection' => 'mpm',
             'connections' => ['mpm']
-        ]
+        ],
+        'paths' => [
+            'schemaDir' => 'config/',
+            'phpDir' => 'config/generated-classes/',
+            'sqlDir' => 'config/generated-sql/'
+        ],
     ]
 ];
 

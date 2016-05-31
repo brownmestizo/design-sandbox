@@ -59,7 +59,7 @@ class TblProdPricesTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 14;
+    const NUM_COLUMNS = 4;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class TblProdPricesTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 14;
+    const NUM_HYDRATE_COLUMNS = 4;
 
     /**
      * the column name for the prod_id field
@@ -85,56 +85,6 @@ class TblProdPricesTableMap extends TableMap
      * the column name for the prod_salesprice field
      */
     const COL_PROD_SALESPRICE = 'tbl_prod_prices.prod_salesprice';
-
-    /**
-     * the column name for the prod_shipping_asia field
-     */
-    const COL_PROD_SHIPPING_ASIA = 'tbl_prod_prices.prod_shipping_asia';
-
-    /**
-     * the column name for the prod_shipping_europe field
-     */
-    const COL_PROD_SHIPPING_EUROPE = 'tbl_prod_prices.prod_shipping_europe';
-
-    /**
-     * the column name for the prod_shipping_usa field
-     */
-    const COL_PROD_SHIPPING_USA = 'tbl_prod_prices.prod_shipping_usa';
-
-    /**
-     * the column name for the prod_shipping_canada field
-     */
-    const COL_PROD_SHIPPING_CANADA = 'tbl_prod_prices.prod_shipping_canada';
-
-    /**
-     * the column name for the prod_shipping_au field
-     */
-    const COL_PROD_SHIPPING_AU = 'tbl_prod_prices.prod_shipping_au';
-
-    /**
-     * the column name for the prod_shipping_asia_parcel field
-     */
-    const COL_PROD_SHIPPING_ASIA_PARCEL = 'tbl_prod_prices.prod_shipping_asia_parcel';
-
-    /**
-     * the column name for the prod_shipping_europe_parcel field
-     */
-    const COL_PROD_SHIPPING_EUROPE_PARCEL = 'tbl_prod_prices.prod_shipping_europe_parcel';
-
-    /**
-     * the column name for the prod_shipping_usa_parcel field
-     */
-    const COL_PROD_SHIPPING_USA_PARCEL = 'tbl_prod_prices.prod_shipping_usa_parcel';
-
-    /**
-     * the column name for the prod_shipping_canada_parcel field
-     */
-    const COL_PROD_SHIPPING_CANADA_PARCEL = 'tbl_prod_prices.prod_shipping_canada_parcel';
-
-    /**
-     * the column name for the prod_shipping_au_parcel field
-     */
-    const COL_PROD_SHIPPING_AU_PARCEL = 'tbl_prod_prices.prod_shipping_au_parcel';
 
     /**
      * the column name for the prod_customprice field
@@ -153,11 +103,11 @@ class TblProdPricesTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('ProdId', 'ProdNormalprice', 'ProdSalesprice', 'ProdShippingAsia', 'ProdShippingEurope', 'ProdShippingUsa', 'ProdShippingCanada', 'ProdShippingAu', 'ProdShippingAsiaParcel', 'ProdShippingEuropeParcel', 'ProdShippingUsaParcel', 'ProdShippingCanadaParcel', 'ProdShippingAuParcel', 'ProdCustomprice', ),
-        self::TYPE_CAMELNAME     => array('prodId', 'prodNormalprice', 'prodSalesprice', 'prodShippingAsia', 'prodShippingEurope', 'prodShippingUsa', 'prodShippingCanada', 'prodShippingAu', 'prodShippingAsiaParcel', 'prodShippingEuropeParcel', 'prodShippingUsaParcel', 'prodShippingCanadaParcel', 'prodShippingAuParcel', 'prodCustomprice', ),
-        self::TYPE_COLNAME       => array(TblProdPricesTableMap::COL_PROD_ID, TblProdPricesTableMap::COL_PROD_NORMALPRICE, TblProdPricesTableMap::COL_PROD_SALESPRICE, TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA, TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE, TblProdPricesTableMap::COL_PROD_SHIPPING_USA, TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA, TblProdPricesTableMap::COL_PROD_SHIPPING_AU, TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL, TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL, TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL, TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL, TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL, TblProdPricesTableMap::COL_PROD_CUSTOMPRICE, ),
-        self::TYPE_FIELDNAME     => array('prod_id', 'prod_normalprice', 'prod_salesprice', 'prod_shipping_asia', 'prod_shipping_europe', 'prod_shipping_usa', 'prod_shipping_canada', 'prod_shipping_au', 'prod_shipping_asia_parcel', 'prod_shipping_europe_parcel', 'prod_shipping_usa_parcel', 'prod_shipping_canada_parcel', 'prod_shipping_au_parcel', 'prod_customprice', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        self::TYPE_PHPNAME       => array('ProdId', 'ProdNormalprice', 'ProdSalesprice', 'ProdCustomprice', ),
+        self::TYPE_CAMELNAME     => array('prodId', 'prodNormalprice', 'prodSalesprice', 'prodCustomprice', ),
+        self::TYPE_COLNAME       => array(TblProdPricesTableMap::COL_PROD_ID, TblProdPricesTableMap::COL_PROD_NORMALPRICE, TblProdPricesTableMap::COL_PROD_SALESPRICE, TblProdPricesTableMap::COL_PROD_CUSTOMPRICE, ),
+        self::TYPE_FIELDNAME     => array('prod_id', 'prod_normalprice', 'prod_salesprice', 'prod_customprice', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, )
     );
 
     /**
@@ -167,11 +117,11 @@ class TblProdPricesTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('ProdId' => 0, 'ProdNormalprice' => 1, 'ProdSalesprice' => 2, 'ProdShippingAsia' => 3, 'ProdShippingEurope' => 4, 'ProdShippingUsa' => 5, 'ProdShippingCanada' => 6, 'ProdShippingAu' => 7, 'ProdShippingAsiaParcel' => 8, 'ProdShippingEuropeParcel' => 9, 'ProdShippingUsaParcel' => 10, 'ProdShippingCanadaParcel' => 11, 'ProdShippingAuParcel' => 12, 'ProdCustomprice' => 13, ),
-        self::TYPE_CAMELNAME     => array('prodId' => 0, 'prodNormalprice' => 1, 'prodSalesprice' => 2, 'prodShippingAsia' => 3, 'prodShippingEurope' => 4, 'prodShippingUsa' => 5, 'prodShippingCanada' => 6, 'prodShippingAu' => 7, 'prodShippingAsiaParcel' => 8, 'prodShippingEuropeParcel' => 9, 'prodShippingUsaParcel' => 10, 'prodShippingCanadaParcel' => 11, 'prodShippingAuParcel' => 12, 'prodCustomprice' => 13, ),
-        self::TYPE_COLNAME       => array(TblProdPricesTableMap::COL_PROD_ID => 0, TblProdPricesTableMap::COL_PROD_NORMALPRICE => 1, TblProdPricesTableMap::COL_PROD_SALESPRICE => 2, TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA => 3, TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE => 4, TblProdPricesTableMap::COL_PROD_SHIPPING_USA => 5, TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA => 6, TblProdPricesTableMap::COL_PROD_SHIPPING_AU => 7, TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL => 8, TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL => 9, TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL => 10, TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL => 11, TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL => 12, TblProdPricesTableMap::COL_PROD_CUSTOMPRICE => 13, ),
-        self::TYPE_FIELDNAME     => array('prod_id' => 0, 'prod_normalprice' => 1, 'prod_salesprice' => 2, 'prod_shipping_asia' => 3, 'prod_shipping_europe' => 4, 'prod_shipping_usa' => 5, 'prod_shipping_canada' => 6, 'prod_shipping_au' => 7, 'prod_shipping_asia_parcel' => 8, 'prod_shipping_europe_parcel' => 9, 'prod_shipping_usa_parcel' => 10, 'prod_shipping_canada_parcel' => 11, 'prod_shipping_au_parcel' => 12, 'prod_customprice' => 13, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, )
+        self::TYPE_PHPNAME       => array('ProdId' => 0, 'ProdNormalprice' => 1, 'ProdSalesprice' => 2, 'ProdCustomprice' => 3, ),
+        self::TYPE_CAMELNAME     => array('prodId' => 0, 'prodNormalprice' => 1, 'prodSalesprice' => 2, 'prodCustomprice' => 3, ),
+        self::TYPE_COLNAME       => array(TblProdPricesTableMap::COL_PROD_ID => 0, TblProdPricesTableMap::COL_PROD_NORMALPRICE => 1, TblProdPricesTableMap::COL_PROD_SALESPRICE => 2, TblProdPricesTableMap::COL_PROD_CUSTOMPRICE => 3, ),
+        self::TYPE_FIELDNAME     => array('prod_id' => 0, 'prod_normalprice' => 1, 'prod_salesprice' => 2, 'prod_customprice' => 3, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, )
     );
 
     /**
@@ -191,19 +141,9 @@ class TblProdPricesTableMap extends TableMap
         $this->setPackage('');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addForeignPrimaryKey('prod_id', 'ProdId', 'INTEGER' , 'tbl_prod_info', 'prod_id', true, null, null);
+        $this->addPrimaryKey('prod_id', 'ProdId', 'INTEGER', true, null, null);
         $this->addColumn('prod_normalprice', 'ProdNormalprice', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_salesprice', 'ProdSalesprice', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_asia', 'ProdShippingAsia', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_europe', 'ProdShippingEurope', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_usa', 'ProdShippingUsa', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_canada', 'ProdShippingCanada', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_au', 'ProdShippingAu', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_asia_parcel', 'ProdShippingAsiaParcel', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_europe_parcel', 'ProdShippingEuropeParcel', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_usa_parcel', 'ProdShippingUsaParcel', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_canada_parcel', 'ProdShippingCanadaParcel', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('prod_shipping_au_parcel', 'ProdShippingAuParcel', 'LONGVARCHAR', true, null, null);
         $this->addColumn('prod_customprice', 'ProdCustomprice', 'LONGVARCHAR', true, null, null);
     } // initialize()
 
@@ -264,7 +204,7 @@ class TblProdPricesTableMap extends TableMap
                 : self::translateFieldName('ProdId', TableMap::TYPE_PHPNAME, $indexType)
         ];
     }
-    
+
     /**
      * The class that the tableMap will make instances of.
      *
@@ -325,7 +265,7 @@ class TblProdPricesTableMap extends TableMap
     public static function populateObjects(DataFetcherInterface $dataFetcher)
     {
         $results = array();
-    
+
         // set the class once to avoid overhead in the loop
         $cls = static::getOMClass(false);
         // populate the object(s)
@@ -365,31 +305,11 @@ class TblProdPricesTableMap extends TableMap
             $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_ID);
             $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_NORMALPRICE);
             $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SALESPRICE);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_USA);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_AU);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_ASIA_PARCEL);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_EUROPE_PARCEL);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_USA_PARCEL);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_CANADA_PARCEL);
-            $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_SHIPPING_AU_PARCEL);
             $criteria->addSelectColumn(TblProdPricesTableMap::COL_PROD_CUSTOMPRICE);
         } else {
             $criteria->addSelectColumn($alias . '.prod_id');
             $criteria->addSelectColumn($alias . '.prod_normalprice');
             $criteria->addSelectColumn($alias . '.prod_salesprice');
-            $criteria->addSelectColumn($alias . '.prod_shipping_asia');
-            $criteria->addSelectColumn($alias . '.prod_shipping_europe');
-            $criteria->addSelectColumn($alias . '.prod_shipping_usa');
-            $criteria->addSelectColumn($alias . '.prod_shipping_canada');
-            $criteria->addSelectColumn($alias . '.prod_shipping_au');
-            $criteria->addSelectColumn($alias . '.prod_shipping_asia_parcel');
-            $criteria->addSelectColumn($alias . '.prod_shipping_europe_parcel');
-            $criteria->addSelectColumn($alias . '.prod_shipping_usa_parcel');
-            $criteria->addSelectColumn($alias . '.prod_shipping_canada_parcel');
-            $criteria->addSelectColumn($alias . '.prod_shipping_au_parcel');
             $criteria->addSelectColumn($alias . '.prod_customprice');
         }
     }

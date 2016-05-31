@@ -23,11 +23,11 @@ use Propel\Runtime\Parser\AbstractParser;
 /**
  * Base class that represents a row from the 'tbl_prod_smaller' table.
  *
- * 
+ *
  *
 * @package    propel.generator..Base
 */
-abstract class TblProdSmaller implements ActiveRecordInterface 
+abstract class TblProdSmaller implements ActiveRecordInterface
 {
     /**
      * TableMap class name
@@ -63,63 +63,63 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * The value for the prod_id field.
-     * 
+     *
      * @var        int
      */
     protected $prod_id;
 
     /**
      * The value for the sm_enable_id field.
-     * 
+     *
      * @var        int
      */
     protected $sm_enable_id;
 
     /**
      * The value for the sm_prod_length field.
-     * 
+     *
      * @var        string
      */
     protected $sm_prod_length;
 
     /**
      * The value for the sm_prod_wingspan field.
-     * 
+     *
      * @var        string
      */
     protected $sm_prod_wingspan;
 
     /**
      * The value for the sm_prod_height field.
-     * 
+     *
      * @var        string
      */
     protected $sm_prod_height;
 
     /**
      * The value for the sm_prod_scale field.
-     * 
+     *
      * @var        string
      */
     protected $sm_prod_scale;
 
     /**
      * The value for the sm_prod_price_id field.
-     * 
+     *
      * @var        int
      */
     protected $sm_prod_price_id;
 
     /**
      * The value for the sm_prod_normalprice field.
-     * 
+     *
      * @var        double
      */
     protected $sm_prod_normalprice;
 
     /**
      * The value for the sm_prod_shipping_price_id field.
-     * 
+     *
      * @var        int
      */
     protected $sm_prod_shipping_price_id;
@@ -354,17 +354,17 @@ abstract class TblProdSmaller implements ActiveRecordInterface
         $cls = new \ReflectionClass($this);
         $propertyNames = [];
         $serializableProperties = array_diff($cls->getProperties(), $cls->getProperties(\ReflectionProperty::IS_STATIC));
-        
+
         foreach($serializableProperties as $property) {
             $propertyNames[] = $property->getName();
         }
-        
+
         return $propertyNames;
     }
 
     /**
      * Get the [prod_id] column value.
-     * 
+     *
      * @return int
      */
     public function getProdId()
@@ -374,7 +374,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_enable_id] column value.
-     * 
+     *
      * @return int
      */
     public function getSmEnableId()
@@ -384,7 +384,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_length] column value.
-     * 
+     *
      * @return string
      */
     public function getSmProdLength()
@@ -394,7 +394,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_wingspan] column value.
-     * 
+     *
      * @return string
      */
     public function getSmProdWingspan()
@@ -404,7 +404,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_height] column value.
-     * 
+     *
      * @return string
      */
     public function getSmProdHeight()
@@ -414,7 +414,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_scale] column value.
-     * 
+     *
      * @return string
      */
     public function getSmProdScale()
@@ -424,7 +424,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_price_id] column value.
-     * 
+     *
      * @return int
      */
     public function getSmProdPriceId()
@@ -434,7 +434,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_normalprice] column value.
-     * 
+     *
      * @return double
      */
     public function getSmProdNormalprice()
@@ -444,7 +444,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Get the [sm_prod_shipping_price_id] column value.
-     * 
+     *
      * @return int
      */
     public function getSmProdShippingPriceId()
@@ -454,7 +454,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [prod_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -469,16 +469,12 @@ abstract class TblProdSmaller implements ActiveRecordInterface
             $this->modifiedColumns[TblProdSmallerTableMap::COL_PROD_ID] = true;
         }
 
-        if ($this->singleTblProdInfo !== null && $this->singleTblProdInfo->getProdId() !== $v) {
-            $this->singleTblProdInfo = null;
-        }
-
         return $this;
     } // setProdId()
 
     /**
      * Set the value of [sm_enable_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -498,7 +494,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_length] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -518,7 +514,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_wingspan] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -538,7 +534,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_height] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -558,7 +554,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_scale] column.
-     * 
+     *
      * @param string $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -578,7 +574,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_price_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -598,7 +594,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_normalprice] column.
-     * 
+     *
      * @param double $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -618,7 +614,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
     /**
      * Set the value of [sm_prod_shipping_price_id] column.
-     * 
+     *
      * @param int $v new value
      * @return $this|\TblProdSmaller The current object (for fluent API support)
      */
@@ -827,8 +823,8 @@ abstract class TblProdSmaller implements ActiveRecordInterface
         }
 
         return $con->transaction(function () use ($con) {
-            $isInsert = $this->isNew();
             $ret = $this->preSave($con);
+            $isInsert = $this->isNew();
             if ($isInsert) {
                 $ret = $ret && $this->preInsert($con);
             } else {
@@ -868,13 +864,6 @@ abstract class TblProdSmaller implements ActiveRecordInterface
         if (!$this->alreadyInSave) {
             $this->alreadyInSave = true;
 
-            if ($this->singleTblProdInfo !== null) {
-                if ($this->singleTblProdInfo->isModified() || $this->singleTblProdInfo->isNew()) {
-                    $affectedRows += $this->singleTblProdInfo->save($con);
-                }
-                $this->setTblProdInfo($this->singleTblProdInfo);
-            }
-
             if ($this->isNew() || $this->isModified()) {
                 // persist changes
                 if ($this->isNew()) {
@@ -884,6 +873,12 @@ abstract class TblProdSmaller implements ActiveRecordInterface
                     $affectedRows += $this->doUpdate($con);
                 }
                 $this->resetModified();
+            }
+
+            if ($this->singleTblProdInfo !== null) {
+                if (!$this->singleTblProdInfo->isDeleted() && ($this->singleTblProdInfo->isNew() || $this->singleTblProdInfo->isModified())) {
+                    $affectedRows += $this->singleTblProdInfo->save($con);
+                }
             }
 
             $this->alreadyInSave = false;
@@ -946,31 +941,31 @@ abstract class TblProdSmaller implements ActiveRecordInterface
             $stmt = $con->prepare($sql);
             foreach ($modifiedColumns as $identifier => $columnName) {
                 switch ($columnName) {
-                    case 'prod_id':                        
+                    case 'prod_id':
                         $stmt->bindValue($identifier, $this->prod_id, PDO::PARAM_INT);
                         break;
-                    case 'sm_enable_id':                        
+                    case 'sm_enable_id':
                         $stmt->bindValue($identifier, $this->sm_enable_id, PDO::PARAM_INT);
                         break;
-                    case 'sm_prod_length':                        
+                    case 'sm_prod_length':
                         $stmt->bindValue($identifier, $this->sm_prod_length, PDO::PARAM_STR);
                         break;
-                    case 'sm_prod_wingspan':                        
+                    case 'sm_prod_wingspan':
                         $stmt->bindValue($identifier, $this->sm_prod_wingspan, PDO::PARAM_STR);
                         break;
-                    case 'sm_prod_height':                        
+                    case 'sm_prod_height':
                         $stmt->bindValue($identifier, $this->sm_prod_height, PDO::PARAM_STR);
                         break;
-                    case 'sm_prod_scale':                        
+                    case 'sm_prod_scale':
                         $stmt->bindValue($identifier, $this->sm_prod_scale, PDO::PARAM_STR);
                         break;
-                    case 'sm_prod_price_id':                        
+                    case 'sm_prod_price_id':
                         $stmt->bindValue($identifier, $this->sm_prod_price_id, PDO::PARAM_INT);
                         break;
-                    case 'sm_prod_normalprice':                        
+                    case 'sm_prod_normalprice':
                         $stmt->bindValue($identifier, $this->sm_prod_normalprice, PDO::PARAM_STR);
                         break;
-                    case 'sm_prod_shipping_price_id':                        
+                    case 'sm_prod_shipping_price_id':
                         $stmt->bindValue($identifier, $this->sm_prod_shipping_price_id, PDO::PARAM_INT);
                         break;
                 }
@@ -1099,10 +1094,10 @@ abstract class TblProdSmaller implements ActiveRecordInterface
         foreach ($virtualColumns as $key => $virtualColumn) {
             $result[$key] = $virtualColumn;
         }
-        
+
         if ($includeForeignObjects) {
             if (null !== $this->singleTblProdInfo) {
-                
+
                 switch ($keyType) {
                     case TableMap::TYPE_CAMELNAME:
                         $key = 'tblProdInfo';
@@ -1113,7 +1108,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
                     default:
                         $key = 'TblProdInfo';
                 }
-        
+
                 $result[$key] = $this->singleTblProdInfo->toArray($keyType, $includeLazyLoadColumns, $alreadyDumpedObjects, true);
             }
         }
@@ -1341,7 +1336,7 @@ abstract class TblProdSmaller implements ActiveRecordInterface
 
         return spl_object_hash($this);
     }
-        
+
     /**
      * Returns the primary key for this object (row).
      * @return int
@@ -1456,10 +1451,8 @@ abstract class TblProdSmaller implements ActiveRecordInterface
     public function getTblProdInfo(ConnectionInterface $con = null)
     {
 
-        if ($this->singleTblProdInfo === null && ($this->prod_id !== null)) {
-            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->prod_id, $con);
-            // Because this foreign key represents a one-to-one relationship, we will create a bi-directional association.
-            $this->singleTblProdInfo->setTblProdSmaller($this);
+        if ($this->singleTblProdInfo === null && !$this->isNew()) {
+            $this->singleTblProdInfo = ChildTblProdInfoQuery::create()->findPk($this->getPrimaryKey(), $con);
         }
 
         return $this->singleTblProdInfo;
@@ -1474,15 +1467,10 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function setTblProdInfo(ChildTblProdInfo $v = null)
     {
-        if ($v === null) {
-            $this->setProdId(NULL);
-        } else {
-            $this->setProdId($v->getProdId());
-        }
-
         $this->singleTblProdInfo = $v;
 
-        if ($v !== null) {
+        // Make sure that that the passed-in ChildTblProdInfo isn't already associated with this object
+        if ($v !== null && $v->getTblProdSmaller(null, false) === null) {
             $v->setTblProdSmaller($this);
         }
 
@@ -1548,6 +1536,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function preSave(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preSave')) {
+            return parent::preSave($con);
+        }
         return true;
     }
 
@@ -1557,7 +1548,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function postSave(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postSave')) {
+            parent::postSave($con);
+        }
     }
 
     /**
@@ -1567,6 +1560,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function preInsert(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preInsert')) {
+            return parent::preInsert($con);
+        }
         return true;
     }
 
@@ -1576,7 +1572,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function postInsert(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postInsert')) {
+            parent::postInsert($con);
+        }
     }
 
     /**
@@ -1586,6 +1584,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function preUpdate(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preUpdate')) {
+            return parent::preUpdate($con);
+        }
         return true;
     }
 
@@ -1595,7 +1596,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function postUpdate(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postUpdate')) {
+            parent::postUpdate($con);
+        }
     }
 
     /**
@@ -1605,6 +1608,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function preDelete(ConnectionInterface $con = null)
     {
+        if (is_callable('parent::preDelete')) {
+            return parent::preDelete($con);
+        }
         return true;
     }
 
@@ -1614,7 +1620,9 @@ abstract class TblProdSmaller implements ActiveRecordInterface
      */
     public function postDelete(ConnectionInterface $con = null)
     {
-
+        if (is_callable('parent::postDelete')) {
+            parent::postDelete($con);
+        }
     }
 
 

@@ -1,7 +1,9 @@
 {% extends "template.html" %}
 
 {% block title %}Modelbuffs Version 4{% endblock %}
-
+{% block customheader%} 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
 {% block content %}
 
 <div class="container main-container headerOffset">
@@ -35,8 +37,7 @@
                     <div class="cartContent w100">
                         <h2>Select country of destination</h2>
                         <select name="country" class="form-control filter-product m-t-sm">
-                            <option value="1">USA</option>
-                            <option value="2">Australia</option>
+                            <option value="">Select a country of destination</option>
                         </select>                        
                         <p>For other destinations, please contact us and we will send you a tailor made quotation for the
                         delivery to your country including directions on how to make a payment direct to Paypal.</p>
@@ -167,5 +168,26 @@
     <div style="clear:both"></div>
 </div>
 <!-- /.main-container -->
+{% endblock %}
+
+{% block customjs%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+<script type="text/javascript">
+
+    $('select').select2({
+        ajax: {
+            url: '../api/index.php/fedex/countries',
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function(obj) {
+                        return { id: obj.cty_id, text: obj.cty_name };
+                    })
+                };
+            }
+        }
+    });
+
+</script>
 
 {% endblock %}

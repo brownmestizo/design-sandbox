@@ -33,9 +33,11 @@
 	});	
 
 	$app->get('/fedex/countries', function () {
-	    $standQuery = new TblShippingCountriesQuery();
-	    $stands = $standQuery->orderByCtyId()->find();	    
-	    echo $stands->toJSON();	    
+		$countriesQuery = TblShippingCountriesQuery::create()
+		->select(array('cty_id', 'cty_name'))
+		->find();
+
+	    echo $countriesQuery->toJSON();	    
 	});	
 
 

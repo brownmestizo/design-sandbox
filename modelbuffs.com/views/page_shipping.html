@@ -175,17 +175,36 @@
 
 <script type="text/javascript">
 
+    function formatCountry (country) {
+      var markup = "<div>" + country.CtyName + "</div>";
+      return markup;
+    }
+
+    function formatCountrySelection (country) {
+      return country.CtyName;
+    }
+
     $('select').select2({
         ajax: {
-            url: '../api/index.php/fedex/countries',
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function(obj) {
-                        return { id: obj.cty_id, text: obj.cty_name };
-                    })
-                };
-            }
-        }
+            url: function (params) {
+              return '../api/index.php/fedex/country/' + params.term;
+            },        
+            delay: 250,
+            dataType: 'json',
+            data: function (params) {
+              return {};
+            },
+            processResults: function (data, params) {
+              return {
+                results: data.TblShippingCountriess,
+              };
+            },
+            cache: true
+        },
+        escapeMarkup: function (markup) { return markup; }, 
+        minimumInputLength: 1,
+        templateResult: formatCountry, 
+        templateSelection: formatCountrySelection
     });
 
 </script>

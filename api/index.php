@@ -32,6 +32,14 @@
 	    echo $stands->toJSON();
 	});	
 
+	$app->get('/fedex/country/:search', function ($search) {
+		$countriesQuery = TblShippingCountriesQuery::create()
+		->filterByCtyName($search.'%')		
+		->find();
+
+	    echo $countriesQuery->toJSON();	    
+	});		
+
 	$app->get('/fedex/countries', function () {
 		$countriesQuery = TblShippingCountriesQuery::create()
 		->select(array('cty_id', 'cty_name'))

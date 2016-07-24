@@ -5,10 +5,18 @@ require_once '../lib/init.php';
 
 $twig = Templater::getTwig();
 
-$newProducts = TblProdInfoQuery::create()
+$latestProductID = TblProdInfoQuery::create()
 	->orderByProdId('desc')
-	->limit(8)
-	->find();
+	->limit(1)
+	->findOne();
+
+
+$newProducts = TblProdInfoQuery::create()
+	->useTblProdPhotosQuery()
+		->filterByProdId(array('max'=>$latestProductID->getProdId()))
+	->endUse()
+	->orderByProdId('desc')
+	->limit(8);
 
 $featuredProducts = TblProdInfoQuery::create()
 	->orderByProdId('asc')

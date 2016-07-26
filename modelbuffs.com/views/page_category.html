@@ -129,7 +129,11 @@
                                 </div>
                                 </div>
                             <div class="price"><small>Starting from</small> <span>{{ product.getTblProdPricing().getProdPricePrice() }}</span></div>
-                            <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span> </a></div>
+                            <div class="action-control">
+                                <a class="btn btn-primary" href="cart.php">
+                                    <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                                </a>
+                            </div>
                         </div>
                     </div>                
                 {% endfor %}

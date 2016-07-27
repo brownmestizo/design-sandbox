@@ -20,6 +20,10 @@
 
     filterProduct.add(filterQty).add(filterStand).change(refreshPrice);
     refreshPrice();
+    $('.js-push-add-to-cart').click(function(e) {
+        e.preventDefault();
+        $(this).parents('form').submit();
+    })
 })();
 
 //

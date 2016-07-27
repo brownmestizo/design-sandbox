@@ -35,7 +35,9 @@ class AddToCartUseCase
             $this->product->getProdName(),
             $this->product->getTblProdPricing()->getProdPricePrice(), 
             $this->product->getTblProdPhotos()->getProdSolo1(),
-            $this->size
+            $this->size,
+            $this->product->getTblShippingCategories()->getWeightIde(),
+            $this->product->getTblShippingCategories()->getWeightIdp()
         );
         $stand = new Stand($this->stand->getStandId(), $this->stand->getStandName(), $this->stand->getStandPrice());
         $cart = $this->cs->load();

@@ -1,8 +1,8 @@
 {% extends "template.html" %}
 
 {% block title %}Modelbuffs Version 4{% endblock %}
-{% block customheader%} 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+{% block customheader%}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 {% endblock %}
 {% block content %}
 
@@ -13,7 +13,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li class="active">Cart</li>
             </ul>
-        </div> 
+        </div>
     </div>
     <!--/.row-->
 
@@ -36,11 +36,12 @@
 
                     <div class="cartContent w100">
                         <h2>Select country of destination</h2>
-                        <select name="country" class="form-control filter-product m-t-sm">
+                        <select name="country" class="form-control filter-product m-t-sm js-select-country">
                             <option value="">Select a country of destination</option>
-                        </select>                        
-                        <p>For other destinations, please contact us and we will send you a tailor made quotation for the
-                        delivery to your country including directions on how to make a payment direct to Paypal.</p>
+                        </select>
+                        <p>For other destinations, please contact us and we will send you a tailor made quotation for
+                            the
+                            delivery to your country including directions on how to make a payment direct to Paypal.</p>
                     </div>
 
                 </div>
@@ -50,44 +51,46 @@
                     <div class="cartContent w100">
                         <h2>Select a shipping method</h2>
 
-                        <table class="std table m-t-sm">
+                        <table class="std table m-t-sm js-options">
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <label for="radios-0">
-                                            <input name="radios" id="radios-0" value="1" checked="checked" type="radio">
-                                            Fedex Economy <br />
-                                            <small>Fedex International Economy (3-4 days delivery)</small>
-                                        </label>                                        
-                                    </td>
-                                    <td class="text-right">$100.00</td>                                    
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="radios-0">
-                                            <input name="radios" id="radios-0" value="1" checked="checked" type="radio">
-                                            Fedex Priority <br />
-                                            <small>Fedex International Priority (2-3 days delivery)</small>
-                                        </label>                                        
-                                    </td>
-                                    <td class="text-right">$100.00</td>                                    
-                                </tr>                                
-                                <tr>
-                                    <td>
-                                        <label for="radios-1">
-                                            <input name="radios" id="radios-1" value="2" type="radio">
-                                            Air Parcel <br />
-                                            <small>Philpost Air Parcel option is also available (14-21 days trackable). Shipping via Air Parcel is normally up to 50% lower than the FedEx cost.</small>
-                                        </label>                                      
-                                    </td>
-                                    <td class="text-right">$100.00</td>                                    
-                                </tr>                                
+                            <tr class="js-fedex-economy">
+                                <td>
+                                    <label for="radios-0">
+                                        <input class="js-ship-radio" name="radios" id="radios-0" value="economy" type="radio">
+                                        Fedex Economy <br/>
+                                        <small>Fedex International Economy (3-4 days delivery)</small>
+                                    </label>
+                                </td>
+                                <td class="text-right"><span class="js-economy-price"></span></td>
+                            </tr>
+                            <tr class="js-fedex-priority">
+                                <td>
+                                    <label for="radios-1">
+                                        <input class="js-ship-radio" name="radios" id="radios-1" value="priority" type="radio">
+                                        Fedex Priority <br/>
+                                        <small>Fedex International Priority (2-3 days delivery)</small>
+                                    </label>
+                                </td>
+                                <td class="text-right"><span class="js-priority-price"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="radios-2">
+                                        <input class="js-ship-radio" name="radios" id="radios-2" value="air" type="radio">
+                                        Air Parcel <br/>
+                                        <small>Philpost Air Parcel option is also available (14-21 days trackable).
+                                            Shipping via Air Parcel is normally up to 50% lower than the FedEx cost.
+                                        </small>
+                                    </label>
+                                </td>
+                                <td class="text-right">$100.00</td>
+                            </tr>
                             </tbody>
                         </table>
-         
+
                     </div>
 
-                </div>                
+                </div>
             </div>
             <!--/row end-->
             <div class="row userInfo">
@@ -99,7 +102,7 @@
                                     class="fa fa-arrow-left"></i> &nbsp; Continue shopping </a></div>
                             <div class="pull-right">
                                 <button type="submit" class="btn btn-default">
-                                <i class="fa fa-undo"></i> &nbsp; Update cart
+                                    <i class="fa fa-undo"></i> &nbsp; Update cart
                                 </button>
                             </div>
                         </div>
@@ -120,32 +123,30 @@
                                 <tbody>
                                 <tr>
                                     <td colspan="2">Order Summary (x items)</td>
-                                </tr>                                
+                                </tr>
                                 <tr>
                                     <td>Estimated total</td>
-                                    <td class="site-color total-price" id="total-price" data-price="{{ cart.price }}">
-                                        $4400.00
+                                    <td class="site-color total-price js-cart-price" id="total-price" data-price="{{ cart.price }}">
+                                        ${{ cart.price }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Shipping</td>
-                                    <td class="site-color total-price" id="total-price" data-shipping="{{ cart.price }}">
-                                        $500.00
-                                    </td>
-                                </tr>                                
+                                    <td class="site-color js-total-shipping">-</td>
+                                </tr>
                                 </tbody>
                             </table>
 
                             <table class="std table no-border m-b-none">
-                                <tbody>                               
+                                <tbody>
                                 <tr>
                                     <td><strong>Your total price</strong></td>
-                                    <td class="site-color total-price text-right" id="total-price" data-price="{{ cart.price }}">
-                                        <strong>$1500.00</strong>
+                                    <td class="site-color text-right">
+                                        <strong class="js-summary">${{ cart.price }}</strong>
                                     </td>
-                                </tr>                             
+                                </tr>
                                 </tbody>
-                            </table>                            
+                            </table>
                         </div>
 
                         <a class="btn btn-primary btn-lg btn-block m-t-lg" title="checkout" href="shipping.php">
@@ -173,40 +174,5 @@
 {% block customjs%}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
-<script type="text/javascript">
-
-    function formatCountry (country) {
-      var markup = "<div>" + country.CtyName + "</div>";
-      return markup;
-    }
-
-    function formatCountrySelection (country) {
-      return country.CtyName;
-    }
-
-    $('select').select2({
-        ajax: {
-            url: function (params) {
-              return '../api/index.php/fedex/country/' + params.term;
-            },        
-            delay: 250,
-            dataType: 'json',
-            data: function (params) {
-              return {};
-            },
-            processResults: function (data, params) {
-              return {
-                results: data.TblShippingCountriess,
-              };
-            },
-            cache: true
-        },
-        escapeMarkup: function (markup) { return markup; }, 
-        minimumInputLength: 1,
-        templateResult: formatCountry, 
-        templateSelection: formatCountrySelection
-    });
-
-</script>
-
+<script src="/assets/js/scripts/shipping.js"></script>
 {% endblock %}

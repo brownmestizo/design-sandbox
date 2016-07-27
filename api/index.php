@@ -1,7 +1,9 @@
-<?php 
-	
-	
-	function is_localhost() {
+<?php
+
+
+use MB\Cart\SessionCartStorage;
+
+function is_localhost() {
 	    $whitelist = array( '127.0.0.1', '::1', '192.168.33.1',);
 	    if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) )
 	        return true;
@@ -39,9 +41,18 @@
 		->find();
 
 	    echo $countriesQuery->toJSON();	    
-	});		
+	});
 
-	$app->get('/fedex/countries', function () {
+	$app->get('/fedex/country/options/:id', function ($id) {
+		$cs = new SessionCartStorage();
+		$cart = $cs->load();
+		$shipping = new \MB\Shipping\Shipping($id);
+		$priority = $shipping->getPriorityPrice($cart);
+		$economy = $shipping->getEconomyPrice($cart);
+		echo json_encode(compact('priority', 'economy'));
+	});
+
+$app->get('/fedex/countries', function () {
 		$countriesQuery = TblShippingCountriesQuery::create()
 		->select(array('cty_id', 'cty_name'))
 		->find();

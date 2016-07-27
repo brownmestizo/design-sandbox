@@ -14,14 +14,18 @@ class Product
     private $price;
     private $photo;
     private $size;
+    private $weightE;
+    private $weightP;
 
-    public function __construct($id, $name, $price, $photo, $size)
+    public function __construct($id, $name, $price, $photo, $size, $weightE, $weightP)
     {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
         $this->photo = $photo;
         $this->size = $size;
+        $this->weightE = $weightE;
+        $this->weightP = $weightP;
     }
 
     /**
@@ -54,5 +58,21 @@ class Product
     public function getPhoto()
     {
         return $this->photo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeightEconomy()
+    {
+        return $this->weightE;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeightPriority()
+    {
+        return $this->weightP;
     }
 }

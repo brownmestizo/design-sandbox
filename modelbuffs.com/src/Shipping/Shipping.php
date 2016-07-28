@@ -49,12 +49,34 @@ class Shipping
 
         $items = $cart->getItems();
         $price = 0;
+
         foreach ($items as $item) {
             $weightEconomy = $item->getProduct()->getWeightEconomy();
             $price += $this->economyInfo[$weightEconomy] * $item->getQuantity();
         }
 
         return $price;
+    }
+
+
+    public function getProductPrices(Cart $cart)
+    {
+        $items = $cart->getItems();
+        $res = [];
+        foreach ($items as $item) {
+            $info = ['p' => null, 'e' => null];
+            if ($this->economy) {
+                $weightEconomy = $item->getProduct()->getWeightEconomy();
+                $info['e'] = $this->economyInfo[$weightEconomy] * $item->getQuantity();
+            }
+            if ($this->priority) {
+                $weightPriority = $item->getProduct()->getWeightPriority();
+                $info['p'] = $this->priorityInfo[$weightPriority] * $item->getQuantity();
+            }
+            $res[$item->getId()] = $info;
+        }
+
+        return $res;
     }
 
     private function fillEconomyInfo()
@@ -82,4 +104,5 @@ class Shipping
             return $r;
         }, []);
     }
+
 }

@@ -9,4 +9,4 @@ $cs = new SessionCartStorage();
 $cart = $cs->load();
 echo $twig->render(
     'page_shipping.html', 
-        compact('cart'));
+        compact('cart', 'generated_image_url'));

@@ -49,7 +49,8 @@ function is_localhost() {
 		$shipping = new \MB\Shipping\Shipping($id);
 		$priority = $shipping->getPriorityPrice($cart);
 		$economy = $shipping->getEconomyPrice($cart);
-		echo json_encode(compact('priority', 'economy'));
+		$products = $shipping->getProductPrices($cart);
+		echo json_encode(compact('priority', 'economy', 'products'));
 	});
 
 $app->get('/fedex/countries', function () {

@@ -14,7 +14,7 @@
     select.select2({
         ajax: {
             url: function (params) {
-                return '/api/index.php/fedex/country/' + params.term;
+                return '../api/index.php/fedex/country/' + params.term;
             },
             delay: 250,
             dataType: 'json',
@@ -61,7 +61,7 @@
         },
         loadShippingOptionsFor = function (countryId) {
             eraseShippingInformation();
-            $.get('/api/index.php/fedex/country/options/' + countryId, function (data) {
+            $.get('../api/index.php/fedex/country/options/' + countryId, function (data) {
                 if (data.priority) {
                     priorityPrice.html('$' + data.priority);
                     priorityBlock.show();

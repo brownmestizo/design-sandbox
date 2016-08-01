@@ -20,6 +20,8 @@ $twig = Templater::getTwig();
 $productQuery = new TblProdInfoQuery();
 $product = $productQuery->findPK($request->get('id'));
 
+$smallerVersion = TblProdSmallerQuery::create()->findPK($request->get('id'));
+
 $pricingQuery = new TblProdPricingQuery();
 
 $relatedProducts = TblProdInfoQuery::create()->findPKs($product->getRelatedProductsIds());
@@ -49,7 +51,7 @@ if ($form->isValid()) {
     $addUseCase = new \MB\Cart\AddToCartUseCase($cs, $product, $stand, $addedItem->quantity, $addedItem->product);
     $addUseCase->execute();
 
-    $resp = new RedirectResponse('/modelbuffs.com/cart.php');
+    $resp = new RedirectResponse('cart.php');
     $resp->send();
     return;
 }
@@ -64,6 +66,7 @@ echo $twig->render('page_product.html',
         'jsData' => $jsData,
         'form' => $form->createView(),
         'product' => $product,
+        'smallerVersion' => $smallerVersion,
         'image_url' => $generated_image_url,
         'relatedProducts' => $relatedProducts,
         'stands' => $stands

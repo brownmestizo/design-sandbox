@@ -33,8 +33,8 @@ class TblProdInfo extends BaseTblProdInfo
     }
 
     public function displayStat ($x) {
-    	$formatted = number_format($x, 2);
-    	$metric = number_format(($x * 2.54), 2);
+    	$formatted = number_format((float)$x, 2);
+    	$metric = number_format(((float)$x * 2.54), 2);
 
     	return $formatted." in (".$metric." cm)";
     }

@@ -24,4 +24,11 @@
         {% include 'partials/parallax.php' %}
         {% include 'partials/products-modal.php' %}
 
+{% block customjs %}
+<script>
+var jsData = {{ jsData|json_encode|raw }};
+</script>
+<script type="text/javascript" src="../assets/js/scripts/product.js"></script>
+{% endblock %}
+
 {% endblock %}

@@ -66,6 +66,8 @@
               <hr />
               <p><a class="btn btn-primary btn-lg" href="https://docs.google.com/spreadsheets/d/1dFIfclA8szSJp8oBd7nMXhQxTP4mRtUwzAVHOS1Xspk/edit?usp=sharing" role="button">Project tracker</a></p>                                                        
               <p><a class="btn btn-primary btn-lg" href="project/index.php" role="button">Other projects</a></p>                                                        
+              <p><a class="btn btn-green btn-lg" href="https://airtable.com/shrMlFVzVCYugDyxe" role="button">Report an issue/bug</a></p>                                                                      
+
 
             </div>            
        

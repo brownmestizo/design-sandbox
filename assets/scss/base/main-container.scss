@@ -395,7 +395,7 @@
     margin: 25px 10px 0 10px;
     padding: 0;
     line-height: 24px;    
-    @include ellipsis-auto(17px, 24px, 2);    
+    @include ellipsis(17, 24, 1);    
 }
 
 .item h4 a {

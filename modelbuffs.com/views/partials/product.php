@@ -6,10 +6,7 @@
                         </span>
                         {% endif %}                         
                         
-                        <div class="image">
-                            <div class="quickview">
-                                <a title="Quick View" class="btn btn-xs btn-quickview" data-target="#product-details-modal" data-toggle="modal" id="{{ product.getProdId() }}"> Quick View </a>
-                            </div>                            
+                        <div class="image m-b-sm">                     
                             <a href="product.php?id={{ product.getProdId() }}">      
                                 <img src="{{ image_url }}{{ product.getTblProdPhotos().getProdSolo1() }}" alt="img" class="img-responsive">
                             </a>
@@ -17,7 +14,9 @@
 
                         <div class="description">
                             <h4>
-                                <a href="product.php?id={{ product.getProdId() }}">{{ product.getProdName() }}</a>
+                                <a href="product.php?id={{ product.getProdId() }}">
+                                {{ product.getProdName() }}
+                                </a>
                             </h4>
                         </div>
 
@@ -28,8 +27,10 @@
                         </div> 
 
                         <div class="action-control">
-                            <a class="btn btn-primary" href="cart.php">
-                                <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                            <a class="btn btn-primary" href="product.php?id={{ product.getProdId() }}">
+                                <span class="add2cart">
+                                    View more
+                                </span>
                             </a>
                         </div>
 

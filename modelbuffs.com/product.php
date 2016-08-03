@@ -1,5 +1,4 @@
 <?php
-
 use Form\FormBuilder;
 use MB\Cart\SessionCartStorage;
 use MB\Form\ProductChoiceForm;
@@ -9,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 require_once '../lib/init.php';
+
 $request = Request::createFromGlobals();
 
 if (!$request->get('id')) {

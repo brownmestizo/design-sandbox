@@ -69,7 +69,11 @@
 
                 <hr />
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScAOgUpnO8eNCpFKfTRsYzew76Aozv3KP3Sd9BhCD88dsXWKA/viewform">Test plan - casual user</a>
-
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdy0mxlIjrRvB4mYtWHhr5N4tKR8tI6niK6Tp8837afgmBv2Q/viewform">Test plan - power user</a>
+                <p>Test plan - accessibility <label class="label label-green">Soon</label></p>
+                <p>Test plan - back-end admin user <label class="label label-green">Soon</label></p>
+                <p>Test plan - automated via CI <label class="label label-green">Soon</label></p>
+                <p>Test plan - speed via PageInsights <label class="label label-green">Soon</label></p>
 
             </div>            
        

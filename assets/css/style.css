@@ -10786,31 +10786,16 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   height: 100%;
   padding: 3px 5px; }
 
-/* line 388, ../scss/base/main-container.scss */
+/* line 393, ../scss/base/main-container.scss */
 .item h4 {
   margin: 0;
   min-height: 45px;
   max-height: 80px;
   overflow: hidden;
   display: block;
-  line-height: 20px;
   margin: 25px 10px 0 10px;
-  padding: 0;
-  line-height: 24px;
-  display: block;
-  /* Fallback for non-webkit */
-  display: -webkit-box;
-  height: 408;
-  /* Fallback for non-webkit */
-  margin: 0 auto;
-  font-size: 17;
-  line-height: 24;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-/* line 401, ../scss/base/main-container.scss */
+  padding: 0; }
+/* line 404, ../scss/base/main-container.scss */
 .item h4 a {
   color: #2c3e50;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -10818,7 +10803,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   text-decoration: none;
   text-transform: uppercase; }
 
-/* line 409, ../scss/base/main-container.scss */
+/* line 415, ../scss/base/main-container.scss */
 .description p {
   color: #7F8C8D;
   font-size: 14px;
@@ -10827,14 +10812,14 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   overflow: hidden;
   line-height: 18px; }
 
-/* line 418, ../scss/base/main-container.scss */
+/* line 424, ../scss/base/main-container.scss */
 .price {
   font-size: 18px;
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 10px; }
 
-/* line 425, ../scss/base/main-container.scss */
+/* line 431, ../scss/base/main-container.scss */
 .action-control {
   border: 0;
   display: block;
@@ -10842,11 +10827,11 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   padding: 5px 0 10px;
   width: 100%; }
 
-/* line 433, ../scss/base/main-container.scss */
+/* line 439, ../scss/base/main-container.scss */
 .action-control a {
   cursor: pointer; }
 
-/* line 437, ../scss/base/main-container.scss */
+/* line 443, ../scss/base/main-container.scss */
 .cart a {
   font-size: 20px;
   color: #2c3e50;
@@ -10858,12 +10843,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s; }
 
-/* line 449, ../scss/base/main-container.scss */
+/* line 455, ../scss/base/main-container.scss */
 .load-more-block {
   padding-bottom: 30px;
   position: relative; }
 
-/* line 454, ../scss/base/main-container.scss */
+/* line 460, ../scss/base/main-container.scss */
 .load-more-block .btn-thin {
   background: #fff;
   z-index: 2;
@@ -10873,7 +10858,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -moz-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF;
   -o-box-shadow: -4px 0 0 #FFFFFF, 4px 0 0 #FFFFFF; }
 
-/* line 464, ../scss/base/main-container.scss */
+/* line 470, ../scss/base/main-container.scss */
 .load-more-block:after {
   background: none repeat scroll 0 0 #DDDDDD;
   content: "";
@@ -10885,12 +10870,12 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   width: 40%;
   z-index: 1; }
 
-/* line 476, ../scss/base/main-container.scss */
+/* line 482, ../scss/base/main-container.scss */
 .featureImg a {
   display: block;
   overflow: hidden; }
 
-/* line 481, ../scss/base/main-container.scss */
+/* line 487, ../scss/base/main-container.scss */
 .featureImg a img {
   transition: all 0.4s ease 0s;
   -webkit-transition: all 0.4s ease 0s;
@@ -10898,7 +10883,7 @@ h1.bolder-style.dark, h1.bolder-style.dark a {
   -o-transition: all 0.4s ease 0s;
   -ms-transition: all 0.4s ease 0s; }
 
-/* line 489, ../scss/base/main-container.scss */
+/* line 495, ../scss/base/main-container.scss */
 .featureImg a img:hover {
   transform: scale(1.1) rotate(-1.1deg);
   -webkit-transform: scale(1.1) rotate(-1.1deg);

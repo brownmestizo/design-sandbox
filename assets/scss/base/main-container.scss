@@ -385,26 +385,32 @@
     padding: 3px 5px;
 }
 
-.item h4 {
-    margin: 0;
-    min-height: 45px;
-    max-height: 80px;
-    overflow: hidden;
-    display: block;
-    line-height: 20px;
-    margin: 25px 10px 0 10px;
-    padding: 0;
-    line-height: 24px;    
-    @include ellipsis(17, 24, 1);    
+.item {
+    .description {
+        
+    }
+
+    h4 {
+        margin: 0;
+        min-height: 45px;
+        max-height: 80px;
+        overflow: hidden;
+        display: block;
+        margin: 25px 10px 0 10px;
+        padding: 0;
+    }
+
+
+    h4 a {
+        color: #2c3e50;
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 }
 
-.item h4 a {
-    color: #2c3e50;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 
 .description p {
     color: #7F8C8D;

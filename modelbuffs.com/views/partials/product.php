@@ -12,7 +12,7 @@
                             </a>
                         </div>
 
-                        <div class="description">
+                        <div class="description ">
                             <h4>
                                 <a href="product.php?id={{ product.getProdId() }}">
                                 {{ product.getProdName() }}

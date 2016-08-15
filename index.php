@@ -65,7 +65,8 @@
               <p><a class="btn btn-primary btn-lg" href="mymahoganymodel.com/" role="button">Looking for My Mahogany Model?</a></p>                            
               <hr />
               <p><a class="btn btn-primary btn-lg" href="project/index.php" role="button">Other projects</a></p>                                                        
-              <p><a class="btn btn-green btn-lg" href="https://airtable.com/shrMlFVzVCYugDyxe" role="button">Report an issue/bug</a></p>                                                                      
+              <p><a class="btn btn-green btn-lg" href="https://airtable.com/shrMlFVzVCYugDyxe" role="button">Report an issue/bug</a></p> 
+              <p><a href="https://airtable.com/shrFQmvGmT1nSzFE9/tblzT8GE5vrA2woUI/viw4AHehTk9DotVKN">View submitted issues/bugs</a></p>                                                                     
 
                 <hr />
                 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScAOgUpnO8eNCpFKfTRsYzew76Aozv3KP3Sd9BhCD88dsXWKA/viewform">Test plan - casual user</a>
